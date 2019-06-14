@@ -10,8 +10,7 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.
-*/
+limitations under the License. */
 "use strict";
 
 // use modules from D3 (hierarchy, colors), Canvas (Cairo-based sw canvas), and FS
@@ -44,14 +43,14 @@ const abort = (s, showUsage = false) => {
     }
     process.exit(1);
 };
+let project_count = 0;
 
 // input: from Cloc command line stdout on dir
 function readOutputOfClocOnDir(dir) {
     if (dir !== undefined && fs.statSync(dir).isDirectory()) {
-        print('A folder was supplied, running ' + chalkCloc + ' on ' + chalk.underline(dir));
+        print(' ' + (++project_count) + '. Running ' + chalkCloc + ' on folder: ' + chalk.underline(dir));
         try {
             const clocJsonOutput = child_process.execSync(cloc_shell_cmd, {cwd: dir, encoding: 'utf8', stdio: 'pipe'});
-            print('done.');
             if (options['store']) {
                 print('Saving the file to ' + chalk.underline(options['store']) + ' as requested');
                 fs.writeFileSync(options['store'], clocJsonOutput);
@@ -66,7 +65,7 @@ function readOutputOfClocOnDir(dir) {
 // input: from file
 function readClocFile(file) {
     if (file !== undefined && fs.statSync(file).isFile()) {
-        print('Reading ' + chalk.underline(file) + '. Done.');
+        print(' ' + (++project_count) + '. Reading ' + chalk.underline(file));
         return fs.readFileSync(file, 'utf8');
     }
 }
@@ -150,20 +149,36 @@ function updateDirStatValuesRecursively(dirNode, depth) {
 // Main
 print('== Welcome to ' + chalk.red('Code X-RAY') + ' ==');
 
-const clocJsonOutput =
-    readOutputOfClocOnDir(options['dir'] /*|| options['_'][0]*/) ||
-    readClocFile(options['file'] /*|| options['_'][0]*/) ||
-    abort('Need to specify either a valid folder or an existing input file.', true);
+// input: read all the files and folders supplied
+const clocJsonOutputs = [];
+if (options['dir'])
+    [].concat(options['dir']).forEach(dir => clocJsonOutputs.push(readOutputOfClocOnDir(dir)));
+if (options['file'])
+    [].concat(options['file']).forEach(file => clocJsonOutputs.push(readClocFile(file)));
+if (clocJsonOutputs.length < 1)
+    abort('Need to specify either valid folders or an existing cloc json files.', true);
 
-const filesStats = parseClocJson(clocJsonOutput);
+// parse JSON and create a tree for every input
+print('> Transforming per-file statistics to folder trees for ' + clocJsonOutputs.length + ' project/s.');
+let graphsStats = {'name': options['root'] || 'root', files: [], children: []};
+clocJsonOutputs.forEach(jsonString => {
+    const filesStats = parseClocJson(jsonString);
+    const dirStats = makeDirStatsTree(filesStats);
+    graphsStats.children.push(dirStats);
+});
 
-print('Computing per-folder source code statistics.');
-const graphStats = makeDirStatsTree(filesStats);
-updateDirStatValuesRecursively(graphStats, 0);
+// if only had a single input, remove the holder node
+// TODO -> add optimization (sub-path folding) here
+if (graphsStats.children.length === 1)
+    graphsStats = graphsStats.children[0];
+
+// math time
+print('> Computing code and source language share per-project, per-folder');
+updateDirStatValuesRecursively(graphsStats, 0);
 
 if (options['out']) {
-    fs.writeFileSync(options['out'], JSON.stringify(graphStats, null, 4));
-    print('Hierarchy saved to: ' + chalk.underline(options['out']));
+    fs.writeFileSync(options['out'], JSON.stringify(graphsStats, null, 4));
+    print('> Hierarchy saved to: ' + chalk.underline(options['out']));
 } else {
     print('Not saving the output, since --out was not specified');
 }
