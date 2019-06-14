@@ -52,7 +52,7 @@ function readOutputOfClocOnDir(dir) {
         try {
             const clocJsonOutput = child_process.execSync(cloc_shell_cmd, {cwd: dir, encoding: 'utf8', stdio: 'pipe'});
             if (options['store']) {
-                print('Saving the file to ' + chalk.underline(options['store']) + ' as requested');
+                print('   > storing the file to ' + chalk.underline(options['store']) + ' as requested');
                 fs.writeFileSync(options['store'], clocJsonOutput);
             }
             return clocJsonOutput;
@@ -158,7 +158,7 @@ if (options['file'])
 if (clocJsonOutputs.length < 1)
     abort('Need to specify either valid folders or an existing cloc json files.', true);
 
-// parse JSON and create a tree for every input
+// parse JSON and create a tree for every project
 print('> Transforming per-file statistics to folder trees for ' + clocJsonOutputs.length + ' project/s.');
 let graphsStats = {'name': options['root'] || 'root', files: [], children: []};
 clocJsonOutputs.forEach(jsonString => {
@@ -176,9 +176,10 @@ if (graphsStats.children.length === 1)
 print('> Computing code and source language share per-project, per-folder');
 updateDirStatValuesRecursively(graphsStats, 0);
 
-if (options['out']) {
-    fs.writeFileSync(options['out'], JSON.stringify(graphsStats, null, 4));
-    print('> Hierarchy saved to: ' + chalk.underline(options['out']));
+if (options['out'] && options['out'] !== '') {
+    const saveFileName = options['out'].indexOf('.') === -1 ? (options['out'] + '.xray.json') : options['out'];
+    fs.writeFileSync(saveFileName, JSON.stringify(graphsStats, null, 4));
+    print('> Hierarchy saved to: ' + chalk.underline(saveFileName));
 } else {
     print('Not saving the output, since --out was not specified');
 }
