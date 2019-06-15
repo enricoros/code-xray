@@ -1,6 +1,6 @@
 {
   "name": "codexray",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Intuitive graphical representation of source code",
   "main": "xray-gen-tree.js",
   "keywords": [
