@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /* Copyright 2019 Enrico Ros
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,51 +14,61 @@ See the License for the specific language governing permissions and
 limitations under the License. */
 "use strict";
 
-// use modules from D3 (hierarchy, colors), Canvas (Cairo-based sw canvas), and FS
+// use standard node modules (fs, path, child_process) and a couple installed (minimist, chalk)
 const fs = require('fs');
 const path = require('path');
 const child_process = require('child_process');
 const options = require('minimist')(process.argv.slice(2));
+const chalk = require('chalk');
 
 // help
-const chalk = require('chalk');
 const print = console.log;
 const chalkCloc = chalk.blue('cloc');
-const cloc_shell_cmd = 'cloc --by-file --json --quiet --hide-rate ./';
-const abort = (s, showUsage = false) => {
-    print(chalk.redBright('Error: ') + s);
+const clocOptions = ' --by-file --json --quiet --hide-rate ./';
+const cleanupLanguages = ['XML', 'YAML', 'Dockerfile', 'Protocol Buffers', 'HTML', 'Bourne Shell', 'Markdown',
+    'CMake', 'PowerShell', 'Windows Module Definition', 'DOS Batch', 'Pascal', 'MSBuild script'];
+const cleanupFolders = options['exclude'] ? [].concat(options['exclude']) : [];
+const defaultProjectName = 'Project';
+const quit = (s, showUsage = false) => {
+    if (s) print(chalk.redBright('Error: ') + s);
     if (showUsage) {
         print('Available options');
-        print();
-        print('  Input options - use either of:');
-        print('     --dir    directory    runs ' + chalk.blue.underline(cloc_shell_cmd) + ' on this directory');
-        print('     --file   filename     loads a saved ' + chalkCloc + ' json file with per-file statistics');
-        print();
-        print('  Content options:');
-        print('     --root   name         name the root node: default \'root\'');
-        print();
-        print('  Output options:');
-        print('     --store  filename     caches the --dir ' + chalkCloc + ' output, for subsequent use with --file');
-        print('     --out    filename     writes the hierarchical JSON to file');
-        print();
+        print('\n  Input options - use either of:');
+        print('     --dir      directory     runs ' + chalk.blue.underline('cloc ' + clocOptions) + ' on this directory');
+        print('     --in       filename      loads a saved ' + chalkCloc + ' json file with per-file statistics');
+        print('\n  Content options:');
+        print('     --exclude  folder/paths  excludes complete folders; provide path from the project root (can be repeated)');
+        print('     --clean                  removes non-strictly-source files: ' + cleanupLanguages.join(', '));
+        print('     --project  name          names the project (top-level node), default: ' + defaultProjectName);
+        print('\n  Output options:');
+        print('     --cache    filename      caches the --dir ' + chalkCloc + ' output, for subsequent use with --in');
+        print('     --out      filename      writes the hierarchical JSON to file');
     }
     process.exit(1);
 };
-let project_count = 0;
 
 // input: from Cloc command line stdout on dir
+let globalProjectCount = 0;
+
 function readOutputOfClocOnDir(dir) {
     if (dir !== undefined && fs.statSync(dir).isDirectory()) {
-        print(' ' + (++project_count) + '. Running ' + chalkCloc + ' on folder: ' + chalk.underline(dir));
+        print(' ' + (++globalProjectCount) + '. Running ' + chalkCloc + ' on folder: ' + chalk.underline(dir));
         try {
-            const clocJsonOutput = child_process.execSync(cloc_shell_cmd, {cwd: dir, encoding: 'utf8', stdio: 'pipe'});
-            if (options['store']) {
-                print('   > storing the file to ' + chalk.underline(options['store']) + ' as requested');
-                fs.writeFileSync(options['store'], clocJsonOutput);
+            let clocCmd = process.mainModule.paths[0] + path.sep + '.bin' + path.sep + 'cloc';
+            if (!fs.existsSync(clocCmd)) {
+                clocCmd = 'cloc';
+                print('   > local cloc ' + chalk.redBright('not found') + '. trying global ' + chalk.whiteBright(clocCmd));
+            } else
+                print('   > using local cloc install on ' + chalk.whiteBright(clocCmd));
+            clocCmd = clocCmd + ' ' + clocOptions;
+            const clocJsonOutput = child_process.execSync(clocCmd, {cwd: dir, encoding: 'utf8', stdio: 'pipe'});
+            if (options['cache']) {
+                print('   > caching the cloc output to ' + chalk.underline(options['cache']) + ' as requested');
+                fs.writeFileSync(options['cache'], clocJsonOutput);
             }
             return clocJsonOutput;
         } catch (e) {
-            abort('cannot run the ' + chalkCloc + ' tool. make sure cloc 1.80+ is present in this system');
+            quit('cannot run the ' + chalkCloc + ' tool. make sure cloc 1.80+ is present in this system. Issue:\n' + e);
         }
     }
 }
@@ -65,26 +76,26 @@ function readOutputOfClocOnDir(dir) {
 // input: from file
 function readClocFile(file) {
     if (file !== undefined && fs.statSync(file).isFile()) {
-        print(' ' + (++project_count) + '. Reading ' + chalk.underline(file));
+        print(' ' + (++globalProjectCount) + '. Reading ' + chalk.underline(file));
         return fs.readFileSync(file, 'utf8');
     }
 }
 
 // parse CLOC JSON to a list of files: {name, dir, code, language}
-function parseClocJson(jsonString) {
+function sourceStatsFromClocJson(jsonString) {
     const fileStats = [];
     let json;
     try {
         json = JSON.parse(jsonString);
     } catch (e) {
-        abort('error parsing the json input format.')
+        quit('error parsing the json input format.')
     }
     // parse the Cloc 1.80+ JSON output; ignore header and sum
     delete json['header'];
     delete json['SUM'];
     for (const [filePath, file] of Object.entries(json)) {
         if (!filePath.startsWith('./'))
-            abort('expected all files to begin with ./');
+            quit('expected all files to begin with ./');
         // ignore data: 'blank' and 'comment' - not useful
         fileStats.push({
             'name': path.basename(filePath.substring(2)),
@@ -96,10 +107,9 @@ function parseClocJson(jsonString) {
     return fileStats;
 }
 
-
 // create a Tree representation of folders, with contained files: {name, files[], children[]}
-function makeDirStatsTree(filesStats) {
-    const root = {'name': options['root'] || 'root', files: [], children: []};
+function makeDirStatsTree(filesStats, projectName) {
+    const root = {is_project: true, 'name': projectName, files: [], children: []};
     filesStats.forEach(fileStat => {
         // create & walk the sub-folder structure
         let fileDir = root;
@@ -118,6 +128,22 @@ function makeDirStatsTree(filesStats) {
     return root;
 }
 
+// when a directory only has 1 sub-folder and no files, fuse-in that sub-folder contents (similar to github's path simplifier)
+function collapseDegenerateDirectories(node) {
+    let fused = false;
+    while (node.children.length === 1 && node.files.length === 0) {
+        const child = node.children[0];
+        node.name = node.name + path.sep + child.name;
+        node.files = child.files;
+        node.children = child.children;
+        fused = true;
+    }
+    if (fused)
+        print('  > fused: ' + chalk.italic(node.name));
+    // this node is okay, recurse to children
+    node.children.forEach(c => collapseDegenerateDirectories(c));
+}
+
 /* compute the 'net code statistics', adding to each node: {depth, lang_local, lang_rollup, value, value_lang}
 Note that the output structure is directly parsable by 'd3-hierarchy' as {name, value, children[]} are present
  */
@@ -126,6 +152,7 @@ function updateDirStatValuesRecursively(dirNode, depth) {
     dirNode.depth = depth;
     dirNode.lang_local = {};
     dirNode.files.forEach(f => dirNode.lang_local[f.language] = (dirNode.lang_local[f.language] || 0) + f.code);
+    // DEBUG: comment the following to leave 'files'
     delete dirNode.files;
 
     // sum local to children stats
@@ -147,34 +174,51 @@ function updateDirStatValuesRecursively(dirNode, depth) {
 }
 
 // Main
-print('== Welcome to ' + chalk.red('Code X-RAY') + ' ==');
+print('== Welcome to ' + chalk.red('Code X-RAY') + ' Part I, ' + chalk.blueBright('The Mathematician') + ' ==');
+if (options['help'])
+    quit(undefined, true);
 
 // input: read all the files and folders supplied
-const clocJsonOutputs = [];
+const projectsClocJsons = [];
 if (options['dir'])
-    [].concat(options['dir']).forEach(dir => clocJsonOutputs.push(readOutputOfClocOnDir(dir)));
-if (options['file'])
-    [].concat(options['file']).forEach(file => clocJsonOutputs.push(readClocFile(file)));
-if (clocJsonOutputs.length < 1)
-    abort('Need to specify either valid folders or an existing cloc json files.', true);
+    [].concat(options['dir']).forEach(dir => projectsClocJsons.push(readOutputOfClocOnDir(dir)));
+if (options['in'])
+    [].concat(options['in']).forEach(file => projectsClocJsons.push(readClocFile(file)));
+if (projectsClocJsons.length < 1)
+    quit('Need to specify either valid folders or an existing cloc json files.', true);
 
 // parse JSON and create a tree for every project
-print('> Transforming per-file statistics to folder trees for ' + clocJsonOutputs.length + ' project/s.');
-let graphsStats = {'name': options['root'] || 'root', files: [], children: []};
-clocJsonOutputs.forEach(jsonString => {
-    const filesStats = parseClocJson(jsonString);
-    const dirStats = makeDirStatsTree(filesStats);
-    graphsStats.children.push(dirStats);
+print('> Transforming per-file statistics to folder trees for ' + projectsClocJsons.length + ' project/s.');
+let graphsStats = {is_multi_project: true, 'name': defaultProjectName, files: [], children: []};
+projectsClocJsons.forEach(jsonString => {
+    let sourceFilesStats = sourceStatsFromClocJson(jsonString);
+    // cleanup 1: remove entire folders from the export (for example if you didn't care about /scripts/..)
+    if (cleanupFolders.length) {
+        const countBefore = sourceFilesStats.length;
+        sourceFilesStats = sourceFilesStats.filter(file => !cleanupFolders.find(folder => file.dir.startsWith(folder)));
+        print('  > --exclude: removed ' + (countBefore - sourceFilesStats.length) + ' files for being in: ' + cleanupFolders.join(', '))
+    }
+    // cleanup 2: remove files written in misc languages, to improve the SNR
+    if (options['clean']) {
+        const countBefore = sourceFilesStats.length;
+        sourceFilesStats = sourceFilesStats.filter(file => !cleanupLanguages.includes(file.language));
+        print('  > --clean: removed ' + (countBefore - sourceFilesStats.length) + ' files for unused languages')
+    }
+    // create the tree, and add it to the multi-project holder
+    const dirStatsTree = makeDirStatsTree(sourceFilesStats, options['project'] || defaultProjectName);
+    // cleanup 3: collapse degenerate a-b-c- .. directories into single 'a/b/c/' nodes
+    if (options['clean'])
+        collapseDegenerateDirectories(dirStatsTree);
+    // tree done for this project
+    graphsStats.children.push(dirStatsTree);
 });
-
-// if only had a single input, remove the holder node
-// TODO -> add optimization (sub-path folding) here
+// collapse the holder 'multi_project' node if only had a single project
 if (graphsStats.children.length === 1)
     graphsStats = graphsStats.children[0];
 
 // math time
 print('> Computing code and source language share per-project, per-folder');
-updateDirStatValuesRecursively(graphsStats, 0);
+updateDirStatValuesRecursively(graphsStats, graphsStats.is_multi_project ? -1 : 0);
 
 if (options['out'] && options['out'] !== '') {
     const saveFileName = options['out'].indexOf('.') === -1 ? (options['out'] + '.xray.json') : options['out'];
@@ -187,7 +231,7 @@ print('All done.');
 
 // output example
 // {
-//     "name": "root",
+//     "name": "Project",
 //     "children": [],
 //     "depth": 0,
 //     "lang_local": {
