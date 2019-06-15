@@ -31,7 +31,9 @@ const quit = (s, showUsage = false) => {
     if (showUsage) {
         print('Usage:  node ' + path.basename(__filename) + ' ' + chalk.greenBright('input.xray') + ' [options]');
         print('\n  The input file is the output of ' + chalk.greenBright('xray-gen-tree') + '.');
-        print('\n  Content options:');
+        print('\n  Style options:');
+        print('    --width N               picture width, default: height * 16/9');
+        print('    --height N              picture height, default: 2000');
         print('    --hide-below N          hide content below this depth, default: 0 (Project depth)');
         print('    --hide-above N          hide content above this depth, default: 99');
         print('    --hide-labels-above N   hide labels above this depth, default: 6');
