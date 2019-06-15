@@ -1,2 +1,54 @@
-# source-code-xray
-Helps you understanding a project by showing the contents graphically.
+# code-xray
+XRAYs a folder and shows the code in a nice looking
+ [Treemap](https://en.wikipedia.org/wiki/Treemapping).
+
+This tool makes it intuitive to look at new source code, such as freshly cloned github repo,
+and understand what's going on at large.
+
+You will see where (which folders) most of the work resides and be immediately able to
+navigate the directory structure of the project. The #1 and Only metric used here is Lines
+of Code* (without blanks and comments) - for sure there are more, but this works really well.
+
+## Setup
+Quick and easy
+1. make sure NodeJS (11+) and Perl are installed globally
+1. download this repository
+1. enter the directory
+1. install dependencies
+```bash
+git clone https://github.com/enricoros/code-xray.git
+cd coode-xray
+npm install
+```
+
+## Structure
+Unfortunately this tool comes in TWO command line commands.
+1. 
+
+
+
+## Want to make it better?
+Ideas for improvement:
+* Make a **Web application** to automatically scan a repository, XRAY it, and provide a Web app with
+parametric image generation. Since this tools is using the Canvas (Context2D) API, the renderer
+can be easily executed by the browser.
+* Fuse the two command line tools for quicker access, but also leave them separate for backend vs
+frontend usage.
+* Separate **Languages as layers**, so each language has a color, and when overlapping all
+the layers the picture is complete. This goes really well with the XRAY metaphor.
+* Add a language representation/coloring for the local file matter of inner-nodes with children,
+aka: show the 'leftover blocks' that look like missing pieces in the squares.
+* Open a new [Issue](issues/) and let me know about your ideas
+* Send a pull request and enjoy it when it gets merged
+
+## Other tools
+If you're a source-code-visualization aficionado, check out
+[Gource](https://github.com/acaudwell/Gource) that adds the time axis and creates movies that can
+tell who-did-what as well as see where the activity was concentrated and see the final tree-like
+structure of the code.
+
+Also, make sure to check out [cloc](https://github.com/AlDanial/cloc) which is the command-line
+tool that this project uses to perform the per-file source code analysis.
+
+## Found this useful?
+Me too, please open an issue, say Hi, and attach the picture of your repo.
