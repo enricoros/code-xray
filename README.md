@@ -30,8 +30,10 @@ node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
 ```
 <img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/glow.17ec51e2.png" width="800">
 
-
 ## Analyzer: xray-gen-tree
+This tool analyzes a folder (or loads a saved cloc json file) and creates a XRAY file out of it.
+This is the **backend** portion of the solution, as the cloc analysis and the tree transformations
+tend to be slow.
 ```console
 enrico@localhost ~/code-xray $ ./xray-gen-tree.js --help  
 == Welcome to Code X-RAY Part I, The Mathematician ==
@@ -42,8 +44,10 @@ Available options
      --in       filename      loads a saved cloc json file with per-file statistics
 
   Content options:
-     --exclude  folder/paths  excludes complete folders; provide path from the project root (can be repeated)
-     --clean                  removes non-strictly-source files: XML, YAML, Dockerfile, Protocol Buffers, HTML, Bourne Shell, Markdown, CMake, PowerShell, Windows Module Definition, DOS Batch, Pascal, MSBuild script
+     --exclude  folder/paths  excludes complete folders; provide path from the project root (repeat)
+     --clean                  removes non-strictly-source files, including: XML, YAML, Dockerfile,
+                              Protocol Buffers, HTML, Bourne Shell, Markdown, CMake, PowerShell,
+                              Windows Module Definition, DOS Batch, Pascal, MSBuild script
      --project  name          names the project (top-level node), default: Project
 
   Output options:
@@ -52,6 +56,9 @@ Available options
 ```
 
 ## Painter: xray-draw-tree
+This tool renders a given XRAY file using the provided style options. This is the frontend portion
+of the tool, as it can render the data (XRAY) file into a PNG picture. Eventually this could work
+on the web browser and without requiring Node (not yet).   
 ```console
 enrico@localhost ~/code-xray $ ./xray-draw-tree.js --help  
 == Welcome to Code X-RAY Part II, The Artist ==
@@ -59,7 +66,9 @@ Usage:  node xray-draw-tree.js input.xray [options]
 
   The input file is the output of xray-gen-tree.
 
-  Content options:
+  Style options:
+    --width N               picture width, default: height * 16/9
+    --height N              picture height, default: 2000
     --hide-below N          hide content below this depth, default: 0 (Project depth)
     --hide-above N          hide content above this depth, default: 99
     --hide-labels-above N   hide labels above this depth, default: 6
@@ -68,7 +77,6 @@ Usage:  node xray-draw-tree.js input.xray [options]
   Output options:
     --out filename.png      saves the output png file, default: tree.png
 ```
-
 
 
 ## Want to make this better?
