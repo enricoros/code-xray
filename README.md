@@ -10,7 +10,7 @@ of Code* (without blanks and comments) - for sure there are more, but this works
 ### Setup
 ```bash
 git clone https://github.com/enricoros/code-xray.git
-cd coode-xray
+cd code-xray
 npm install
 ```
 1. make sure NodeJS (11+) and Perl are installed globally
