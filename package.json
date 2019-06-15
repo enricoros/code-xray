@@ -1,0 +1,28 @@
+{
+  "name": "codexray",
+  "version": "1.0",
+  "description": "Intuitive graphical representation of source code",
+  "main": "xray-gen-tree.js",
+  "keywords": [
+    "source code",
+    "visualization",
+    "lines of code",
+    "code xray",
+    "undesrtand source",
+    "repository",
+    "code analysis",
+    "cloc",
+    "sloccount"
+  ],
+  "author": "Enrico Ros",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "canvas": "^2.5.0",
+    "chalk": "^2.4.2",
+    "cloc": "^2.5.0",
+    "d3-hierarchy": "^1.1.8",
+    "d3-scale": "^3.0.0",
+    "d3-scale-chromatic": "^1.3.3",
+    "minimist": "^1.2.0"
+  }
+}
