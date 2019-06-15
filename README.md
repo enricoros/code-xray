@@ -113,6 +113,9 @@ All done.
 
 ## Want to make this better?
 Ideas for improvement:
+* Add a '--opaque' option for rendering folders without discending over a certain depth, useful to
+keep the size of the parent in view, but when discending into the sub-folders will just add noise
+(test folders, for example)
 * Make a **Web application** to automatically scan a repository, XRAY it, and provide a Web app with
 parametric image generation. Since this tools is using the Canvas (Context2D) API, the renderer
 can be easily executed by the browser.
