@@ -29,7 +29,7 @@ const print = console.log;
 const quit = (s, showUsage = false) => {
     if (s) print(chalk.redBright('Error: ') + s);
     if (showUsage) {
-        print('Usage:  node ' + path.basename(__filename) + '  ' + chalk.greenBright('input.xray.json') + '  [options]');
+        print('Usage:  node ' + path.basename(__filename) + ' ' + chalk.greenBright('input.xray') + ' [options]');
         print('\n  The input file is the output of ' + chalk.greenBright('xray-gen-tree') + '.');
         print('\n  Content options:');
         print('    --hide-below N          hide content below this depth, default: 0 (Project depth)');
@@ -124,7 +124,7 @@ function drawFolderLabel(ctx, d, thinLabels) {
 }
 
 // Main
-print('== Welcome to ' + chalk.red('Code X-RAY') + ' Part II, ' + chalk.blueBright('The Artist') + ' ==');
+print('== Welcome to ' + chalk.red('Code X-RAY') + ' Part II, ' + chalk.greenBright('The Artist') + ' ==');
 if (options['help'])
     quit(undefined, true);
 
