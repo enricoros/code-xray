@@ -11,7 +11,7 @@ of Code (without blanks and comments) - for sure thee are more metrics, but this
 This tool is written in JavaScript for [Node.js](https://nodejs.org) (version 11+). In addition
 make sure Perl is installed globally, for [cloc](https://github.com/AlDanial/cloc) the source
 code analysis tool.
-```bash
+```console
 git clone https://github.com/enricoros/code-xray.git
 cd code-xray
 npm install
@@ -23,7 +23,7 @@ This tool comes in 2 programs to be invoked from shell, in sequence:
 1. Paint the XRAY in a delightful PNG treemap with [xray-draw-tree.js](blob/master/xray-draw-tree.js)
 
 ##### Minimal example
-```bash
+```console
 git clone https://github.com/pytorch/glow.git
 node xray-gen-tree.js --dir glow --clean --out glow.xray
 node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
