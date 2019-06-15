@@ -3,89 +3,6 @@
     "name": "Project",
     "children": [
         {
-            "name": "tests",
-            "children": [
-                {
-                    "name": "unittests",
-                    "children": [],
-                    "depth": 2,
-                    "lang_local": {
-                        "C++": 24717,
-                        "C/C++ Header": 205
-                    },
-                    "lang_rollup": {
-                        "C++": 24717,
-                        "C/C++ Header": 205
-                    },
-                    "value": 24922,
-                    "value_lang": "C++"
-                },
-                {
-                    "name": "benchmark",
-                    "children": [],
-                    "depth": 2,
-                    "lang_local": {
-                        "C++": 564,
-                        "C/C++ Header": 28
-                    },
-                    "lang_rollup": {
-                        "C++": 564,
-                        "C/C++ Header": 28
-                    },
-                    "value": 592,
-                    "value_lang": "C++"
-                },
-                {
-                    "name": "stress",
-                    "children": [],
-                    "depth": 2,
-                    "lang_local": {
-                        "C++": 348
-                    },
-                    "lang_rollup": {
-                        "C++": 348
-                    },
-                    "value": 348,
-                    "value_lang": "C++"
-                },
-                {
-                    "name": "Testing",
-                    "children": [],
-                    "depth": 2,
-                    "lang_local": {
-                        "C++": 59
-                    },
-                    "lang_rollup": {
-                        "C++": 59
-                    },
-                    "value": 59,
-                    "value_lang": "C++"
-                },
-                {
-                    "name": "utils",
-                    "children": [],
-                    "depth": 2,
-                    "lang_local": {
-                        "Python": 52
-                    },
-                    "lang_rollup": {
-                        "Python": 52
-                    },
-                    "value": 52,
-                    "value_lang": "Python"
-                }
-            ],
-            "depth": 1,
-            "lang_local": {},
-            "lang_rollup": {
-                "C++": 25688,
-                "C/C++ Header": 233,
-                "Python": 52
-            },
-            "value": 25973,
-            "value_lang": "C++"
-        },
-        {
             "name": "lib",
             "children": [
                 {
@@ -674,19 +591,6 @@
                     "value_lang": "C/C++ Header"
                 },
                 {
-                    "name": "Backends",
-                    "children": [],
-                    "depth": 2,
-                    "lang_local": {
-                        "C/C++ Header": 212
-                    },
-                    "lang_rollup": {
-                        "C/C++ Header": 212
-                    },
-                    "value": 212,
-                    "value_lang": "C/C++ Header"
-                },
-                {
                     "name": "CodeGen",
                     "children": [],
                     "depth": 2,
@@ -697,6 +601,19 @@
                         "C/C++ Header": 64
                     },
                     "value": 64,
+                    "value_lang": "C/C++ Header"
+                },
+                {
+                    "name": "Backends",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 212
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 212
+                    },
+                    "value": 212,
                     "value_lang": "C/C++ Header"
                 },
                 {
@@ -977,12 +894,12 @@
     "depth": 0,
     "lang_local": {},
     "lang_rollup": {
-        "C++": 60564,
-        "C/C++ Header": 8895,
-        "Python": 1126,
+        "C++": 34876,
+        "C/C++ Header": 8662,
         "OpenCL": 1785,
-        "SVG": 1341
+        "SVG": 1341,
+        "Python": 1074
     },
-    "value": 73711,
+    "value": 47738,
     "value_lang": "C++"
 }
