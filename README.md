@@ -1,4 +1,4 @@
-# code-xray
+# Code XRAY
 XRAYs a folder and shows the code in a nice looking
 [Treemap](https://en.wikipedia.org/wiki/Treemapping). This tool makes it intuitive to look at
 new source code, such as freshly cloned github repo, and understand what's going on at large.
