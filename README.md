@@ -19,10 +19,10 @@ npm install
 
 ### Usage
 This tool comes in 2 programs to be invoked from shell, in sequence: 
-1. Analyze a folder with [xray-gen-tree.js](blob/master/xray-gen-tree.js) and save an XRAY JSON file 
+1. Analyze a folder with [xray-gen-tree.js](blob/master/xray-gen-tree.js) and save an XRAY file 
 1. Paint the XRAY in a delightful PNG treemap with [xray-draw-tree.js](blob/master/xray-draw-tree.js)
 
-##### Minimal example
+#### Minimal example
 ```console
 git clone https://github.com/pytorch/glow.git
 node xray-gen-tree.js --dir glow --clean --out glow.xray
@@ -32,7 +32,7 @@ node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
 
 
 
-## Want to make it better?
+### Want to make this better?
 Ideas for improvement:
 * Make a **Web application** to automatically scan a repository, XRAY it, and provide a Web app with
 parametric image generation. Since this tools is using the Canvas (Context2D) API, the renderer
@@ -46,7 +46,7 @@ aka: show the 'leftover blocks' that look like missing pieces in the squares.
 * Open a new [Issue](issues/) and let me know about your ideas
 * Send a pull request and enjoy it when it gets merged
 
-## Other tools
+### Other tools
 If you're a source-code-visualization aficionado, check out
 [Gource](https://github.com/acaudwell/Gource) that adds the time axis and creates movies that can
 tell who-did-what as well as see where the activity was concentrated and see the final tree-like
@@ -57,5 +57,5 @@ tool that this project uses to perform the per-file source code analysis.
 
 For the old timers, do you remember [SLOCCount](https://dwheeler.com/sloccount/)?
 
-## Found this useful?
+### Found this useful?
 Me too, please open an issue, say Hi, and attach the picture of your repo.
