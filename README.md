@@ -28,7 +28,7 @@ git clone https://github.com/pytorch/glow.git
 node xray-gen-tree.js --dir glow --out glow.xray --clean --exclude tests
 node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
 ```
-<img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/glow.17ec51e2.png" width="800">
+<img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/glow.17ec51e2.png">
 
 ## Analyzer: xray-gen-tree
 This tool analyzes a folder (or loads a saved cloc json file) and creates a XRAY file out of it.
@@ -54,6 +54,26 @@ Available options
      --cache    filename      caches the --dir cloc output, for subsequent use with --in
      --out      filename      writes the hierarchical JSON to file
 ```
+Usage example:
+```console
+enrico@localhost ~/code-xray $ git clone https://github.com/microsoft/onnxruntime
+enrico@localhost ~/code-xray $ ./xray-gen-tree.js --dir onnxruntime --out ort --clean
+== Welcome to Code X-RAY Part I, The Mathematician ==
+ 1. Running cloc on folder: onnxruntime
+   > using local cloc install on /home/eros/code-xray/node_modules/.bin/cloc
+> Transforming per-file statistics to folder trees for 1 project/s.
+  > --clean: removed 159 files for unused languages
+  > fused: platform/windows
+  > fused: codegen/tvm
+  > fused: src/Microsoft.ML.OnnxRuntime
+  > fused: tools/Microsoft.ML.OnnxRuntime.PerfTool
+  > fused: sample/Microsoft.ML.OnnxRuntime.InferenceSample
+  > fused: include/onnxruntime/core
+  > fused: docs/python
+> Computing code and source language share per-project, per-folder
+> Hierarchy saved to: ort.xray
+All done.
+```
 
 ## Painter: xray-draw-tree
 This tool renders a given XRAY file using the provided style options. This is the frontend portion
@@ -77,7 +97,18 @@ Usage:  node xray-draw-tree.js input.xray [options]
   Output options:
     --out filename.png      saves the output png file, default: tree.png
 ```
+Usage example:
+```console
+enrico@localhost ~/code-xray $  ./xray-gen-tree.js --dir onnxruntime --out ort --clean
+=== Welcome to Code X-RAY Part II, The Artist ==
+ > Loading graph from: ort.xray
+ > Drawing to a 1600 by 900 canvas
+ > Saving canvas to: ort.png
+ All done.
+```
+<img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/ort.08731589.png">
 
+---
 
 ## Want to make this better?
 Ideas for improvement:
