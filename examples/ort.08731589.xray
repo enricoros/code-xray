@@ -1,0 +1,2163 @@
+{
+    "is_project": true,
+    "name": "Project",
+    "children": [
+        {
+            "name": "onnxruntime",
+            "children": [
+                {
+                    "name": "test",
+                    "children": [
+                        {
+                            "name": "providers",
+                            "children": [
+                                {
+                                    "name": "cpu",
+                                    "children": [
+                                        {
+                                            "name": "reduction",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 5507,
+                                                "Python": 88,
+                                                "C/C++ Header": 17
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 5507,
+                                                "Python": 88,
+                                                "C/C++ Header": 17
+                                            },
+                                            "value": 5612,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "nn",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 4530
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 4530
+                                            },
+                                            "value": 4530,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "math",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 2209
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 2209
+                                            },
+                                            "value": 2209,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "controlflow",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 1333
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 1333
+                                            },
+                                            "value": 1333,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "rnn",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 2155,
+                                                "Python": 681
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 2155,
+                                                "Python": 681
+                                            },
+                                            "value": 2836,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "tensor",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 3624
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 3624
+                                            },
+                                            "value": 3624,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "object_detection",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 309
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 309
+                                            },
+                                            "value": 309,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "generator",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 335
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 335
+                                            },
+                                            "value": 335,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "ml",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 1352
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 1352
+                                            },
+                                            "value": 1352,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "activation",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 194
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 194
+                                            },
+                                            "value": 194,
+                                            "value_lang": "C++"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 12
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 21560,
+                                        "Python": 769,
+                                        "C/C++ Header": 17
+                                    },
+                                    "value": 22346,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "ngraph",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 172
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 172
+                                    },
+                                    "value": 172,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "tensorrt",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 81
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 81
+                                    },
+                                    "value": 81,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 477,
+                                "C/C++ Header": 269
+                            },
+                            "lang_rollup": {
+                                "C++": 22290,
+                                "C/C++ Header": 286,
+                                "Python": 769
+                            },
+                            "value": 23345,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "framework",
+                            "children": [
+                                {
+                                    "name": "cuda",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 257
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 257
+                                    },
+                                    "value": 257,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "inference_session_without_environment",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 15
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 15
+                                    },
+                                    "value": 15,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 4329,
+                                "C/C++ Header": 151
+                            },
+                            "lang_rollup": {
+                                "C++": 4601,
+                                "C/C++ Header": 151
+                            },
+                            "value": 4752,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "mlas",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 988
+                            },
+                            "lang_rollup": {
+                                "C++": 988
+                            },
+                            "value": 988,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "server",
+                            "children": [
+                                {
+                                    "name": "unit_tests",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 1211
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 1211
+                                    },
+                                    "value": 1211,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "integration_tests",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "Python": 640
+                                    },
+                                    "lang_rollup": {
+                                        "Python": 640
+                                    },
+                                    "value": 640,
+                                    "value_lang": "Python"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {},
+                            "lang_rollup": {
+                                "C++": 1211,
+                                "Python": 640
+                            },
+                            "value": 1851,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "ir",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 1311
+                            },
+                            "lang_rollup": {
+                                "C++": 1311
+                            },
+                            "value": 1311,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "contrib_ops",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 1919,
+                                "Python": 124
+                            },
+                            "lang_rollup": {
+                                "C++": 1919,
+                                "Python": 124
+                            },
+                            "value": 2043,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "onnx",
+                            "children": [
+                                {
+                                    "name": "microbenchmark",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 314
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 314
+                                    },
+                                    "value": 314,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 1620,
+                                "C/C++ Header": 425,
+                                "Python": 73
+                            },
+                            "lang_rollup": {
+                                "C++": 1934,
+                                "C/C++ Header": 425,
+                                "Python": 73
+                            },
+                            "value": 2432,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "optimizer",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 545,
+                                "C/C++ Header": 39
+                            },
+                            "lang_rollup": {
+                                "C++": 545,
+                                "C/C++ Header": 39
+                            },
+                            "value": 584,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "python",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "Python": 578
+                            },
+                            "lang_rollup": {
+                                "Python": 578
+                            },
+                            "value": 578,
+                            "value_lang": "Python"
+                        },
+                        {
+                            "name": "tvm",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 354
+                            },
+                            "lang_rollup": {
+                                "C++": 354
+                            },
+                            "value": 354,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "util",
+                            "children": [
+                                {
+                                    "name": "include",
+                                    "children": [
+                                        {
+                                            "name": "test",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 59
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 59
+                                            },
+                                            "value": 59,
+                                            "value_lang": "C/C++ Header"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C/C++ Header": 61
+                                    },
+                                    "lang_rollup": {
+                                        "C/C++ Header": 120
+                                    },
+                                    "value": 120,
+                                    "value_lang": "C/C++ Header"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 533
+                            },
+                            "lang_rollup": {
+                                "C++": 533,
+                                "C/C++ Header": 120
+                            },
+                            "value": 653,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "shared_lib",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 749,
+                                "C": 183,
+                                "C/C++ Header": 54
+                            },
+                            "lang_rollup": {
+                                "C++": 749,
+                                "C": 183,
+                                "C/C++ Header": 54
+                            },
+                            "value": 986,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "perftest",
+                            "children": [
+                                {
+                                    "name": "windows",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 56
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 56
+                                    },
+                                    "value": 56,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "posix",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 48
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 48
+                                    },
+                                    "value": 48,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 470,
+                                "C++": 505
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 470,
+                                "C++": 609
+                            },
+                            "value": 1079,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "testdata",
+                            "children": [
+                                {
+                                    "name": "CNTK",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "Python": 155
+                                    },
+                                    "lang_rollup": {
+                                        "Python": 155
+                                    },
+                                    "value": 155,
+                                    "value_lang": "Python"
+                                },
+                                {
+                                    "name": "ngraph",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "Python": 85
+                                    },
+                                    "lang_rollup": {
+                                        "Python": 85
+                                    },
+                                    "value": 85,
+                                    "value_lang": "Python"
+                                },
+                                {
+                                    "name": "server",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "JSON": 2
+                                    },
+                                    "lang_rollup": {
+                                        "JSON": 2
+                                    },
+                                    "value": 2,
+                                    "value_lang": "JSON"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {},
+                            "lang_rollup": {
+                                "Python": 240,
+                                "JSON": 2
+                            },
+                            "value": 242,
+                            "value_lang": "Python"
+                        },
+                        {
+                            "name": "common",
+                            "children": [
+                                {
+                                    "name": "logging",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 233,
+                                        "C/C++ Header": 26
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 233,
+                                        "C/C++ Header": 26
+                                    },
+                                    "value": 259,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 52
+                            },
+                            "lang_rollup": {
+                                "C++": 285,
+                                "C/C++ Header": 26
+                            },
+                            "value": 311,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "win_getopt",
+                            "children": [
+                                {
+                                    "name": "wide",
+                                    "children": [
+                                        {
+                                            "name": "include",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 7
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 7
+                                            },
+                                            "value": 7,
+                                            "value_lang": "C/C++ Header"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 60
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 60,
+                                        "C/C++ Header": 7
+                                    },
+                                    "value": 67,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "mb",
+                                    "children": [
+                                        {
+                                            "name": "include",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 9
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 9
+                                            },
+                                            "value": 9,
+                                            "value_lang": "C/C++ Header"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 60
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 60,
+                                        "C/C++ Header": 9
+                                    },
+                                    "value": 69,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {},
+                            "lang_rollup": {
+                                "C++": 120,
+                                "C/C++ Header": 16
+                            },
+                            "value": 136,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "platform/windows",
+                            "children": [
+                                {
+                                    "name": "logging",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 33
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 33
+                                    },
+                                    "value": 33,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 31
+                            },
+                            "lang_rollup": {
+                                "C++": 64
+                            },
+                            "value": 64,
+                            "value_lang": "C++"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {},
+                    "lang_rollup": {
+                        "C++": 37513,
+                        "C/C++ Header": 1587,
+                        "Python": 2424,
+                        "C": 183,
+                        "JSON": 2
+                    },
+                    "value": 41709,
+                    "value_lang": "C++"
+                },
+                {
+                    "name": "core",
+                    "children": [
+                        {
+                            "name": "graph",
+                            "children": [
+                                {
+                                    "name": "contrib_ops",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 1603,
+                                        "C/C++ Header": 53
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 1603,
+                                        "C/C++ Header": 53
+                                    },
+                                    "value": 1656,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 3049,
+                                "C/C++ Header": 251
+                            },
+                            "lang_rollup": {
+                                "C++": 4652,
+                                "C/C++ Header": 304
+                            },
+                            "value": 4956,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "providers",
+                            "children": [
+                                {
+                                    "name": "cpu",
+                                    "children": [
+                                        {
+                                            "name": "math",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 1721,
+                                                "C/C++ Header": 992
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 1721,
+                                                "C/C++ Header": 992
+                                            },
+                                            "value": 2713,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "rnn",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 2128,
+                                                "C/C++ Header": 476
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 2128,
+                                                "C/C++ Header": 476
+                                            },
+                                            "value": 2604,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "nn",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 2256,
+                                                "C/C++ Header": 1030
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 2256,
+                                                "C/C++ Header": 1030
+                                            },
+                                            "value": 3286,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "tensor",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 2876,
+                                                "C/C++ Header": 1037
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 2876,
+                                                "C/C++ Header": 1037
+                                            },
+                                            "value": 3913,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "controlflow",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 1335,
+                                                "C/C++ Header": 203
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 1335,
+                                                "C/C++ Header": 203
+                                            },
+                                            "value": 1538,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "ml",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 1923,
+                                                "C/C++ Header": 826
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 1923,
+                                                "C/C++ Header": 826
+                                            },
+                                            "value": 2749,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "reduction",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 345,
+                                                "C/C++ Header": 113
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 345,
+                                                "C/C++ Header": 113
+                                            },
+                                            "value": 458,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "object_detection",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 440,
+                                                "C/C++ Header": 77
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 440,
+                                                "C/C++ Header": 77
+                                            },
+                                            "value": 517,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "generator",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 388,
+                                                "C/C++ Header": 188
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 388,
+                                                "C/C++ Header": 188
+                                            },
+                                            "value": 576,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "activation",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 156,
+                                                "C++": 38
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 156,
+                                                "C++": 38
+                                            },
+                                            "value": 194,
+                                            "value_lang": "C/C++ Header"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 667,
+                                        "C/C++ Header": 42
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 14117,
+                                        "C/C++ Header": 5140
+                                    },
+                                    "value": 19257,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "cuda",
+                                    "children": [
+                                        {
+                                            "name": "math",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 671,
+                                                "C/C++ Header": 376,
+                                                "CUDA": 173
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 671,
+                                                "C/C++ Header": 376,
+                                                "CUDA": 173
+                                            },
+                                            "value": 1220,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "rnn",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 351,
+                                                "C/C++ Header": 236,
+                                                "CUDA": 142
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 351,
+                                                "C/C++ Header": 236,
+                                                "CUDA": 142
+                                            },
+                                            "value": 729,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "reduction",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 219,
+                                                "C/C++ Header": 125
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 219,
+                                                "C/C++ Header": 125
+                                            },
+                                            "value": 344,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "shared_inc",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 340
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 340
+                                            },
+                                            "value": 340,
+                                            "value_lang": "C/C++ Header"
+                                        },
+                                        {
+                                            "name": "cu_inc",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "CUDA": 407
+                                            },
+                                            "lang_rollup": {
+                                                "CUDA": 407
+                                            },
+                                            "value": 407,
+                                            "value_lang": "CUDA"
+                                        },
+                                        {
+                                            "name": "nn",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 842,
+                                                "CUDA": 275,
+                                                "C/C++ Header": 305
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 842,
+                                                "CUDA": 275,
+                                                "C/C++ Header": 305
+                                            },
+                                            "value": 1422,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "activation",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 227,
+                                                "CUDA": 110,
+                                                "C++": 50
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 227,
+                                                "CUDA": 110,
+                                                "C++": 50
+                                            },
+                                            "value": 387,
+                                            "value_lang": "C/C++ Header"
+                                        },
+                                        {
+                                            "name": "tensor",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "CUDA": 826,
+                                                "C++": 1059,
+                                                "C/C++ Header": 518
+                                            },
+                                            "lang_rollup": {
+                                                "CUDA": 826,
+                                                "C++": 1059,
+                                                "C/C++ Header": 518
+                                            },
+                                            "value": 2403,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "generator",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 45,
+                                                "C/C++ Header": 17
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 45,
+                                                "C/C++ Header": 17
+                                            },
+                                            "value": 62,
+                                            "value_lang": "C++"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 1383,
+                                        "C/C++ Header": 382,
+                                        "CUDA": 146
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 4620,
+                                        "C/C++ Header": 2526,
+                                        "CUDA": 2079
+                                    },
+                                    "value": 9225,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "mkldnn",
+                                    "children": [
+                                        {
+                                            "name": "subgraph",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 1919,
+                                                "C++": 276
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 1919,
+                                                "C++": 276
+                                            },
+                                            "value": 2195,
+                                            "value_lang": "C/C++ Header"
+                                        },
+                                        {
+                                            "name": "nn",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 1053,
+                                                "C/C++ Header": 64
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 1053,
+                                                "C/C++ Header": 64
+                                            },
+                                            "value": 1117,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "math",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 263,
+                                                "C/C++ Header": 40
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 263,
+                                                "C/C++ Header": 40
+                                            },
+                                            "value": 303,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "activation",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 146,
+                                                "C/C++ Header": 13
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 146,
+                                                "C/C++ Header": 13
+                                            },
+                                            "value": 159,
+                                            "value_lang": "C++"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 393,
+                                        "C/C++ Header": 265
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 2131,
+                                        "C/C++ Header": 2301
+                                    },
+                                    "value": 4432,
+                                    "value_lang": "C/C++ Header"
+                                },
+                                {
+                                    "name": "tensorrt",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 467,
+                                        "C/C++ Header": 108
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 467,
+                                        "C/C++ Header": 108
+                                    },
+                                    "value": 575,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "ngraph",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 586,
+                                        "C/C++ Header": 70
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 586,
+                                        "C/C++ Header": 70
+                                    },
+                                    "value": 656,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 9
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 10154,
+                                "C++": 21921,
+                                "CUDA": 2079
+                            },
+                            "value": 34154,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "session",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 2020,
+                                "C/C++ Header": 235
+                            },
+                            "lang_rollup": {
+                                "C++": 2020,
+                                "C/C++ Header": 235
+                            },
+                            "value": 2255,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "util",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 1146,
+                                "C/C++ Header": 648
+                            },
+                            "lang_rollup": {
+                                "C++": 1146,
+                                "C/C++ Header": 648
+                            },
+                            "value": 1794,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "framework",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 6117,
+                                "C/C++ Header": 2572
+                            },
+                            "lang_rollup": {
+                                "C++": 6117,
+                                "C/C++ Header": 2572
+                            },
+                            "value": 8689,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "mlas",
+                            "children": [
+                                {
+                                    "name": "lib",
+                                    "children": [
+                                        {
+                                            "name": "amd64",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "Assembly": 2282
+                                            },
+                                            "lang_rollup": {
+                                                "Assembly": 2282
+                                            },
+                                            "value": 2282,
+                                            "value_lang": "Assembly"
+                                        },
+                                        {
+                                            "name": "x86_64",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "Assembly": 2591,
+                                                "C/C++ Header": 24
+                                            },
+                                            "lang_rollup": {
+                                                "Assembly": 2591,
+                                                "C/C++ Header": 24
+                                            },
+                                            "value": 2615,
+                                            "value_lang": "Assembly"
+                                        },
+                                        {
+                                            "name": "i386",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "Assembly": 458
+                                            },
+                                            "lang_rollup": {
+                                                "Assembly": 458
+                                            },
+                                            "value": 458,
+                                            "value_lang": "Assembly"
+                                        },
+                                        {
+                                            "name": "arm64",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "Assembly": 285
+                                            },
+                                            "lang_rollup": {
+                                                "Assembly": 285
+                                            },
+                                            "value": 285,
+                                            "value_lang": "Assembly"
+                                        },
+                                        {
+                                            "name": "arm",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 273
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 273
+                                            },
+                                            "value": 273,
+                                            "value_lang": "C++"
+                                        },
+                                        {
+                                            "name": "aarch64",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "Assembly": 263
+                                            },
+                                            "lang_rollup": {
+                                                "Assembly": 263
+                                            },
+                                            "value": 263,
+                                            "value_lang": "Assembly"
+                                        },
+                                        {
+                                            "name": "x86",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "Assembly": 435
+                                            },
+                                            "lang_rollup": {
+                                                "Assembly": 435
+                                            },
+                                            "value": 435,
+                                            "value_lang": "Assembly"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 2836,
+                                        "C/C++ Header": 523
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 3109,
+                                        "C/C++ Header": 547,
+                                        "Assembly": 6314
+                                    },
+                                    "value": 9970,
+                                    "value_lang": "Assembly"
+                                },
+                                {
+                                    "name": "inc",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C/C++ Header": 172
+                                    },
+                                    "lang_rollup": {
+                                        "C/C++ Header": 172
+                                    },
+                                    "value": 172,
+                                    "value_lang": "C/C++ Header"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {},
+                            "lang_rollup": {
+                                "C++": 3109,
+                                "C/C++ Header": 719,
+                                "Assembly": 6314
+                            },
+                            "value": 10142,
+                            "value_lang": "Assembly"
+                        },
+                        {
+                            "name": "optimizer",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 728,
+                                "C++": 1585
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 728,
+                                "C++": 1585
+                            },
+                            "value": 2313,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "platform",
+                            "children": [
+                                {
+                                    "name": "posix",
+                                    "children": [
+                                        {
+                                            "name": "logging",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 19,
+                                                "C++": 18
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 19,
+                                                "C++": 18
+                                            },
+                                            "value": 37,
+                                            "value_lang": "C/C++ Header"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 390
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 408,
+                                        "C/C++ Header": 19
+                                    },
+                                    "value": 427,
+                                    "value_lang": "C++"
+                                },
+                                {
+                                    "name": "windows",
+                                    "children": [
+                                        {
+                                            "name": "logging",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C++": 85,
+                                                "C/C++ Header": 27
+                                            },
+                                            "lang_rollup": {
+                                                "C++": 85,
+                                                "C/C++ Header": 27
+                                            },
+                                            "value": 112,
+                                            "value_lang": "C++"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 548,
+                                        "C/C++ Header": 12
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 633,
+                                        "C/C++ Header": 39
+                                    },
+                                    "value": 672,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 148,
+                                "C++": 8
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 206,
+                                "C++": 1049
+                            },
+                            "value": 1255,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "language_interop_ops",
+                            "children": [
+                                {
+                                    "name": "pyop",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 344,
+                                        "C/C++ Header": 89
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 344,
+                                        "C/C++ Header": 89
+                                    },
+                                    "value": 433,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 46,
+                                "C/C++ Header": 14
+                            },
+                            "lang_rollup": {
+                                "C++": 390,
+                                "C/C++ Header": 103
+                            },
+                            "value": 493,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "common",
+                            "children": [
+                                {
+                                    "name": "logging",
+                                    "children": [
+                                        {
+                                            "name": "sinks",
+                                            "children": [],
+                                            "depth": 5,
+                                            "lang_local": {
+                                                "C/C++ Header": 94,
+                                                "C++": 16
+                                            },
+                                            "lang_rollup": {
+                                                "C/C++ Header": 94,
+                                                "C++": 16
+                                            },
+                                            "value": 110,
+                                            "value_lang": "C/C++ Header"
+                                        }
+                                    ],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 188
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 204,
+                                        "C/C++ Header": 94
+                                    },
+                                    "value": 298,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 398,
+                                "C/C++ Header": 305
+                            },
+                            "lang_rollup": {
+                                "C++": 602,
+                                "C/C++ Header": 399
+                            },
+                            "value": 1001,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "codegen/tvm",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 130,
+                                "C++": 99
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 130,
+                                "C++": 99
+                            },
+                            "value": 229,
+                            "value_lang": "C/C++ Header"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {},
+                    "lang_rollup": {
+                        "C++": 42690,
+                        "C/C++ Header": 16198,
+                        "CUDA": 2079,
+                        "Assembly": 6314
+                    },
+                    "value": 67281,
+                    "value_lang": "C++"
+                },
+                {
+                    "name": "python",
+                    "children": [
+                        {
+                            "name": "tools",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "Python": 73
+                            },
+                            "lang_rollup": {
+                                "Python": 73
+                            },
+                            "value": 73,
+                            "value_lang": "Python"
+                        },
+                        {
+                            "name": "backend",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "Python": 71
+                            },
+                            "lang_rollup": {
+                                "Python": 71
+                            },
+                            "value": 71,
+                            "value_lang": "Python"
+                        },
+                        {
+                            "name": "datasets",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "Python": 7
+                            },
+                            "lang_rollup": {
+                                "Python": 7
+                            },
+                            "value": 7,
+                            "value_lang": "Python"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {
+                        "C++": 895,
+                        "Python": 80,
+                        "C/C++ Header": 19
+                    },
+                    "lang_rollup": {
+                        "C++": 895,
+                        "Python": 231,
+                        "C/C++ Header": 19
+                    },
+                    "value": 1145,
+                    "value_lang": "C++"
+                },
+                {
+                    "name": "contrib_ops",
+                    "children": [
+                        {
+                            "name": "cpu",
+                            "children": [
+                                {
+                                    "name": "attnlstm",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 957,
+                                        "C/C++ Header": 341
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 957,
+                                        "C/C++ Header": 341
+                                    },
+                                    "value": 1298,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 1187,
+                                "C/C++ Header": 595
+                            },
+                            "lang_rollup": {
+                                "C++": 2144,
+                                "C/C++ Header": 936
+                            },
+                            "value": 3080,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "cuda",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 16,
+                                "C++": 15
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 16,
+                                "C++": 15
+                            },
+                            "value": 31,
+                            "value_lang": "C/C++ Header"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {
+                        "C++": 82,
+                        "C/C++ Header": 11
+                    },
+                    "lang_rollup": {
+                        "C++": 2241,
+                        "C/C++ Header": 963
+                    },
+                    "value": 3204,
+                    "value_lang": "C++"
+                },
+                {
+                    "name": "server",
+                    "children": [
+                        {
+                            "name": "http",
+                            "children": [
+                                {
+                                    "name": "core",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "C++": 308,
+                                        "C/C++ Header": 167
+                                    },
+                                    "lang_rollup": {
+                                        "C++": 308,
+                                        "C/C++ Header": 167
+                                    },
+                                    "value": 475,
+                                    "value_lang": "C++"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 228,
+                                "C/C++ Header": 45
+                            },
+                            "lang_rollup": {
+                                "C++": 536,
+                                "C/C++ Header": 212
+                            },
+                            "value": 748,
+                            "value_lang": "C++"
+                        },
+                        {
+                            "name": "logging",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 33
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 33
+                            },
+                            "value": 33,
+                            "value_lang": "C/C++ Header"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {
+                        "C++": 534,
+                        "C/C++ Header": 192
+                    },
+                    "lang_rollup": {
+                        "C++": 1070,
+                        "C/C++ Header": 437
+                    },
+                    "value": 1507,
+                    "value_lang": "C++"
+                }
+            ],
+            "depth": 1,
+            "lang_local": {
+                "Python": 6
+            },
+            "lang_rollup": {
+                "Python": 2661,
+                "C++": 84409,
+                "C/C++ Header": 19204,
+                "C": 183,
+                "JSON": 2,
+                "CUDA": 2079,
+                "Assembly": 6314
+            },
+            "value": 114852,
+            "value_lang": "C++"
+        },
+        {
+            "name": "csharp",
+            "children": [
+                {
+                    "name": "test",
+                    "children": [
+                        {
+                            "name": "Microsoft.ML.OnnxRuntime.Tests",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C#": 4761
+                            },
+                            "lang_rollup": {
+                                "C#": 4761
+                            },
+                            "value": 4761,
+                            "value_lang": "C#"
+                        },
+                        {
+                            "name": "Microsoft.ML.OnnxRuntime.EndToEndTests.Capi",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C++": 210
+                            },
+                            "lang_rollup": {
+                                "C++": 210
+                            },
+                            "value": 210,
+                            "value_lang": "C++"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {},
+                    "lang_rollup": {
+                        "C#": 4761,
+                        "C++": 210
+                    },
+                    "value": 4971,
+                    "value_lang": "C#"
+                },
+                {
+                    "name": "src/Microsoft.ML.OnnxRuntime",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C#": 1725
+                    },
+                    "lang_rollup": {
+                        "C#": 1725
+                    },
+                    "value": 1725,
+                    "value_lang": "C#"
+                },
+                {
+                    "name": "tools/Microsoft.ML.OnnxRuntime.PerfTool",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C#": 117
+                    },
+                    "lang_rollup": {
+                        "C#": 117
+                    },
+                    "value": 117,
+                    "value_lang": "C#"
+                },
+                {
+                    "name": "sample/Microsoft.ML.OnnxRuntime.InferenceSample",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C#": 57
+                    },
+                    "lang_rollup": {
+                        "C#": 57
+                    },
+                    "value": 57,
+                    "value_lang": "C#"
+                }
+            ],
+            "depth": 1,
+            "lang_local": {},
+            "lang_rollup": {
+                "C#": 6660,
+                "C++": 210
+            },
+            "value": 6870,
+            "value_lang": "C#"
+        },
+        {
+            "name": "tools",
+            "children": [
+                {
+                    "name": "ci_build",
+                    "children": [
+                        {
+                            "name": "github",
+                            "children": [
+                                {
+                                    "name": "windows",
+                                    "children": [],
+                                    "depth": 4,
+                                    "lang_local": {
+                                        "Python": 69
+                                    },
+                                    "lang_rollup": {
+                                        "Python": 69
+                                    },
+                                    "value": 69,
+                                    "value_lang": "Python"
+                                }
+                            ],
+                            "depth": 3,
+                            "lang_local": {
+                                "Python": 38
+                            },
+                            "lang_rollup": {
+                                "Python": 107
+                            },
+                            "value": 107,
+                            "value_lang": "Python"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {
+                        "Python": 815
+                    },
+                    "lang_rollup": {
+                        "Python": 922
+                    },
+                    "value": 922,
+                    "value_lang": "Python"
+                },
+                {
+                    "name": "python",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "Python": 410
+                    },
+                    "lang_rollup": {
+                        "Python": 410
+                    },
+                    "value": 410,
+                    "value_lang": "Python"
+                },
+                {
+                    "name": "nuget",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "Python": 32
+                    },
+                    "lang_rollup": {
+                        "Python": 32
+                    },
+                    "value": 32,
+                    "value_lang": "Python"
+                }
+            ],
+            "depth": 1,
+            "lang_local": {},
+            "lang_rollup": {
+                "Python": 1364
+            },
+            "value": 1364,
+            "value_lang": "Python"
+        },
+        {
+            "name": "include/onnxruntime/core",
+            "children": [
+                {
+                    "name": "framework",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 1555
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 1555
+                    },
+                    "value": 1555,
+                    "value_lang": "C/C++ Header"
+                },
+                {
+                    "name": "graph",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 769
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 769
+                    },
+                    "value": 769,
+                    "value_lang": "C/C++ Header"
+                },
+                {
+                    "name": "session",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 872
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 872
+                    },
+                    "value": 872,
+                    "value_lang": "C/C++ Header"
+                },
+                {
+                    "name": "common",
+                    "children": [
+                        {
+                            "name": "logging",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 338
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 338
+                            },
+                            "value": 338,
+                            "value_lang": "C/C++ Header"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 407
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 745
+                    },
+                    "value": 745,
+                    "value_lang": "C/C++ Header"
+                },
+                {
+                    "name": "platform",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 130
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 130
+                    },
+                    "value": 130,
+                    "value_lang": "C/C++ Header"
+                },
+                {
+                    "name": "optimizer",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 119
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 119
+                    },
+                    "value": 119,
+                    "value_lang": "C/C++ Header"
+                },
+                {
+                    "name": "providers",
+                    "children": [
+                        {
+                            "name": "cpu",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 9
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 9
+                            },
+                            "value": 9,
+                            "value_lang": "C/C++ Header"
+                        },
+                        {
+                            "name": "tensorrt",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 8
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 8
+                            },
+                            "value": 8,
+                            "value_lang": "C/C++ Header"
+                        },
+                        {
+                            "name": "cuda",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 8
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 8
+                            },
+                            "value": 8,
+                            "value_lang": "C/C++ Header"
+                        },
+                        {
+                            "name": "mkldnn",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 8
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 8
+                            },
+                            "value": 8,
+                            "value_lang": "C/C++ Header"
+                        },
+                        {
+                            "name": "ngraph",
+                            "children": [],
+                            "depth": 3,
+                            "lang_local": {
+                                "C/C++ Header": 8
+                            },
+                            "lang_rollup": {
+                                "C/C++ Header": 8
+                            },
+                            "value": 8,
+                            "value_lang": "C/C++ Header"
+                        }
+                    ],
+                    "depth": 2,
+                    "lang_local": {
+                        "C/C++ Header": 7
+                    },
+                    "lang_rollup": {
+                        "C/C++ Header": 48
+                    },
+                    "value": 48,
+                    "value_lang": "C/C++ Header"
+                }
+            ],
+            "depth": 1,
+            "lang_local": {},
+            "lang_rollup": {
+                "C/C++ Header": 4238
+            },
+            "value": 4238,
+            "value_lang": "C/C++ Header"
+        },
+        {
+            "name": "docs/python",
+            "children": [
+                {
+                    "name": "notebooks",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "Jupyter Notebook": 256
+                    },
+                    "lang_rollup": {
+                        "Jupyter Notebook": 256
+                    },
+                    "value": 256,
+                    "value_lang": "Jupyter Notebook"
+                },
+                {
+                    "name": "examples",
+                    "children": [],
+                    "depth": 2,
+                    "lang_local": {
+                        "Python": 325
+                    },
+                    "lang_rollup": {
+                        "Python": 325
+                    },
+                    "value": 325,
+                    "value_lang": "Python"
+                }
+            ],
+            "depth": 1,
+            "lang_local": {
+                "reStructuredText": 159,
+                "Python": 68
+            },
+            "lang_rollup": {
+                "reStructuredText": 159,
+                "Python": 393,
+                "Jupyter Notebook": 256
+            },
+            "value": 808,
+            "value_lang": "Python"
+        }
+    ],
+    "depth": 0,
+    "lang_local": {
+        "JSON": 314,
+        "Python": 99
+    },
+    "lang_rollup": {
+        "JSON": 316,
+        "Python": 4517,
+        "C++": 84619,
+        "C/C++ Header": 23442,
+        "C": 183,
+        "CUDA": 2079,
+        "Assembly": 6314,
+        "C#": 6660,
+        "reStructuredText": 159,
+        "Jupyter Notebook": 256
+    },
+    "value": 128545,
+    "value_lang": "C++"
+}
