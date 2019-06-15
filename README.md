@@ -22,13 +22,13 @@ This tool comes in 2 programs to be invoked from shell, in sequence:
 1. Analyze a folder with [xray-gen-tree.js](blob/master/xray-gen-tree.js) and save an XRAY file 
 1. Paint the XRAY in a delightful PNG treemap with [xray-draw-tree.js](blob/master/xray-draw-tree.js)
 
-#### Minimal example
+### Example1
 ```console
 git clone https://github.com/pytorch/glow.git
 node xray-gen-tree.js --dir glow --clean --out glow.xray
 node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
 ```
-
+ 
 
 
 
