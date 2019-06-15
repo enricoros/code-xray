@@ -174,7 +174,7 @@ function updateDirStatValuesRecursively(dirNode, depth) {
 }
 
 // Main
-print('== Welcome to ' + chalk.red('Code X-RAY') + ' Part I, ' + chalk.blueBright('The Mathematician') + ' ==');
+print('== Welcome to ' + chalk.red('Code X-RAY') + ' Part I, ' + chalk.greenBright('The Mathematician') + ' ==');
 if (options['help'])
     quit(undefined, true);
 
@@ -221,7 +221,7 @@ print('> Computing code and source language share per-project, per-folder');
 updateDirStatValuesRecursively(graphsStats, graphsStats.is_multi_project ? -1 : 0);
 
 if (options['out'] && options['out'] !== '') {
-    const saveFileName = options['out'].indexOf('.') === -1 ? (options['out'] + '.xray.json') : options['out'];
+    const saveFileName = options['out'].indexOf('.') === -1 ? (options['out'] + '.xray') : options['out'];
     fs.writeFileSync(saveFileName, JSON.stringify(graphsStats, null, 4));
     print('> Hierarchy saved to: ' + chalk.underline(saveFileName));
 } else {
