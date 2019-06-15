@@ -25,10 +25,10 @@ This tool comes in 2 programs to be invoked from shell, in sequence:
 ```console
 # from inside the code-xray folder
 git clone https://github.com/pytorch/glow.git
-node xray-gen-tree.js --dir glow --clean --out glow.xray
+node xray-gen-tree.js --dir glow --out glow.xray --clean --exclude tests
 node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
 ```
-<img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/glow.17ec51e2.png">
+<img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/glow.17ec51e2.png" width="800">
  
 
 
