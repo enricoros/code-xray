@@ -21,7 +21,7 @@ This tool comes in 2 programs to be invoked from shell, in sequence:
 1. Analyze a folder with [xray-gen-tree.js](blob/master/xray-gen-tree.js) and save an XRAY file 
 1. Paint the XRAY in a delightful PNG treemap with [xray-draw-tree.js](blob/master/xray-draw-tree.js)
 
-### Example 1
+### Example 1: Glow
 ```console
 # from inside the code-xray folder
 git clone https://github.com/pytorch/glow.git
@@ -29,11 +29,49 @@ node xray-gen-tree.js --dir glow --out glow.xray --clean --exclude tests
 node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
 ```
 <img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/glow.17ec51e2.png" width="800">
- 
+
+
+## Analyzer: xray-gen-tree
+```console
+enrico@localhost ~/code-xray $ ./xray-gen-tree.js --help  
+== Welcome to Code X-RAY Part I, The Mathematician ==
+Available options
+
+  Input options - use either of:
+     --dir      directory     runs cloc  --by-file --json --quiet --hide-rate ./ on this directory
+     --in       filename      loads a saved cloc json file with per-file statistics
+
+  Content options:
+     --exclude  folder/paths  excludes complete folders; provide path from the project root (can be repeated)
+     --clean                  removes non-strictly-source files: XML, YAML, Dockerfile, Protocol Buffers, HTML, Bourne Shell, Markdown, CMake, PowerShell, Windows Module Definition, DOS Batch, Pascal, MSBuild script
+     --project  name          names the project (top-level node), default: Project
+
+  Output options:
+     --cache    filename      caches the --dir cloc output, for subsequent use with --in
+     --out      filename      writes the hierarchical JSON to file
+```
+
+## Painter: xray-draw-tree
+```console
+enrico@localhost ~/code-xray $ ./xray-draw-tree.js --help  
+== Welcome to Code X-RAY Part II, The Artist ==
+Usage:  node xray-draw-tree.js input.xray [options]
+
+  The input file is the output of xray-gen-tree.
+
+  Content options:
+    --hide-below N          hide content below this depth, default: 0 (Project depth)
+    --hide-above N          hide content above this depth, default: 99
+    --hide-labels-above N   hide labels above this depth, default: 6
+    --thin-labels-above N   reduce labels above this depth, default: 3
+
+  Output options:
+    --out filename.png      saves the output png file, default: tree.png
+```
 
 
 
-### Want to make this better?
+## Want to make this better?
 Ideas for improvement:
 * Make a **Web application** to automatically scan a repository, XRAY it, and provide a Web app with
 parametric image generation. Since this tools is using the Canvas (Context2D) API, the renderer
