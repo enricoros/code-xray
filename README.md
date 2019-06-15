@@ -8,18 +8,17 @@ navigate the directory structure of the project. The #1 and Only metric used her
 of Code* (without blanks and comments) - for sure there are more, but this works really well.
 
 ### Setup
+This tool is written in JavaScript for [Node.js](https://nodejs.org) (version 11+). In addition
+make sure Perl is installed globally, for [cloc](https://github.com/AlDanial/cloc) the source
+code analysis tool.
 ```bash
 git clone https://github.com/enricoros/code-xray.git
 cd code-xray
 npm install
 ```
-1. make sure NodeJS (11+) and Perl are installed globally
-1. download this repository
-1. enter the directory
-1. install dependencies
 
 ### Usage
-This tool comes in TWO command line commands - to be invoked from shell, in sequence: 
+This tool comes in 2 programs to be invoked from shell, in sequence: 
 1. Analyze a folder with [xray-gen-tree.js](blob/master/xray-gen-tree.js) and save an XRAY JSON file 
 1. Paint the XRAY in a delightful PNG treemap with [xray-draw-tree.js](blob/master/xray-draw-tree.js)
 
@@ -55,6 +54,8 @@ structure of the code.
 
 Also, make sure to check out [cloc](https://github.com/AlDanial/cloc) which is the command-line
 tool that this project uses to perform the per-file source code analysis.
+
+For the old timers, do you remember [SLOCCount](https://dwheeler.com/sloccount/)?
 
 ## Found this useful?
 Me too, please open an issue, say Hi, and attach the picture of your repo.
