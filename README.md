@@ -99,12 +99,13 @@ Usage:  node xray-draw-tree.js input.xray [options]
 ```
 Usage example:
 ```console
-enrico@localhost ~/code-xray $  ./xray-gen-tree.js --dir onnxruntime --out ort --clean
+enrico@localhost ~/code-xray $  ./xray-draw-tree.js ort.xray --width 860 --out ort.png --hide-below 1 --hide-labels-above 4
 === Welcome to Code X-RAY Part II, The Artist ==
- > Loading graph from: ort.xray
- > Drawing to a 1600 by 900 canvas
- > Saving canvas to: ort.png
- All done.
+> Loading graph from: ort.xray
+> Drawing to a 860 by 483 canvas
+  > Hiding below 1, above 99, hide labels above 4, and thin above 1
+> Saving canvas to: ort.png
+All done.
 ```
 <img src="https://raw.githubusercontent.com/enricoros/code-xray/master/examples/ort.08731589.png">
 
