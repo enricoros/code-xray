@@ -1,29 +1,35 @@
 # code-xray
 XRAYs a folder and shows the code in a nice looking
- [Treemap](https://en.wikipedia.org/wiki/Treemapping).
-
-This tool makes it intuitive to look at new source code, such as freshly cloned github repo,
-and understand what's going on at large.
+[Treemap](https://en.wikipedia.org/wiki/Treemapping). This tool makes it intuitive to look at
+new source code, such as freshly cloned github repo, and understand what's going on at large.
 
 You will see where (which folders) most of the work resides and be immediately able to
 navigate the directory structure of the project. The #1 and Only metric used here is Lines
 of Code* (without blanks and comments) - for sure there are more, but this works really well.
 
-## Setup
-Quick and easy
-1. make sure NodeJS (11+) and Perl are installed globally
-1. download this repository
-1. enter the directory
-1. install dependencies
+### Setup
 ```bash
 git clone https://github.com/enricoros/code-xray.git
 cd coode-xray
 npm install
 ```
+1. make sure NodeJS (11+) and Perl are installed globally
+1. download this repository
+1. enter the directory
+1. install dependencies
 
-## Structure
-Unfortunately this tool comes in TWO command line commands.
-1. 
+### Usage
+This tool comes in TWO command line commands - to be invoked from shell, in sequence: 
+1. Analyze a folder with [xray-gen-tree.js](blob/master/xray-gen-tree.js) and save an XRAY JSON file 
+1. Paint the XRAY in a delightful PNG treemap with [xray-draw-tree.js](blob/master/xray-draw-tree.js)
+
+##### Minimal example
+```bash
+git clone https://github.com/pytorch/glow.git
+node xray-gen-tree.js --dir glow --clean --out glow.xray
+node xray-draw-tree.js glow.xray --hide-below 1 --out glow.png
+```
+ 
 
 
 
