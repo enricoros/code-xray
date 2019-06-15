@@ -99,7 +99,7 @@ Usage:  node xray-draw-tree.js input.xray [options]
 ```
 Usage example:
 ```console
-enrico@localhost ~/code-xray $  ./xray-draw-tree.js ort.xray --width 860 --out ort.png --hide-below 1 --hide-labels-above 4
+enrico@localhost ~/code-xray $  ./xray-draw-tree.js ort.xray --width 760 --out ort.png --hide-below 1 --hide-labels-above 4
 === Welcome to Code X-RAY Part II, The Artist ==
 > Loading graph from: ort.xray
 > Drawing to a 860 by 483 canvas
