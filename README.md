@@ -14,7 +14,9 @@ code analysis tool.
 ```console
 git clone https://github.com/enricoros/code-xray.git
 cd code-xray
-npm install
+# this will install the dependencies, including cloc, in this folder
+npm install 
+# you can run the 2 executables now
 ```
 
 This tool comes in 2 programs to be invoked from shell, in sequence: 
