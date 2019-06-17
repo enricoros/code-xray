@@ -1,5 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import {ThemeProvider} from '@material-ui/styles';
+import {createMuiTheme} from '@material-ui/core/styles';
+import {red} from '@material-ui/core/colors';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// customize the colors by using a theme
+const theme = createMuiTheme({
+  palette: {
+    _primary: {
+      main: '#556cd6',
+    },
+    _secondary: {
+      main: '#19857b',
+    },
+    error: {
+      main: red.A400,
+    },
+    background: {
+      default: '#fff',
+    },
+  },
+});
+
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <CssBaseline/>
+    <App/>
+  </ThemeProvider>,
+  document.querySelector('#root'),
+);

@@ -2,8 +2,11 @@
   "name": "code-xray",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.enricoros.com/code-xray",
+  "homepage": "/code-xray",
   "dependencies": {
+    "@material-ui/core": "^4.1.1",
+    "@material-ui/icons": "^4.2.0",
+    "@material-ui/styles": "^4.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
