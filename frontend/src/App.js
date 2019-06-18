@@ -8,12 +8,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import './App.css';
 import SignIn from "./SignIn";
-import Grid from "@material-ui/core/Grid";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Paper from "@material-ui/core/Paper";
-import UploadXray from "./UploadXray";
-import MediaCapture from "./DataLoader";
+import XrayLoader from "./XrayLoader";
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -22,7 +17,7 @@ import MediaCapture from "./DataLoader";
 // settings
 const default_GuestName = 'Guest';
 
-const useStyles = makeStyles(theme => ({
+const useAppStyles = makeStyles(theme => ({
   appBar: {
     position: 'relative',
   },
@@ -41,13 +36,6 @@ const useStyles = makeStyles(theme => ({
   sectionClass: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(3),
-  },
-  sourceContainer: {},
-  codeBlock: {
-    padding: theme.spacing(2),
-    margin: 0,
-    color: 'white',
-    background: '#263238',
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -68,9 +56,6 @@ function Hero(props) {
   </Container>
 }
 
-function TabContainer(props) {
-  return <Typography component="div" style={{padding: 8 * 3}}>{props.children}</Typography>
-}
 
 function Section(props) {
   return <Container maxWidth="lg" component="main" className={props.className}>
@@ -81,16 +66,16 @@ function Section(props) {
   </Container>
 }
 
+
 function App() {
-  const classes = useStyles();
+  const classes = useAppStyles();
   const [userName, setUserName] = React.useState(default_GuestName);
-  const [srcTabIdx, setSrcTabIdx] = React.useState(0);
   const [clocData, setClocData] = React.useState('');
 
   // ask for user name if not set
   if (!userName) return <SignIn onUserChanged={setUserName}/>;
 
-  function loadExample() {
+  function loadData() {
     setClocData('aa');
   }
 
@@ -117,53 +102,13 @@ function App() {
 
       {/* Load Content */}
       {!clocData && <Section title="Analyze Source Code" className={classes.sectionClass}>
-        <div className={classes.sourceContainer}>
-          <AppBar position="static">
-            <Tabs centered value={srcTabIdx} onChange={(e, newValue) => setSrcTabIdx(newValue)}>
-              <Tab label="Load Cloc file"/>
-              <Tab label="Examples"/>
-              <Tab label="From Github" disabled/>
-            </Tabs>
-          </AppBar>
-          <Paper square>
-            {srcTabIdx === 0 && <TabContainer>
-              <Grid container>
-                <Grid item sm={12} lg={6}>
-                  Load a JSON file generated with <Link component="a"
-                                                        href="https://github.com/AlDanial/cloc">Cloc</Link>
-                </Grid>
-                <Grid item sm={12} lg={6}>
-                  <pre className={classes.codeBlock}>
-{`# generate a cloc file by running:
-cloc --by-file --json --quiet --hide-rate ./`}
-                  </pre>
-                </Grid>
-              </Grid>
-            </TabContainer>}
-            {srcTabIdx === 1 && <TabContainer>
-              {[1, 2, 3, 4, 5].map(n =>
-                <Button variant="outlined" color="primary" href="#" style={{'margin': '5px'}} key={n}
-                        onClick={loadExample}>Example {n}</Button>)}
-            </TabContainer>}
-            {srcTabIdx === 2 && <TabContainer>
-              Importing from Github is not supported yet.
-            </TabContainer>}
-          </Paper>
-        </div>
+        <XrayLoader onDataLoad={loadData}/>
       </Section>}
 
       {/* Show Analysis on loaded content */}
       {clocData && <Section title="Source Code Analysis" className={classes.sectionClass}>
         This appears after loading the file. Shows statistics, such as
       </Section>}
-
-      <div className="App">
-        a
-        <UploadXray/>
-        b
-        <MediaCapture/>
-        c
-      </div>
 
       {/*/!* Section 3 filter *!/*/}
       {/*<Section title="Filter" className={classes.sectionClass}>*/}
