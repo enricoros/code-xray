@@ -12,6 +12,8 @@ import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Paper from "@material-ui/core/Paper";
+import UploadXray from "./UploadXray";
+import MediaCapture from "./DataLoader";
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -154,6 +156,14 @@ cloc --by-file --json --quiet --hide-rate ./`}
       {clocData && <Section title="Source Code Analysis" className={classes.sectionClass}>
         This appears after loading the file. Shows statistics, such as
       </Section>}
+
+      <div className="App">
+        a
+        <UploadXray/>
+        b
+        <MediaCapture/>
+        c
+      </div>
 
       {/*/!* Section 3 filter *!/*/}
       {/*<Section title="Filter" className={classes.sectionClass}>*/}
