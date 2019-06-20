@@ -8,7 +8,13 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import './App.css';
 import SignIn from "./SignIn";
-import XrayLoader from "./XrayLoader";
+import ProjectLoader from "./ProjectLoader";
+import {Grid} from "@material-ui/core";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import Code from "@material-ui/core/SvgIcon/SvgIcon";
+import CardContent from "@material-ui/core/CardContent";
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -70,14 +76,10 @@ function Section(props) {
 function App() {
   const classes = useAppStyles();
   const [userName, setUserName] = React.useState(default_GuestName);
-  const [clocData, setClocData] = React.useState('');
+  const [project, setProject] = React.useState(undefined);
 
   // ask for user name if not set
   if (!userName) return <SignIn onUserChanged={setUserName}/>;
-
-  function loadData() {
-    setClocData('aa');
-  }
 
   return (
     <React.Fragment>
@@ -101,13 +103,32 @@ function App() {
             description="Quickly understand a project based on source code analysis and visualization."/>
 
       {/* Load Content */}
-      {!clocData && <Section title="Analyze Source Code" className={classes.sectionClass}>
-        <XrayLoader onDataLoad={loadData}/>
+      {!project && <Section title="Analyze Source Code" className={classes.sectionClass}>
+        <ProjectLoader onProjectLoaded={setProject}/>
       </Section>}
 
       {/* Show Analysis on loaded content */}
-      {clocData && <Section title="Source Code Analysis" className={classes.sectionClass}>
-        This appears after loading the file. Shows statistics, such as
+      {project && <Section title="Source Code Analysis" className={classes.sectionClass}>
+        <Typography>
+          Active project:
+        </Typography>
+        <Grid container spacing={2}>
+          <Grid item sm={6} md={4} lg={3}>
+            <Card raised>
+              <CardContent>
+                <Typography variant="h6" component="h4">
+                  {project.name}
+                </Typography>
+                <Typography>
+                  {Object.keys(project.clocFiles).length} files
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button color="primary" onClick={() => setProject()} href="#">Discard</Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        </Grid>
       </Section>}
 
       {/*/!* Section 3 filter *!/*/}
