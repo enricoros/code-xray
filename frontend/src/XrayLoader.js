@@ -94,12 +94,30 @@ function XrayLoader(props) {
   const _classes = useSourceSelectorStyles();
   const [tabIdx, setTabIdx] = React.useState(1);
   const [errorString, setErrorString] = React.useState('');
+
+  function passLoadedDataToTheParent(projectName, clocJson) {
+    // TODO: transform the data to XRAY here? Or let this go?
+    const project = {
+      name: projectName,
+      clocFiles: clocJson,
+      xrayFolders: undefined,
+    };
+    onClocProjectLoaded(project);
+  }
+
+  // using the "react-dropzone" module, which mimics hooks. upon a drop, load the file
   const {getRootProps: dzProps, getInputProps: dzInputProps, isDragActive} = useDropzone(
     {
       accept: "application/json",
       onDropAccepted: (f) => loadJsonFromUpload(f[0], (maybeJson) => loadClocJson(UPLOAD_PRJ, maybeJson, f[0].name)),
       onDropRejected: (f) => setErrorString('File ' + f[0].name + ' does not seem a JSON (' + f[0].type + ')'),
     });
+
+  // load one of the examples from the same web server (static examples)
+  function loadExampleByIndex(index) {
+    const example = EXAMPLES[index];
+    loadJsonFromHttpGet(example.href, (maybeJson) => loadClocJson(example.name, maybeJson, example.href));
+  }
 
   function loadClocJson(projectName, clocJson, sourceLocation) {
     if (clocJson === null) {
@@ -122,7 +140,7 @@ function XrayLoader(props) {
     delete clocJson['SUM'];
     console.log('Loaded a file generated from cloc: ' + clocJson['header']['cloc_version']);
     delete clocJson['header'];
-    onClocProjectLoaded(projectName, clocJson);
+    passLoadedDataToTheParent(projectName, clocJson);
   }
 
   function loadJsonFromUpload(file, callback) {
@@ -141,11 +159,6 @@ function XrayLoader(props) {
     request.onerror = () => setErrorString('Error loading the example file from: ' + href);
     request.onload = () => callback(request.response);
     request.send();
-  }
-
-  function loadExampleByIndex(index) {
-    const example = EXAMPLES[index];
-    loadJsonFromHttpGet(example.href, (maybeJson) => loadClocJson(example.name, maybeJson, example.href));
   }
 
   return (
