@@ -74,7 +74,7 @@ function XrayLoader(props) {
     const request = new XMLHttpRequest();
     request.open('GET', 'ort.json', true);
     request.responseType = 'blob';
-    request.onload = function() {
+    request.onload = function () {
       onFileSelected([request.response]);
     };
     request.send();
