@@ -1,0 +1,6129 @@
+{"header" : {
+  "cloc_url"           : "github.com/AlDanial/cloc",
+  "cloc_version"       : "1.80",
+  "elapsed_seconds"    : 0.940908908843994,
+  "n_files"            : 1223,
+  "n_lines"            : 191928,
+  "files_per_second"   : 1299.80701479656,
+  "lines_per_second"   : 203981.488745604,
+  "report_file"        : "/tmp/cloc.microsoft_onnxruntime.df68111b.json"},
+"./onnxruntime/test/providers/cpu/reduction/reduction_test_cases.inl" :{
+  "blank": 3,
+  "comment": 784,
+  "code": 4570,
+  "language": "C++"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.Tests/OnnxMl.cs" :{
+  "blank": 420,
+  "comment": 609,
+  "code": 4085,
+  "language": "C#"},
+"./onnxruntime/core/graph/graph.cc" :{
+  "blank": 395,
+  "comment": 308,
+  "code": 1826,
+  "language": "C++"},
+"./onnxruntime/core/graph/contrib_ops/contrib_defs.cc" :{
+  "blank": 86,
+  "comment": 45,
+  "code": 1201,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/pool_op_test.cc" :{
+  "blank": 75,
+  "comment": 5,
+  "code": 1145,
+  "language": "C++"},
+"./onnxruntime/test/framework/inference_session_test.cc" :{
+  "blank": 239,
+  "comment": 79,
+  "code": 1101,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/math/element_wise_ops_test.cc" :{
+  "blank": 157,
+  "comment": 4,
+  "code": 1071,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/element_wise_ops.cc" :{
+  "blank": 187,
+  "comment": 16,
+  "code": 1069,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cuda_execution_provider.cc" :{
+  "blank": 58,
+  "comment": 37,
+  "code": 1033,
+  "language": "C++"},
+"./onnxruntime/core/session/onnxruntime_c_api.cc" :{
+  "blank": 87,
+  "comment": 46,
+  "code": 992,
+  "language": "C++"},
+"./onnxruntime/test/mlas/unittest.cpp" :{
+  "blank": 236,
+  "comment": 26,
+  "code": 988,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/reduction/reduction_ops_test.cc" :{
+  "blank": 181,
+  "comment": 3,
+  "code": 937,
+  "language": "C++"},
+"./onnxruntime/core/util/math_cpu.cc" :{
+  "blank": 98,
+  "comment": 137,
+  "code": 887,
+  "language": "C++"},
+"./docs/python/notebooks/onnx-inference-byoc-gpu-cpu-aks.ipynb" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 877,
+  "language": "IPython Notebook"},
+"./onnxruntime/core/framework/data_types.cc" :{
+  "blank": 111,
+  "comment": 23,
+  "code": 823,
+  "language": "C++"},
+"./onnxruntime/test/server/unit_tests/converter_tests.cc" :{
+  "blank": 227,
+  "comment": 110,
+  "code": 811,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/controlflow/scan_test.cc" :{
+  "blank": 257,
+  "comment": 108,
+  "code": 800,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/pooling.cpp" :{
+  "blank": 370,
+  "comment": 200,
+  "code": 783,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/rnn/deep_cpu_lstm_op_test.cc" :{
+  "blank": 236,
+  "comment": 92,
+  "code": 768,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/rnn/deep_cpu_gru_op_test.cc" :{
+  "blank": 190,
+  "comment": 26,
+  "code": 764,
+  "language": "C++"},
+"./tools/ci_build/build.py" :{
+  "blank": 136,
+  "comment": 66,
+  "code": 716,
+  "language": "Python"},
+"./onnxruntime/core/providers/cpu/rnn/deep_cpu_lstm.cc" :{
+  "blank": 192,
+  "comment": 240,
+  "code": 705,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/rnn/rnn_helpers.cc" :{
+  "blank": 142,
+  "comment": 4,
+  "code": 704,
+  "language": "C++"},
+"./onnxruntime/core/session/inference_session.cc" :{
+  "blank": 164,
+  "comment": 88,
+  "code": 701,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/sgemm.cpp" :{
+  "blank": 370,
+  "comment": 259,
+  "code": 682,
+  "language": "C++"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.Tests/InferenceTest.cs" :{
+  "blank": 76,
+  "comment": 48,
+  "code": 676,
+  "language": "C#"},
+"./onnxruntime/core/providers/cpu/cpu_execution_provider.cc" :{
+  "blank": 17,
+  "comment": 8,
+  "code": 639,
+  "language": "C++"},
+"./onnxruntime/test/ir/graph_test.cc" :{
+  "blank": 136,
+  "comment": 74,
+  "code": 638,
+  "language": "C++"},
+"./onnxruntime/test/contrib_ops/tokenizer_test.cc" :{
+  "blank": 152,
+  "comment": 90,
+  "code": 626,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/rnn/rnn_op_test.cc" :{
+  "blank": 136,
+  "comment": 29,
+  "code": 623,
+  "language": "C++"},
+"./docs/ContribOperators.md" :{
+  "blank": 246,
+  "comment": 0,
+  "code": 610,
+  "language": "Markdown"},
+"./onnxruntime/core/mlas/lib/convolve.cpp" :{
+  "blank": 359,
+  "comment": 280,
+  "code": 595,
+  "language": "C++"},
+"./onnxruntime/python/tools/quantization/quantize.py" :{
+  "blank": 145,
+  "comment": 320,
+  "code": 590,
+  "language": "Python"},
+"./onnxruntime/core/mlas/lib/amd64/SgemmKernelAvx.asm" :{
+  "blank": 103,
+  "comment": 289,
+  "code": 570,
+  "language": "Assembly"},
+"./cmake/onnxruntime_unittests.cmake" :{
+  "blank": 87,
+  "comment": 33,
+  "code": 557,
+  "language": "CMake"},
+"./onnxruntime/python/onnxruntime_pybind_state.cc" :{
+  "blank": 73,
+  "comment": 7,
+  "code": 556,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/batch_norm_op_test.cc" :{
+  "blank": 50,
+  "comment": 5,
+  "code": 554,
+  "language": "C++"},
+"./onnxruntime/test/onnx/TestCase.cc" :{
+  "blank": 58,
+  "comment": 23,
+  "code": 547,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_conv.h" :{
+  "blank": 77,
+  "comment": 23,
+  "code": 537,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/mlasi.h" :{
+  "blank": 98,
+  "comment": 71,
+  "code": 523,
+  "language": "C/C++ Header"},
+"./cmake/CMakeLists.txt" :{
+  "blank": 90,
+  "comment": 89,
+  "code": 517,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/rnn/deep_cpu_gru.cc" :{
+  "blank": 147,
+  "comment": 192,
+  "code": 517,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/conv_op_test.cc" :{
+  "blank": 32,
+  "comment": 11,
+  "code": 506,
+  "language": "C++"},
+"./onnxruntime/test/onnx/runner.cc" :{
+  "blank": 35,
+  "comment": 14,
+  "code": 505,
+  "language": "C++"},
+"./onnxruntime/core/framework/utils.cc" :{
+  "blank": 143,
+  "comment": 51,
+  "code": 505,
+  "language": "C++"},
+"./onnxruntime/core/framework/cblas.h" :{
+  "blank": 37,
+  "comment": 74,
+  "code": 500,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/nn/tfidfvectorizer_test.cc" :{
+  "blank": 114,
+  "comment": 56,
+  "code": 500,
+  "language": "C++"},
+"./onnxruntime/core/framework/allocation_planner.cc" :{
+  "blank": 82,
+  "comment": 85,
+  "code": 495,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/element_wise_ops.h" :{
+  "blank": 130,
+  "comment": 21,
+  "code": 494,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/tensor/tensor_op_test.cc" :{
+  "blank": 122,
+  "comment": 10,
+  "code": 486,
+  "language": "C++"},
+"./onnxruntime/core/framework/tensorprotoutils.cc" :{
+  "blank": 60,
+  "comment": 25,
+  "code": 484,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmKernelAvx512F.S" :{
+  "blank": 120,
+  "comment": 99,
+  "code": 474,
+  "language": "Assembly"},
+"./onnxruntime/test/framework/data_types_test.cc" :{
+  "blank": 69,
+  "comment": 57,
+  "code": 472,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/tfidfvectorizer.cc" :{
+  "blank": 66,
+  "comment": 47,
+  "code": 470,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/slice_op.test.cc" :{
+  "blank": 54,
+  "comment": 16,
+  "code": 462,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/i386/sgemma.asm" :{
+  "blank": 102,
+  "comment": 285,
+  "code": 458,
+  "language": "Assembly"},
+"./include/onnxruntime/core/framework/data_types.h" :{
+  "blank": 124,
+  "comment": 131,
+  "code": 447,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/tensorrt/tensorrt_execution_provider.cc" :{
+  "blank": 67,
+  "comment": 40,
+  "code": 441,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc" :{
+  "blank": 34,
+  "comment": 2,
+  "code": 438,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmKernelFma3.S" :{
+  "blank": 129,
+  "comment": 107,
+  "code": 435,
+  "language": "Assembly"},
+"./onnxruntime/core/optimizer/initializer.h" :{
+  "blank": 35,
+  "comment": 2,
+  "code": 433,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/rnn/LSTM.py" :{
+  "blank": 143,
+  "comment": 38,
+  "code": 432,
+  "language": "Python"},
+"./onnxruntime/test/contrib_ops/attention_lstm_op_test.cc" :{
+  "blank": 114,
+  "comment": 44,
+  "code": 431,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/tokenizer.cc" :{
+  "blank": 53,
+  "comment": 35,
+  "code": 425,
+  "language": "C++"},
+"./onnxruntime/core/providers/openvino/openvino_execution_provider.cc" :{
+  "blank": 133,
+  "comment": 36,
+  "code": 414,
+  "language": "C++"},
+"./onnxruntime/test/providers/provider_test_utils.cc" :{
+  "blank": 68,
+  "comment": 30,
+  "code": 409,
+  "language": "C++"},
+"./onnxruntime/test/onnx/main.cc" :{
+  "blank": 26,
+  "comment": 14,
+  "code": 409,
+  "language": "C++"},
+"./onnxruntime/core/providers/ngraph/ngraph_execution_provider.cc" :{
+  "blank": 91,
+  "comment": 62,
+  "code": 408,
+  "language": "C++"},
+"./include/onnxruntime/core/graph/graph.h" :{
+  "blank": 206,
+  "comment": 367,
+  "code": 406,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/amd64/ErfKernelFma3.asm" :{
+  "blank": 116,
+  "comment": 49,
+  "code": 404,
+  "language": "Assembly"},
+"./onnxruntime/core/util/math.h" :{
+  "blank": 62,
+  "comment": 84,
+  "code": 403,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/deep_cpu_attn_lstm.cc" :{
+  "blank": 81,
+  "comment": 25,
+  "code": 400,
+  "language": "C++"},
+"./onnxruntime/test/optimizer/graph_transform_test.cc" :{
+  "blank": 104,
+  "comment": 18,
+  "code": 392,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/amd64/SgemmKernelSse2.asm" :{
+  "blank": 47,
+  "comment": 95,
+  "code": 392,
+  "language": "Assembly"},
+"./onnxruntime/core/providers/cpu/tensor/cast_op.cc" :{
+  "blank": 25,
+  "comment": 3,
+  "code": 389,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/pool.cc" :{
+  "blank": 60,
+  "comment": 8,
+  "code": 389,
+  "language": "C++"},
+"./onnxruntime/core/framework/bfc_arena.cc" :{
+  "blank": 81,
+  "comment": 83,
+  "code": 388,
+  "language": "C++"},
+"./include/onnxruntime/core/session/onnxruntime_cxx_inline.h" :{
+  "blank": 83,
+  "comment": 8,
+  "code": 383,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/math/binary_elementwise_ops.cc" :{
+  "blank": 46,
+  "comment": 25,
+  "code": 381,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/nn/conv.cc" :{
+  "blank": 72,
+  "comment": 21,
+  "code": 379,
+  "language": "C++"},
+"./onnxruntime/test/python/onnxruntime_test_python.py" :{
+  "blank": 69,
+  "comment": 17,
+  "code": 375,
+  "language": "Python"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmKernelSse2.S" :{
+  "blank": 79,
+  "comment": 62,
+  "code": 368,
+  "language": "Assembly"},
+"./onnxruntime/test/providers/cpu/controlflow/loop_test.cc" :{
+  "blank": 126,
+  "comment": 67,
+  "code": 368,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/mkldnn_execution_provider.cc" :{
+  "blank": 55,
+  "comment": 41,
+  "code": 367,
+  "language": "C++"},
+"./onnxruntime/test/framework/sparse_kernels_test.cc" :{
+  "blank": 82,
+  "comment": 54,
+  "code": 367,
+  "language": "C++"},
+"./onnxruntime/core/providers/openvino/openvino_mo/openvino_mo.py" :{
+  "blank": 84,
+  "comment": 13,
+  "code": 366,
+  "language": "Python"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/uni_dir_attn_lstm.cc" :{
+  "blank": 86,
+  "comment": 58,
+  "code": 366,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/tree_ensemble_classifier.cc" :{
+  "blank": 22,
+  "comment": 142,
+  "code": 366,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/controlflow/scan_utils.cc" :{
+  "blank": 94,
+  "comment": 56,
+  "code": 366,
+  "language": "C++"},
+"./onnxruntime/core/framework/execution_frame.cc" :{
+  "blank": 74,
+  "comment": 65,
+  "code": 365,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmKernelAvx.S" :{
+  "blank": 108,
+  "comment": 90,
+  "code": 362,
+  "language": "Assembly"},
+"./onnxruntime/core/mlas/lib/x86_64/ErfKernelFma3.S" :{
+  "blank": 123,
+  "comment": 33,
+  "code": 361,
+  "language": "Assembly"},
+"./onnxruntime/python/onnxruntime_pybind_mlvalue.cc" :{
+  "blank": 36,
+  "comment": 43,
+  "code": 355,
+  "language": "C++"},
+"./onnxruntime/test/tvm/tvm_basic_test.cc" :{
+  "blank": 55,
+  "comment": 16,
+  "code": 354,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_pool.h" :{
+  "blank": 54,
+  "comment": 26,
+  "code": 347,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/reduction/reduction_ops.cc" :{
+  "blank": 76,
+  "comment": 14,
+  "code": 345,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/NamedOnnxValue.cs" :{
+  "blank": 27,
+  "comment": 40,
+  "code": 344,
+  "language": "C#"},
+"./onnxruntime/test/util/compare_ortvalue.cc" :{
+  "blank": 36,
+  "comment": 12,
+  "code": 341,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/InferenceSession.cs" :{
+  "blank": 65,
+  "comment": 52,
+  "code": 332,
+  "language": "C#"},
+"./onnxruntime/core/graph/model.cc" :{
+  "blank": 65,
+  "comment": 17,
+  "code": 330,
+  "language": "C++"},
+"./onnxruntime/core/providers/openvino/openvino_graph.cc" :{
+  "blank": 85,
+  "comment": 59,
+  "code": 327,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/ml_common.h" :{
+  "blank": 29,
+  "comment": 7,
+  "code": 326,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/openvino/openvino_mo/openvino_emitter.py" :{
+  "blank": 65,
+  "comment": 14,
+  "code": 326,
+  "language": "Python"},
+"./onnxruntime/core/framework/session_state_initializer.cc" :{
+  "blank": 59,
+  "comment": 45,
+  "code": 320,
+  "language": "C++"},
+"./onnxruntime/test/framework/allocation_planner_test.cc" :{
+  "blank": 78,
+  "comment": 45,
+  "code": 319,
+  "language": "C++"},
+"./cgmanifest.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 314,
+  "language": "JSON"},
+"./onnxruntime/core/util/protobuf_parsing_utils.cc" :{
+  "blank": 87,
+  "comment": 78,
+  "code": 314,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/object_detection/roialign_test.cc" :{
+  "blank": 36,
+  "comment": 2,
+  "code": 309,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/split_op_test.cc" :{
+  "blank": 130,
+  "comment": 64,
+  "code": 308,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/controlflow/scan_9.cc" :{
+  "blank": 101,
+  "comment": 98,
+  "code": 306,
+  "language": "C++"},
+"./onnxruntime/core/graph/graph_utils.cc" :{
+  "blank": 65,
+  "comment": 59,
+  "code": 303,
+  "language": "C++"},
+"./onnxruntime/core/framework/bfc_arena.h" :{
+  "blank": 96,
+  "comment": 97,
+  "code": 295,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_batchnorm.h" :{
+  "blank": 52,
+  "comment": 16,
+  "code": 294,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/opaque_kernels_test.cc" :{
+  "blank": 57,
+  "comment": 52,
+  "code": 293,
+  "language": "C++"},
+"./tools/python/gen_doc.py" :{
+  "blank": 72,
+  "comment": 24,
+  "code": 290,
+  "language": "Python"},
+"./onnxruntime/test/providers/cpu/nn/non_max_suppression_test.cc" :{
+  "blank": 21,
+  "comment": 2,
+  "code": 290,
+  "language": "C++"},
+"./BUILD.md" :{
+  "blank": 94,
+  "comment": 0,
+  "code": 286,
+  "language": "Markdown"},
+"./onnxruntime/core/mlas/lib/arm64/sgemma.asm" :{
+  "blank": 95,
+  "comment": 147,
+  "code": 285,
+  "language": "Assembly"},
+"./onnxruntime/test/providers/cpu/tensor/upsample_op_test.cc" :{
+  "blank": 99,
+  "comment": 4,
+  "code": 285,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/rnn/cudnn_rnn_base.cc" :{
+  "blank": 39,
+  "comment": 23,
+  "code": 281,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/object_detection/roialign.cc" :{
+  "blank": 41,
+  "comment": 30,
+  "code": 278,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/gather_op_test.cc" :{
+  "blank": 25,
+  "comment": 8,
+  "code": 276,
+  "language": "C++"},
+"./include/onnxruntime/core/session/onnxruntime_c_api.h" :{
+  "blank": 93,
+  "comment": 252,
+  "code": 275,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/arm/sgemmc.cpp" :{
+  "blank": 149,
+  "comment": 109,
+  "code": 273,
+  "language": "C++"},
+"./onnxruntime/test/server/integration_tests/function_tests.py" :{
+  "blank": 81,
+  "comment": 10,
+  "code": 272,
+  "language": "Python"},
+"./onnxruntime/test/providers/provider_test_utils.h" :{
+  "blank": 65,
+  "comment": 28,
+  "code": 269,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/amd64/SgemmKernelAvx512F.asm" :{
+  "blank": 41,
+  "comment": 184,
+  "code": 266,
+  "language": "Assembly"},
+"./onnxruntime/core/graph/function.cc" :{
+  "blank": 24,
+  "comment": 20,
+  "code": 266,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/nn/pool.cc" :{
+  "blank": 53,
+  "comment": 18,
+  "code": 266,
+  "language": "C++"},
+"./onnxruntime/core/graph/contrib_ops/attn_lstm_schema_defs.cc" :{
+  "blank": 67,
+  "comment": 3,
+  "code": 265,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/unpool_op_test.cc" :{
+  "blank": 104,
+  "comment": 14,
+  "code": 264,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/controlflow/scan_8.cc" :{
+  "blank": 89,
+  "comment": 101,
+  "code": 264,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/aarch64/sgemma.s" :{
+  "blank": 110,
+  "comment": 109,
+  "code": 263,
+  "language": "Assembly"},
+"./onnxruntime/core/providers/cpu/tensor/slice.cc" :{
+  "blank": 38,
+  "comment": 31,
+  "code": 262,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/controlflow/loop.cc" :{
+  "blank": 84,
+  "comment": 92,
+  "code": 255,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/generator/random.cc" :{
+  "blank": 66,
+  "comment": 53,
+  "code": 252,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/upsample.cc" :{
+  "blank": 30,
+  "comment": 8,
+  "code": 250,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/rnn/GRU.py" :{
+  "blank": 106,
+  "comment": 26,
+  "code": 249,
+  "language": "Python"},
+"./onnxruntime/core/providers/cpu/nn/string_normalizer.cc" :{
+  "blank": 34,
+  "comment": 15,
+  "code": 247,
+  "language": "C++"},
+"./onnxruntime/test/ir/utils_test.cc" :{
+  "blank": 69,
+  "comment": 41,
+  "code": 246,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/activate.cpp" :{
+  "blank": 110,
+  "comment": 85,
+  "code": 245,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/rnn/rnn_helpers.h" :{
+  "blank": 47,
+  "comment": 41,
+  "code": 245,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/amd64/SgemmKernelFma3.asm" :{
+  "blank": 42,
+  "comment": 178,
+  "code": 243,
+  "language": "Assembly"},
+"./onnxruntime/test/framework/local_kernel_registry_test.cc" :{
+  "blank": 60,
+  "comment": 28,
+  "code": 241,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/DisposableNamedOnnxValue.cs" :{
+  "blank": 32,
+  "comment": 17,
+  "code": 240,
+  "language": "C#"},
+"./onnxruntime/core/mlas/lib/amd64/SgemmKernelCommon.inc" :{
+  "blank": 30,
+  "comment": 0,
+  "code": 239,
+  "language": "Pascal"},
+"./onnxruntime/test/shared_lib/test_inference.cc" :{
+  "blank": 46,
+  "comment": 16,
+  "code": 239,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/pool_base.h" :{
+  "blank": 45,
+  "comment": 3,
+  "code": 238,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/conv_transpose.cc" :{
+  "blank": 35,
+  "comment": 30,
+  "code": 238,
+  "language": "C++"},
+"./onnxruntime/server/converter.cc" :{
+  "blank": 14,
+  "comment": 10,
+  "code": 237,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/math/topk_op_test.cc" :{
+  "blank": 30,
+  "comment": 6,
+  "code": 232,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/treeregressor.cc" :{
+  "blank": 18,
+  "comment": 21,
+  "code": 232,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/x86/SgemmKernelAvx.S" :{
+  "blank": 101,
+  "comment": 102,
+  "code": 230,
+  "language": "Assembly"},
+"./cmake/onnxruntime_providers.cmake" :{
+  "blank": 20,
+  "comment": 11,
+  "code": 230,
+  "language": "CMake"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_func_kernel.cc" :{
+  "blank": 22,
+  "comment": 6,
+  "code": 229,
+  "language": "C++"},
+"./onnxruntime/core/platform/posix/env.cc" :{
+  "blank": 33,
+  "comment": 22,
+  "code": 228,
+  "language": "C++"},
+"./onnxruntime/core/framework/path_lib.h" :{
+  "blank": 31,
+  "comment": 15,
+  "code": 227,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/framework/op_kernel.h" :{
+  "blank": 69,
+  "comment": 48,
+  "code": 226,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/mkldnn/nn/batch_norm.cc" :{
+  "blank": 49,
+  "comment": 10,
+  "code": 226,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/generator/random_test.cc" :{
+  "blank": 78,
+  "comment": 8,
+  "code": 225,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/azure-pipelines-py-packaging.yml" :{
+  "blank": 36,
+  "comment": 0,
+  "code": 223,
+  "language": "YAML"},
+"./onnxruntime/core/optimizer/transformer_memcpy.cc" :{
+  "blank": 54,
+  "comment": 49,
+  "code": 222,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/tree_ensembler_classifier_test.cc" :{
+  "blank": 32,
+  "comment": 19,
+  "code": 219,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/reduction/reduction_ops.cc" :{
+  "blank": 32,
+  "comment": 12,
+  "code": 219,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/NativeOnnxTensorMemory.cs" :{
+  "blank": 39,
+  "comment": 9,
+  "code": 218,
+  "language": "C#"},
+"./include/onnxruntime/core/session/onnxruntime_cxx_api.h" :{
+  "blank": 72,
+  "comment": 20,
+  "code": 214,
+  "language": "C/C++ Header"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/NativeMethods.cs" :{
+  "blank": 79,
+  "comment": 39,
+  "code": 213,
+  "language": "C#"},
+"./onnxruntime/core/providers/cpu/ml/svmclassifier.cc" :{
+  "blank": 29,
+  "comment": 8,
+  "code": 210,
+  "language": "C++"},
+"./onnxruntime/core/framework/parallel_executor.cc" :{
+  "blank": 37,
+  "comment": 20,
+  "code": 209,
+  "language": "C++"},
+"./onnxruntime/test/perftest/tf_test_session.h" :{
+  "blank": 10,
+  "comment": 13,
+  "code": 208,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/execution_frame_test.cc" :{
+  "blank": 49,
+  "comment": 6,
+  "code": 208,
+  "language": "C++"},
+"./onnxruntime/core/framework/kernel_registry.cc" :{
+  "blank": 29,
+  "comment": 58,
+  "code": 207,
+  "language": "C++"},
+"./onnxruntime/test/framework/cuda/fence_cuda_test.cc" :{
+  "blank": 39,
+  "comment": 7,
+  "code": 206,
+  "language": "C++"},
+"./cmake/onnxruntime_python.cmake" :{
+  "blank": 22,
+  "comment": 7,
+  "code": 206,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cuda/shared_inc/fpgeneric.h" :{
+  "blank": 36,
+  "comment": 27,
+  "code": 206,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/x86/SgemmKernelSse2.S" :{
+  "blank": 96,
+  "comment": 88,
+  "code": 205,
+  "language": "Assembly"},
+"./onnxruntime/core/providers/cpu/tensor/utils.h" :{
+  "blank": 43,
+  "comment": 35,
+  "code": 202,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/activation/activation_op_test.cc" :{
+  "blank": 44,
+  "comment": 4,
+  "code": 201,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_func_kernel.h" :{
+  "blank": 34,
+  "comment": 2,
+  "code": 198,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/microbenchmark/model_init.cc" :{
+  "blank": 23,
+  "comment": 2,
+  "code": 197,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/concat_op_test.cc" :{
+  "blank": 37,
+  "comment": 4,
+  "code": 196,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/insert_cast_transformer.cc" :{
+  "blank": 33,
+  "comment": 25,
+  "code": 195,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cu_inc/common.cuh" :{
+  "blank": 62,
+  "comment": 22,
+  "code": 195,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cpu/tensor/transpose.cc" :{
+  "blank": 45,
+  "comment": 48,
+  "code": 195,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/word_conv_embedding.cc" :{
+  "blank": 32,
+  "comment": 8,
+  "code": 194,
+  "language": "C++"},
+"./onnxruntime/core/platform/windows/env.cc" :{
+  "blank": 29,
+  "comment": 20,
+  "code": 192,
+  "language": "C++"},
+"./onnxruntime/test/ir/op_test.cc" :{
+  "blank": 34,
+  "comment": 28,
+  "code": 190,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/rnn/rnn.cc" :{
+  "blank": 35,
+  "comment": 14,
+  "code": 190,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/conv.cc" :{
+  "blank": 38,
+  "comment": 5,
+  "code": 189,
+  "language": "C++"},
+"./onnxruntime/core/language_interop_ops/pyop/pywrapper.cc" :{
+  "blank": 24,
+  "comment": 2,
+  "code": 187,
+  "language": "C++"},
+"./onnxruntime/core/graph/schema_registry.cc" :{
+  "blank": 35,
+  "comment": 29,
+  "code": 184,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/math/sum.cc" :{
+  "blank": 42,
+  "comment": 9,
+  "code": 184,
+  "language": "C++"},
+"./onnxruntime/test/perftest/performance_runner.cc" :{
+  "blank": 30,
+  "comment": 23,
+  "code": 183,
+  "language": "C++"},
+"./onnxruntime/core/protobuf/onnx-ml.proto" :{
+  "blank": 95,
+  "comment": 321,
+  "code": 183,
+  "language": "Protocol Buffers"},
+"./onnxruntime/server/protobuf/onnx-ml.proto" :{
+  "blank": 95,
+  "comment": 321,
+  "code": 183,
+  "language": "Protocol Buffers"},
+"./onnxruntime/core/providers/cpu/tensor/pad.cc" :{
+  "blank": 35,
+  "comment": 34,
+  "code": 183,
+  "language": "C++"},
+"./onnxruntime/core/protobuf/onnx.in.proto" :{
+  "blank": 93,
+  "comment": 324,
+  "code": 183,
+  "language": "Protocol Buffers"},
+"./onnxruntime/test/shared_lib/fns_candy_style_transfer.c" :{
+  "blank": 11,
+  "comment": 25,
+  "code": 183,
+  "language": "C"},
+"./onnxruntime/core/providers/mkldnn/nn/lrn.cc" :{
+  "blank": 45,
+  "comment": 14,
+  "code": 182,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/erf.cpp" :{
+  "blank": 47,
+  "comment": 42,
+  "code": 182,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/matmul_helper.h" :{
+  "blank": 43,
+  "comment": 34,
+  "code": 181,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/shared_lib/test_model_loading.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 181,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cu_inc/binary_elementwise_impl.cuh" :{
+  "blank": 10,
+  "comment": 8,
+  "code": 181,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cuda/math/binary_elementwise_ops.h" :{
+  "blank": 41,
+  "comment": 13,
+  "code": 180,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/ml/svmclassifier_test.cc" :{
+  "blank": 33,
+  "comment": 2,
+  "code": 180,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/math/gemm_test.cc" :{
+  "blank": 35,
+  "comment": 3,
+  "code": 178,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/controlflow/if_test.cc" :{
+  "blank": 61,
+  "comment": 51,
+  "code": 178,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/pool.cc" :{
+  "blank": 30,
+  "comment": 3,
+  "code": 178,
+  "language": "C++"},
+"./onnxruntime/core/platform/windows/debug_alloc.cc" :{
+  "blank": 41,
+  "comment": 35,
+  "code": 177,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmKernelM1Avx.S" :{
+  "blank": 51,
+  "comment": 44,
+  "code": 174,
+  "language": "Assembly"},
+"./onnxruntime/core/mlas/inc/mlas.h" :{
+  "blank": 36,
+  "comment": 40,
+  "code": 172,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/activation/activations.h" :{
+  "blank": 54,
+  "comment": 2,
+  "code": 172,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/ngraph/ngraph_execution_provider_test.cc" :{
+  "blank": 59,
+  "comment": 126,
+  "code": 172,
+  "language": "C++"},
+"./onnxruntime/core/framework/sequential_executor.cc" :{
+  "blank": 36,
+  "comment": 13,
+  "code": 172,
+  "language": "C++"},
+"./onnxruntime/test/framework/bfc_arena_test.cc" :{
+  "blank": 41,
+  "comment": 26,
+  "code": 171,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmKernelM1TransposeBAvx.S" :{
+  "blank": 54,
+  "comment": 53,
+  "code": 170,
+  "language": "Assembly"},
+"./onnxruntime/core/providers/cpu/nn/conv_base.h" :{
+  "blank": 25,
+  "comment": 6,
+  "code": 169,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/scatter.cc" :{
+  "blank": 29,
+  "comment": 45,
+  "code": 166,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/max_pool_with_index.cu" :{
+  "blank": 15,
+  "comment": 5,
+  "code": 164,
+  "language": "CUDA"},
+"./onnxruntime/core/common/threadpool.cc" :{
+  "blank": 32,
+  "comment": 15,
+  "code": 163,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/object_detection/non_max_suppression.cc" :{
+  "blank": 36,
+  "comment": 19,
+  "code": 162,
+  "language": "C++"},
+"./onnxruntime/core/session/inference_session.h" :{
+  "blank": 81,
+  "comment": 198,
+  "code": 162,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/language_interop_ops/pyop/pyop.cc" :{
+  "blank": 20,
+  "comment": 1,
+  "code": 157,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/c-api-packaging-pipelines.yml" :{
+  "blank": 33,
+  "comment": 0,
+  "code": 157,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/activation/activations.h" :{
+  "blank": 33,
+  "comment": 3,
+  "code": 156,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/controlflow/if.cc" :{
+  "blank": 58,
+  "comment": 52,
+  "code": 156,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/qlinearconv.cc" :{
+  "blank": 26,
+  "comment": 6,
+  "code": 156,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/transpose_test.cc" :{
+  "blank": 37,
+  "comment": 8,
+  "code": 156,
+  "language": "C++"},
+"./onnxruntime/core/framework/session_state.cc" :{
+  "blank": 45,
+  "comment": 17,
+  "code": 155,
+  "language": "C++"},
+"./onnxruntime/test/testdata/CNTK/gen.py" :{
+  "blank": 38,
+  "comment": 7,
+  "code": 155,
+  "language": "Python"},
+"./include/onnxruntime/core/common/logging/logging.h" :{
+  "blank": 54,
+  "comment": 138,
+  "code": 154,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/graph_partitioner.cc" :{
+  "blank": 24,
+  "comment": 55,
+  "code": 153,
+  "language": "C++"},
+"./onnxruntime/test/framework/math_test.cc" :{
+  "blank": 11,
+  "comment": 23,
+  "code": 153,
+  "language": "C++"},
+"./onnxruntime/test/server/integration_tests/test_util.py" :{
+  "blank": 42,
+  "comment": 5,
+  "code": 152,
+  "language": "Python"},
+"./onnxruntime/test/providers/cpu/math/sign_test.cc" :{
+  "blank": 28,
+  "comment": 2,
+  "code": 152,
+  "language": "C++"},
+"./onnxruntime/test/framework/tensor_test.cc" :{
+  "blank": 38,
+  "comment": 9,
+  "code": 151,
+  "language": "C++"},
+"./onnxruntime/core/providers/ngraph/ngraph_custom_op.cc" :{
+  "blank": 32,
+  "comment": 15,
+  "code": 151,
+  "language": "C++"},
+"./onnxruntime/core/common/logging/logging.cc" :{
+  "blank": 43,
+  "comment": 35,
+  "code": 150,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/maxpool_with_mask.h" :{
+  "blank": 18,
+  "comment": 8,
+  "code": 149,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/where_op.cc" :{
+  "blank": 22,
+  "comment": 22,
+  "code": 149,
+  "language": "C++"},
+"./onnxruntime/test/shared_lib/test_tensor_loader.cc" :{
+  "blank": 9,
+  "comment": 18,
+  "code": 147,
+  "language": "C++"},
+"./onnxruntime/test/common/logging/logging_test.cc" :{
+  "blank": 49,
+  "comment": 39,
+  "code": 146,
+  "language": "C++"},
+"./onnxruntime/core/framework/tensor_type_and_shape.cc" :{
+  "blank": 18,
+  "comment": 7,
+  "code": 146,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/activation/activations.cc" :{
+  "blank": 40,
+  "comment": 9,
+  "code": 146,
+  "language": "C++"},
+"./onnxruntime/test/framework/memcpy_transformer_test.cc" :{
+  "blank": 27,
+  "comment": 11,
+  "code": 145,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/shrink_test.cc" :{
+  "blank": 27,
+  "comment": 2,
+  "code": 145,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/qlinearconv_op_test.cc" :{
+  "blank": 31,
+  "comment": 5,
+  "code": 145,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/string_normalizer_test.cc" :{
+  "blank": 16,
+  "comment": 44,
+  "code": 145,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/conv.cc" :{
+  "blank": 22,
+  "comment": 4,
+  "code": 145,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/rnn/cudnn_rnn_base.h" :{
+  "blank": 32,
+  "comment": 4,
+  "code": 143,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/math/softmax_test.cc" :{
+  "blank": 42,
+  "comment": 52,
+  "code": 143,
+  "language": "C++"},
+"./onnxruntime/core/util/protobuf_parsing_utils.h" :{
+  "blank": 65,
+  "comment": 140,
+  "code": 143,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_lrn.h" :{
+  "blank": 29,
+  "comment": 12,
+  "code": 142,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/rnn/rnn_impl.cu" :{
+  "blank": 16,
+  "comment": 5,
+  "code": 142,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cuda/cuda_common.h" :{
+  "blank": 30,
+  "comment": 12,
+  "code": 142,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/top_k.cc" :{
+  "blank": 20,
+  "comment": 36,
+  "code": 141,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/generator/random.h" :{
+  "blank": 40,
+  "comment": 13,
+  "code": 139,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/amd64/LogisticKernelFma3.asm" :{
+  "blank": 24,
+  "comment": 43,
+  "code": 139,
+  "language": "Assembly"},
+"./onnxruntime/core/providers/mkldnn/mkldnn_common.h" :{
+  "blank": 25,
+  "comment": 12,
+  "code": 138,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/command_args_parser.cc" :{
+  "blank": 12,
+  "comment": 5,
+  "code": 137,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_sum.h" :{
+  "blank": 23,
+  "comment": 12,
+  "code": 137,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/contrib_ops/range_schema_defs.cc" :{
+  "blank": 19,
+  "comment": 3,
+  "code": 137,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/allocator.h" :{
+  "blank": 30,
+  "comment": 40,
+  "code": 137,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/float_16_test.cc" :{
+  "blank": 28,
+  "comment": 12,
+  "code": 137,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/generator/constant_of_shape.cc" :{
+  "blank": 18,
+  "comment": 5,
+  "code": 136,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/pad_test.cc" :{
+  "blank": 27,
+  "comment": 4,
+  "code": 136,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/onehot_op_test.cc" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 135,
+  "language": "C++"},
+"./onnxruntime/test/contrib_ops/pad_op_test.cc" :{
+  "blank": 16,
+  "comment": 2,
+  "code": 135,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/kernel_def_builder.h" :{
+  "blank": 48,
+  "comment": 72,
+  "code": 134,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/murmur_hash3.cc" :{
+  "blank": 48,
+  "comment": 24,
+  "code": 134,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/linearclassifier.cc" :{
+  "blank": 15,
+  "comment": 4,
+  "code": 133,
+  "language": "C++"},
+"./include/onnxruntime/core/common/common.h" :{
+  "blank": 37,
+  "comment": 43,
+  "code": 133,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/Unpool.cc" :{
+  "blank": 43,
+  "comment": 23,
+  "code": 133,
+  "language": "C++"},
+"./onnxruntime/test/contrib_ops/gather_nd_op_test.cc" :{
+  "blank": 23,
+  "comment": 2,
+  "code": 132,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/templates/win-ci.yml" :{
+  "blank": 21,
+  "comment": 5,
+  "code": 132,
+  "language": "YAML"},
+"./onnxruntime/test/providers/cpu/math/logsoftmax_test.cc" :{
+  "blank": 38,
+  "comment": 32,
+  "code": 131,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/amd64/TanhKernelFma3.asm" :{
+  "blank": 24,
+  "comment": 44,
+  "code": 130,
+  "language": "Assembly"},
+"./cmake/onnxruntime_mlas.cmake" :{
+  "blank": 48,
+  "comment": 6,
+  "code": 130,
+  "language": "CMake"},
+"./onnxruntime/core/common/utf8_util.h" :{
+  "blank": 7,
+  "comment": 10,
+  "code": 129,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/templates/win-x86-ci.yml" :{
+  "blank": 17,
+  "comment": 3,
+  "code": 129,
+  "language": "YAML"},
+"./onnxruntime/core/framework/op_node_proto_helper.cc" :{
+  "blank": 18,
+  "comment": 3,
+  "code": 128,
+  "language": "C++"},
+"./onnxruntime/test/ir/onnx_model_test.cc" :{
+  "blank": 16,
+  "comment": 22,
+  "code": 128,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/conv.h" :{
+  "blank": 30,
+  "comment": 6,
+  "code": 127,
+  "language": "C/C++ Header"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/SessionOptions.cs" :{
+  "blank": 21,
+  "comment": 48,
+  "code": 127,
+  "language": "C#"},
+"./onnxruntime/core/providers/cpu/nn/conv_integer.cc" :{
+  "blank": 19,
+  "comment": 5,
+  "code": 126,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/normalizer.cc" :{
+  "blank": 26,
+  "comment": 41,
+  "code": 125,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/NativeMemoryAllocator.cs" :{
+  "blank": 23,
+  "comment": 6,
+  "code": 125,
+  "language": "C#"},
+"./onnxruntime/core/providers/cuda/reduction/reduction_ops.h" :{
+  "blank": 31,
+  "comment": 4,
+  "code": 125,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/nn/conv_transpose.cc" :{
+  "blank": 31,
+  "comment": 4,
+  "code": 125,
+  "language": "C++"},
+"./onnxruntime/core/framework/kernel_def_builder.cc" :{
+  "blank": 23,
+  "comment": 12,
+  "code": 124,
+  "language": "C++"},
+"./onnxruntime/test/contrib_ops/attention_lstm_data_gen.py" :{
+  "blank": 32,
+  "comment": 2,
+  "code": 124,
+  "language": "Python"},
+"./onnxruntime/core/optimizer/conv_bn_fusion.cc" :{
+  "blank": 24,
+  "comment": 9,
+  "code": 124,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/Microsoft.ML.OnnxRuntime.csproj" :{
+  "blank": 12,
+  "comment": 7,
+  "code": 124,
+  "language": "MSBuild script"},
+"./onnxruntime/test/providers/cpu/tensor/space_depth_ops_test.cc" :{
+  "blank": 24,
+  "comment": 2,
+  "code": 123,
+  "language": "C++"},
+"./onnxruntime/core/framework/onnxruntime_typeinfo.cc" :{
+  "blank": 14,
+  "comment": 3,
+  "code": 123,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/nuget/cpu_win_linux_mac_x86_mklml.yml" :{
+  "blank": 10,
+  "comment": 5,
+  "code": 123,
+  "language": "YAML"},
+"./tools/ci_build/github/azure-pipelines/nuget/cpu_win_linux_mac_nocontribops.yml" :{
+  "blank": 15,
+  "comment": 5,
+  "code": 123,
+  "language": "YAML"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/bahdanau_attention.cc" :{
+  "blank": 27,
+  "comment": 11,
+  "code": 122,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/uni_dir_attn_lstm.h" :{
+  "blank": 35,
+  "comment": 3,
+  "code": 122,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/tensor/scatter_op_test.cc" :{
+  "blank": 26,
+  "comment": 3,
+  "code": 121,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/nuget/cpu_win_linux_mac_x86.yml" :{
+  "blank": 14,
+  "comment": 5,
+  "code": 121,
+  "language": "YAML"},
+"./onnxruntime/test/providers/cpu/tensor/compress_op.test.cc" :{
+  "blank": 32,
+  "comment": 4,
+  "code": 121,
+  "language": "C++"},
+"./onnxruntime/core/session/custom_ops.cc" :{
+  "blank": 36,
+  "comment": 2,
+  "code": 119,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cudnn_common.cc" :{
+  "blank": 27,
+  "comment": 2,
+  "code": 118,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/instance_norm.cc" :{
+  "blank": 23,
+  "comment": 13,
+  "code": 118,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/tensor.h" :{
+  "blank": 30,
+  "comment": 63,
+  "code": 118,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/conv_impl.h" :{
+  "blank": 19,
+  "comment": 16,
+  "code": 118,
+  "language": "C/C++ Header"},
+"./csharp/tools/Microsoft.ML.OnnxRuntime.PerfTool/Program.cs" :{
+  "blank": 27,
+  "comment": 7,
+  "code": 117,
+  "language": "C#"},
+"./onnxruntime/core/providers/cuda/tensor/resize_impl.cu" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 117,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cuda/cuda_execution_provider.h" :{
+  "blank": 37,
+  "comment": 9,
+  "code": 117,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/executor.cc" :{
+  "blank": 30,
+  "comment": 7,
+  "code": 117,
+  "language": "C++"},
+"./docs/execution_providers/OpenVINO-ExecutionProvider.md" :{
+  "blank": 21,
+  "comment": 0,
+  "code": 117,
+  "language": "Markdown"},
+"./onnxruntime/core/common/task_thread_pool.h" :{
+  "blank": 35,
+  "comment": 62,
+  "code": 116,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/nn/batch_norm.cc" :{
+  "blank": 20,
+  "comment": 4,
+  "code": 116,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/reverse_sequence_test.cc" :{
+  "blank": 28,
+  "comment": 5,
+  "code": 115,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/cast_map.cc" :{
+  "blank": 24,
+  "comment": 8,
+  "code": 115,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/mkldnn_execution_provider.h" :{
+  "blank": 31,
+  "comment": 15,
+  "code": 115,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/controlflow/scan_utils.h" :{
+  "blank": 37,
+  "comment": 49,
+  "code": 114,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/graph_transformer_utils.cc" :{
+  "blank": 20,
+  "comment": 6,
+  "code": 113,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/reverse_sequence.cc" :{
+  "blank": 30,
+  "comment": 9,
+  "code": 113,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/reduction/reduction_ops.h" :{
+  "blank": 32,
+  "comment": 2,
+  "code": 113,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/session_state.h" :{
+  "blank": 46,
+  "comment": 70,
+  "code": 113,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/op_kernel.cc" :{
+  "blank": 32,
+  "comment": 6,
+  "code": 113,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/upsample_impl.cu" :{
+  "blank": 16,
+  "comment": 5,
+  "code": 112,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_activations.h" :{
+  "blank": 29,
+  "comment": 12,
+  "code": 111,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/runner.h" :{
+  "blank": 22,
+  "comment": 6,
+  "code": 111,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/performance_runner.h" :{
+  "blank": 23,
+  "comment": 4,
+  "code": 111,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/windows/stacktrace.cc" :{
+  "blank": 29,
+  "comment": 10,
+  "code": 110,
+  "language": "C++"},
+"./onnxruntime/server/http/predict_request_handler.cc" :{
+  "blank": 16,
+  "comment": 7,
+  "code": 110,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/activation/activations_impl.cu" :{
+  "blank": 21,
+  "comment": 2,
+  "code": 110,
+  "language": "CUDA"},
+"./onnxruntime/test/contrib_ops/range_test.cc" :{
+  "blank": 21,
+  "comment": 2,
+  "code": 110,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/generator/constant_of_shape_test.cc" :{
+  "blank": 30,
+  "comment": 21,
+  "code": 110,
+  "language": "C++"},
+"./onnxruntime/test/contrib_ops/dynamic_slice_op_test.cc" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 109,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/slice.cc" :{
+  "blank": 20,
+  "comment": 3,
+  "code": 109,
+  "language": "C++"},
+"./include/onnxruntime/core/platform/ort_mutex.h" :{
+  "blank": 16,
+  "comment": 9,
+  "code": 108,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/math/unary_elementwise_ops_impl.cu" :{
+  "blank": 20,
+  "comment": 16,
+  "code": 108,
+  "language": "CUDA"},
+"./onnxruntime/test/providers/cpu/ml/linearclassifer_test.cc" :{
+  "blank": 33,
+  "comment": 6,
+  "code": 108,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/split.cc" :{
+  "blank": 26,
+  "comment": 6,
+  "code": 108,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/tile.cc" :{
+  "blank": 24,
+  "comment": 14,
+  "code": 108,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/upsample.cc" :{
+  "blank": 21,
+  "comment": 5,
+  "code": 107,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/onehot.cc" :{
+  "blank": 29,
+  "comment": 25,
+  "code": 107,
+  "language": "C++"},
+"./onnxruntime/test/perftest/ort_test_session.cc" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 107,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/math/hardmax_test.cc" :{
+  "blank": 28,
+  "comment": 17,
+  "code": 107,
+  "language": "C++"},
+"./cmake/onnxruntime_server.cmake" :{
+  "blank": 19,
+  "comment": 9,
+  "code": 107,
+  "language": "CMake"},
+"./onnxruntime/test/python/onnx_backend_test_series.py" :{
+  "blank": 29,
+  "comment": 14,
+  "code": 107,
+  "language": "Python"},
+"./cmake/protobuf_function.cmake" :{
+  "blank": 17,
+  "comment": 35,
+  "code": 106,
+  "language": "CMake"},
+"./setup.py" :{
+  "blank": 15,
+  "comment": 11,
+  "code": 106,
+  "language": "Python"},
+"./onnxruntime/core/platform/posix/ort_mutex.cc" :{
+  "blank": 11,
+  "comment": 3,
+  "code": 106,
+  "language": "C++"},
+"./onnxruntime/server/http/core/session.cc" :{
+  "blank": 33,
+  "comment": 14,
+  "code": 106,
+  "language": "C++"},
+"./docs/ONNX_Runtime_Server_Usage.md" :{
+  "blank": 34,
+  "comment": 0,
+  "code": 106,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cuda/tensor/transpose.cc" :{
+  "blank": 17,
+  "comment": 5,
+  "code": 105,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/concat.cc" :{
+  "blank": 24,
+  "comment": 15,
+  "code": 104,
+  "language": "C++"},
+"./onnxruntime/core/framework/utils.h" :{
+  "blank": 15,
+  "comment": 7,
+  "code": 104,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/kernel_registry_manager.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 104,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/compress_impl.cu" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 103,
+  "language": "CUDA"},
+"./onnxruntime/contrib_ops/cpu/gather_nd.cc" :{
+  "blank": 21,
+  "comment": 2,
+  "code": 103,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/crop.h" :{
+  "blank": 27,
+  "comment": 6,
+  "code": 103,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/math/matmul_test.cc" :{
+  "blank": 25,
+  "comment": 2,
+  "code": 102,
+  "language": "C++"},
+"./onnxruntime/test/server/integration_tests/model_zoo_data_prep.py" :{
+  "blank": 41,
+  "comment": 4,
+  "code": 101,
+  "language": "Python"},
+"./docs/python/examples/plot_train_convert_predict.py" :{
+  "blank": 52,
+  "comment": 67,
+  "code": 101,
+  "language": "Python"},
+"./onnxruntime/test/shared_lib/test_nontensor_types.cc" :{
+  "blank": 24,
+  "comment": 25,
+  "code": 101,
+  "language": "C++"},
+"./onnxruntime/test/onnx/sync_api.cc" :{
+  "blank": 15,
+  "comment": 4,
+  "code": 100,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/math/gemm.cc" :{
+  "blank": 14,
+  "comment": 8,
+  "code": 100,
+  "language": "C++"},
+"./onnxruntime/test/server/unit_tests/json_handling_tests.cc" :{
+  "blank": 26,
+  "comment": 2,
+  "code": 100,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/pad_impl.cu" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 100,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cuda/cuda_call.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 99,
+  "language": "C++"},
+"./onnxruntime/core/codegen/tvm/tvm_kernel.h" :{
+  "blank": 14,
+  "comment": 14,
+  "code": 98,
+  "language": "C/C++ Header"},
+"./docs/CSharp_API.md" :{
+  "blank": 41,
+  "comment": 0,
+  "code": 98,
+  "language": "Markdown"},
+"./tools/ci_build/github/azure-pipelines/win-x86-nocontribops-ci-pipeline.yml" :{
+  "blank": 13,
+  "comment": 0,
+  "code": 98,
+  "language": "YAML"},
+"./onnxruntime/core/mlas/lib/logistic.cpp" :{
+  "blank": 46,
+  "comment": 36,
+  "code": 98,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/gemm.h" :{
+  "blank": 17,
+  "comment": 13,
+  "code": 98,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/contrib_ops/word_conv_embedding_test.cc" :{
+  "blank": 22,
+  "comment": 12,
+  "code": 97,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/win-nocontribops-ci-pipeline.yml" :{
+  "blank": 12,
+  "comment": 0,
+  "code": 97,
+  "language": "YAML"},
+"./tools/ci_build/github/azure-pipelines/win-gpu-tensorrt-ci-pipeline.yml" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 97,
+  "language": "YAML"},
+"./onnxruntime/test/server/integration_tests/model_zoo_tests.py" :{
+  "blank": 25,
+  "comment": 2,
+  "code": 96,
+  "language": "Python"},
+"./onnxruntime/core/mlas/lib/tanh.cpp" :{
+  "blank": 46,
+  "comment": 36,
+  "code": 96,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/lrn_op_test.cc" :{
+  "blank": 7,
+  "comment": 3,
+  "code": 96,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/quantize_linear_matmul.cc" :{
+  "blank": 18,
+  "comment": 7,
+  "code": 96,
+  "language": "C++"},
+"./onnxruntime/core/framework/path_lib.cc" :{
+  "blank": 7,
+  "comment": 6,
+  "code": 95,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/win-gpu-ci-pipeline.yml" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 95,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/math/sign.cc" :{
+  "blank": 13,
+  "comment": 5,
+  "code": 95,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/treeregressor_test.cc" :{
+  "blank": 20,
+  "comment": 10,
+  "code": 95,
+  "language": "C++"},
+"./onnxruntime/python/tools/quantization/README.md" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 94,
+  "language": "Markdown"},
+"./tools/ci_build/github/azure-pipelines/win-mklml-ci-pipeline.yml" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 94,
+  "language": "YAML"},
+"./onnxruntime/test/contrib_ops/murmur_hash3_test.cc" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 94,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/cast_op.cc" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 94,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/array_feature_extractor_test.cc" :{
+  "blank": 16,
+  "comment": 4,
+  "code": 93,
+  "language": "C++"},
+"./include/onnxruntime/core/common/logging/macros.h" :{
+  "blank": 67,
+  "comment": 49,
+  "code": 93,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/optimizer_execution_frame.cc" :{
+  "blank": 19,
+  "comment": 12,
+  "code": 93,
+  "language": "C++"},
+"./onnxruntime/test/server/unit_tests/util_tests.cc" :{
+  "blank": 26,
+  "comment": 2,
+  "code": 93,
+  "language": "C++"},
+"./onnxruntime/test/framework/insert_cast_transformer_test.cc" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 93,
+  "language": "C++"},
+"./cmake/external/ngraph.cmake" :{
+  "blank": 8,
+  "comment": 7,
+  "code": 93,
+  "language": "CMake"},
+"./onnxruntime/core/framework/execution_frame.h" :{
+  "blank": 43,
+  "comment": 28,
+  "code": 93,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/compress.cc" :{
+  "blank": 14,
+  "comment": 4,
+  "code": 93,
+  "language": "C++"},
+"./onnxruntime/core/common/profiler.cc" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 93,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/x86_64/LogisticKernelFma3.S" :{
+  "blank": 32,
+  "comment": 27,
+  "code": 93,
+  "language": "Assembly"},
+"./onnxruntime/core/optimizer/gemm_activation_fusion.cc" :{
+  "blank": 21,
+  "comment": 8,
+  "code": 92,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/conv_mul_fusion.cc" :{
+  "blank": 19,
+  "comment": 9,
+  "code": 92,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/conv_activation_fusion.cc" :{
+  "blank": 22,
+  "comment": 8,
+  "code": 92,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_kernel.h" :{
+  "blank": 20,
+  "comment": 10,
+  "code": 91,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/shared_inc/fast_divmod.h" :{
+  "blank": 19,
+  "comment": 21,
+  "code": 91,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/nn/instance_norm_op_test.cc" :{
+  "blank": 20,
+  "comment": 7,
+  "code": 91,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/feature_vectorizer.cc" :{
+  "blank": 27,
+  "comment": 13,
+  "code": 90,
+  "language": "C++"},
+"./onnxruntime/core/framework/tensor_shape.cc" :{
+  "blank": 26,
+  "comment": 9,
+  "code": 90,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/mean_variance_normalization.h" :{
+  "blank": 17,
+  "comment": 10,
+  "code": 90,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/platform.cpp" :{
+  "blank": 55,
+  "comment": 40,
+  "code": 90,
+  "language": "C++"},
+"./onnxruntime/server/server_configuration.h" :{
+  "blank": 21,
+  "comment": 17,
+  "code": 90,
+  "language": "C/C++ Header"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests.Capi/C_Api_Sample.cpp" :{
+  "blank": 27,
+  "comment": 56,
+  "code": 89,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/quantize_linear.cc" :{
+  "blank": 20,
+  "comment": 8,
+  "code": 89,
+  "language": "C++"},
+"./onnxruntime/core/language_interop_ops/pyop/pyop.h" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 89,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/linux/run_dockerbuild.sh" :{
+  "blank": 9,
+  "comment": 7,
+  "code": 88,
+  "language": "Bourne Shell"},
+"./onnxruntime/test/providers/cpu/reduction/reduction_test_cases_generator.py" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 88,
+  "language": "Python"},
+"./onnxruntime/server/main.cc" :{
+  "blank": 20,
+  "comment": 4,
+  "code": 88,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/conv_add_fusion.cc" :{
+  "blank": 22,
+  "comment": 12,
+  "code": 88,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/split_impl.cu" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 88,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cpu/rnn/rnn_activation_functors.h" :{
+  "blank": 21,
+  "comment": 2,
+  "code": 88,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/common/logging/sinks_test.cc" :{
+  "blank": 35,
+  "comment": 24,
+  "code": 87,
+  "language": "C++"},
+"./onnxruntime/core/framework/ort_value_tensor_slicer.h" :{
+  "blank": 31,
+  "comment": 24,
+  "code": 87,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/math/matmul.cc" :{
+  "blank": 13,
+  "comment": 4,
+  "code": 87,
+  "language": "C++"},
+"./include/onnxruntime/core/graph/graph_nodes.h" :{
+  "blank": 28,
+  "comment": 25,
+  "code": 87,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/testdata/ngraph/model_gen.py" :{
+  "blank": 22,
+  "comment": 0,
+  "code": 85,
+  "language": "Python"},
+"./include/onnxruntime/core/graph/schema_registry.h" :{
+  "blank": 33,
+  "comment": 43,
+  "code": 85,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/fpgeneric.cu" :{
+  "blank": 38,
+  "comment": 34,
+  "code": 85,
+  "language": "CUDA"},
+"./onnxruntime/core/framework/tensor_allocator_with_mem_pattern.h" :{
+  "blank": 11,
+  "comment": 6,
+  "code": 85,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/windows/logging/etw_sink.cc" :{
+  "blank": 26,
+  "comment": 21,
+  "code": 85,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/matmul_add_fusion.cc" :{
+  "blank": 17,
+  "comment": 12,
+  "code": 85,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/normalizer_test.cc" :{
+  "blank": 44,
+  "comment": 58,
+  "code": 84,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/op_node_proto_helper.h" :{
+  "blank": 26,
+  "comment": 30,
+  "code": 84,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/x86_64/TanhKernelFma3.S" :{
+  "blank": 32,
+  "comment": 28,
+  "code": 84,
+  "language": "Assembly"},
+"./onnxruntime/core/providers/tensorrt/tensorrt_execution_provider.h" :{
+  "blank": 19,
+  "comment": 13,
+  "code": 84,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/tensor/where_op_test.cc" :{
+  "blank": 27,
+  "comment": 2,
+  "code": 84,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/upsample.h" :{
+  "blank": 19,
+  "comment": 2,
+  "code": 83,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/session/IOBinding.cc" :{
+  "blank": 20,
+  "comment": 3,
+  "code": 83,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/cast_map_test.cc" :{
+  "blank": 38,
+  "comment": 28,
+  "code": 83,
+  "language": "C++"},
+"./onnxruntime/test/server/unit_tests/http_routes_tests.cc" :{
+  "blank": 22,
+  "comment": 4,
+  "code": 83,
+  "language": "C++"},
+"./include/onnxruntime/core/common/status.h" :{
+  "blank": 27,
+  "comment": 16,
+  "code": 82,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/zipmap.cc" :{
+  "blank": 9,
+  "comment": 25,
+  "code": 82,
+  "language": "C++"},
+"./onnxruntime/core/framework/tensor.cc" :{
+  "blank": 12,
+  "comment": 9,
+  "code": 82,
+  "language": "C++"},
+"./onnxruntime/core/session/abi_session_options.cc" :{
+  "blank": 15,
+  "comment": 16,
+  "code": 82,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/contrib_kernels.cc" :{
+  "blank": 8,
+  "comment": 9,
+  "code": 82,
+  "language": "C++"},
+"./docs/PyOp.md" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 82,
+  "language": "Markdown"},
+"./README.md" :{
+  "blank": 31,
+  "comment": 0,
+  "code": 81,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cpu/ml/svmclassifier.h" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 81,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/tensorrt/tensorrt_basic_test.cc" :{
+  "blank": 15,
+  "comment": 6,
+  "code": 81,
+  "language": "C++"},
+"./tools/python/update_version.py" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 80,
+  "language": "Python"},
+"./onnxruntime/test/server/unit_tests/server_configuration_test.cc" :{
+  "blank": 16,
+  "comment": 2,
+  "code": 79,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/gather.cc" :{
+  "blank": 22,
+  "comment": 5,
+  "code": 79,
+  "language": "C++"},
+"./docs/python/_templates/page.html" :{
+  "blank": 8,
+  "comment": 1,
+  "code": 79,
+  "language": "HTML"},
+"./onnxruntime/core/graph/graph_viewer.cc" :{
+  "blank": 22,
+  "comment": 11,
+  "code": 79,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/math/gemm.cc" :{
+  "blank": 10,
+  "comment": 8,
+  "code": 79,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/imputer.cc" :{
+  "blank": 10,
+  "comment": 40,
+  "code": 79,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/props.xml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 79,
+  "language": "XML"},
+"./onnxruntime/test/framework/shape_inference_test.cc" :{
+  "blank": 18,
+  "comment": 10,
+  "code": 78,
+  "language": "C++"},
+"./cmake/get_boost.cmake" :{
+  "blank": 18,
+  "comment": 9,
+  "code": 78,
+  "language": "CMake"},
+"./onnxruntime/contrib_ops/cpu/range.cc" :{
+  "blank": 11,
+  "comment": 1,
+  "code": 78,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/svmregressor_test.cc" :{
+  "blank": 25,
+  "comment": 6,
+  "code": 77,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/onehotencoder.cc" :{
+  "blank": 15,
+  "comment": 28,
+  "code": 77,
+  "language": "C++"},
+"./onnxruntime/core/codegen/tvm/tvm_compiler.cc" :{
+  "blank": 12,
+  "comment": 4,
+  "code": 77,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/gather.cc" :{
+  "blank": 11,
+  "comment": 4,
+  "code": 76,
+  "language": "C++"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests.Capi/InferenceTestCapi.cpp" :{
+  "blank": 14,
+  "comment": 4,
+  "code": 76,
+  "language": "C++"},
+"./onnxruntime/test/optimizer/optimizer_test.cc" :{
+  "blank": 18,
+  "comment": 2,
+  "code": 75,
+  "language": "C++"},
+"./docs/HighLevelDesign.md" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 75,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cuda/nn/lrn.cc" :{
+  "blank": 20,
+  "comment": 2,
+  "code": 75,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/resize_op_test.cc" :{
+  "blank": 28,
+  "comment": 2,
+  "code": 74,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/slice_impl.cu" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 74,
+  "language": "CUDA"},
+"./onnxruntime/test/onnx/gen_test_models.py" :{
+  "blank": 12,
+  "comment": 11,
+  "code": 73,
+  "language": "Python"},
+"./onnxruntime/python/tools/onnxruntime_test.py" :{
+  "blank": 16,
+  "comment": 6,
+  "code": 73,
+  "language": "Python"},
+"./cmake/onnxruntime.cmake" :{
+  "blank": 12,
+  "comment": 6,
+  "code": 73,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/tensor/nonzero_op.cc" :{
+  "blank": 19,
+  "comment": 16,
+  "code": 72,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/math/unary_elementwise_ops.h" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 72,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/shrink.cc" :{
+  "blank": 12,
+  "comment": 4,
+  "code": 72,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/tensor_shape.h" :{
+  "blank": 27,
+  "comment": 49,
+  "code": 71,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/execution_providers.h" :{
+  "blank": 25,
+  "comment": 11,
+  "code": 71,
+  "language": "C/C++ Header"},
+"./tools/ci_build/static_analysis_filter.py" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 71,
+  "language": "Python"},
+"./onnxruntime/test/providers/cpu/tensor/isinf_test.cc" :{
+  "blank": 24,
+  "comment": 6,
+  "code": 71,
+  "language": "C++"},
+"./onnxruntime/test/proto/tml.proto" :{
+  "blank": 19,
+  "comment": 16,
+  "code": 71,
+  "language": "Protocol Buffers"},
+"./cmake/external/mkldnn.cmake" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 71,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/tensor/isinf.cc" :{
+  "blank": 15,
+  "comment": 5,
+  "code": 71,
+  "language": "C++"},
+"./tools/ci_build/github/linux/ubuntu16.04/install.sh" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 70,
+  "language": "Bourne Shell"},
+"./onnxruntime/test/providers/cpu/tensor/tile_op_test.cc" :{
+  "blank": 26,
+  "comment": 14,
+  "code": 70,
+  "language": "C++"},
+"./onnxruntime/test/contrib_ops/maxpool_mask_test.cc" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 70,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/amd64/cvtfp16a.asm" :{
+  "blank": 15,
+  "comment": 39,
+  "code": 70,
+  "language": "Assembly"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/deep_cpu_attn_lstm.h" :{
+  "blank": 23,
+  "comment": 11,
+  "code": 69,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/util/math_cpuonly.h" :{
+  "blank": 13,
+  "comment": 22,
+  "code": 69,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/allocator.cc" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 69,
+  "language": "C++"},
+"./tools/ci_build/github/windows/download_cmake.py" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 69,
+  "language": "Python"},
+"./onnxruntime/test/util/default_providers.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 69,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/space_depth_ops.cc" :{
+  "blank": 16,
+  "comment": 5,
+  "code": 69,
+  "language": "C++"},
+"./onnxruntime/core/framework/mem_pattern_planner.h" :{
+  "blank": 19,
+  "comment": 19,
+  "code": 69,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/roi_pool.cc" :{
+  "blank": 20,
+  "comment": 11,
+  "code": 69,
+  "language": "C++"},
+"./tools/ci_build/github/linux/docker/scripts/install_ubuntu.sh" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 69,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/platform/windows/env_time.cc" :{
+  "blank": 22,
+  "comment": 27,
+  "code": 69,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/matmul_integer.cc" :{
+  "blank": 12,
+  "comment": 5,
+  "code": 69,
+  "language": "C++"},
+"./docs/python/conf.py" :{
+  "blank": 23,
+  "comment": 22,
+  "code": 68,
+  "language": "Python"},
+"./onnxruntime/core/mlas/lib/amd64/sgemma.asm" :{
+  "blank": 18,
+  "comment": 95,
+  "code": 68,
+  "language": "Assembly"},
+"./onnxruntime/core/providers/cpu/ml/scaler.cc" :{
+  "blank": 9,
+  "comment": 26,
+  "code": 68,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/templates/windows-build-tools-setup-steps.yml" :{
+  "blank": 9,
+  "comment": 10,
+  "code": 68,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/tensor/transpose.h" :{
+  "blank": 12,
+  "comment": 10,
+  "code": 68,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/http/core/http_server.cc" :{
+  "blank": 16,
+  "comment": 5,
+  "code": 67,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/lp_norm_op_test.cc" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 67,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/split.cc" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 67,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/nuget/templates/test_win.yml" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 67,
+  "language": "YAML"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests.Capi/runtest.bat" :{
+  "blank": 16,
+  "comment": 11,
+  "code": 67,
+  "language": "DOS Batch"},
+"./onnxruntime/core/framework/execution_provider.cc" :{
+  "blank": 15,
+  "comment": 4,
+  "code": 66,
+  "language": "C++"},
+"./onnxruntime/core/framework/node_index_info.cc" :{
+  "blank": 17,
+  "comment": 11,
+  "code": 66,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/array_feature_extractor.cc" :{
+  "blank": 14,
+  "comment": 27,
+  "code": 66,
+  "language": "C++"},
+"./onnxruntime/server/http/util.cc" :{
+  "blank": 16,
+  "comment": 2,
+  "code": 66,
+  "language": "C++"},
+"./onnxruntime/core/graph/model.h" :{
+  "blank": 29,
+  "comment": 36,
+  "code": 66,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/pad.cc" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 66,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/matmul.cc" :{
+  "blank": 15,
+  "comment": 3,
+  "code": 66,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/onehotencoder_test.cc" :{
+  "blank": 20,
+  "comment": 16,
+  "code": 65,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/OnnxRuntime.cs" :{
+  "blank": 11,
+  "comment": 6,
+  "code": 65,
+  "language": "C#"},
+"./onnxruntime/core/providers/cuda/math/binary_elementwise_ops_impl.cu" :{
+  "blank": 13,
+  "comment": 17,
+  "code": 65,
+  "language": "CUDA"},
+"./onnxruntime/test/providers/cpu/tensor/nonzero_op_test.cc" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 65,
+  "language": "C++"},
+"./onnxruntime/core/mlas/lib/threading.cpp" :{
+  "blank": 45,
+  "comment": 44,
+  "code": 65,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/tile.cc" :{
+  "blank": 14,
+  "comment": 3,
+  "code": 65,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/svmregressor.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 64,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/shrink_impl.cu" :{
+  "blank": 10,
+  "comment": 6,
+  "code": 64,
+  "language": "CUDA"},
+"./onnxruntime/test/onnx/TestResultStat.h" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 64,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/tensor/eyelike_op_test.cc" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 64,
+  "language": "C++"},
+"./onnxruntime/server/http/core/routes.cc" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 64,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/compress.cc" :{
+  "blank": 15,
+  "comment": 3,
+  "code": 64,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/optimizer_execution_frame.h" :{
+  "blank": 18,
+  "comment": 6,
+  "code": 64,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/session/environment.cc" :{
+  "blank": 14,
+  "comment": 7,
+  "code": 64,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/squeeze_op_test.cc" :{
+  "blank": 11,
+  "comment": 6,
+  "code": 64,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/attention_wrapper.cc" :{
+  "blank": 13,
+  "comment": 9,
+  "code": 64,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/tensor/quantize_linear_test.cc" :{
+  "blank": 8,
+  "comment": 7,
+  "code": 63,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/eye_like.cc" :{
+  "blank": 10,
+  "comment": 3,
+  "code": 63,
+  "language": "C++"},
+"./tools/ci_build/github/linux/server_run_dockerbuild.sh" :{
+  "blank": 9,
+  "comment": 5,
+  "code": 63,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/providers/cpu/nn/batch_norm_helper.h" :{
+  "blank": 12,
+  "comment": 5,
+  "code": 63,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/rule_based_graph_transformer.cc" :{
+  "blank": 19,
+  "comment": 12,
+  "code": 63,
+  "language": "C++"},
+"./onnxruntime/test/onnx/microbenchmark/main.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 63,
+  "language": "C++"},
+"./tools/ci_build/github/windows/post_code_coverage_to_dashboard.py" :{
+  "blank": 20,
+  "comment": 13,
+  "code": 62,
+  "language": "Python"},
+"./onnxruntime/core/providers/cuda/cudnn_common.h" :{
+  "blank": 21,
+  "comment": 2,
+  "code": 62,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/mkldnn/subgraph/subgraph.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 62,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/lrn.cc" :{
+  "blank": 15,
+  "comment": 23,
+  "code": 61,
+  "language": "C++"},
+"./onnxruntime/core/graph/op.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 61,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cuda_utils.cu" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 61,
+  "language": "CUDA"},
+"./onnxruntime/test/python/onnxruntime_test_python_backend.py" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 61,
+  "language": "Python"},
+"./onnxruntime/test/framework/tensorutils_test.cc" :{
+  "blank": 11,
+  "comment": 3,
+  "code": 61,
+  "language": "C++"},
+"./onnxruntime/core/framework/feeds_fetches_manager.h" :{
+  "blank": 23,
+  "comment": 3,
+  "code": 61,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/ort_value_tensor_slicer.cc" :{
+  "blank": 17,
+  "comment": 15,
+  "code": 61,
+  "language": "C++"},
+"./onnxruntime/test/win_getopt/mb/getopt.cc" :{
+  "blank": 8,
+  "comment": 49,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/test/framework/TestAllocatorManager.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/test/framework/session_state_test.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/math/unary_elementwise_ops.cc" :{
+  "blank": 12,
+  "comment": 15,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/unsqueeze_elimination.cc" :{
+  "blank": 15,
+  "comment": 8,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/server/http/core/listener.cc" :{
+  "blank": 15,
+  "comment": 7,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/core/framework/op_kernel_info.cc" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/lp_norm.cc" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/test/win_getopt/wide/getopt.cc" :{
+  "blank": 8,
+  "comment": 49,
+  "code": 60,
+  "language": "C++"},
+"./onnxruntime/test/ir/op_reg_test.cc" :{
+  "blank": 12,
+  "comment": 13,
+  "code": 59,
+  "language": "C++"},
+"./include/onnxruntime/core/common/logging/capture.h" :{
+  "blank": 19,
+  "comment": 37,
+  "code": 59,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/amd64/mlasi.inc" :{
+  "blank": 9,
+  "comment": 0,
+  "code": 59,
+  "language": "Pascal"},
+"./cmake/onnx/CMakeLists.txt" :{
+  "blank": 6,
+  "comment": 4,
+  "code": 59,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/rnn/deep_cpu_lstm.h" :{
+  "blank": 21,
+  "comment": 9,
+  "code": 59,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/cpuid_info.cc" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 58,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/bahdanau_attention.h" :{
+  "blank": 22,
+  "comment": 3,
+  "code": 58,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/gather_impl.cu" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 58,
+  "language": "CUDA"},
+"./onnxruntime/test/providers/cpu/ml/feature_vectorizer_test.cc" :{
+  "blank": 28,
+  "comment": 4,
+  "code": 57,
+  "language": "C++"},
+"./cmake/onnxruntime_common.cmake" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 57,
+  "language": "CMake"},
+"./onnxruntime/test/providers/cpu/ml/zipmap_test.cc" :{
+  "blank": 13,
+  "comment": 5,
+  "code": 57,
+  "language": "C++"},
+"./csharp/sample/Microsoft.ML.OnnxRuntime.InferenceSample/Program.cs" :{
+  "blank": 14,
+  "comment": 6,
+  "code": 57,
+  "language": "C#"},
+"./onnxruntime/test/providers/memcpy_test.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 57,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/execution_provider.h" :{
+  "blank": 27,
+  "comment": 83,
+  "code": 57,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/status.cc" :{
+  "blank": 17,
+  "comment": 17,
+  "code": 57,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/reshape.h" :{
+  "blank": 15,
+  "comment": 5,
+  "code": 56,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/windows/utils.cc" :{
+  "blank": 20,
+  "comment": 4,
+  "code": 56,
+  "language": "C++"},
+"./onnxruntime/test/onnx/FixedCountFinishCallback.h" :{
+  "blank": 10,
+  "comment": 4,
+  "code": 56,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/notification.h" :{
+  "blank": 15,
+  "comment": 15,
+  "code": 56,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/activation/activations_impl.h" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 55,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/microbenchmark/modeltest.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 54,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/category_mapper.cc" :{
+  "blank": 14,
+  "comment": 3,
+  "code": 54,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/crop.cc" :{
+  "blank": 14,
+  "comment": 4,
+  "code": 54,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/softmax_shared.cc" :{
+  "blank": 14,
+  "comment": 24,
+  "code": 54,
+  "language": "C++"},
+"./docs/python/examples/plot_common_errors.py" :{
+  "blank": 18,
+  "comment": 32,
+  "code": 54,
+  "language": "Python"},
+"./onnxruntime/core/platform/env.h" :{
+  "blank": 24,
+  "comment": 66,
+  "code": 54,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/fuse_nodes_funcs.cc" :{
+  "blank": 6,
+  "comment": 1,
+  "code": 54,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/gemm_helper.h" :{
+  "blank": 12,
+  "comment": 7,
+  "code": 54,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/label_encoder.cc" :{
+  "blank": 14,
+  "comment": 3,
+  "code": 54,
+  "language": "C++"},
+"./onnxruntime/test/framework/test_utils.h" :{
+  "blank": 7,
+  "comment": 5,
+  "code": 54,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/unique.cc" :{
+  "blank": 18,
+  "comment": 18,
+  "code": 54,
+  "language": "C++"},
+"./include/onnxruntime/core/common/const_pointer_container.h" :{
+  "blank": 18,
+  "comment": 13,
+  "code": 54,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/win-ngraph-ci-pipeline.yml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 53,
+  "language": "YAML"},
+"./onnxruntime/server/environment.cc" :{
+  "blank": 16,
+  "comment": 3,
+  "code": 53,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cuda_allocator.cc" :{
+  "blank": 13,
+  "comment": 4,
+  "code": 53,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/pad.h" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 53,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/shape_to_initializer.cc" :{
+  "blank": 18,
+  "comment": 9,
+  "code": 52,
+  "language": "C++"},
+"./onnxruntime/test/onnx/TestCase.h" :{
+  "blank": 6,
+  "comment": 6,
+  "code": 52,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/linearregressor.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 52,
+  "language": "C++"},
+"./onnxruntime/test/onnx/TestResultStat.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 52,
+  "language": "C++"},
+"./onnxruntime/server/http/json_handling.cc" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 52,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/ml_value.h" :{
+  "blank": 15,
+  "comment": 6,
+  "code": 52,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/file_util.cc" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 52,
+  "language": "C++"},
+"./onnxruntime/test/framework/cuda/allocator_cuda_test.cc" :{
+  "blank": 15,
+  "comment": 5,
+  "code": 51,
+  "language": "C++"},
+"./onnxruntime/test/framework/path_lib_test.cc" :{
+  "blank": 12,
+  "comment": 0,
+  "code": 51,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/pad.cc" :{
+  "blank": 11,
+  "comment": 6,
+  "code": 51,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/constant_folding.cc" :{
+  "blank": 21,
+  "comment": 14,
+  "code": 51,
+  "language": "C++"},
+"./cmake/onnxruntime_pyop.cmake" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 50,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cuda/activation/activations.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 50,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/attention_wrapper.h" :{
+  "blank": 21,
+  "comment": 4,
+  "code": 50,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/posix/env_time.cc" :{
+  "blank": 16,
+  "comment": 17,
+  "code": 50,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/image_scaler.cc" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 49,
+  "language": "C++"},
+"./tools/ci_build/github/windows/run_OpenCppCoverage.ps1" :{
+  "blank": 20,
+  "comment": 12,
+  "code": 49,
+  "language": "PowerShell"},
+"./include/onnxruntime/core/common/ml_status.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 49,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/generator/constant_of_shape.h" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 49,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/allocator_test.cc" :{
+  "blank": 13,
+  "comment": 15,
+  "code": 49,
+  "language": "C++"},
+"./onnxruntime/core/framework/arena.h" :{
+  "blank": 15,
+  "comment": 13,
+  "code": 49,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/feeds_fetches_manager.cc" :{
+  "blank": 17,
+  "comment": 3,
+  "code": 49,
+  "language": "C++"},
+"./onnxruntime/test/perftest/main.cc" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 48,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/image_scaler_impl.cu" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 48,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/openvino/openvino_execution_provider.h" :{
+  "blank": 16,
+  "comment": 4,
+  "code": 48,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/tensor/unsqueeze_op_test.cc" :{
+  "blank": 16,
+  "comment": 3,
+  "code": 48,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/math/quantize_linear_matmul_test.cc" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 48,
+  "language": "C++"},
+"./onnxruntime/core/framework/mem_pattern.h" :{
+  "blank": 14,
+  "comment": 3,
+  "code": 48,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/parallel_executor.h" :{
+  "blank": 12,
+  "comment": 5,
+  "code": 48,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/ml/imputer_test.cc" :{
+  "blank": 7,
+  "comment": 4,
+  "code": 48,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/word_conv_embedding.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 48,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/language_interop_ops/language_interop_ops.cc" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 48,
+  "language": "C++"},
+"./onnxruntime/test/perftest/posix/utils.cc" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 48,
+  "language": "C++"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests.Capi/runtest-gpu.bat" :{
+  "blank": 13,
+  "comment": 10,
+  "code": 47,
+  "language": "DOS Batch"},
+"./onnxruntime/core/providers/mkldnn/subgraph/mkldnn_kernel.cc" :{
+  "blank": 6,
+  "comment": 4,
+  "code": 47,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/tree_ensemble_classifier.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 47,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/win-arm64-crosscompile-ci-pipeline.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 47,
+  "language": "YAML"},
+"./include/onnxruntime/core/common/exceptions.h" :{
+  "blank": 14,
+  "comment": 10,
+  "code": 47,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/unpool.h" :{
+  "blank": 16,
+  "comment": 6,
+  "code": 47,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/win-arm-crosscompile-ci-pipeline.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 47,
+  "language": "YAML"},
+"./onnxruntime/core/framework/tensor_external_data_info.cc" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 47,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/tile_impl.cu" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 47,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cuda/nn/instance_norm_impl.cu" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 47,
+  "language": "CUDA"},
+"./onnxruntime/core/providers/cpu/rnn/deep_cpu_gru.h" :{
+  "blank": 20,
+  "comment": 6,
+  "code": 47,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/op_kernel_context_internal.h" :{
+  "blank": 16,
+  "comment": 6,
+  "code": 46,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/squeeze.h" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 46,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/test_environment.cc" :{
+  "blank": 17,
+  "comment": 7,
+  "code": 46,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/scaler_test.cc" :{
+  "blank": 9,
+  "comment": 4,
+  "code": 46,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/flatten_op_test.cc" :{
+  "blank": 10,
+  "comment": 4,
+  "code": 46,
+  "language": "C++"},
+"./docs/execution_providers/MKL-DNN-Subgraphs.md" :{
+  "blank": 19,
+  "comment": 0,
+  "code": 46,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cpu/tensor/reshape.h" :{
+  "blank": 18,
+  "comment": 3,
+  "code": 46,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/test_configuration.h" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 46,
+  "language": "C/C++ Header"},
+"./tools/ci_build/gen_def.py" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 46,
+  "language": "Python"},
+"./onnxruntime/test/python/onnxruntime_test_python_keras.py" :{
+  "blank": 18,
+  "comment": 8,
+  "code": 45,
+  "language": "Python"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests.Capi/CXX_Api_Sample.cpp" :{
+  "blank": 24,
+  "comment": 55,
+  "code": 45,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/Exceptions.cs" :{
+  "blank": 7,
+  "comment": 8,
+  "code": 45,
+  "language": "C#"},
+"./onnxruntime/core/providers/cuda/generator/constant_of_shape.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 45,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/nn/conv_integer_test.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 45,
+  "language": "C++"},
+"./dockerfiles/README.md" :{
+  "blank": 17,
+  "comment": 0,
+  "code": 44,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cpu/nn/qlinearconv.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 44,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/model_builder_utils.h" :{
+  "blank": 11,
+  "comment": 9,
+  "code": 44,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/session/default_cpu_allocator_c_api.cc" :{
+  "blank": 10,
+  "comment": 4,
+  "code": 44,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/object_detection/roialign.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 44,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/crop_impl.cu" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 44,
+  "language": "CUDA"},
+"./onnxruntime/core/framework/sequential_execution_plan.h" :{
+  "blank": 18,
+  "comment": 29,
+  "code": 44,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/slice.h" :{
+  "blank": 9,
+  "comment": 5,
+  "code": 44,
+  "language": "C/C++ Header"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/runtest.sh" :{
+  "blank": 12,
+  "comment": 17,
+  "code": 43,
+  "language": "Bourne Shell"},
+"./onnxruntime/python/backend/backend.py" :{
+  "blank": 12,
+  "comment": 53,
+  "code": 43,
+  "language": "Python"},
+"./onnxruntime/core/providers/cuda/math/softmax.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 43,
+  "language": "C++"},
+"./onnxruntime/core/framework/kernel_registry_manager.h" :{
+  "blank": 12,
+  "comment": 32,
+  "code": 43,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/unsqueeze.cc" :{
+  "blank": 11,
+  "comment": 6,
+  "code": 43,
+  "language": "C++"},
+"./onnxruntime/test/optimizer/graph_transform_utils_test.cc" :{
+  "blank": 10,
+  "comment": 8,
+  "code": 43,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/isnan.cc" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 43,
+  "language": "C++"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.Tests/Microsoft.ML.OnnxRuntime.Tests.csproj" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 42,
+  "language": "MSBuild script"},
+"./onnxruntime/core/common/profiler.h" :{
+  "blank": 14,
+  "comment": 29,
+  "code": 42,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/slice_elimination.cc" :{
+  "blank": 10,
+  "comment": 6,
+  "code": 42,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/cpu_execution_provider.h" :{
+  "blank": 12,
+  "comment": 5,
+  "code": 42,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/openvino/openvino_graph.h" :{
+  "blank": 19,
+  "comment": 2,
+  "code": 42,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/batch_norm.cc" :{
+  "blank": 10,
+  "comment": 26,
+  "code": 42,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/sparse_tensor.h" :{
+  "blank": 18,
+  "comment": 14,
+  "code": 42,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/conv_transpose.h" :{
+  "blank": 12,
+  "comment": 16,
+  "code": 42,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/image_scaler.h" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 42,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/TFModelInfo.cc" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 42,
+  "language": "C++"},
+"./onnxruntime/core/framework/func_kernel.h" :{
+  "blank": 8,
+  "comment": 5,
+  "code": 41,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/nn/shrink.cc" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 41,
+  "language": "C++"},
+"./onnxruntime/server/http/core/session.h" :{
+  "blank": 16,
+  "comment": 21,
+  "code": 41,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/ort_test_session.h" :{
+  "blank": 6,
+  "comment": 4,
+  "code": 41,
+  "language": "C/C++ Header"},
+"./onnxruntime/python/session.py" :{
+  "blank": 14,
+  "comment": 26,
+  "code": 41,
+  "language": "Python"},
+"./onnxruntime/core/providers/cpu/math/hardmax.cc" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 41,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cuda_fence.cc" :{
+  "blank": 10,
+  "comment": 10,
+  "code": 41,
+  "language": "C++"},
+"./tools/ci_build/github/linux/copy_strip_binary.sh" :{
+  "blank": 7,
+  "comment": 1,
+  "code": 40,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/providers/cpu/tensor/identity_op.h" :{
+  "blank": 9,
+  "comment": 4,
+  "code": 40,
+  "language": "C/C++ Header"},
+"./tools/python/dump_subgraphs.py" :{
+  "blank": 12,
+  "comment": 0,
+  "code": 40,
+  "language": "Python"},
+"./onnxruntime/core/graph/record.h" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 40,
+  "language": "C/C++ Header"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/runtest-docker.sh" :{
+  "blank": 11,
+  "comment": 3,
+  "code": 40,
+  "language": "Bourne Shell"},
+"./onnxruntime/contrib_ops/cpu/gather_nd.h" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 40,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/allocation_planner.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./CONTRIBUTING.md" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 39,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cpu/rnn/rnn.h" :{
+  "blank": 16,
+  "comment": 12,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/http/core/http_server.h" :{
+  "blank": 10,
+  "comment": 4,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/linux-x86-nocontribops-ci-pipeline.yml" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 39,
+  "language": "YAML"},
+"./onnxruntime/test/optimizer/dummy_graph_transformer.h" :{
+  "blank": 13,
+  "comment": 5,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/TestCaseResult.h" :{
+  "blank": 9,
+  "comment": 6,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/framework/op_kernel_info.h" :{
+  "blank": 16,
+  "comment": 7,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./cmake/external/zlib.cmake" :{
+  "blank": 7,
+  "comment": 1,
+  "code": 39,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/ml/treeregressor.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/ort_value_name_idx_map.h" :{
+  "blank": 13,
+  "comment": 6,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/util.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 39,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/instance_norm_helper.h" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 39,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/nuget/templates/bundle_dlls.yml" :{
+  "blank": 1,
+  "comment": 1,
+  "code": 39,
+  "language": "YAML"},
+"./onnxruntime/core/framework/ex_lib_loader.cc" :{
+  "blank": 6,
+  "comment": 1,
+  "code": 38,
+  "language": "C++"},
+"./tools/ci_build/github/download_test_data.py" :{
+  "blank": 6,
+  "comment": 1,
+  "code": 38,
+  "language": "Python"},
+"./onnxruntime/core/framework/error_code.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 38,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/activation/activations.cc" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 38,
+  "language": "C++"},
+"./onnxruntime/core/framework/session_state_initializer.h" :{
+  "blank": 9,
+  "comment": 10,
+  "code": 38,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/contrib_ops/unique_op_test.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 38,
+  "language": "C++"},
+"./onnxruntime/test/common/utf8_util_test.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 38,
+  "language": "C++"},
+"./tools/ci_build/github/linux/run_build.sh" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 38,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/common/logging/capture.cc" :{
+  "blank": 9,
+  "comment": 5,
+  "code": 38,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/linux-nocontribops-ci-pipeline.yml" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 38,
+  "language": "YAML"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/Microsoft.ML.OnnxRuntime.EndToEndTests.csproj" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 37,
+  "language": "MSBuild script"},
+"./onnxruntime/core/providers/ngraph/ngraph_custom_op.h" :{
+  "blank": 17,
+  "comment": 9,
+  "code": 37,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/ort_value_pattern_planner.cc" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 37,
+  "language": "C++"},
+"./tools/ci_build/github/linux/create_package_inside_docker.sh" :{
+  "blank": 5,
+  "comment": 5,
+  "code": 37,
+  "language": "Bourne Shell"},
+"./docs/Model_Test.md" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 37,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cpu/tensor/reshape_helper.h" :{
+  "blank": 6,
+  "comment": 5,
+  "code": 37,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/graph_utils.h" :{
+  "blank": 21,
+  "comment": 27,
+  "code": 37,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/concat.cc" :{
+  "blank": 8,
+  "comment": 5,
+  "code": 37,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/math/binary_elementwise_ops_impl.h" :{
+  "blank": 8,
+  "comment": 10,
+  "code": 37,
+  "language": "C/C++ Header"},
+"./docs/python/examples/plot_convert_pipeline_vectorizer.py" :{
+  "blank": 22,
+  "comment": 43,
+  "code": 36,
+  "language": "Python"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmTransposePackB16x4Avx.S" :{
+  "blank": 41,
+  "comment": 44,
+  "code": 36,
+  "language": "Assembly"},
+"./onnxruntime/core/graph/op.h" :{
+  "blank": 5,
+  "comment": 17,
+  "code": 36,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/node_index_info.h" :{
+  "blank": 16,
+  "comment": 15,
+  "code": 36,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/templates/windows-code-coverage-steps.yml" :{
+  "blank": 5,
+  "comment": 1,
+  "code": 36,
+  "language": "YAML"},
+"./include/onnxruntime/core/optimizer/graph_transformer.h" :{
+  "blank": 14,
+  "comment": 19,
+  "code": 36,
+  "language": "C/C++ Header"},
+"./cmake/external/FindNumPy.cmake" :{
+  "blank": 7,
+  "comment": 13,
+  "code": 36,
+  "language": "CMake"},
+"./docs/Coding_Conventions_and_Standards.md" :{
+  "blank": 17,
+  "comment": 0,
+  "code": 36,
+  "language": "Markdown"},
+"./docs/ABI_Dev_Notes.md" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 36,
+  "language": "Markdown"},
+"./include/onnxruntime/core/graph/graph_viewer.h" :{
+  "blank": 25,
+  "comment": 57,
+  "code": 36,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/optimizer/rule_based_graph_transformer_test.cc" :{
+  "blank": 15,
+  "comment": 6,
+  "code": 36,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/linux-ort-srv-nightly-pipeline.yml" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 36,
+  "language": "YAML"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/Microsoft.ML.OnnxRuntime.EndToEndTests.Gpu.csproj" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 36,
+  "language": "MSBuild script"},
+"./tools/ci_build/github/linux/docker/scripts/install_deps.sh" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 35,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/providers/cpu/ml/category_mapper.h" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 35,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/tensorprotoutils.h" :{
+  "blank": 11,
+  "comment": 20,
+  "code": 35,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/templates/c-api-artifacts-package-and-publish-steps-windows.yml" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 35,
+  "language": "YAML"},
+"./csharp/sample/Microsoft.ML.OnnxRuntime.InferenceSample/Microsoft.ML.OnnxRuntime.InferenceSample.csproj" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 35,
+  "language": "MSBuild script"},
+"./tools/ci_build/github/azure-pipelines/templates/windows-build-and-test-steps.yml" :{
+  "blank": 5,
+  "comment": 1,
+  "code": 35,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cuda/tensor/transpose_impl.cu" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 35,
+  "language": "CUDA"},
+"./tools/ci_build/github/azure-pipelines/linux-gpu-ci-pipeline.yml" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 34,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/ml/binarizer.cc" :{
+  "blank": 7,
+  "comment": 21,
+  "code": 34,
+  "language": "C++"},
+"./onnxruntime/core/session/IOBinding.h" :{
+  "blank": 10,
+  "comment": 49,
+  "code": 34,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/x86_64/SgemmTransposePackB16x4Sse2.S" :{
+  "blank": 26,
+  "comment": 24,
+  "code": 34,
+  "language": "Assembly"},
+"./onnxruntime/test/providers/cpu/tensor/size_test.cc" :{
+  "blank": 13,
+  "comment": 8,
+  "code": 34,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/concat.h" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 34,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/expand_dims.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 34,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/linux-ngraph-ci-pipeline.yml" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 34,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/nn/instance_norm.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 34,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/linux-openvino-ci-pipeline.yml" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 34,
+  "language": "YAML"},
+"./tools/ci_build/github/azure-pipelines/linux-ort-srv-ci-pipeline.yml" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 34,
+  "language": "YAML"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/runtest.bat" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 33,
+  "language": "DOS Batch"},
+"./onnxruntime/test/platform/windows/logging/etw_sink_test.cc" :{
+  "blank": 16,
+  "comment": 14,
+  "code": 33,
+  "language": "C++"},
+"./onnxruntime/test/ir/common_data_structure_test.cc" :{
+  "blank": 9,
+  "comment": 4,
+  "code": 33,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/relu_clip_fusion.cc" :{
+  "blank": 11,
+  "comment": 9,
+  "code": 33,
+  "language": "C++"},
+"./onnxruntime/core/framework/iexecutor.h" :{
+  "blank": 8,
+  "comment": 7,
+  "code": 33,
+  "language": "C/C++ Header"},
+"./csharp/tools/Microsoft.ML.OnnxRuntime.PerfTool/Microsoft.ML.OnnxRuntime.PerfTool.csproj" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 33,
+  "language": "MSBuild script"},
+"./onnxruntime/test/providers/cpu/nn/max_roi_pool_op_test.cc" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 33,
+  "language": "C++"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/runtest-docker-gpu.sh" :{
+  "blank": 13,
+  "comment": 4,
+  "code": 33,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/providers/cpu/object_detection/non_max_suppression.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 33,
+  "language": "C/C++ Header"},
+"./docs/python/examples/plot_dl_keras.py" :{
+  "blank": 22,
+  "comment": 27,
+  "code": 33,
+  "language": "Python"},
+"./onnxruntime/test/util/test_allocator.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 33,
+  "language": "C++"},
+"./cmake/onnxruntime_graph.cmake" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 33,
+  "language": "CMake"},
+"./onnxruntime/core/optimizer/graph_transformer_mgr.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 33,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/mac-nocontribops-ci-pipeline.yml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 32,
+  "language": "YAML"},
+"./onnxruntime/python/onnxruntime_validation.py" :{
+  "blank": 8,
+  "comment": 17,
+  "code": 32,
+  "language": "Python"},
+"./include/onnxruntime/core/optimizer/rule_based_graph_transformer.h" :{
+  "blank": 16,
+  "comment": 34,
+  "code": 32,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/post-merge-jobs.yml" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 32,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/math/softmax.cc" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 32,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/lrn.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 32,
+  "language": "C/C++ Header"},
+"./tools/nuget/create_nuspect.py" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 32,
+  "language": "Python"},
+"./tools/ci_build/github/azure-pipelines/templates/mac-ci.yml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 31,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/tensor/split.h" :{
+  "blank": 12,
+  "comment": 6,
+  "code": 31,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/platform/windows/stacktrace_test.cc" :{
+  "blank": 10,
+  "comment": 11,
+  "code": 31,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/dictvectorizer.h" :{
+  "blank": 5,
+  "comment": 5,
+  "code": 31,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/logsoftmax.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 31,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/nuget/templates/test_macos.yml" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 31,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/ml/label_encoder.h" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 31,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/ml/category_mapper_test.cc" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 31,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cu_inc/unary_elementwise_impl.cuh" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 31,
+  "language": "CUDA"},
+"./onnxruntime/core/framework/simple_tensor_allocator.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 31,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/size.cc" :{
+  "blank": 8,
+  "comment": 8,
+  "code": 31,
+  "language": "C++"},
+"./onnxruntime/test/server/unit_tests/executor_test.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 31,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/upsample_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 31,
+  "language": "C/C++ Header"},
+"./cmake/patches/ngraph/ngraph_onnx.cmake" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 31,
+  "language": "CMake"},
+"./onnxruntime/test/providers/cpu/ml/dictvectorizer_test.cc" :{
+  "blank": 13,
+  "comment": 2,
+  "code": 31,
+  "language": "C++"},
+"./docs/Versioning.md" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 31,
+  "language": "Markdown"},
+"./onnxruntime/server/environment.h" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 31,
+  "language": "C/C++ Header"},
+"./docs/AddingExecutionProvider.md" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 30,
+  "language": "Markdown"},
+"./onnxruntime/test/framework/test_utils.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 30,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/batch_norm.h" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/executor.h" :{
+  "blank": 10,
+  "comment": 3,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/identity_op.h" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/run_options.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 30,
+  "language": "C++"},
+"./onnxruntime/test/shared_lib/onnx_protobuf.h" :{
+  "blank": 1,
+  "comment": 4,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/graph/onnx_protobuf.h" :{
+  "blank": 1,
+  "comment": 3,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/common/code_location.h" :{
+  "blank": 9,
+  "comment": 18,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/rnn/rnn_impl.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/math/unary_elementwise_ops_impl.h" :{
+  "blank": 8,
+  "comment": 8,
+  "code": 29,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/shared_lib/test_io_types.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 29,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/label_encoder_test.cc" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 29,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/nn/autopad_type.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 29,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/graph/indexed_sub_graph.h" :{
+  "blank": 15,
+  "comment": 15,
+  "code": 29,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/mem_pattern_planner_test.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 29,
+  "language": "C++"},
+"./onnxruntime/core/framework/fuse_nodes_funcs.h" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 29,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/openvino/openvino_provider_factory.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 29,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/squeeze.cc" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 28,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/win-gpu-ci-pipeline-cuda9.yml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 28,
+  "language": "YAML"},
+"./onnxruntime/core/framework/allocatormgr.h" :{
+  "blank": 12,
+  "comment": 2,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/function_impl.h" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./docs/execution_providers/nGraph-ExecutionProvider.md" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 28,
+  "language": "Markdown"},
+"./include/onnxruntime/core/graph/node_arg.h" :{
+  "blank": 21,
+  "comment": 46,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/linux/docker/scripts/install_openvino.sh" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 28,
+  "language": "Bourne Shell"},
+"./include/onnxruntime/core/optimizer/rewrite_rule.h" :{
+  "blank": 17,
+  "comment": 44,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/tensor_allocator.h" :{
+  "blank": 8,
+  "comment": 13,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/http/core/context.h" :{
+  "blank": 11,
+  "comment": 7,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/util.h" :{
+  "blank": 12,
+  "comment": 6,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/templates/linux-ci.yml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 28,
+  "language": "YAML"},
+"./onnxruntime/test/providers/cpu/ml/linearregressor_test.cc" :{
+  "blank": 11,
+  "comment": 31,
+  "code": 28,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/svmregressor.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/cpu_provider_factory.cc" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 28,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/cast_map.h" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 27,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/math/matmul_integer_test.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 27,
+  "language": "C++"},
+"./include/onnxruntime/core/graph/basic_types.h" :{
+  "blank": 6,
+  "comment": 6,
+  "code": 27,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/str_helper.cc" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 27,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/dropout_elimination.cc" :{
+  "blank": 8,
+  "comment": 8,
+  "code": 27,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/nuget/templates/test_linux.yml" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 27,
+  "language": "YAML"},
+"./onnxruntime/core/platform/windows/logging/etw_sink.h" :{
+  "blank": 13,
+  "comment": 7,
+  "code": 27,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/space_depth_ops.h" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 27,
+  "language": "C/C++ Header"},
+"./onnxruntime/python/backend/backend_rep.py" :{
+  "blank": 7,
+  "comment": 18,
+  "code": 27,
+  "language": "Python"},
+"./onnxruntime/test/shared_lib/test_allocator.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 27,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/controlflow/utils.h" :{
+  "blank": 8,
+  "comment": 6,
+  "code": 27,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/OrtValueList.h" :{
+  "blank": 5,
+  "comment": 6,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/common/logging/helpers.h" :{
+  "blank": 9,
+  "comment": 9,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/clip.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/rnn/rnn.h" :{
+  "blank": 9,
+  "comment": 6,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/linux/docker/scripts/install_onnx.sh" :{
+  "blank": 2,
+  "comment": 6,
+  "code": 26,
+  "language": "Bourne Shell"},
+"./onnxruntime/server/http/core/routes.h" :{
+  "blank": 11,
+  "comment": 4,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/linux/upload_ortsrv_binaries.sh" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 26,
+  "language": "Bourne Shell"},
+"./docs/execution_providers/MKL-DNN-ExecutionProvider.md" :{
+  "blank": 9,
+  "comment": 0,
+  "code": 26,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cuda/math/gemm.h" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/unsqueeze.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 26,
+  "language": "C++"},
+"./onnxruntime/core/framework/tensor_external_data_info.h" :{
+  "blank": 7,
+  "comment": 5,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/roi_pool.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/linux/server_run_build.sh" :{
+  "blank": 4,
+  "comment": 1,
+  "code": 26,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/providers/cpu/tensor/gather.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/flatten.cc" :{
+  "blank": 7,
+  "comment": 3,
+  "code": 26,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/cuda_provider_factory.cc" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 26,
+  "language": "C++"},
+"./onnxruntime/core/framework/simple_tensor_allocator.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/reshape.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 26,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/templates/linux-set-variables-and-download.yml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 26,
+  "language": "YAML"},
+"./onnxruntime/core/providers/mkldnn/mkldnn_provider_factory.cc" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 26,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/math/gemm.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/string_normalizer.h" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/runtest-gpu.sh" :{
+  "blank": 9,
+  "comment": 11,
+  "code": 25,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/providers/cuda/cuda_allocator.h" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/framework/customregistry.h" :{
+  "blank": 12,
+  "comment": 12,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/tensor/shape_op_test.cc" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 25,
+  "language": "C++"},
+"./onnxruntime/core/providers/ngraph/ngraph_execution_provider.h" :{
+  "blank": 11,
+  "comment": 4,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/op_kernel_test.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 25,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/shared_inc/cuda_utils.h" :{
+  "blank": 8,
+  "comment": 4,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/logging/sinks/file_sink.h" :{
+  "blank": 6,
+  "comment": 20,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/sequential_executor.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/dummy_provider.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/sparse_tensor.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 25,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/templates/c-api-artifacts-package-and-publish-steps-posix.yml" :{
+  "blank": 3,
+  "comment": 1,
+  "code": 24,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cuda/rnn/rnn.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 24,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/sample.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/matmul_integer.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/flatten.h" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/NativeApiStatus.cs" :{
+  "blank": 3,
+  "comment": 8,
+  "code": 24,
+  "language": "C#"},
+"./docs/How_To_Update_ONNX_Dev_Notes.md" :{
+  "blank": 18,
+  "comment": 0,
+  "code": 24,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/ngraph/ngraph_provider_factory.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 24,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/graph_transformer_mgr.h" :{
+  "blank": 10,
+  "comment": 9,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/linearclassifier.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/testenv.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/graph/constants.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/logging/sinks/composite_sink.h" :{
+  "blank": 7,
+  "comment": 15,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/contrib_ops/crop_op_test.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 24,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/lrn.h" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/rnn/gru.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 24,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/kernel_registry.h" :{
+  "blank": 10,
+  "comment": 28,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/include/test/capturing_sink.h" :{
+  "blank": 10,
+  "comment": 3,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/runtest-gpu.bat" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 24,
+  "language": "DOS Batch"},
+"./onnxruntime/test/shared_lib/test_fixture.h" :{
+  "blank": 7,
+  "comment": 4,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/unsqueeze.h" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/batch_norm.h" :{
+  "blank": 8,
+  "comment": 19,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/include/providers.h" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/nn/shrink.h" :{
+  "blank": 8,
+  "comment": 4,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./.github/ISSUE_TEMPLATE/bug-performance-issue.md" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 23,
+  "language": "Markdown"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/attention_mechanism.h" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/reverse_sequence.h" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/contrib_op_activations.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/codegen/tvm/tvm_compiler.h" :{
+  "blank": 5,
+  "comment": 8,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/identity_op.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 23,
+  "language": "C++"},
+"./onnxruntime/core/providers/tensorrt/tensorrt_allocator.h" :{
+  "blank": 5,
+  "comment": 5,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./docs/C_API.md" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 23,
+  "language": "Markdown"},
+"./onnxruntime/core/providers/cuda/tensor/identity_op.cc" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 23,
+  "language": "C++"},
+"./onnxruntime/test/onnx/sync_api.h" :{
+  "blank": 5,
+  "comment": 8,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/contrib_ops/contrib_defs.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/onnxruntime_typeinfo.h" :{
+  "blank": 8,
+  "comment": 7,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/templates/set-version-number-variables-step.yml" :{
+  "blank": 6,
+  "comment": 1,
+  "code": 23,
+  "language": "YAML"},
+"./onnxruntime/server/http/core/listener.h" :{
+  "blank": 14,
+  "comment": 7,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/onehot.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 22,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/controlflow/if.h" :{
+  "blank": 6,
+  "comment": 6,
+  "code": 22,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/codegen/tvm/tvm_utils.cc" :{
+  "blank": 7,
+  "comment": 3,
+  "code": 22,
+  "language": "C++"},
+"./onnxruntime/core/providers/tensorrt/tensorrt_provider_factory.cc" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 22,
+  "language": "C++"},
+"./include/onnxruntime/core/platform/threadpool.h" :{
+  "blank": 13,
+  "comment": 22,
+  "code": 22,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/env_time.h" :{
+  "blank": 15,
+  "comment": 24,
+  "code": 22,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/customregistry.cc" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 22,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/normalizer.h" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 22,
+  "language": "C/C++ Header"},
+"./docs/python/examples/plot_load_and_predict.py" :{
+  "blank": 12,
+  "comment": 19,
+  "code": 22,
+  "language": "Python"},
+"./onnxruntime/test/providers/cpu/tensor/isnan_test.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 22,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/ml/dictvectorizer.cc" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 22,
+  "language": "C++"},
+"./onnxruntime/test/platform/windows/logging/HowToValidateEtwSinkOutput.md" :{
+  "blank": 12,
+  "comment": 0,
+  "code": 22,
+  "language": "Markdown"},
+"./tools/ci_build/github/azure-pipelines/linux-gpu-ci-pipeline-cuda9.yml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 22,
+  "language": "YAML"},
+"./onnxruntime/test/perftest/README.md" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 22,
+  "language": "Markdown"},
+"./docs/python/examples/plot_profiling.py" :{
+  "blank": 16,
+  "comment": 17,
+  "code": 22,
+  "language": "Python"},
+"./onnxruntime/test/perftest/TFModelInfo.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 22,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/rnn/lstm.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 22,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/softmax.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/hardmax.h" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./cmake/onnxruntime_session.cmake" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 21,
+  "language": "CMake"},
+"./onnxruntime/core/framework/ort_value_pattern_planner.h" :{
+  "blank": 5,
+  "comment": 6,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/resize.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 21,
+  "language": "C++"},
+"./onnxruntime/test/providers/cpu/ml/binarizer_test.cc" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 21,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/resize.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 21,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/math/logsoftmax.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/controlflow/scan.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./cmake/external/jemalloc.cmake" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 21,
+  "language": "CMake"},
+"./onnxruntime/test/providers/cpu/math/clip_test.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 21,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/pool.h" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/compress_impl.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/logging/sinks/ostream_sink.h" :{
+  "blank": 6,
+  "comment": 6,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/contrib_op_activations.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 21,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/eye_like.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/protobuf/onnx-operators.in.proto" :{
+  "blank": 19,
+  "comment": 92,
+  "code": 21,
+  "language": "Protocol Buffers"},
+"./onnxruntime/core/framework/allocatormgr.cc" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 20,
+  "language": "C++"},
+"./onnxruntime/test/contrib_ops/expand_dims_test.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 20,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/rnn/gru.h" :{
+  "blank": 7,
+  "comment": 6,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/murmur_hash3.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/linearregressor.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/element_wise_exp_ops.h" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./docs/python/examples/plot_metadata.py" :{
+  "blank": 8,
+  "comment": 15,
+  "code": 20,
+  "language": "Python"},
+"./onnxruntime/test/providers/cpu/tensor/identity_op_test.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 20,
+  "language": "C++"},
+"./onnxruntime/core/session/allocator_impl.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/include/test/test_environment.h" :{
+  "blank": 9,
+  "comment": 11,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/pad_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/shape_op.h" :{
+  "blank": 8,
+  "comment": 4,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/ex_lib_loader.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/graph_partitioner.h" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/logging/log_sink.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/fused_gemm.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/nn/dropout_op_test.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 20,
+  "language": "C++"},
+"./onnxruntime/core/protobuf/onnx-operators-ml.proto" :{
+  "blank": 21,
+  "comment": 92,
+  "code": 20,
+  "language": "Protocol Buffers"},
+"./onnxruntime/core/providers/cpu/nn/tfidfvectorizer.h" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/linux/create_package.sh" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 20,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/providers/cpu/ml/feature_vectorizer.h" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/server/integration_tests/test_main.py" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 19,
+  "language": "Python"},
+"./onnxruntime/core/providers/cuda/tensor/cast_op.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./docs/python/examples/plot_pipeline.py" :{
+  "blank": 21,
+  "comment": 29,
+  "code": 19,
+  "language": "Python"},
+"./cmake/external/openvino.cmake" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 19,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cuda/nn/instance_norm_impl.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./docs/AddingCustomOp.md" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 19,
+  "language": "Markdown"},
+"./include/onnxruntime/core/framework/run_options.h" :{
+  "blank": 7,
+  "comment": 13,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/common/logging/isink.h" :{
+  "blank": 9,
+  "comment": 13,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/x86_64/xgetbv.h" :{
+  "blank": 12,
+  "comment": 10,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/mkldnn/nn/conv.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/mkldnn/nn/pool.h" :{
+  "blank": 6,
+  "comment": 4,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/resize_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/posix/logging/syslog_sink.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/python/onnxruntime_pybind_mlvalue.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/pool.h" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/reshape.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 19,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/templates/compliance.yml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 19,
+  "language": "YAML"},
+"./onnxruntime/core/util/eigen_common_wrapper.h" :{
+  "blank": 3,
+  "comment": 14,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/shrink.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/controlflow/loop.h" :{
+  "blank": 5,
+  "comment": 6,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/cuda_fence.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/insert_cast_transformer.h" :{
+  "blank": 7,
+  "comment": 10,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./cmake/onnxruntime_util.cmake" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 18,
+  "language": "CMake"},
+"./cmake/onnxruntime_framework.cmake" :{
+  "blank": 7,
+  "comment": 4,
+  "code": 18,
+  "language": "CMake"},
+"./onnxruntime/core/common/cpuid_info.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/http/util.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./docs/execution_providers/TensorRT-ExecutionProvider.md" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 18,
+  "language": "Markdown"},
+"./onnxruntime/core/platform/posix/logging/syslog_sink.cc" :{
+  "blank": 7,
+  "comment": 4,
+  "code": 18,
+  "language": "C++"},
+"./include/onnxruntime/core/graph/function.h" :{
+  "blank": 9,
+  "comment": 14,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/element_wise_exp_ops.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 18,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/identity_elimination.cc" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 18,
+  "language": "C++"},
+"./onnxruntime/test/util/include/test_allocator.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/quantize_linear.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/onehotencoder.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/session/environment.h" :{
+  "blank": 8,
+  "comment": 15,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/nn/max_pool_with_index.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/contrib_ops/conv_transpose_with_dynamic_pads_test.cc" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 18,
+  "language": "C++"},
+"./docs/python/examples/plot_backend.py" :{
+  "blank": 10,
+  "comment": 22,
+  "code": 18,
+  "language": "Python"},
+"./onnxruntime/core/util/gemmlowp_common_wrapper.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/image_scaler.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/heap_buffer.h" :{
+  "blank": 3,
+  "comment": 8,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/function.h" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/shared_inc/cuda_call.h" :{
+  "blank": 7,
+  "comment": 5,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/ir/test_main.cc" :{
+  "blank": 7,
+  "comment": 4,
+  "code": 17,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/slice_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/TestAllocatorManager.h" :{
+  "blank": 6,
+  "comment": 7,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/crop_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/dummy_allocator.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/nn/conv_transpose.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/generator/constant_of_shape.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/function_inliner.h" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/providers/cpu/reduction/reduction_test_cases.h" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/split_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/lp_norm.h" :{
+  "blank": 6,
+  "comment": 16,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/fused_conv.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/math/softmax.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./cmake/onnxruntime_csharp.cmake" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 17,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/ml/imputer.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/framework/func_api.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/rnn/lstm.h" :{
+  "blank": 8,
+  "comment": 6,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/flatten.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/transpose.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/gather_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/logging/sinks/ostream_sink.cc" :{
+  "blank": 8,
+  "comment": 9,
+  "code": 16,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/expand_dims.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 16,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/compress.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/zipmap.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/transformer_memcpy.h" :{
+  "blank": 8,
+  "comment": 6,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/upsample.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/utils.h" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/shape_op.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 16,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cuda/conv_transpose_with_dynamic_pads.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/context.h" :{
+  "blank": 9,
+  "comment": 19,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/tile_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/tensor_allocator.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 16,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/templates/mac-set-variables-and-download.yml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 16,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/ml/scaler.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/session/abi_session_options_impl.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/mem_buffer.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/constant_folding.h" :{
+  "blank": 9,
+  "comment": 11,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/framework/fence.h" :{
+  "blank": 11,
+  "comment": 30,
+  "code": 16,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/resize.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/contrib_ops/range_schema_defs.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/include/test/compare_ortvalue.h" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/contrib_ops/sample_op_test.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 15,
+  "language": "C++"},
+"./include/onnxruntime/core/framework/framework_common.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/contrib_ops/attn_lstm_schema_defs.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/math/matmul.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/inference_session_without_environment/inference_session_without_environment_standalone_test.cc" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 15,
+  "language": "C++"},
+"./onnxruntime/core/framework/error_code_helper.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/binarizer.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/shared_lib/test_session_options.cc" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 15,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cuda/conv_transpose_with_dynamic_pads.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 15,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/math/sum.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/common/test_main.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 14,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/dropout_elimination.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/language_interop_ops/language_interop_ops.h" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/test_main.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 14,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/shape_to_initializer.h" :{
+  "blank": 10,
+  "comment": 8,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/conv_bn_fusion.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/unsqueeze_elimination.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/memcpy.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 14,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/image_scaler_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/linux/docker/scripts/install_deps_android.sh" :{
+  "blank": 4,
+  "comment": 1,
+  "code": 14,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/optimizer/conv_add_fusion.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/server/unit_tests/test_main.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 14,
+  "language": "C++"},
+"./onnxruntime/test/providers/test_main.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 14,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/slice_elimination.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./.github/ISSUE_TEMPLATE/feature_request.md" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 14,
+  "language": "Markdown"},
+"./onnxruntime/core/optimizer/conv_mul_fusion.h" :{
+  "blank": 9,
+  "comment": 7,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/crop.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/nn/instance_norm.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/conv_transpose_with_dynamic_pads.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/relu_clip_fusion.h" :{
+  "blank": 9,
+  "comment": 6,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/templates/set-test-data-variables-step.yml" :{
+  "blank": 3,
+  "comment": 1,
+  "code": 14,
+  "language": "YAML"},
+"./onnxruntime/core/optimizer/identity_elimination.h" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/http/predict_request_handler.h" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/pad.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/compress.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/dummy_allocator.cc" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 14,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/resize.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/perftest/test_session.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/instance_norm.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/tile.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/attnlstm/activation_info.h" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/heap_buffer.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 13,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/nn/batch_norm.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/converter.h" :{
+  "blank": 8,
+  "comment": 8,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/gather.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/func_kernel.cc" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 13,
+  "language": "C++"},
+"./onnxruntime/core/providers/mkldnn/nn/lrn.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/unique.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/mkldnn/activation/activations.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/include/default_providers.h" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/squeeze.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/range.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/top_k.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/logging/console_sink.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/unsqueeze.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/slice.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/quantize_linear_matmul.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/ml/array_feature_extractor.h" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/common/logging/severity.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/optimizer/graph_transformer_utils.h" :{
+  "blank": 8,
+  "comment": 9,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/framework/alloc_kind.h" :{
+  "blank": 4,
+  "comment": 17,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/server/http/json_handling.h" :{
+  "blank": 11,
+  "comment": 10,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/matmul.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/tensor/concat.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/common/callback.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/pad.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/graph_transformer.cc" :{
+  "blank": 8,
+  "comment": 6,
+  "code": 12,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/nn/shrink_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/conv_transpose_with_dynamic_pads.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 12,
+  "language": "C++"},
+"./cmake/external/pybind11.cmake" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 12,
+  "language": "CMake"},
+"./onnxruntime/test/providers/cpu/cpu_execution_provider_test.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 12,
+  "language": "C++"},
+"./onnxruntime/core/platform/windows/debug_alloc.h" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/logging/sinks/clog_sink.h" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/onnxruntime_event.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/memcpy.h" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/where_op.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/contrib_kernels_cuda.cc" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 12,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/split.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/common/logging/sinks/cerr_sink.h" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/sample.cc" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 12,
+  "language": "C++"},
+"./onnxruntime/test/perftest/command_args_parser.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/maxpool_with_mask.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 12,
+  "language": "C++"},
+"./onnxruntime/core/framework/execution_plan_base.h" :{
+  "blank": 5,
+  "comment": 8,
+  "code": 12,
+  "language": "C/C++ Header"},
+"./onnxruntime/contrib_ops/cpu/fused_conv.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 12,
+  "language": "C++"},
+"./tools/ci_build/github/windows/set_cuda_path.ps1" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 12,
+  "language": "PowerShell"},
+"./tools/ci_build/github/linux/ubuntu16.04/Dockerfile" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 11,
+  "language": "Dockerfile"},
+"./tools/ci_build/github/azure-pipelines/win-ci-pipeline.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 11,
+  "language": "YAML"},
+"./onnxruntime/contrib_ops/cpu/fused_gemm.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 11,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/contrib_kernels.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/flatten.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 11,
+  "language": "C++"},
+"./onnxruntime/core/optimizer/conv_activation_fusion.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./cmake/onnxruntime_optimizer.cmake" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 11,
+  "language": "CMake"},
+"./onnxruntime/core/framework/compute_capability.h" :{
+  "blank": 4,
+  "comment": 10,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/tile.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/nonzero_op.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./docs/Python_Dev_Notes.md" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 11,
+  "language": "Markdown"},
+"./onnxruntime/contrib_ops/cpu/mean_variance_normalization_exp.cc" :{
+  "blank": 2,
+  "comment": 5,
+  "code": 11,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/android-arm64-crosscompile-ci-pipeline.yml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 11,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/nn/conv.h" :{
+  "blank": 6,
+  "comment": 16,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/util/include/file_util.h" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/framework/dummy_provider.cc" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 11,
+  "language": "C++"},
+"./onnxruntime/server/protobuf/predict.proto" :{
+  "blank": 6,
+  "comment": 10,
+  "code": 11,
+  "language": "Protocol Buffers"},
+"./tools/ci_build/github/azure-pipelines/linux-gpu-tensorrt-ci-pipeline.yml" :{
+  "blank": 4,
+  "comment": 1,
+  "code": 11,
+  "language": "YAML"},
+"./onnxruntime/server/http/core/util.cc" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 11,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/size.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/win-x86-ci-pipeline.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 10,
+  "language": "YAML"},
+"./onnxruntime/test/shared_lib/test_run_options.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "C++"},
+"./include/onnxruntime/core/optimizer/graph_transformer_level.h" :{
+  "blank": 5,
+  "comment": 4,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/onnx/testenv.cc" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 10,
+  "language": "C++"},
+"./onnxruntime/core/providers/cuda/tensor/transpose_impl.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/optimizer/matmul_add_fusion.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/nn/conv_integer.h" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./cmake/onnxruntime_codegen.cmake" :{
+  "blank": 2,
+  "comment": 4,
+  "code": 10,
+  "language": "CMake"},
+"./onnxruntime/core/optimizer/gemm_activation_fusion.h" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/cuda_pch.h" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/azure-pipelines/nuget/templates/test_all_os.yml" :{
+  "blank": 1,
+  "comment": 1,
+  "code": 10,
+  "language": "YAML"},
+"./onnxruntime/core/providers/cpu/tensor/squeeze.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 10,
+  "language": "C++"},
+"./csharp/src/Microsoft.ML.OnnxRuntime/targets.xml" :{
+  "blank": 1,
+  "comment": 5,
+  "code": 10,
+  "language": "XML"},
+"./onnxruntime/contrib_ops/cpu/crop.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "C++"},
+"./onnxruntime/contrib_ops/cpu/image_scaler.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "C++"},
+"./onnxruntime/core/framework/mldata_type_utils.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "C++"},
+"./onnxruntime/core/providers/cpu/tensor/isnan.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./tools/ci_build/github/windows/clean_up_cuda_prop_files.ps1" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 10,
+  "language": "PowerShell"},
+"./onnxruntime/server/http/core/util.h" :{
+  "blank": 8,
+  "comment": 3,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/tensor_type_and_shape.h" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/codegen/tvm/tvm_utils.h" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/framework/mldata_type_utils.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/providers/openvino/openvino_provider_factory.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/providers/cpu/cpu_provider_factory.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/graph/function_container.h" :{
+  "blank": 1,
+  "comment": 4,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/common.h" :{
+  "blank": 5,
+  "comment": 9,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/math/gemm.cc" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 9,
+  "language": "C++"},
+"./include/onnxruntime/core/providers/mkldnn/mkldnn_provider_factory.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 8,
+  "language": "C/C++ Header"},
+"./cmake/external/eigen.cmake" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 8,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/math/clip.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 8,
+  "language": "C++"},
+"./include/onnxruntime/core/providers/tensorrt/tensorrt_provider_factory.h" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 8,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/shape_op.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 8,
+  "language": "C++"},
+"./tools/ci_build/github/azure-pipelines/linux-ci-pipeline.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 8,
+  "language": "YAML"},
+"./include/onnxruntime/core/providers/cuda/cuda_provider_factory.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 8,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/providers/ngraph/ngraph_provider_factory.h" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 8,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cpu/tensor/mean_variance_normalization.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 8,
+  "language": "C++"},
+"./rename_manylinux.sh" :{
+  "blank": 2,
+  "comment": 4,
+  "code": 8,
+  "language": "Bourne Shell"},
+"./tools/ci_build/github/azure-pipelines/linux-x86-ci-pipeline.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 8,
+  "language": "YAML"},
+"./onnxruntime/core/framework/callback.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 8,
+  "language": "C++"},
+"./tools/ci_build/github/linux/docker/scripts/install_fedora_gpu.sh" :{
+  "blank": 1,
+  "comment": 1,
+  "code": 8,
+  "language": "Bourne Shell"},
+"./tools/ci_build/github/linux/docker/scripts/install_protobuf.sh" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 8,
+  "language": "Bourne Shell"},
+"./tools/ci_build/github/azure-pipelines/templates/clean-agent-build-directory-step.yml" :{
+  "blank": 1,
+  "comment": 1,
+  "code": 7,
+  "language": "YAML"},
+"./onnxruntime/test/win_getopt/wide/include/getopt.h" :{
+  "blank": 4,
+  "comment": 31,
+  "code": 7,
+  "language": "C/C++ Header"},
+"./include/onnxruntime/core/providers/providers.h" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 7,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/win_getopt/mb/include/getopt.h" :{
+  "blank": 4,
+  "comment": 31,
+  "code": 7,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/ngraph/ngraph_fwd.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 7,
+  "language": "C/C++ Header"},
+"./onnxruntime/python/_pybind_state.py" :{
+  "blank": 1,
+  "comment": 4,
+  "code": 7,
+  "language": "Python"},
+"./onnxruntime/python/datasets/__init__.py" :{
+  "blank": 2,
+  "comment": 8,
+  "code": 7,
+  "language": "Python"},
+"./onnxruntime/core/providers/mkldnn/mkldnn_fwd.h" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 7,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/providers/cuda/cuda_fwd.h" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 7,
+  "language": "C/C++ Header"},
+"./cmake/onnxruntime_language_interop_ops.cmake" :{
+  "blank": 0,
+  "comment": 2,
+  "code": 6,
+  "language": "CMake"},
+"./onnxruntime/core/providers/cpu/math/softmax_shared.h" :{
+  "blank": 3,
+  "comment": 13,
+  "code": 6,
+  "language": "C/C++ Header"},
+"./onnxruntime/__init__.py" :{
+  "blank": 1,
+  "comment": 14,
+  "code": 6,
+  "language": "Python"},
+"./tools/ci_build/github/azure-pipelines/mac-ci-pipeline.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 6,
+  "language": "YAML"},
+"./onnxruntime/core/platform/posix/stacktrace.cc" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 6,
+  "language": "C++"},
+"./build.amd64.1411.bat" :{
+  "blank": 3,
+  "comment": 4,
+  "code": 5,
+  "language": "DOS Batch"},
+"./onnxruntime/core/providers/mkldnn/memcpy_s.h" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 5,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/mlas/lib/x86_64/asmmacro.h" :{
+  "blank": 8,
+  "comment": 8,
+  "code": 5,
+  "language": "C/C++ Header"},
+"./onnxruntime/core/platform/env.cc" :{
+  "blank": 7,
+  "comment": 12,
+  "code": 4,
+  "language": "C++"},
+"./.github/pull_request_template.md" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 4,
+  "language": "Markdown"},
+"./onnxruntime/ReformatSource.ps1" :{
+  "blank": 2,
+  "comment": 6,
+  "code": 4,
+  "language": "PowerShell"},
+"./build.bat" :{
+  "blank": 1,
+  "comment": 1,
+  "code": 4,
+  "language": "DOS Batch"},
+"./onnxruntime/test/onnx/TestCaseResult.cc" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 4,
+  "language": "C++"},
+"./onnxruntime/core/mlas/README.md" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 4,
+  "language": "Markdown"},
+"./onnxruntime/core/platform/env_time.cc" :{
+  "blank": 7,
+  "comment": 12,
+  "code": 4,
+  "language": "C++"},
+"./onnxruntime/ReformatSourcePython.bat" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 3,
+  "language": "DOS Batch"},
+"./docs/ReleaseManagement.md" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 3,
+  "language": "Markdown"},
+"./onnxruntime/python/pybind.def" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 3,
+  "language": "Windows Module Definition"},
+"./tools/ci_build/github/linux/docker/scripts/install_fedora.sh" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 3,
+  "language": "Bourne Shell"},
+"./onnxruntime/core/session/custom_ops.h" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 3,
+  "language": "C/C++ Header"},
+"./build.sh" :{
+  "blank": 2,
+  "comment": 4,
+  "code": 3,
+  "language": "Bourne Shell"},
+"./onnxruntime/test/win_getopt/mb/include/unistd.h" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "C/C++ Header"},
+"./onnxruntime/test/testdata/server/mnist_test_data_set_0_output.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1,
+  "language": "JSON"},
+"./tools/ci_build/github/windows/setup_env.bat" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1,
+  "language": "DOS Batch"},
+"./onnxruntime/core/providers/cuda/cuda_pch.cc" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "C++"},
+"./onnxruntime/test/testdata/server/mnist_test_data_set_0_input.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1,
+  "language": "JSON"},
+"./onnxruntime/python/backend/__init__.py" :{
+  "blank": 1,
+  "comment": 4,
+  "code": 1,
+  "language": "Python"},
+"./tools/ci_build/github/windows/setup_env_cuda.bat" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1,
+  "language": "DOS Batch"},
+"./onnxruntime/core/framework/empty.cc" :{
+  "blank": 1,
+  "comment": 4,
+  "code": 0,
+  "language": "C++"},
+"./onnxruntime/python/tools/__init__.py" :{
+  "blank": 0,
+  "comment": 4,
+  "code": 0,
+  "language": "Python"},
+"SUM": {
+  "blank": 29555,
+  "comment": 21196,
+  "code": 141177,
+  "nFiles": 1223} }

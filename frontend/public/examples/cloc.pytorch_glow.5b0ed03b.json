@@ -1,0 +1,1979 @@
+{"header" : {
+  "cloc_url"           : "github.com/AlDanial/cloc",
+  "cloc_version"       : "1.80",
+  "elapsed_seconds"    : 0.417952060699463,
+  "n_files"            : 393,
+  "n_lines"            : 118333,
+  "files_per_second"   : 940.299227960009,
+  "lines_per_second"   : 283125.772371989,
+  "report_file"        : "/tmp/cloc_pytorch_glow.5b0ed03b.json"},
+"./tests/unittests/OperatorTest.cpp" :{
+  "blank": 1271,
+  "comment": 807,
+  "code": 4946,
+  "language": "C++"},
+"./lib/Graph/Graph.cpp" :{
+  "blank": 439,
+  "comment": 283,
+  "code": 2341,
+  "language": "C++"},
+"./lib/Backends/Interpreter/InterpreterNodes.cpp" :{
+  "blank": 503,
+  "comment": 284,
+  "code": 2331,
+  "language": "C++"},
+"./cloc_pytorch_glow.5b0ed03b.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1974,
+  "language": "JSON"},
+"./tests/unittests/GraphOptzTest.cpp" :{
+  "blank": 521,
+  "comment": 428,
+  "code": 1935,
+  "language": "C++"},
+"./lib/Optimizer/GraphOptimizer.cpp" :{
+  "blank": 381,
+  "comment": 630,
+  "code": 1915,
+  "language": "C++"},
+"./lib/LLVMIRCodeGen/LLVMIRGen.cpp" :{
+  "blank": 306,
+  "comment": 232,
+  "code": 1892,
+  "language": "C++"},
+"./tests/unittests/QuantizationTest.cpp" :{
+  "blank": 340,
+  "comment": 332,
+  "code": 1611,
+  "language": "C++"},
+"./tests/unittests/Caffe2ImporterTest.cpp" :{
+  "blank": 381,
+  "comment": 496,
+  "code": 1605,
+  "language": "C++"},
+"./lib/Backends/OpenCL/OpenCL.cpp" :{
+  "blank": 251,
+  "comment": 244,
+  "code": 1500,
+  "language": "C++"},
+"./lib/Backends/CPU/libjit/libjit.cpp" :{
+  "blank": 207,
+  "comment": 178,
+  "code": 1461,
+  "language": "C++"},
+"./lib/Backends/Habana/Habana.cpp" :{
+  "blank": 194,
+  "comment": 210,
+  "code": 1341,
+  "language": "C++"},
+"./tests/unittests/OnnxImporterTest.cpp" :{
+  "blank": 241,
+  "comment": 187,
+  "code": 1321,
+  "language": "C++"},
+"./tests/unittests/GraphTest.cpp" :{
+  "blank": 306,
+  "comment": 226,
+  "code": 1314,
+  "language": "C++"},
+"./lib/Backends/OpenCL/kernels.cl" :{
+  "blank": 186,
+  "comment": 225,
+  "code": 1298,
+  "language": "OpenCL"},
+"./lib/Importer/Caffe2ModelLoader.cpp" :{
+  "blank": 227,
+  "comment": 243,
+  "code": 1279,
+  "language": "C++"},
+"./lib/Graph/Nodes.cpp" :{
+  "blank": 185,
+  "comment": 69,
+  "code": 1219,
+  "language": "C++"},
+"./tests/unittests/HabanaBackendTest.cpp" :{
+  "blank": 312,
+  "comment": 300,
+  "code": 1187,
+  "language": "C++"},
+"./tests/unittests/MLTest.cpp" :{
+  "blank": 313,
+  "comment": 230,
+  "code": 1006,
+  "language": "C++"},
+"./lib/Optimizer/IROptimizer.cpp" :{
+  "blank": 185,
+  "comment": 471,
+  "code": 1005,
+  "language": "C++"},
+"./lib/Importer/ONNXModelLoader.cpp" :{
+  "blank": 189,
+  "comment": 168,
+  "code": 996,
+  "language": "C++"},
+"./tests/unittests/HabanaTest.cpp" :{
+  "blank": 208,
+  "comment": 104,
+  "code": 936,
+  "language": "C++"},
+"./include/glow/Importer/CommonOperatorLoader.h" :{
+  "blank": 148,
+  "comment": 122,
+  "code": 919,
+  "language": "C/C++ Header"},
+"./tests/unittests/BackendTestUtils.cpp" :{
+  "blank": 156,
+  "comment": 55,
+  "code": 803,
+  "language": "C++"},
+"./lib/Partitioner/Partitioner.cpp" :{
+  "blank": 84,
+  "comment": 205,
+  "code": 768,
+  "language": "C++"},
+"./lib/Optimizer/Lower.cpp" :{
+  "blank": 199,
+  "comment": 157,
+  "code": 701,
+  "language": "C++"},
+"./include/glow/Base/Tensor.h" :{
+  "blank": 149,
+  "comment": 233,
+  "code": 687,
+  "language": "C/C++ Header"},
+"./tests/unittests/TensorsTest.cpp" :{
+  "blank": 175,
+  "comment": 120,
+  "code": 670,
+  "language": "C++"},
+"./tools/ClassGen/NodeGen.cpp" :{
+  "blank": 91,
+  "comment": 63,
+  "code": 656,
+  "language": "C++"},
+"./tests/unittests/ThreadPoolExecutorTest.cpp" :{
+  "blank": 135,
+  "comment": 335,
+  "code": 631,
+  "language": "C++"},
+"./tests/unittests/PartitionerTest.cpp" :{
+  "blank": 95,
+  "comment": 87,
+  "code": 628,
+  "language": "C++"},
+"./tests/unittests/RecommendationSystemTest.cpp" :{
+  "blank": 142,
+  "comment": 157,
+  "code": 605,
+  "language": "C++"},
+"./tests/unittests/IROptTest.cpp" :{
+  "blank": 140,
+  "comment": 198,
+  "code": 592,
+  "language": "C++"},
+"./tests/unittests/DeviceManagerTest.cpp" :{
+  "blank": 124,
+  "comment": 31,
+  "code": 586,
+  "language": "C++"},
+"./tests/unittests/GradCheckTest.cpp" :{
+  "blank": 172,
+  "comment": 56,
+  "code": 560,
+  "language": "C++"},
+"./tools/ClassGen/NodeBuilder.cpp" :{
+  "blank": 121,
+  "comment": 64,
+  "code": 552,
+  "language": "C++"},
+"./lib/Quantization/Quantization.cpp" :{
+  "blank": 91,
+  "comment": 287,
+  "code": 540,
+  "language": "C++"},
+"./tools/ClassGen/InstrGen.cpp" :{
+  "blank": 82,
+  "comment": 67,
+  "code": 530,
+  "language": "C++"},
+"./tests/unittests/TraceEventsTest.cpp" :{
+  "blank": 148,
+  "comment": 42,
+  "code": 523,
+  "language": "C++"},
+"./tools/loader/ImageClassifier.cpp" :{
+  "blank": 85,
+  "comment": 121,
+  "code": 493,
+  "language": "C++"},
+"./lib/IR/IR.cpp" :{
+  "blank": 89,
+  "comment": 63,
+  "code": 486,
+  "language": "C++"},
+"./include/glow/Graph/Graph.h" :{
+  "blank": 207,
+  "comment": 491,
+  "code": 484,
+  "language": "C/C++ Header"},
+"./tests/unittests/CMakeLists.txt" :{
+  "blank": 44,
+  "comment": 1,
+  "code": 471,
+  "language": "CMake"},
+"./lib/Base/Tensor.cpp" :{
+  "blank": 58,
+  "comment": 43,
+  "code": 468,
+  "language": "C++"},
+"./tests/unittests/BackendTest.cpp" :{
+  "blank": 89,
+  "comment": 83,
+  "code": 427,
+  "language": "C++"},
+"./tests/unittests/TypeAToTypeBFunctionConverterTest.cpp" :{
+  "blank": 80,
+  "comment": 415,
+  "code": 422,
+  "language": "C++"},
+"./include/glow/Base/Type.h" :{
+  "blank": 93,
+  "comment": 74,
+  "code": 402,
+  "language": "C/C++ Header"},
+"./lib/Onnxifi/onnxifiGlow.cpp" :{
+  "blank": 104,
+  "comment": 76,
+  "code": 396,
+  "language": "C++"},
+"./lib/Backends/CPU/libjit/libjit_conv.cpp" :{
+  "blank": 65,
+  "comment": 126,
+  "code": 394,
+  "language": "C++"},
+"./tests/unittests/BackendCorrectnessTest.cpp" :{
+  "blank": 79,
+  "comment": 51,
+  "code": 387,
+  "language": "C++"},
+"./tests/benchmark/RuntimeBench.cpp" :{
+  "blank": 86,
+  "comment": 141,
+  "code": 387,
+  "language": "C++"},
+"./lib/Base/Image.cpp" :{
+  "blank": 72,
+  "comment": 33,
+  "code": 370,
+  "language": "C++"},
+"./tools/loader/Loader.cpp" :{
+  "blank": 53,
+  "comment": 56,
+  "code": 370,
+  "language": "C++"},
+"./examples/fr2en.cpp" :{
+  "blank": 70,
+  "comment": 43,
+  "code": 348,
+  "language": "C++"},
+"./lib/Backends/Interpreter/Interpreter.cpp" :{
+  "blank": 51,
+  "comment": 19,
+  "code": 347,
+  "language": "C++"},
+"./lib/IR/IRGen.cpp" :{
+  "blank": 47,
+  "comment": 46,
+  "code": 332,
+  "language": "C++"},
+"./lib/Backend/BackendUtils.cpp" :{
+  "blank": 41,
+  "comment": 56,
+  "code": 322,
+  "language": "C++"},
+"./tools/ClassGen/InstrBuilder.cpp" :{
+  "blank": 50,
+  "comment": 68,
+  "code": 301,
+  "language": "C++"},
+"./lib/LLVMIRCodeGen/DebugInfo.cpp" :{
+  "blank": 38,
+  "comment": 112,
+  "code": 298,
+  "language": "C++"},
+"./lib/Graph/Node.cpp" :{
+  "blank": 55,
+  "comment": 38,
+  "code": 292,
+  "language": "C++"},
+"./tests/unittests/TaggedListTest.cpp" :{
+  "blank": 56,
+  "comment": 29,
+  "code": 288,
+  "language": "C++"},
+"./include/glow/Graph/Node.h" :{
+  "blank": 76,
+  "comment": 120,
+  "code": 276,
+  "language": "C/C++ Header"},
+"./lib/Backends/CPU/CPUBackend.cpp" :{
+  "blank": 44,
+  "comment": 31,
+  "code": 275,
+  "language": "C++"},
+"./lib/Backends/OpenCL/OpenCLDeviceManager.cpp" :{
+  "blank": 43,
+  "comment": 49,
+  "code": 271,
+  "language": "C++"},
+"./examples/bundles/resnet50/main.cpp" :{
+  "blank": 45,
+  "comment": 75,
+  "code": 270,
+  "language": "C++"},
+"./lib/Backends/Habana/HabanaDeviceManager.cpp" :{
+  "blank": 63,
+  "comment": 61,
+  "code": 269,
+  "language": "C++"},
+"./lib/LLVMIRCodeGen/FunctionSpecializer.cpp" :{
+  "blank": 42,
+  "comment": 150,
+  "code": 255,
+  "language": "C++"},
+"./examples/bundles/lenet_mnist/main.cpp" :{
+  "blank": 45,
+  "comment": 74,
+  "code": 255,
+  "language": "C++"},
+"./tests/unittests/HyphenTest.cpp" :{
+  "blank": 42,
+  "comment": 87,
+  "code": 253,
+  "language": "C++"},
+"./lib/Backends/OpenCL/kernels_fwd_quantized_conv.cl" :{
+  "blank": 10,
+  "comment": 87,
+  "code": 248,
+  "language": "OpenCL"},
+"./tests/stress/ParameterSweepTest.cpp" :{
+  "blank": 61,
+  "comment": 80,
+  "code": 247,
+  "language": "C++"},
+"./lib/Graph/Grad.cpp" :{
+  "blank": 54,
+  "comment": 63,
+  "code": 244,
+  "language": "C++"},
+"./lib/Quantization/Base/Base.cpp" :{
+  "blank": 37,
+  "comment": 146,
+  "code": 243,
+  "language": "C++"},
+"./utils/download_datasets_and_models.py" :{
+  "blank": 36,
+  "comment": 18,
+  "code": 243,
+  "language": "Python"},
+"./include/glow/Base/TaggedList.h" :{
+  "blank": 63,
+  "comment": 96,
+  "code": 240,
+  "language": "C/C++ Header"},
+"./lib/Backends/OpenCL/kernels_fwd_conv.cl" :{
+  "blank": 8,
+  "comment": 89,
+  "code": 239,
+  "language": "OpenCL"},
+"./tests/unittests/BasicIRTest.cpp" :{
+  "blank": 55,
+  "comment": 43,
+  "code": 238,
+  "language": "C++"},
+"./tests/unittests/GraphGradTest.cpp" :{
+  "blank": 79,
+  "comment": 30,
+  "code": 232,
+  "language": "C++"},
+"./lib/Runtime/Executor/ThreadPoolExecutor.cpp" :{
+  "blank": 69,
+  "comment": 96,
+  "code": 231,
+  "language": "C++"},
+"./docs/IR.md" :{
+  "blank": 53,
+  "comment": 0,
+  "code": 225,
+  "language": "Markdown"},
+"./lib/Runtime/HostManager/HostManager.cpp" :{
+  "blank": 36,
+  "comment": 29,
+  "code": 221,
+  "language": "C++"},
+"./tools/loader/TextTranslator.cpp" :{
+  "blank": 64,
+  "comment": 85,
+  "code": 221,
+  "language": "C++"},
+"./lib/Backends/CPU/libjit/libjit_matmul.cpp" :{
+  "blank": 29,
+  "comment": 91,
+  "code": 218,
+  "language": "C++"},
+"./README.md" :{
+  "blank": 70,
+  "comment": 0,
+  "code": 216,
+  "language": "Markdown"},
+"./tools/ClassGen/InstrBuilder.h" :{
+  "blank": 47,
+  "comment": 81,
+  "code": 211,
+  "language": "C/C++ Header"},
+"./docs/Quantization.md" :{
+  "blank": 52,
+  "comment": 0,
+  "code": 210,
+  "language": "Markdown"},
+"./examples/ptb.cpp" :{
+  "blank": 52,
+  "comment": 54,
+  "code": 209,
+  "language": "C++"},
+"./lib/ExecutionEngine/ExecutionEngine.cpp" :{
+  "blank": 41,
+  "comment": 29,
+  "code": 205,
+  "language": "C++"},
+"./lib/LLVMIRCodeGen/BundleSaver.cpp" :{
+  "blank": 22,
+  "comment": 78,
+  "code": 204,
+  "language": "C++"},
+"./tests/unittests/TensorPoolTest.cpp" :{
+  "blank": 57,
+  "comment": 31,
+  "code": 203,
+  "language": "C++"},
+"./tests/unittests/MemoryAllocatorTest.cpp" :{
+  "blank": 47,
+  "comment": 74,
+  "code": 201,
+  "language": "C++"},
+"./utils/imagenet_topk_accuracy_driver.py" :{
+  "blank": 60,
+  "comment": 73,
+  "code": 200,
+  "language": "Python"},
+"./examples/mnist.cpp" :{
+  "blank": 60,
+  "comment": 32,
+  "code": 195,
+  "language": "C++"},
+"./include/glow/IR/IR.h" :{
+  "blank": 99,
+  "comment": 119,
+  "code": 193,
+  "language": "C/C++ Header"},
+"./lib/Partitioner/PartitionerUtils.cpp" :{
+  "blank": 25,
+  "comment": 60,
+  "code": 190,
+  "language": "C++"},
+"./lib/Onnxifi/Base.cpp" :{
+  "blank": 40,
+  "comment": 38,
+  "code": 190,
+  "language": "C++"},
+"./tools/ClassGen/NodeBuilder.h" :{
+  "blank": 55,
+  "comment": 109,
+  "code": 187,
+  "language": "C/C++ Header"},
+"./lib/Backends/Interpreter/InterpreterFunction.cpp" :{
+  "blank": 32,
+  "comment": 27,
+  "code": 183,
+  "language": "C++"},
+"./examples/char-rnn.cpp" :{
+  "blank": 51,
+  "comment": 61,
+  "code": 183,
+  "language": "C++"},
+"./tests/unittests/BackendTestUtils.h" :{
+  "blank": 54,
+  "comment": 66,
+  "code": 179,
+  "language": "C/C++ Header"},
+"./lib/Importer/caffe2.proto" :{
+  "blank": 49,
+  "comment": 204,
+  "code": 174,
+  "language": "Protocol Buffers"},
+"./utils/caffe2_train_and_dump_pb.py" :{
+  "blank": 57,
+  "comment": 69,
+  "code": 167,
+  "language": "Python"},
+"./include/glow/Graph/Nodes.h" :{
+  "blank": 54,
+  "comment": 59,
+  "code": 166,
+  "language": "C/C++ Header"},
+"./include/glow/Support/Error.h" :{
+  "blank": 32,
+  "comment": 88,
+  "code": 163,
+  "language": "C/C++ Header"},
+"./tests/unittests/HostManagerTest.cpp" :{
+  "blank": 32,
+  "comment": 25,
+  "code": 162,
+  "language": "C++"},
+"./examples/training/resnet50/main.cpp" :{
+  "blank": 34,
+  "comment": 40,
+  "code": 162,
+  "language": "C++"},
+"./examples/cifar10.cpp" :{
+  "blank": 43,
+  "comment": 39,
+  "code": 160,
+  "language": "C++"},
+"./lib/Backends/Interpreter/InterpreterFunction.h" :{
+  "blank": 62,
+  "comment": 44,
+  "code": 159,
+  "language": "C/C++ Header"},
+"./docs/Backends.md" :{
+  "blank": 47,
+  "comment": 0,
+  "code": 159,
+  "language": "Markdown"},
+"./include/glow/Quantization/Base/Base.h" :{
+  "blank": 43,
+  "comment": 96,
+  "code": 158,
+  "language": "C/C++ Header"},
+"./CMakeLists.txt" :{
+  "blank": 37,
+  "comment": 10,
+  "code": 156,
+  "language": "CMake"},
+"./examples/resnet-runtime.cpp" :{
+  "blank": 38,
+  "comment": 29,
+  "code": 155,
+  "language": "C++"},
+"./include/glow/LLVMIRCodeGen/LLVMIRGen.h" :{
+  "blank": 18,
+  "comment": 173,
+  "code": 154,
+  "language": "C/C++ Header"},
+"./docs/AOT.md" :{
+  "blank": 33,
+  "comment": 0,
+  "code": 152,
+  "language": "Markdown"},
+"./lib/LLVMIRCodeGen/AllocationsInfo.cpp" :{
+  "blank": 25,
+  "comment": 43,
+  "code": 147,
+  "language": "C++"},
+"./lib/Graph/PlaceholderBindings.cpp" :{
+  "blank": 31,
+  "comment": 30,
+  "code": 147,
+  "language": "C++"},
+"./utils/caffe2_pb_runner.py" :{
+  "blank": 27,
+  "comment": 18,
+  "code": 147,
+  "language": "Python"},
+"./docs/Optimizations.md" :{
+  "blank": 66,
+  "comment": 0,
+  "code": 145,
+  "language": "Markdown"},
+"./lib/LLVMIRCodeGen/LLVMCompiledFunction.cpp" :{
+  "blank": 22,
+  "comment": 21,
+  "code": 135,
+  "language": "C++"},
+"./include/glow/Partitioner/Partitioner.h" :{
+  "blank": 58,
+  "comment": 113,
+  "code": 135,
+  "language": "C/C++ Header"},
+"./lib/ExecutionContext/TraceEvents.cpp" :{
+  "blank": 28,
+  "comment": 26,
+  "code": 134,
+  "language": "C++"},
+"./include/glow/ExecutionContext/TraceEvents.h" :{
+  "blank": 63,
+  "comment": 86,
+  "code": 133,
+  "language": "C/C++ Header"},
+"./docs/Tracing.md" :{
+  "blank": 65,
+  "comment": 0,
+  "code": 133,
+  "language": "Markdown"},
+"./tests/images/run.sh" :{
+  "blank": 13,
+  "comment": 21,
+  "code": 133,
+  "language": "Bourne Shell"},
+"./lib/IR/IRBuilder.cpp" :{
+  "blank": 27,
+  "comment": 35,
+  "code": 132,
+  "language": "C++"},
+"./lib/CodeGen/MemoryAllocator.cpp" :{
+  "blank": 21,
+  "comment": 35,
+  "code": 132,
+  "language": "C++"},
+"./lib/Support/Support.cpp" :{
+  "blank": 25,
+  "comment": 26,
+  "code": 131,
+  "language": "C++"},
+"./examples/tracing-compare.cpp" :{
+  "blank": 34,
+  "comment": 19,
+  "code": 131,
+  "language": "C++"},
+"./lib/Graph/Log.cpp" :{
+  "blank": 18,
+  "comment": 20,
+  "code": 131,
+  "language": "C++"},
+"./lib/Onnxifi/GlowOnnxifiManager.cpp" :{
+  "blank": 37,
+  "comment": 17,
+  "code": 129,
+  "language": "C++"},
+"./lib/Backends/Habana/Habana.h" :{
+  "blank": 51,
+  "comment": 77,
+  "code": 129,
+  "language": "C/C++ Header"},
+"./lib/Runtime/Provisioner/Provisioner.cpp" :{
+  "blank": 12,
+  "comment": 44,
+  "code": 129,
+  "language": "C++"},
+"./lib/Converter/FunctionConverter.cpp" :{
+  "blank": 22,
+  "comment": 73,
+  "code": 127,
+  "language": "C++"},
+"./lib/IR/ChildMemSizeBasedScheduler.cpp" :{
+  "blank": 17,
+  "comment": 54,
+  "code": 126,
+  "language": "C++"},
+"./lib/Backends/OpenCL/OpenCL.h" :{
+  "blank": 41,
+  "comment": 91,
+  "code": 126,
+  "language": "C/C++ Header"},
+"./lib/Importer/ProtobufLoader.cpp" :{
+  "blank": 21,
+  "comment": 23,
+  "code": 124,
+  "language": "C++"},
+"./docs/JIT.md" :{
+  "blank": 21,
+  "comment": 0,
+  "code": 124,
+  "language": "Markdown"},
+"./lib/LLVMIRCodeGen/GlowJIT.cpp" :{
+  "blank": 12,
+  "comment": 42,
+  "code": 123,
+  "language": "C++"},
+"./include/glow/Graph/VerifierHelper.h" :{
+  "blank": 23,
+  "comment": 86,
+  "code": 120,
+  "language": "C/C++ Header"},
+"./docs/GraphOptimizationPipeline.md" :{
+  "blank": 31,
+  "comment": 0,
+  "code": 120,
+  "language": "Markdown"},
+"./docs/Testing.md" :{
+  "blank": 33,
+  "comment": 0,
+  "code": 116,
+  "language": "Markdown"},
+"./lib/Backends/CPU/CPULLVMIRGen.cpp" :{
+  "blank": 19,
+  "comment": 38,
+  "code": 111,
+  "language": "C++"},
+"./tests/benchmark/ConvBench.cpp" :{
+  "blank": 21,
+  "comment": 23,
+  "code": 109,
+  "language": "C++"},
+"./include/glow/Graph/NodeValue.h" :{
+  "blank": 40,
+  "comment": 82,
+  "code": 108,
+  "language": "C/C++ Header"},
+"./lib/LLVMIRCodeGen/LLVMBackend.cpp" :{
+  "blank": 19,
+  "comment": 36,
+  "code": 107,
+  "language": "C++"},
+"./lib/Onnxifi/HostManagerOnnxifi.cpp" :{
+  "blank": 30,
+  "comment": 22,
+  "code": 106,
+  "language": "C++"},
+"./lib/Backends/CPU/CPUDeviceManager.cpp" :{
+  "blank": 20,
+  "comment": 23,
+  "code": 101,
+  "language": "C++"},
+"./tests/stress/SparseLengthsSumTest.cpp" :{
+  "blank": 14,
+  "comment": 19,
+  "code": 101,
+  "language": "C++"},
+"./lib/Backends/Interpreter/InterpreterDeviceManager.cpp" :{
+  "blank": 20,
+  "comment": 22,
+  "code": 101,
+  "language": "C++"},
+"./.circleci/config.yml" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 99,
+  "language": "YAML"},
+"./lib/LLVMIRCodeGen/Pipeline.cpp" :{
+  "blank": 17,
+  "comment": 42,
+  "code": 99,
+  "language": "C++"},
+"./tools/ClassGen/MemberType.h" :{
+  "blank": 11,
+  "comment": 19,
+  "code": 98,
+  "language": "C/C++ Header"},
+"./examples/CMakeLists.txt" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 97,
+  "language": "CMake"},
+"./tests/unittests/ImageTest.cpp" :{
+  "blank": 24,
+  "comment": 21,
+  "code": 96,
+  "language": "C++"},
+"./include/glow/Support/ThreadPool.h" :{
+  "blank": 29,
+  "comment": 52,
+  "code": 96,
+  "language": "C/C++ Header"},
+"./lib/Optimizer/TrainingPreparation.cpp" :{
+  "blank": 14,
+  "comment": 24,
+  "code": 95,
+  "language": "C++"},
+"./docs/Building.md" :{
+  "blank": 34,
+  "comment": 0,
+  "code": 93,
+  "language": "Markdown"},
+"./tests/unittests/OCLTest.cpp" :{
+  "blank": 20,
+  "comment": 21,
+  "code": 93,
+  "language": "C++"},
+"./tests/unittests/ThreadPoolTest.cpp" :{
+  "blank": 34,
+  "comment": 29,
+  "code": 93,
+  "language": "C++"},
+"./docs/Lexicon.md" :{
+  "blank": 35,
+  "comment": 0,
+  "code": 92,
+  "language": "Markdown"},
+"./include/glow/Importer/ONNXModelLoader.h" :{
+  "blank": 46,
+  "comment": 82,
+  "code": 91,
+  "language": "C/C++ Header"},
+"./utils/scripts/dce_caffe2_model.py" :{
+  "blank": 27,
+  "comment": 28,
+  "code": 90,
+  "language": "Python"},
+"./.circleci/build.sh" :{
+  "blank": 13,
+  "comment": 8,
+  "code": 89,
+  "language": "Bourne Shell"},
+"./include/glow/Support/Support.h" :{
+  "blank": 27,
+  "comment": 38,
+  "code": 89,
+  "language": "C/C++ Header"},
+"./lib/Graph/NodeValue.cpp" :{
+  "blank": 20,
+  "comment": 19,
+  "code": 89,
+  "language": "C++"},
+"./include/glow/Importer/ProtobufLoader.h" :{
+  "blank": 32,
+  "comment": 65,
+  "code": 88,
+  "language": "C/C++ Header"},
+"./lib/Backends/CPU/Transforms.cpp" :{
+  "blank": 21,
+  "comment": 40,
+  "code": 87,
+  "language": "C++"},
+"./lib/Backend/Backend.cpp" :{
+  "blank": 21,
+  "comment": 41,
+  "code": 86,
+  "language": "C++"},
+"./lib/Onnxifi/Base.h" :{
+  "blank": 39,
+  "comment": 48,
+  "code": 86,
+  "language": "C/C++ Header"},
+"./lib/Backends/CPU/CMakeLists.txt" :{
+  "blank": 14,
+  "comment": 0,
+  "code": 82,
+  "language": "CMake"},
+"./include/glow/Graph/Utils.h" :{
+  "blank": 22,
+  "comment": 33,
+  "code": 82,
+  "language": "C/C++ Header"},
+"./include/glow/Runtime/Executor/ThreadPoolExecutor.h" :{
+  "blank": 32,
+  "comment": 90,
+  "code": 82,
+  "language": "C/C++ Header"},
+"./tests/unittests/GlowOnnxifiManagerTest.cpp" :{
+  "blank": 25,
+  "comment": 27,
+  "code": 80,
+  "language": "C++"},
+"./docs/ExternalBackend.md" :{
+  "blank": 48,
+  "comment": 0,
+  "code": 80,
+  "language": "Markdown"},
+"./include/glow/IR/IRUtils.h" :{
+  "blank": 20,
+  "comment": 41,
+  "code": 80,
+  "language": "C/C++ Header"},
+"./tests/unittests/GraphSchedulerTest.cpp" :{
+  "blank": 18,
+  "comment": 67,
+  "code": 78,
+  "language": "C++"},
+"./lib/Backends/CPU/libjit/libjit_defs.h" :{
+  "blank": 21,
+  "comment": 37,
+  "code": 78,
+  "language": "C/C++ Header"},
+"./examples/resnet-verify.cpp" :{
+  "blank": 14,
+  "comment": 19,
+  "code": 77,
+  "language": "C++"},
+"./tests/CMakeLists.txt" :{
+  "blank": 21,
+  "comment": 15,
+  "code": 77,
+  "language": "CMake"},
+"./include/glow/Backend/Backend.h" :{
+  "blank": 24,
+  "comment": 52,
+  "code": 76,
+  "language": "C/C++ Header"},
+"./include/glow/ExecutionContext/ExecutionContext.h" :{
+  "blank": 25,
+  "comment": 38,
+  "code": 76,
+  "language": "C/C++ Header"},
+"./tests/unittests/ProvisionerTest.cpp" :{
+  "blank": 11,
+  "comment": 17,
+  "code": 76,
+  "language": "C++"},
+"./include/glow/Runtime/RuntimeTypes.h" :{
+  "blank": 24,
+  "comment": 69,
+  "code": 75,
+  "language": "C/C++ Header"},
+"./lib/Graph/VerifierHelper.cpp" :{
+  "blank": 17,
+  "comment": 21,
+  "code": 74,
+  "language": "C++"},
+"./cmake/modules/GlowExternalBackends.cmake" :{
+  "blank": 11,
+  "comment": 34,
+  "code": 73,
+  "language": "CMake"},
+"./tests/unittests/OperatorGradTest.cpp" :{
+  "blank": 23,
+  "comment": 37,
+  "code": 73,
+  "language": "C++"},
+"./.circleci/test.sh" :{
+  "blank": 9,
+  "comment": 9,
+  "code": 71,
+  "language": "Bourne Shell"},
+"./include/glow/Backend/BackendUtils.h" :{
+  "blank": 21,
+  "comment": 78,
+  "code": 71,
+  "language": "C/C++ Header"},
+"./tools/ClassGen/Backends/Habana/HabanaSpecificNodesVerification.h" :{
+  "blank": 9,
+  "comment": 18,
+  "code": 69,
+  "language": "C/C++ Header"},
+"./tests/unittests/Float16Test.cpp" :{
+  "blank": 15,
+  "comment": 17,
+  "code": 68,
+  "language": "C++"},
+"./tests/benchmark/GemmBench.cpp" :{
+  "blank": 14,
+  "comment": 19,
+  "code": 68,
+  "language": "C++"},
+"./docs/CodingStandards.md" :{
+  "blank": 24,
+  "comment": 0,
+  "code": 67,
+  "language": "Markdown"},
+"./lib/Support/TensorPool/TensorPool.cpp" :{
+  "blank": 16,
+  "comment": 17,
+  "code": 67,
+  "language": "C++"},
+"./lib/Backends/Habana/HabanaDeviceManager.h" :{
+  "blank": 24,
+  "comment": 56,
+  "code": 66,
+  "language": "C/C++ Header"},
+"./lib/Quantization/Base/Profile.cpp" :{
+  "blank": 20,
+  "comment": 23,
+  "code": 66,
+  "language": "C++"},
+"./examples/bundles/resnet50/CMakeLists.txt" :{
+  "blank": 9,
+  "comment": 14,
+  "code": 66,
+  "language": "CMake"},
+"./examples/bundles/lenet_mnist/CMakeLists.txt" :{
+  "blank": 9,
+  "comment": 14,
+  "code": 66,
+  "language": "CMake"},
+"./include/glow/CodeGen/MemoryAllocator.h" :{
+  "blank": 25,
+  "comment": 68,
+  "code": 64,
+  "language": "C/C++ Header"},
+"./lib/IR/Instrs.cpp" :{
+  "blank": 16,
+  "comment": 23,
+  "code": 64,
+  "language": "C++"},
+"./docs/NewBackendSpecificNode.md" :{
+  "blank": 34,
+  "comment": 0,
+  "code": 64,
+  "language": "Markdown"},
+"./include/glow/Backends/DummyDeviceManager.h" :{
+  "blank": 17,
+  "comment": 34,
+  "code": 64,
+  "language": "C/C++ Header"},
+"./lib/Onnxifi/InlineOnnxifi.cpp" :{
+  "blank": 19,
+  "comment": 18,
+  "code": 63,
+  "language": "C++"},
+"./cmake/modules/GlowDefaults.cmake" :{
+  "blank": 6,
+  "comment": 21,
+  "code": 63,
+  "language": "CMake"},
+"./include/glow/Base/Image.h" :{
+  "blank": 22,
+  "comment": 59,
+  "code": 62,
+  "language": "C/C++ Header"},
+"./lib/Support/ThreadPool.cpp" :{
+  "blank": 18,
+  "comment": 28,
+  "code": 62,
+  "language": "C++"},
+"./include/glow/Base/Traits.h" :{
+  "blank": 26,
+  "comment": 25,
+  "code": 61,
+  "language": "C/C++ Header"},
+"./include/glow/ExecutionEngine/ExecutionEngine.h" :{
+  "blank": 34,
+  "comment": 85,
+  "code": 60,
+  "language": "C/C++ Header"},
+"./tests/Testing/StrCheck.cpp" :{
+  "blank": 13,
+  "comment": 18,
+  "code": 59,
+  "language": "C++"},
+"./include/glow/Backends/QueueBackedDeviceManager.h" :{
+  "blank": 16,
+  "comment": 33,
+  "code": 59,
+  "language": "C/C++ Header"},
+"./docs/Onnxifi.md" :{
+  "blank": 17,
+  "comment": 0,
+  "code": 58,
+  "language": "Markdown"},
+"./tests/unittests/GemmTest.cpp" :{
+  "blank": 16,
+  "comment": 16,
+  "code": 58,
+  "language": "C++"},
+"./lib/Base/TaggedList.cpp" :{
+  "blank": 15,
+  "comment": 47,
+  "code": 57,
+  "language": "C++"},
+"./utils/format.sh" :{
+  "blank": 13,
+  "comment": 13,
+  "code": 56,
+  "language": "Bourne Shell"},
+"./include/glow/Optimizer/CompilationContext.h" :{
+  "blank": 22,
+  "comment": 34,
+  "code": 56,
+  "language": "C/C++ Header"},
+"./include/glow/IR/IRBuilder.h" :{
+  "blank": 28,
+  "comment": 29,
+  "code": 56,
+  "language": "C/C++ Header"},
+"./utils/scripts/visualize_allocations.py" :{
+  "blank": 18,
+  "comment": 42,
+  "code": 55,
+  "language": "Python"},
+"./lib/Backends/OpenCL/OpenCLDeviceManager.h" :{
+  "blank": 33,
+  "comment": 56,
+  "code": 55,
+  "language": "C/C++ Header"},
+"./include/glow/LLVMIRCodeGen/GlowJIT.h" :{
+  "blank": 11,
+  "comment": 17,
+  "code": 54,
+  "language": "C/C++ Header"},
+"./lib/IR/GraphScheduler.cpp" :{
+  "blank": 6,
+  "comment": 15,
+  "code": 53,
+  "language": "C++"},
+"./include/glow/Importer/Caffe2ModelLoader.h" :{
+  "blank": 25,
+  "comment": 55,
+  "code": 52,
+  "language": "C/C++ Header"},
+"./docs/ModelLoader.md" :{
+  "blank": 20,
+  "comment": 0,
+  "code": 52,
+  "language": "Markdown"},
+"./tests/utils/genNetwork.py" :{
+  "blank": 14,
+  "comment": 18,
+  "code": 52,
+  "language": "Python"},
+"./include/glow/Runtime/HostManager/HostManager.h" :{
+  "blank": 25,
+  "comment": 69,
+  "code": 51,
+  "language": "C/C++ Header"},
+"./utils/caffe2_model_runner.py" :{
+  "blank": 15,
+  "comment": 13,
+  "code": 50,
+  "language": "Python"},
+"./tools/ClassGen/Backends/Habana/HabanaSpecificNodes.h" :{
+  "blank": 6,
+  "comment": 15,
+  "code": 49,
+  "language": "C/C++ Header"},
+"./lib/Backends/DeviceManagers.cpp" :{
+  "blank": 8,
+  "comment": 24,
+  "code": 49,
+  "language": "C++"},
+"./lib/IR/IRUtils.cpp" :{
+  "blank": 14,
+  "comment": 24,
+  "code": 48,
+  "language": "C++"},
+"./lib/Backends/OpenCL/CMakeLists.txt" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 48,
+  "language": "CMake"},
+"./include/glow/Support/Float16.h" :{
+  "blank": 11,
+  "comment": 20,
+  "code": 48,
+  "language": "C/C++ Header"},
+"./include/glow/LLVMIRCodeGen/LLVMBackend.h" :{
+  "blank": 17,
+  "comment": 42,
+  "code": 47,
+  "language": "C/C++ Header"},
+"./cmake/modules/Glog.cmake" :{
+  "blank": 9,
+  "comment": 26,
+  "code": 46,
+  "language": "CMake"},
+"./lib/Converter/TypeAToTypeBFunctionConverter.cpp" :{
+  "blank": 9,
+  "comment": 15,
+  "code": 46,
+  "language": "C++"},
+"./lib/IR/GraphScheduler.h" :{
+  "blank": 26,
+  "comment": 40,
+  "code": 46,
+  "language": "C/C++ Header"},
+"./include/glow/Backends/DeviceManager.h" :{
+  "blank": 21,
+  "comment": 43,
+  "code": 46,
+  "language": "C/C++ Header"},
+"./lib/Onnxifi/GlowOnnxifiManager.h" :{
+  "blank": 26,
+  "comment": 63,
+  "code": 45,
+  "language": "C/C++ Header"},
+"./utils/scripts/gen_onnx_model.py" :{
+  "blank": 12,
+  "comment": 23,
+  "code": 45,
+  "language": "Python"},
+"./tools/loader/CMakeLists.txt" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 45,
+  "language": "CMake"},
+"./lib/Base/Type.cpp" :{
+  "blank": 10,
+  "comment": 15,
+  "code": 44,
+  "language": "C++"},
+"./CONTRIBUTING.md" :{
+  "blank": 12,
+  "comment": 0,
+  "code": 44,
+  "language": "Markdown"},
+"./lib/IR/CMakeLists.txt" :{
+  "blank": 5,
+  "comment": 1,
+  "code": 44,
+  "language": "CMake"},
+"./lib/LLVMIRCodeGen/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 44,
+  "language": "CMake"},
+"./docs/Runtime.md" :{
+  "blank": 25,
+  "comment": 0,
+  "code": 43,
+  "language": "Markdown"},
+"./tools/loader/ModelRunner.cpp" :{
+  "blank": 14,
+  "comment": 24,
+  "code": 43,
+  "language": "C++"},
+"./lib/Quantization/Serialization.cpp" :{
+  "blank": 17,
+  "comment": 19,
+  "code": 43,
+  "language": "C++"},
+"./include/glow/Graph/PlaceholderBindings.h" :{
+  "blank": 29,
+  "comment": 56,
+  "code": 43,
+  "language": "C/C++ Header"},
+"./tools/png2bin/png2bin.cpp" :{
+  "blank": 8,
+  "comment": 15,
+  "code": 41,
+  "language": "C++"},
+"./tools/loader/Loader.h" :{
+  "blank": 16,
+  "comment": 61,
+  "code": 41,
+  "language": "C/C++ Header"},
+"./include/glow/Support/TensorPool.h" :{
+  "blank": 16,
+  "comment": 38,
+  "code": 41,
+  "language": "C/C++ Header"},
+"./docs/Tensors.md" :{
+  "blank": 12,
+  "comment": 0,
+  "code": 41,
+  "language": "Markdown"},
+"./include/glow/Graph/Log.h" :{
+  "blank": 28,
+  "comment": 39,
+  "code": 40,
+  "language": "C/C++ Header"},
+"./lib/Onnxifi/CMakeLists.txt" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 40,
+  "language": "CMake"},
+"./include/glow/Support/Register.h" :{
+  "blank": 13,
+  "comment": 36,
+  "code": 40,
+  "language": "C/C++ Header"},
+"./utils/scripts/gen_caffe2_model.py" :{
+  "blank": 11,
+  "comment": 21,
+  "code": 40,
+  "language": "Python"},
+"./lib/Importer/CMakeLists.txt" :{
+  "blank": 6,
+  "comment": 20,
+  "code": 39,
+  "language": "CMake"},
+"./tests/unittests/UtilsTest.cpp" :{
+  "blank": 9,
+  "comment": 19,
+  "code": 39,
+  "language": "C++"},
+"./lib/Graph/Hook.cpp" :{
+  "blank": 8,
+  "comment": 18,
+  "code": 38,
+  "language": "C++"},
+"./utils/export_onnx_model.py" :{
+  "blank": 9,
+  "comment": 17,
+  "code": 37,
+  "language": "Python"},
+"./lib/Onnxifi/HostManagerOnnxifi.h" :{
+  "blank": 18,
+  "comment": 29,
+  "code": 37,
+  "language": "C/C++ Header"},
+"./lib/Graph/CMakeLists.txt" :{
+  "blank": 4,
+  "comment": 1,
+  "code": 36,
+  "language": "CMake"},
+"./tests/unittests/SupportTest.cpp" :{
+  "blank": 9,
+  "comment": 35,
+  "code": 36,
+  "language": "C++"},
+"./include/glow/IR/Instrs.h" :{
+  "blank": 16,
+  "comment": 20,
+  "code": 36,
+  "language": "C/C++ Header"},
+"./lib/Backends/OpenCL/Transforms.cpp" :{
+  "blank": 9,
+  "comment": 21,
+  "code": 36,
+  "language": "C++"},
+"./include/glow/Converter/FunctionConverter.h" :{
+  "blank": 19,
+  "comment": 123,
+  "code": 35,
+  "language": "C/C++ Header"},
+"./include/glow/Partitioner/PartitionerUtils.h" :{
+  "blank": 15,
+  "comment": 33,
+  "code": 35,
+  "language": "C/C++ Header"},
+"./tools/ClassGen/Backends/OpenCL/OpenCLSpecificNodes.h" :{
+  "blank": 6,
+  "comment": 15,
+  "code": 35,
+  "language": "C/C++ Header"},
+"./include/glow/Backends/LayoutConverter.h" :{
+  "blank": 12,
+  "comment": 21,
+  "code": 34,
+  "language": "C/C++ Header"},
+"./cmake/modules/SanitizerSupport.cmake" :{
+  "blank": 5,
+  "comment": 16,
+  "code": 34,
+  "language": "CMake"},
+"./include/glow/Optimizer/Optimizer.h" :{
+  "blank": 13,
+  "comment": 42,
+  "code": 33,
+  "language": "C/C++ Header"},
+"./lib/Optimizer/Quantization.cpp" :{
+  "blank": 8,
+  "comment": 20,
+  "code": 33,
+  "language": "C++"},
+"./cmake/modules/CoverageSupport.cmake" :{
+  "blank": 14,
+  "comment": 21,
+  "code": 33,
+  "language": "CMake"},
+"./docs/ClassGen.md" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 32,
+  "language": "Markdown"},
+"./include/glow/IR/IRGen.h" :{
+  "blank": 16,
+  "comment": 34,
+  "code": 32,
+  "language": "C/C++ Header"},
+"./lib/Importer/ONNXIFIModelLoader.cpp" :{
+  "blank": 7,
+  "comment": 18,
+  "code": 32,
+  "language": "C++"},
+"./tools/IncludeBin/IncludeBin.cpp" :{
+  "blank": 2,
+  "comment": 25,
+  "code": 32,
+  "language": "C++"},
+"./tools/ClassGen/Backends/OpenCL/OpenCLSpecificInstrs.h" :{
+  "blank": 6,
+  "comment": 15,
+  "code": 32,
+  "language": "C/C++ Header"},
+"./lib/Backends/CPU/CPUBackend.h" :{
+  "blank": 15,
+  "comment": 23,
+  "code": 31,
+  "language": "C/C++ Header"},
+"./examples/lenet-loader.cpp" :{
+  "blank": 8,
+  "comment": 23,
+  "code": 31,
+  "language": "C++"},
+"./include/glow/Testing/StrCheck.h" :{
+  "blank": 15,
+  "comment": 31,
+  "code": 31,
+  "language": "C/C++ Header"},
+"./tools/ClassGen/MemberType.cpp" :{
+  "blank": 1,
+  "comment": 23,
+  "code": 31,
+  "language": "C++"},
+"./utils/license.sh" :{
+  "blank": 6,
+  "comment": 14,
+  "code": 31,
+  "language": "Bourne Shell"},
+"./include/glow/LLVMIRCodeGen/AllocationsInfo.h" :{
+  "blank": 8,
+  "comment": 39,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./include/glow/Graph/UseDef.h" :{
+  "blank": 13,
+  "comment": 26,
+  "code": 30,
+  "language": "C/C++ Header"},
+"./lib/Backends/CPU/CPUDeviceManager.h" :{
+  "blank": 13,
+  "comment": 30,
+  "code": 29,
+  "language": "C/C++ Header"},
+"./PULL_REQUEST.md" :{
+  "blank": 14,
+  "comment": 0,
+  "code": 29,
+  "language": "Markdown"},
+"./lib/Support/Error.cpp" :{
+  "blank": 8,
+  "comment": 18,
+  "code": 29,
+  "language": "C++"},
+"./lib/Backends/Interpreter/InterpreterDeviceManager.h" :{
+  "blank": 13,
+  "comment": 30,
+  "code": 29,
+  "language": "C/C++ Header"},
+"./lib/Backends/CMakeLists.txt" :{
+  "blank": 4,
+  "comment": 7,
+  "code": 28,
+  "language": "CMake"},
+"./tests/benchmark/CMakeLists.txt" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 28,
+  "language": "CMake"},
+"./lib/Base/IO.cpp" :{
+  "blank": 8,
+  "comment": 15,
+  "code": 28,
+  "language": "C++"},
+"./tests/benchmark/Bench.h" :{
+  "blank": 6,
+  "comment": 17,
+  "code": 28,
+  "language": "C/C++ Header"},
+"./cmake/modules/GlowTestSupport.cmake" :{
+  "blank": 9,
+  "comment": 20,
+  "code": 27,
+  "language": "CMake"},
+"./include/glow/Backend/CompiledFunction.h" :{
+  "blank": 14,
+  "comment": 31,
+  "code": 27,
+  "language": "C/C++ Header"},
+"./include/glow/Converter/TypeAToTypeBFunctionConverter.h" :{
+  "blank": 11,
+  "comment": 37,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./tests/unittests/ImporterTestUtils.h" :{
+  "blank": 5,
+  "comment": 30,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./utils/docker/Dockerfile" :{
+  "blank": 5,
+  "comment": 5,
+  "code": 26,
+  "language": "Dockerfile"},
+"./tools/ClassGen/CMakeLists.txt" :{
+  "blank": 8,
+  "comment": 1,
+  "code": 26,
+  "language": "CMake"},
+"./lib/Backends/Interpreter/Interpreter.h" :{
+  "blank": 14,
+  "comment": 24,
+  "code": 26,
+  "language": "C/C++ Header"},
+"./lib/LLVMIRCodeGen/BundleSaver.h" :{
+  "blank": 8,
+  "comment": 29,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./lib/Onnxifi/InlineOnnxifi.h" :{
+  "blank": 11,
+  "comment": 23,
+  "code": 25,
+  "language": "C/C++ Header"},
+"./include/glow/Importer/ONNXIFIModelLoader.h" :{
+  "blank": 12,
+  "comment": 27,
+  "code": 24,
+  "language": "C/C++ Header"},
+"./tests/unittests/StrCheck.cpp" :{
+  "blank": 7,
+  "comment": 15,
+  "code": 24,
+  "language": "C++"},
+"./include/glow/Support/Random.h" :{
+  "blank": 11,
+  "comment": 36,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./include/glow/Runtime/Provisioner/Provisioner.h" :{
+  "blank": 10,
+  "comment": 29,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./lib/LLVMIRCodeGen/CommandLine.cpp" :{
+  "blank": 6,
+  "comment": 15,
+  "code": 23,
+  "language": "C++"},
+"./include/glow/Support/Memory.h" :{
+  "blank": 10,
+  "comment": 19,
+  "code": 23,
+  "language": "C/C++ Header"},
+"./include/glow/LLVMIRCodeGen/LLVMCompiledFunction.h" :{
+  "blank": 10,
+  "comment": 27,
+  "code": 22,
+  "language": "C/C++ Header"},
+"./include/glow/Runtime/Executor/Executor.h" :{
+  "blank": 10,
+  "comment": 27,
+  "code": 21,
+  "language": "C/C++ Header"},
+"./lib/Backends/Habana/CMakeLists.txt" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 21,
+  "language": "CMake"},
+"./tests/images/CMakeLists.txt" :{
+  "blank": 6,
+  "comment": 1,
+  "code": 21,
+  "language": "CMake"},
+"./cmake/modules/DoxygenSupport.cmake" :{
+  "blank": 6,
+  "comment": 14,
+  "code": 20,
+  "language": "CMake"},
+"./lib/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 20,
+  "language": "CMake"},
+"./include/glow/Quantization/Quantization.h" :{
+  "blank": 10,
+  "comment": 28,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./tools/ClassGen/Backends/CPU/CPUSpecificInstrs.h" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./include/glow/Support/Compiler.h" :{
+  "blank": 5,
+  "comment": 15,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./tests/stress/CMakeLists.txt" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 20,
+  "language": "CMake"},
+"./include/glow/Support/Debug.h" :{
+  "blank": 11,
+  "comment": 20,
+  "code": 20,
+  "language": "C/C++ Header"},
+"./lib/Backends/CPU/CPULLVMIRGen.h" :{
+  "blank": 7,
+  "comment": 25,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./tools/ClassGen/Backends/CPU/CPUSpecificNodes.h" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 19,
+  "language": "C/C++ Header"},
+"./.github/stale.yml" :{
+  "blank": 14,
+  "comment": 26,
+  "code": 19,
+  "language": "YAML"},
+"./tests/run_outputcheck.sh" :{
+  "blank": 7,
+  "comment": 18,
+  "code": 19,
+  "language": "Bourne Shell"},
+"./lib/Support/Debug.cpp" :{
+  "blank": 11,
+  "comment": 19,
+  "code": 19,
+  "language": "C++"},
+"./docs/NewOperators.md" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 19,
+  "language": "Markdown"},
+"./tests/unittests/LLVMIRGenTest.cpp" :{
+  "blank": 8,
+  "comment": 17,
+  "code": 18,
+  "language": "C++"},
+"./tools/ClassGen/Backends/CPU/CPUSpecificInstrsVerification.h" :{
+  "blank": 3,
+  "comment": 15,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./lib/Base/CMakeLists.txt" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 18,
+  "language": "CMake"},
+"./lib/Backends/CPU/CPUFunction.h" :{
+  "blank": 6,
+  "comment": 21,
+  "code": 18,
+  "language": "C/C++ Header"},
+"./.circleci/run_coverage.sh" :{
+  "blank": 3,
+  "comment": 1,
+  "code": 18,
+  "language": "Bourne Shell"},
+"./utils/build_llvm.sh" :{
+  "blank": 8,
+  "comment": 14,
+  "code": 18,
+  "language": "Bourne Shell"},
+"./include/glow/Graph/Grad.h" :{
+  "blank": 11,
+  "comment": 24,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./lib/Backends/Interpreter/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 17,
+  "language": "CMake"},
+"./include/glow/Graph/Hook.h" :{
+  "blank": 8,
+  "comment": 15,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./lib/Support/Random.cpp" :{
+  "blank": 9,
+  "comment": 17,
+  "code": 17,
+  "language": "C++"},
+"./include/glow/Base/Train.h" :{
+  "blank": 7,
+  "comment": 17,
+  "code": 17,
+  "language": "C/C++ Header"},
+"./lib/Backends/Backends.cpp" :{
+  "blank": 5,
+  "comment": 15,
+  "code": 16,
+  "language": "C++"},
+"./lib/IR/TopologicalSortBasedScheduler.cpp" :{
+  "blank": 5,
+  "comment": 15,
+  "code": 16,
+  "language": "C++"},
+"./include/glow/Optimizer/TrainingPreparation.h" :{
+  "blank": 9,
+  "comment": 22,
+  "code": 15,
+  "language": "C/C++ Header"},
+"./tools/ClassGen/Backends/CPU/CPUSpecificNodesVerification.h" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 14,
+  "language": "C/C++ Header"},
+"./lib/Optimizer/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 14,
+  "language": "CMake"},
+"./tools/ClassGen/Backends/OpenCL/OpenCLSpecificNodesVerification.h" :{
+  "blank": 5,
+  "comment": 15,
+  "code": 13,
+  "language": "C/C++ Header"},
+"./lib/Backend/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 12,
+  "language": "CMake"},
+"./lib/Backends/CPU/CPUFunction.cpp" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 11,
+  "language": "C++"},
+"./tests/runtime_test/cpuConfigs.yaml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 11,
+  "language": "YAML"},
+"./lib/LLVMIRCodeGen/CommandLine.h" :{
+  "blank": 6,
+  "comment": 27,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./include/glow/Quantization/Base/Profile.h" :{
+  "blank": 6,
+  "comment": 25,
+  "code": 11,
+  "language": "C/C++ Header"},
+"./lib/Support/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 11,
+  "language": "CMake"},
+"./lib/Runtime/HostManager/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 11,
+  "language": "CMake"},
+"./lib/Quantization/CMakeLists.txt" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 11,
+  "language": "CMake"},
+"./include/glow/Quantization/Serialization.h" :{
+  "blank": 8,
+  "comment": 17,
+  "code": 10,
+  "language": "C/C++ Header"},
+"./include/glow/Backends/BackendOptions.h" :{
+  "blank": 5,
+  "comment": 18,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./utils/encode_caffe2_protoc.sh" :{
+  "blank": 6,
+  "comment": 14,
+  "code": 9,
+  "language": "Bourne Shell"},
+"./utils/decode_caffe2_protoc.sh" :{
+  "blank": 6,
+  "comment": 14,
+  "code": 9,
+  "language": "Bourne Shell"},
+"./include/glow/Base/IO.h" :{
+  "blank": 7,
+  "comment": 25,
+  "code": 9,
+  "language": "C/C++ Header"},
+"./tests/unittests/TestMain.cpp" :{
+  "blank": 2,
+  "comment": 15,
+  "code": 9,
+  "language": "C++"},
+"./lib/ExecutionEngine/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 9,
+  "language": "CMake"},
+"./tests/models/CMakeLists.txt" :{
+  "blank": 2,
+  "comment": 1,
+  "code": 8,
+  "language": "CMake"},
+"./lib/Quantization/Base/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 8,
+  "language": "CMake"},
+"./examples/training/resnet50/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 8,
+  "language": "CMake"},
+"./utils/s3put.sh" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 7,
+  "language": "Bourne Shell"},
+"./lib/Runtime/Provisioner/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 7,
+  "language": "CMake"},
+"./lib/Converter/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 7,
+  "language": "CMake"},
+"./utils/install_protobuf.sh" :{
+  "blank": 3,
+  "comment": 13,
+  "code": 7,
+  "language": "Bourne Shell"},
+"./lib/Partitioner/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 7,
+  "language": "CMake"},
+"./tools/png2bin/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 7,
+  "language": "CMake"},
+"./tests/text-translator/en2gr_quantization_test.sh" :{
+  "blank": 6,
+  "comment": 15,
+  "code": 6,
+  "language": "Bourne Shell"},
+"./lib/Runtime/Executor/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 6,
+  "language": "CMake"},
+"./tools/ClassGen/Backends/OpenCL/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 6,
+  "language": "CMake"},
+"./lib/ExecutionContext/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 6,
+  "language": "CMake"},
+"./tools/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 6,
+  "language": "CMake"},
+"./lib/Backend/CompiledFunction.cpp" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 6,
+  "language": "C++"},
+"./tools/ClassGen/Backends/CPU/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 6,
+  "language": "CMake"},
+"./lib/Support/TensorPool/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 5,
+  "language": "CMake"},
+"./tests/Testing/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 5,
+  "language": "CMake"},
+"./PULL_REQUEST_TEMPLATE.md" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 5,
+  "language": "Markdown"},
+"./lib/CodeGen/CMakeLists.txt" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 4,
+  "language": "CMake"},
+"./lib/Backends/CPU/CPUFactory.cpp" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 4,
+  "language": "C++"},
+"./examples/bundles/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 4,
+  "language": "CMake"},
+"./lib/Backends/Habana/HabanaFactory.cpp" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 4,
+  "language": "C++"},
+"./tests/examples_tests/resnet-runtime-test.sh" :{
+  "blank": 3,
+  "comment": 16,
+  "code": 4,
+  "language": "Bourne Shell"},
+"./lib/Backends/Interpreter/InterpreterFactory.cpp" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 4,
+  "language": "C++"},
+"./utils/glow-trace-concat.sh" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 4,
+  "language": "Bourne Shell"},
+"./lib/Backends/OpenCL/OpenCLFactory.cpp" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 4,
+  "language": "C++"},
+"./tests/runtime_test/CMakeLists.txt" :{
+  "blank": 2,
+  "comment": 1,
+  "code": 4,
+  "language": "CMake"},
+"./tests/text-translator/en2gr_cpu_config_test.sh" :{
+  "blank": 3,
+  "comment": 14,
+  "code": 3,
+  "language": "Bourne Shell"},
+"./lib/Runtime/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 3,
+  "language": "CMake"},
+"./tests/text-translator/en2gr_cpu_partition_test.sh" :{
+  "blank": 3,
+  "comment": 14,
+  "code": 3,
+  "language": "Bourne Shell"},
+"./tests/text-translator/en2gr_cpu_test.sh" :{
+  "blank": 3,
+  "comment": 14,
+  "code": 3,
+  "language": "Bourne Shell"},
+"./tools/ClassGen/Backends/Habana/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 3,
+  "language": "CMake"},
+"./tools/IncludeBin/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 2,
+  "language": "CMake"},
+"./cmake/modules/CMakeGraphVizOptions.cmake" :{
+  "blank": 1,
+  "comment": 13,
+  "code": 2,
+  "language": "CMake"},
+"./tools/ClassGen/Backends/OpenCL/OpenCLSpecificInstrsVerification.h" :{
+  "blank": 2,
+  "comment": 15,
+  "code": 2,
+  "language": "C/C++ Header"},
+"./utils/docker/build.sh" :{
+  "blank": 2,
+  "comment": 13,
+  "code": 2,
+  "language": "Bourne Shell"},
+"./CODE_OF_CONDUCT.md" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 2,
+  "language": "Markdown"},
+"./examples/training/CMakeLists.txt" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1,
+  "language": "CMake"},
+"SUM": {
+  "blank": 17307,
+  "comment": 20483,
+  "code": 80543,
+  "nFiles": 393} }
