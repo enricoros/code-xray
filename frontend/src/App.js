@@ -1,20 +1,18 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
 import {makeStyles} from '@material-ui/core/styles';
-import Link from "@material-ui/core/Link";
 import AppBar from "@material-ui/core/AppBar";
+import Button from '@material-ui/core/Button';
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Card from "@material-ui/core/Card";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
 import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import './App.css';
 import SignIn from "./SignIn";
 import ProjectLoader from "./ProjectLoader";
-import {Grid} from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import Code from "@material-ui/core/SvgIcon/SvgIcon";
-import CardContent from "@material-ui/core/CardContent";
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -76,7 +74,19 @@ function Section(props) {
 function App() {
   const classes = useAppStyles();
   const [userName, setUserName] = React.useState(default_GuestName);
-  const [project, setProject] = React.useState(undefined);
+  const [projects, setProjects] = React.useState([]);
+  const hasProjects = projects.length > 0;
+
+  function addProject(project) {
+    // FIXME: multiple calls to this will not extend rhe
+    setProjects([].concat(projects).concat(project));
+  }
+
+  function removeProject(index) {
+    const remaining = [].concat(projects);
+    remaining.splice(index, 1);
+    setProjects(remaining);
+  }
 
   // ask for user name if not set
   if (!userName) return <SignIn onUserChanged={setUserName}/>;
@@ -103,31 +113,33 @@ function App() {
             description="Quickly understand a project based on source code analysis and visualization."/>
 
       {/* Load Content */}
-      {!project && <Section title="Analyze Source Code" className={classes.sectionClass}>
-        <ProjectLoader onProjectLoaded={setProject}/>
+      {!hasProjects && <Section title="Analyze Source Code" className={classes.sectionClass}>
+        <ProjectLoader onProjectLoaded={addProject}/>
       </Section>}
 
       {/* Show Analysis on loaded content */}
-      {project && <Section title="Source Code Analysis" className={classes.sectionClass}>
+      {hasProjects && <Section title="Source Code Analysis" className={classes.sectionClass}>
         <Typography>
-          Active project:
+          Active projects:
         </Typography>
         <Grid container spacing={2}>
-          <Grid item sm={6} md={4} lg={3}>
-            <Card raised>
-              <CardContent>
-                <Typography variant="h6" component="h4">
-                  {project.name}
-                </Typography>
-                <Typography>
-                  {Object.keys(project.clocFiles).length} files
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button color="primary" onClick={() => setProject()} href="#">Discard</Button>
-              </CardActions>
-            </Card>
-          </Grid>
+          {projects.map((project, idx) =>
+            <Grid item sm={6} md={4} lg={3} key={"project-" + idx}>
+              <Card raised>
+                <CardContent>
+                  <Typography variant="h6" component="h4">
+                    {project.name}
+                  </Typography>
+                  <Typography>
+                    {Object.keys(project.clocFiles).length} files
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          )}
         </Grid>
       </Section>}
 
