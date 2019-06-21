@@ -1,22 +1,24 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import CloudUpload from '@material-ui/icons/CloudUpload';
-import Code from '@material-ui/icons/Code';
-import {useDropzone} from "react-dropzone";
-import InputLabel from "@material-ui/core/InputLabel";
-import Card from "@material-ui/core/Card";
+import Button from "@material-ui/core/Button";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
-import Button from "@material-ui/core/Button";
 import CardContent from "@material-ui/core/CardContent";
+import Card from "@material-ui/core/Card";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import InputLabel from "@material-ui/core/InputLabel";
+import Link from "@material-ui/core/Link";
+import Paper from "@material-ui/core/Paper";
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
+import Typography from "@material-ui/core/Typography";
+
+import CloudUpload from '@material-ui/icons/CloudUpload';
+import Code from '@material-ui/icons/Code';
+
+import {useDropzone} from "react-dropzone";
 
 // Configuration: only the Examples metadata
 const EXAMPLES = [
@@ -40,7 +42,8 @@ const EXAMPLES = [
   },
 ];
 // default project name for when a file is dropped (so doesn't have a name)
-const UPLOAD_PRJ = 'Project';
+export const UNNAMED_PROJECT = 'Unnamed Project';
+
 
 // just code below
 const useSourceSelectorStyles = makeStyles(theme => ({
@@ -100,7 +103,7 @@ function ProjectLoader(props) {
     const project = {
       name: projectName,
       clocFiles: clocJson,
-      xrayFolders: undefined,
+      xrayRoot: undefined,
     };
     _parentCallback(project);
   }
@@ -109,8 +112,17 @@ function ProjectLoader(props) {
   const {getRootProps: dzProps, getInputProps: dzInputProps, isDragActive} = useDropzone(
     {
       accept: "application/json",
-      onDropAccepted: (f) => loadJsonFromUpload(f[0], (maybeJson) => loadClocJson(UPLOAD_PRJ, maybeJson, f[0].name)),
-      onDropRejected: (f) => setErrorString('File ' + f[0].name + ' does not seem a JSON (' + f[0].type + ')'),
+      onDropRejected: (f) => setErrorString('File ' + f[0].name + ' does not seem a JSON (' + (f[0].type || 'consider having a .json extension')  + ')'),
+      onDropAccepted: (files) => files.forEach(file => {
+        loadJsonFromUpload(file, (maybeJson) => {
+          let guessedProject = file.name;
+          if (guessedProject.indexOf('.') !== -1)
+            guessedProject = guessedProject.split('.').slice(0, -1).join('.');
+          loadClocJson(guessedProject ? guessedProject : UNNAMED_PROJECT, maybeJson, file.name)
+          //TODO: coalesce all the the response of the for loop and send up a [] of project, otherwise
+          // the asynchronous nature of React will just keep the last
+        })
+      }),
     });
 
   // load one of the examples from the same web server (static examples)
