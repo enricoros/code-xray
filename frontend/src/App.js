@@ -51,7 +51,7 @@ const useAppStyles = makeStyles(theme => ({
 
 function Hero(props) {
   return <Container maxWidth="md" component="main" className={props.heroClass}>
-    <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+    <Typography variant="h2" component="h1" align="center" color="textPrimary" gutterBottom>
       {props.title}
     </Typography>
     <Typography variant="h5" align="center" color="textSecondary" component="p">
@@ -78,8 +78,7 @@ function App() {
   const hasProjects = projects.length > 0;
 
   function addProject(project) {
-    // FIXME: multiple calls to this will not extend rhe
-    setProjects([].concat(projects).concat(project));
+    setProjects((projects) => projects.concat(project));
   }
 
   function removeProject(index) {
@@ -112,36 +111,51 @@ function App() {
       <Hero heroClass={classes.heroContent} title="Code XRay"
             description="Quickly understand a project based on source code analysis and visualization."/>
 
-      {/* Load Content */}
-      {!hasProjects && <Section title="Analyze Source Code" className={classes.sectionClass}>
-        <ProjectLoader onProjectLoaded={addProject}/>
-      </Section>}
+      {/* Projects holder and loader*/}
+      <Section title="Project" className={classes.sectionClass}>
+        {hasProjects &&
+        <React.Fragment>
+          <Grid container spacing={2}>
+            {projects.concat({ADD: true}).map((project, idx) =>
+              <Grid item sm={6} md={4} lg={3} key={"project-" + idx}>
+                {project.ADD && <Button fullWidth href="#" variant="outlined">Load Another</Button>}
+                {!project.ADD && <Card raised>
+                  <CardContent>
+                    <Typography variant="h6" component="h4">
+                      {project.name}
+                    </Typography>
+                    <Typography>
+                      {Object.keys(project.clocFiles).length} files
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
+                  </CardActions>
+                </Card>}
+              </Grid>
+            )}
+          </Grid>
+        </React.Fragment>}
+        {!hasProjects &&
+        <ProjectLoader onProjectLoaded={addProject}/>}
+      </Section>
 
       {/* Show Analysis on loaded content */}
-      {hasProjects && <Section title="Source Code Analysis" className={classes.sectionClass}>
-        <Typography>
-          Active projects:
+      <Section title="Analysis" className={classes.sectionClass}>
+        {(projects.length > 1) && <Typography>For {projects.length} projects</Typography>}
+        <Typography variant="h5" component="h4">
+          Programming Languages
         </Typography>
-        <Grid container spacing={2}>
-          {projects.map((project, idx) =>
-            <Grid item sm={6} md={4} lg={3} key={"project-" + idx}>
-              <Card raised>
-                <CardContent>
-                  <Typography variant="h6" component="h4">
-                    {project.name}
-                  </Typography>
-                  <Typography>
-                    {Object.keys(project.clocFiles).length} files
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          )}
-        </Grid>
-      </Section>}
+        <Typography>
+          ...
+        </Typography>
+        <Typography variant="h5" component="h4">
+          Statistics
+        </Typography>
+        <Typography>
+          depth...
+        </Typography>
+      </Section>
 
       {/*/!* Section 3 filter *!/*/}
       {/*<Section title="Filter" className={classes.sectionClass}>*/}
