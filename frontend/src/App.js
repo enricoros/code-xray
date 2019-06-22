@@ -81,12 +81,129 @@ function Section(props) {
   </Container>
 }
 
+function MultiProjectNode(props) {
+  const {projects, classes} = props;
+
+  const [noLanguages, setNoLanguages] = React.useState([]);
+
+  // TEMP
+  const [aa, setAa] = React.useState(1);
+  console.log('mpn');
+  console.log(aa);
+
+  // Apply all the computation defined by this node
+  const allFiles = [];
+  const allFilteredFiles = [];
+  projects.map(project => {
+    const filteredProject = {
+      name: project.name,
+      filesStats: project.filesStats.filter((f) => !noLanguages.includes(f.language)),
+    };
+    allFiles.push(...project.filesStats);
+    allFilteredFiles.push(...filteredProject.filesStats);
+    console.log(project.filesStats.length + " -> " + filteredProject.filesStats.length);
+    return filteredProject;
+  });
+  console.log(allFiles.length + " -> " + allFilteredFiles.length);
+  // TODO... continue FIXME
+
+
+  if (projects.length < 1) return (
+    <React.Fragment>
+      <Button href="" onClick={() => setAa(aa + 1)}>{"inc:" + aa}</Button>
+    </React.Fragment>
+  );
+
+
+  return (
+    <React.Fragment>
+      <React.Fragment>
+        <Button href="" onClick={() => setAa(aa + 1)}>{"inc:" + aa}</Button>
+      </React.Fragment>
+
+      {/* Show Analysis on loaded content */}
+      {/*<Section title="Analysis" className={classes.sectionClass}>*/}
+      {/*  {(projects.length > 1) && <Typography>For {projects.length} projects</Typography>}*/}
+      {/*  <Typography>*/}
+      {/*    Programming Languages*/}
+      {/*  </Typography>*/}
+      {/*  <Typography>*/}
+      {/*    Statistics*/}
+      {/*  </Typography>*/}
+      {/*  <Typography>*/}
+      {/*    depth...*/}
+      {/*  </Typography>*/}
+      {/*</Section>*/}
+
+      {/* Section 3 filter */}
+      <Section title="Filtering" className={classes.sectionClass}>
+        <Typography>
+          Raise the signal, drop the noise.
+        </Typography>
+        {/* Programming Languages */}
+        <Card square elevation={2}>
+          <CardContent>
+            <Grid container spacing={2}>
+              <Grid item sm={12} md={6}>
+                <Typography variant="h6" component="h4" align="center">
+                  Active Languages - <IconButton href='' onClick={() =>
+                  setNoLanguages(projects[0].langsStats.map(l => l.name)
+                    .filter(l => DEFAULT_NO_LANGUAGES.includes(l)))}>
+                  <BrightnessAuto/></IconButton>
+                </Typography>
+                {projects[0].langsStats.filter(lang => !noLanguages.includes(lang.name)).map(lang =>
+                  <Chip label={lang.name} onDelete={() => {
+                    setNoLanguages((arr) => arr.concat(lang.name));
+                  }} key={'lang-' + lang.name} className={classes.langChip}/>)}
+              </Grid>
+              <Grid item xs={12} md={6} style={{background: '#eee'}}>
+                <Typography variant="h6" component="h4" align="center">
+                  Disabled languages - <IconButton href='' onClick={() => setNoLanguages([])}>
+                  <DoneAll/></IconButton>
+                </Typography>
+                {projects[0].langsStats.filter(lang => noLanguages.includes(lang.name)).map(lang =>
+                  <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => {
+                    setNoLanguages((arr) => arr.filter(l => l !== lang.name));
+                  }} key={'no-lang-' + lang.name} className={classes.langChip}/>)}
+              </Grid>
+              {/*<Grid item xs={12} style={{background: '#eee'}}>*/}
+              {/*  With the current filtering, X% of the files are excluded, representing X% of the code.*/}
+              {/*</Grid>*/}
+            </Grid>
+          </CardContent>
+        </Card>
+      </Section>
+
+      {/*/!* Section 4 semantics *!/*/}
+      {/*<Section title="Semantics" className={classes.sectionClass}>*/}
+      {/*  bb*/}
+      {/*</Section>*/}
+
+      {/*/!* Section 5 render config *!/*/}
+      {/*<Section title="Rendering" className={classes.sectionClass}>*/}
+      {/*  ee*/}
+      {/*</Section>*/}
+
+      {/*/!* Section 6 render *!/*/}
+      {/*<Section title="Result" className={classes.sectionClass}>*/}
+      {/*  dd*/}
+      {/*</Section>*/}
+
+      {/* DEBUG */}
+      <Section title="Debug" className={classes.sectionClass}>
+        {(projects.length > 0) && <ReactJson src={projects} collapsed/>}
+      </Section>
+
+    </React.Fragment>
+  )
+}
+
 
 function App() {
+  console.log('app');
   const classes = useAppStyles();
   const [userName, setUserName] = React.useState(default_GuestName);
   const [projects, setProjects] = React.useState([]);
-  const [noLanguages, setNoLanguages] = React.useState([]);
   const hasProjects = projects.length > 0;
 
   function addProject(project) {
@@ -146,87 +263,12 @@ function App() {
         </Grid>
       </Section>
 
-      {(projects.length > 0) &&
-      <React.Fragment>
+      {/* Projects */}
+      {hasProjects && <MultiProjectNode projects={projects} classes={classes}/>}
 
-        {/* Show Analysis on loaded content */}
-        {/*<Section title="Analysis" className={classes.sectionClass}>*/}
-        {/*  {(projects.length > 1) && <Typography>For {projects.length} projects</Typography>}*/}
-        {/*  <Typography>*/}
-        {/*    Programming Languages*/}
-        {/*  </Typography>*/}
-        {/*  <Typography>*/}
-        {/*    Statistics*/}
-        {/*  </Typography>*/}
-        {/*  <Typography>*/}
-        {/*    depth...*/}
-        {/*  </Typography>*/}
-        {/*</Section>*/}
-
-        {/* Section 3 filter */}
-        <Section title="Filtering" className={classes.sectionClass}>
-          <Typography>
-            Raise the signal, drop the noise.
-          </Typography>
-          {/* Programming Languages */}
-          <Card square elevation={2}>
-            <CardContent>
-              <Grid container spacing={2}>
-                <Grid item sm={12} md={6}>
-                  <Typography variant="h6" component="h4" align="center">
-                    Active Languages - <IconButton href='' onClick={() =>
-                    setNoLanguages(projects[0].langsStats.map(l => l.name)
-                      .filter(l => DEFAULT_NO_LANGUAGES.includes(l)))}>
-                    <BrightnessAuto/></IconButton>
-                  </Typography>
-                  {projects[0].langsStats.filter(lang => !noLanguages.includes(lang.name)).map(lang =>
-                    <Chip label={lang.name} onDelete={() => {
-                      setNoLanguages((arr) => arr.concat(lang.name));
-                    }} key={'lang-' + lang.name} className={classes.langChip}/>)}
-                </Grid>
-                <Grid item xs={12} md={6} style={{background: '#eee'}}>
-                  <Typography variant="h6" component="h4" align="center">
-                    Disabled languages - <IconButton href='' onClick={() => setNoLanguages([])}>
-                    <DoneAll/></IconButton>
-                  </Typography>
-                  {projects[0].langsStats.filter(lang => noLanguages.includes(lang.name)).map(lang =>
-                    <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => {
-                      setNoLanguages((arr) => arr.filter(l => l !== lang.name));
-                    }} key={'no-lang-' + lang.name} className={classes.langChip}/>)}
-                </Grid>
-                {/*<Grid item xs={12} style={{background: '#eee'}}>*/}
-                {/*  With the current filtering, X% of the files are excluded, representing X% of the code.*/}
-                {/*</Grid>*/}
-              </Grid>
-            </CardContent>
-          </Card>
-        </Section>
-
-        {/*/!* Section 4 semantics *!/*/}
-        {/*<Section title="Semantics" className={classes.sectionClass}>*/}
-        {/*  bb*/}
-        {/*</Section>*/}
-
-        {/*/!* Section 5 render config *!/*/}
-        {/*<Section title="Rendering" className={classes.sectionClass}>*/}
-        {/*  ee*/}
-        {/*</Section>*/}
-
-        {/*/!* Section 6 render *!/*/}
-        {/*<Section title="Result" className={classes.sectionClass}>*/}
-        {/*  dd*/}
-        {/*</Section>*/}
-
-        {/* DEBUG */}
-        <Section title="Debug" className={classes.sectionClass}>
-          {(projects.length > 0) && <ReactJson src={projects} collapsed/>}
-        </Section>
-
-      </React.Fragment>}
-
-      {/*<Section className={classes.sectionClass}>*/}
-      {/*  Hi. <Button variant="contained" color="primary" href="#">Hello World</Button>*/}
-      {/*</Section>*/}
+      <Section className={classes.sectionClass}>
+        Hi. <Button variant="contained" color="primary" href="#">Hello World</Button>
+      </Section>
 
       {/* Footer */}
       {/*<Container maxWidth="md" component="footer" className={classes.footer}>*/}
