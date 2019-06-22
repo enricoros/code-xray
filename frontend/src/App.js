@@ -14,6 +14,9 @@ import './App.css';
 import SignIn from "./SignIn";
 import ProjectLoader from "./ProjectLoader";
 
+import ReactJson from 'react-json-view'
+
+
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
 // const usePersistedUserState = createPersistedState('user_name_2');
@@ -176,6 +179,11 @@ function App() {
       {/*<Section title="Result" className={classes.sectionClass}>*/}
       {/*  dd*/}
       {/*</Section>*/}
+
+      {/* Section 6 render */}
+      <Section title="Debug" className={classes.sectionClass}>
+        {(projects.length > 0) && <ReactJson src={projects} collapsed/>}
+      </Section>
 
       {/*<Section className={classes.sectionClass}>*/}
       {/*  Hi. <Button variant="contained" color="primary" href="#">Hello World</Button>*/}
