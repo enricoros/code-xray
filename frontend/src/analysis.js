@@ -1,6 +1,6 @@
-const path = require('path');
+import path from "path";
+import {DEBUGGING} from "./config";
 
-const DEBUG = true;
 
 // constants
 const DEFAULT_NO_LANGUAGES = [
@@ -11,7 +11,7 @@ const DEFAULT_NO_LANGUAGES = [
 
 // parse CLOC JSON to a list of files: {name, dir, code, language}
 function clocJsonToFilesStats(cj) {
-  if (DEBUG) {
+  if (DEBUGGING) {
     console.log('Loaded a file generated from cloc: ' + cj['header']['cloc_version']);
     console.log(cj['header']);
     console.log(cj['SUM']);
@@ -48,8 +48,6 @@ function langStatsFromFilesStats(filesStats) {
     })
     .sort((a, b) => b['code'] - a['code']);
   // const total = languages.reduce((prev, curr) => prev + curr['code'], 0);
-  if (DEBUG)
-    console.log(languages);
   return languages;
 }
 

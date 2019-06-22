@@ -18,6 +18,7 @@ import CloudUpload from '@material-ui/icons/CloudUpload';
 import Code from '@material-ui/icons/Code';
 import {useDropzone} from "react-dropzone";
 import {clocJsonToFilesStats, langStatsFromFilesStats} from "./analysis";
+import {TESTING} from "./config";
 
 // Configuration: only the Examples metadata
 const EXAMPLES = [
@@ -94,7 +95,7 @@ function ClocLink(props) {
 function ProjectLoader(props) {
   const _classes = useSourceSelectorStyles();
   const {onProjectLoaded: _parentCallback} = props;
-  const [tabIdx, setTabIdx] = React.useState(1);
+  const [tabIdx, setTabIdx] = React.useState(TESTING ? 1 : 0);
   const [errorString, setErrorString] = React.useState('');
 
   function passLoadedDataToTheParent(projectName, filesStats) {
