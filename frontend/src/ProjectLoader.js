@@ -14,11 +14,10 @@ import Paper from "@material-ui/core/Paper";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import Typography from "@material-ui/core/Typography";
-
 import CloudUpload from '@material-ui/icons/CloudUpload';
 import Code from '@material-ui/icons/Code';
-
 import {useDropzone} from "react-dropzone";
+import {clocJsonToFilesStats, langStatsFromFilesStats} from "./analysis";
 
 // Configuration: only the Examples metadata
 const EXAMPLES = [
@@ -98,11 +97,13 @@ function ProjectLoader(props) {
   const [tabIdx, setTabIdx] = React.useState(1);
   const [errorString, setErrorString] = React.useState('');
 
-  function passLoadedDataToTheParent(projectName, clocJson) {
+  function passLoadedDataToTheParent(projectName, filesStats) {
+
     // TODO: transform the data to XRAY here? Or let this go?
     const project = {
       name: projectName,
-      clocFiles: clocJson,
+      filesStats: filesStats,
+      langsStats: langStatsFromFilesStats(filesStats),
       xrayRoot: undefined,
     };
     _parentCallback(project);
@@ -112,7 +113,7 @@ function ProjectLoader(props) {
   const {getRootProps: dzProps, getInputProps: dzInputProps, isDragActive} = useDropzone(
     {
       accept: "application/json",
-      onDropRejected: (f) => setErrorString('File ' + f[0].name + ' does not seem a JSON (' + (f[0].type || 'consider having a .json extension')  + ')'),
+      onDropRejected: (f) => setErrorString('File ' + f[0].name + ' does not seem a JSON (' + (f[0].type || 'consider having a .json extension') + ')'),
       onDropAccepted: (files) => files.forEach(file => {
         loadJsonFromUpload(file, (maybeJson) => {
           let guessedProject = file.name;
@@ -149,10 +150,11 @@ function ProjectLoader(props) {
       setErrorString('Invalid cloc file. We expect a JSON with at least a "header" property.');
       return;
     }
-    delete clocJson['SUM'];
-    console.log('Loaded a file generated from cloc: ' + clocJson['header']['cloc_version']);
-    delete clocJson['header'];
-    passLoadedDataToTheParent(projectName, clocJson);
+    try {
+      passLoadedDataToTheParent(projectName, clocJsonToFilesStats(clocJson));
+    } catch (e) {
+      setErrorString('Invalid Cloc file. Details: ' + e);
+    }
   }
 
   function loadJsonFromUpload(file, callback) {
