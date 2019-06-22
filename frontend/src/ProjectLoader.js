@@ -16,6 +16,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Typography from "@material-ui/core/Typography";
 import CloudUpload from '@material-ui/icons/CloudUpload';
 import Code from '@material-ui/icons/Code';
+import LibraryAdd from '@material-ui/icons/LibraryAdd';
 import {useDropzone} from "react-dropzone";
 import {clocJsonToFilesStats, langStatsFromFilesStats} from "./analysis";
 import {TESTING} from "./config";
@@ -94,21 +95,13 @@ function ClocLink(props) {
  */
 function ProjectLoader(props) {
   const _classes = useSourceSelectorStyles();
-  const {onProjectLoaded: _parentCallback} = props;
+  const {hasProjects: _parentHasProjects, onProjectLoaded: _parentCallback} = props;
+  const [expandNext, setExpandNext] = React.useState(false);
   const [tabIdx, setTabIdx] = React.useState(TESTING ? 1 : 0);
   const [errorString, setErrorString] = React.useState('');
 
-  function passLoadedDataToTheParent(projectName, filesStats) {
-
-    // TODO: transform the data to XRAY here? Or let this go?
-    const project = {
-      name: projectName,
-      filesStats: filesStats,
-      langsStats: langStatsFromFilesStats(filesStats),
-      xrayRoot: undefined,
-    };
-    _parentCallback(project);
-  }
+  // derived logic: collapse if there are projects and we didn't expand this
+  const showCollapsed = _parentHasProjects && !expandNext;
 
   // using the "react-dropzone" module, which mimics hooks. upon a drop, load the file
   const {getRootProps: dzProps, getInputProps: dzInputProps, isDragActive} = useDropzone(
@@ -126,6 +119,17 @@ function ProjectLoader(props) {
         })
       }),
     });
+
+  function passLoadedDataToTheParent(projectName, filesStats) {
+    setExpandNext(false);
+    const project = {
+      name: projectName,
+      filesStats: filesStats,
+      langsStats: langStatsFromFilesStats(filesStats),
+      xrayRoot: undefined,
+    };
+    _parentCallback(project);
+  }
 
   // load one of the examples from the same web server (static examples)
   function loadExampleByIndex(index) {
@@ -176,8 +180,18 @@ function ProjectLoader(props) {
     request.send();
   }
 
+  // if collapsed, show a button to bring it back on
+  if (showCollapsed) return (
+    <Grid item md={2}>
+      <IconButton href="" variant="outlined" onClick={() => setExpandNext(true)}  >
+        <LibraryAdd/>
+      </IconButton>
+    </Grid>
+  );
+
+  // render the expanded version
   return (
-    <React.Fragment>
+    <Grid item xs={12}>
       {/* Selector Tab (idx: state) */}
       <AppBar position="static">
         <Tabs centered value={tabIdx} onChange={(e, newValue) => setTabIdx(newValue)} component="div">
@@ -257,7 +271,7 @@ cloc --by-file --json --out=cloc.json ./`}</pre>
       </Paper>
 
       {/* nothing below */}
-    </React.Fragment>
+    </Grid>
   )
 }
 

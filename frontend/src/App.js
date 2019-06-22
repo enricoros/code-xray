@@ -125,31 +125,25 @@ function App() {
 
       {/* Projects holder and loader*/}
       <Section title="Project" className={classes.sectionClass}>
-        {hasProjects &&
-        <React.Fragment>
-          <Grid container spacing={2}>
-            {projects.concat({ADD: true}).map((project, idx) =>
-              <Grid item sm={6} md={4} lg={3} key={"project-" + idx}>
-                {project.ADD && <Button fullWidth href="#" variant="outlined">Load Another</Button>}
-                {!project.ADD && <Card raised>
-                  <CardContent>
-                    <Typography variant="h6" component="h4">
-                      {project.name}
-                    </Typography>
-                    <Typography>
-                      {Object.keys(project.filesStats).length} files
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
-                  </CardActions>
-                </Card>}
-              </Grid>
-            )}
-          </Grid>
-        </React.Fragment>}
-        {!hasProjects &&
-        <ProjectLoader onProjectLoaded={addProject}/>}
+        <Grid container spacing={2}>
+          {projects.map((project, idx) =>
+            <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
+              <Card raised>
+                <CardContent>
+                  <Typography variant="h6" component="h4">
+                    {project.name}
+                  </Typography>
+                  <Typography>
+                    {Object.keys(project.filesStats).length} files
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
+                </CardActions>
+              </Card>
+            </Grid>)}
+          <ProjectLoader hasProjects={hasProjects} onProjectLoaded={addProject}/>
+        </Grid>
       </Section>
 
       {(projects.length > 0) &&
