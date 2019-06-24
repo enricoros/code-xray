@@ -225,7 +225,7 @@ function App() {
       <AppBar position="static" color="default" className={classes.appBar}>
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
-            <Typography variant="h4" color="inherit" noWrap className={classes.toolbarTitle}>Code XRay</Typography>
+            <Typography variant="h4" color="inherit" noWrap className={classes.toolbarTitle}>Source Exploder</Typography>
             <nav>
               <Link variant="button" color="textPrimary" href="#" className={classes.link}
                     component="a">{userName}</Link>
