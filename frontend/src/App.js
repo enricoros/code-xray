@@ -15,8 +15,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import './App.css';
 import LanguagesChips from "./components/LanguagesChips";
+import ProjectLoader from "./components/ProjectLoader";
 import SignIn from "./components/SignIn";
-import ProjectLoader from "./ProjectLoader";
 import {accumulateLangStats, sortDescByKpi} from "./analysis";
 // DEBUG
 import ReactJson from 'react-json-view'
