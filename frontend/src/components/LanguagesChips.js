@@ -32,8 +32,12 @@ export default props => {
     onChange(noLanguages.filter(l => l !== name));
   }
 
-  function excludeDefaults() {
+  function excludeAuto() {
     onChange(langsStats.map(l => l.name).filter(l => DEFAULT_NO_LANGUAGES.includes(l)));
+  }
+
+  function resetIncluded() {
+    onChange(langsStats.map(l => l.name));
   }
 
   function resetExcluded() {
@@ -57,7 +61,9 @@ export default props => {
     <Grid container spacing={2}>
       <Grid item sm={12} md={6}>
         <Typography variant="h6" component="h4" align="center">
-          Active Languages - <IconButton href='' onClick={excludeDefaults}><BrightnessAuto/></IconButton>
+          Active Languages -
+          <IconButton href='' onClick={excludeAuto}><BrightnessAuto/></IconButton>
+          <IconButton href='' onClick={resetIncluded} disabled={nothingLeft}><DoneAll/></IconButton>
         </Typography>
         {activeLangs.map(lang =>
           <Chip label={lang.name} onDelete={() => excludeLanguage(lang.name)}
@@ -65,7 +71,8 @@ export default props => {
       </Grid>
       <Grid item xs={12} md={6} style={{background: '#eee'}}>
         <Typography variant="h6" component="h4" align="center">
-          Disabled languages - <IconButton href='' onClick={resetExcluded}><DoneAll/></IconButton>
+          Disabled languages -
+          <IconButton href='' onClick={resetExcluded} disabled={noExclusion}><DoneAll/></IconButton>
         </Typography>
         {inactiveLangs.map(lang =>
           <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => includeLanguage(lang.name)}
@@ -73,15 +80,15 @@ export default props => {
       </Grid>
       <Grid item xs={12}>
         <Typography>
-          {noExclusion ? 'Code: 100% (' + activeCode + ' lines of code)' : (nothingLeft ? 'Nothing left' :
-            'Removing ' + inactiveCode + ' lines of code')}
-          <LinearProgress variant="determinate" value={activeCodeRatio}/>
+          {noExclusion ? 'Code: 100% (' + activeCode + ')' : (nothingLeft ? 'Nothing left' :
+            'Removing ' + inactiveCode + ' lines of code (' + (100 - ~~(activeCodeRatio)) + '%)')}
         </Typography>
+        <LinearProgress variant="determinate" value={activeCodeRatio}/>
         <Typography>
-          {noExclusion ? 'Files: 100% (' + activeFiles + ' files)' : (nothingLeft ? 'Nothing left' :
-            'Removing ' + inactiveFiles + '/' + (activeFiles + inactiveFiles) + ' files')}
-          <LinearProgress variant="determinate" value={activeFilesRatio}/>
+          {noExclusion ? 'Files: 100% (' + activeFiles + ')' : (nothingLeft ? 'Nothing left' :
+            'Removing ' + inactiveFiles + ' files (' + (100 - ~~(activeFilesRatio)) + '%)')}
         </Typography>
+        <LinearProgress variant="determinate" value={activeFilesRatio}/>
       </Grid>
     </Grid>
   )
