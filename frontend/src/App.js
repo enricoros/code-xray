@@ -17,7 +17,7 @@ import './App.css';
 import LanguagesChips from "./components/LanguagesChips";
 import ProjectLoader from "./ProjectLoader";
 import SignIn from "./SignIn";
-import {accumulateLangStats, langsSumStats, sortDescByKpi} from "./analysis";
+import {accumulateLangStats, sortDescByKpi} from "./analysis";
 // DEBUG
 import ReactJson from 'react-json-view'
 
@@ -90,8 +90,20 @@ function MultiProjectNode(props) {
   // sum all the language stats of different projects
   const allLangsStats = accumulateLangStats(projects.reduce((acc, p) => acc.concat(p.unfiltered.langsStats), []));
   allLangsStats.sort(sortDescByKpi('code'));
-  const allTotalStats = langsSumStats(allLangsStats);
-  console.log(allTotalStats);
+
+  // fused project
+  const filteredLangStats = allLangsStats.filter(l => !noLanguages.includes(l.name));
+  console.log(filteredLangStats.length);
+
+  const bareProject = {
+    name: '_never_see_this_label_',
+    unfiltered: {
+      // filesStats: filesStats,
+      langsStats: filteredLangStats, // or allLangStats?
+      // langsSumStats: langsSumStats(langsStats),
+    },
+  };
+  // fixme FROM here
 
   // Apply all the computation defined by this node
   /*const allFiles = [];
@@ -178,6 +190,7 @@ function App() {
   const [userName, setUserName] = React.useState(default_GuestName);
   const [projects, setProjects] = React.useState([]);
   const hasProjects = projects.length > 0;
+  const multiProject = projects.length > 1;
 
   function addProject(project) {
     setProjects((projects) => projects.concat(project));
@@ -221,23 +234,23 @@ function App() {
             description="Quickly understand a project based on source code analysis and visualization."/>
 
       {/* Projects holder and loader*/}
-      <Section title="Project" className={classes.sectionClass}>
+      <Section title={multiProject ? "Projects" : "Project"} className={classes.sectionClass}>
         <Grid container spacing={2} alignItems="center">
           {projects.map((project, idx) =>
             <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
               <Card raised>
                 <CardContent>
-                  <Typography variant="h6" component="h4">
-                    {project.name}
-                  </Typography>
+                  <Typography variant="h6" component="h4">{project.name}</Typography>
                   <Typography>
                     {project.unfiltered.filesStats.length} files, {project.unfiltered.langsStats.length} languages
                   </Typography>
                   <Typography>
-                    {project.unfiltered.langsSumStats.code} net lines of code
+                    {project.unfiltered.langsSumStats.code} lines of code
                   </Typography>
                   {experiment && <Typography>
-                    {project.unfiltered.langsStats.map((stat) => <Box> - {stat.name} = {stat.code}</Box>)}
+                    <Box>- Lang = LOCs, files - density</Box>
+                    {project.unfiltered.langsStats.map((stat) =>
+                      <Box> - {stat.name} = {stat.code} {stat.files} - {~~(stat.code / stat.files)}</Box>)}
                   </Typography>}
                 </CardContent>
                 <CardActions>
@@ -251,10 +264,6 @@ function App() {
 
       {/* Projects */}
       {hasProjects && <MultiProjectNode projects={projects} classes={classes}/>}
-
-      <Section className={classes.sectionClass}>
-        Hi. <Button variant="contained" color="primary" href="#">Hello World</Button>
-      </Section>
 
       {/* Footer */}
       {/*<Container maxWidth="md" component="footer" className={classes.footer}>*/}
