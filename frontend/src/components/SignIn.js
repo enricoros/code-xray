@@ -1,12 +1,12 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
+import Avatar from '@material-ui/core/Avatar/index';
+import Button from '@material-ui/core/Button/index';
+import CssBaseline from '@material-ui/core/CssBaseline/index';
+import TextField from '@material-ui/core/TextField/index';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import {makeStyles} from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography/index';
+import {makeStyles} from '@material-ui/core/styles/index';
+import Container from '@material-ui/core/Container/index';
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -35,11 +35,12 @@ const useStyles = makeStyles(theme => ({
 
 /**
  * Simple sign-in screen to ask for the user name. That's it, nothing more.
- * @param props {name='', onUserChanged=f}
+ * @param props {initialName='', onChange=f}
  */
 export default function SignIn(props) {
   const classes = useStyles();
-  const [userName, setUserName] = React.useState(props.name || '');
+  const {initialName, onChange} = props;
+  const [userName, setUserName] = React.useState(initialName || '');
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline/>
@@ -52,7 +53,7 @@ export default function SignIn(props) {
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}
                   onClick={(e) => {
                     e.preventDefault();
-                    if (userName.length > 1) props.onUserChanged(userName);
+                    if (userName.length > 1) onChange(userName);
                   }}>
             {userName ? 'Hello, ' + userName : 'Sign In'}
           </Button>

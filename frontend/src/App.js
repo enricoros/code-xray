@@ -15,8 +15,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import './App.css';
 import LanguagesChips from "./components/LanguagesChips";
+import SignIn from "./components/SignIn";
 import ProjectLoader from "./ProjectLoader";
-import SignIn from "./SignIn";
 import {accumulateLangStats, sortDescByKpi} from "./analysis";
 // DEBUG
 import ReactJson from 'react-json-view'
@@ -203,7 +203,7 @@ function App() {
   }
 
   // ask for user name if not set
-  if (!userName) return <SignIn onUserChanged={setUserName}/>;
+  if (!userName) return <SignIn onChange={setUserName}/>;
 
   return (
     <React.Fragment>
