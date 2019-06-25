@@ -17,7 +17,7 @@ import Typography from "@material-ui/core/Typography";
 import CloudUpload from '@material-ui/icons/CloudUpload';
 import Code from '@material-ui/icons/Code';
 import LibraryAdd from '@material-ui/icons/LibraryAdd';
-import {useDropzone} from "react-dropzone/typings/react-dropzone";
+import {useDropzone} from "react-dropzone";
 
 // Local imports (TODO: shall minimize .. dependencies)
 import {clocJsonToFilesStats, langsSumStats, langStatsFromFilesStats} from "../analysis";
