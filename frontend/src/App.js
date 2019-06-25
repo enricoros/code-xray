@@ -7,8 +7,10 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
 import Container from "@material-ui/core/Container";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import BrightnessAuto from "@material-ui/icons/BrightnessAuto";
@@ -202,6 +204,7 @@ function MultiProjectNode(props) {
 function App() {
   console.log('app');
   const classes = useAppStyles();
+  const [experiment, setExperiment] = React.useState(false);
   const [userName, setUserName] = React.useState(default_GuestName);
   const [projects, setProjects] = React.useState([]);
   const hasProjects = projects.length > 0;
@@ -225,16 +228,23 @@ function App() {
       <AppBar position="static" color="default" className={classes.appBar}>
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
-            <Typography variant="h4" color="inherit" noWrap className={classes.toolbarTitle}>Source Exploder</Typography>
-            <nav>
-              <Link variant="button" color="textPrimary" href="#" className={classes.link}
-                    component="a">{userName}</Link>
-            </nav>
+            <Typography variant="h4" color="inherit" noWrap className={classes.toolbarTitle}>
+              Source Exploder
+            </Typography>
+            <FormControlLabel control={
+              <Switch checked={experiment} onChange={(e, state) => setExperiment(state)} color="primary"/>
+            } label="Experiments"/>
+            <Link variant="button" color="textPrimary" href="" className={classes.link} component="a">{userName}</Link>
             <Button href="#" color="primary" variant="outlined" className={classes.link}
                     onClick={() => setUserName(undefined)}>Logout</Button>
           </Toolbar>
         </Container>
       </AppBar>
+
+      {/* Experiments box */}
+      {experiment && <Container maxWidth="lg">
+        Experiments
+      </Container>}
 
       {/* Welcome */}
       <Hero heroClass={classes.heroContent} title="Code XRay"
@@ -242,7 +252,7 @@ function App() {
 
       {/* Projects holder and loader*/}
       <Section title="Project" className={classes.sectionClass}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} alignItems="center">
           {projects.map((project, idx) =>
             <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
               <Card raised>
