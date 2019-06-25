@@ -18,7 +18,7 @@ import CloudUpload from '@material-ui/icons/CloudUpload';
 import Code from '@material-ui/icons/Code';
 import LibraryAdd from '@material-ui/icons/LibraryAdd';
 import {useDropzone} from "react-dropzone";
-import {clocJsonToFilesStats, langStatsFromFilesStats} from "./analysis";
+import {clocJsonToFilesStats, langsSumStats, langStatsFromFilesStats} from "./analysis";
 import {TESTING} from "./config";
 
 // Configuration: only the Examples metadata
@@ -122,13 +122,16 @@ function ProjectLoader(props) {
 
   function passLoadedDataToTheParent(projectName, filesStats) {
     setExpandNext(false);
-    const project = {
+    const langsStats = langStatsFromFilesStats(filesStats);
+    const bareProject = {
       name: projectName,
-      filesStats: filesStats,
-      langsStats: langStatsFromFilesStats(filesStats),
-      xrayRoot: undefined,
+      unfiltered: {
+        filesStats: filesStats,
+        langsStats: langsStats,
+        langsSumStats: langsSumStats(langsStats),
+      },
     };
-    _parentCallback(project);
+    _parentCallback(bareProject);
   }
 
   // load one of the examples from the same web server (static examples)
@@ -183,7 +186,7 @@ function ProjectLoader(props) {
   // if collapsed, show a button to bring it back on
   if (showCollapsed) return (
     <Grid item md={2}>
-      <IconButton href="" variant="outlined" onClick={() => setExpandNext(true)}  >
+      <IconButton href="" variant="outlined" onClick={() => setExpandNext(true)}>
         <LibraryAdd/>
       </IconButton>
     </Grid>
