@@ -1,8 +1,8 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from "@material-ui/core/AppBar";
+import Box from "@material-ui/core/Box";
 import Button from '@material-ui/core/Button';
-import Chip from "@material-ui/core/Chip";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
@@ -13,16 +13,13 @@ import Link from "@material-ui/core/Link";
 import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import BrightnessAuto from "@material-ui/icons/BrightnessAuto";
-import DoneAll from "@material-ui/icons/DoneAll";
 import './App.css';
-import SignIn from "./SignIn";
+import LanguagesChips from "./components/LanguagesChips";
 import ProjectLoader from "./ProjectLoader";
-
+import SignIn from "./SignIn";
+import {accumulateLangStats, langsSumStats, sortDescByKpi} from "./analysis";
+// DEBUG
 import ReactJson from 'react-json-view'
-import IconButton from "@material-ui/core/IconButton";
-import {DEFAULT_NO_LANGUAGES} from "./analysis";
-
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -50,9 +47,6 @@ const useAppStyles = makeStyles(theme => ({
   sectionClass: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(3),
-  },
-  langChip: {
-    margin: theme.spacing(0.5),
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -93,8 +87,14 @@ function MultiProjectNode(props) {
   console.log('mpn');
   console.log(aa);
 
+  // sum all the language stats of different projects
+  const allLangsStats = accumulateLangStats(projects.reduce((acc, p) => acc.concat(p.unfiltered.langsStats), []));
+  allLangsStats.sort(sortDescByKpi('code'));
+  const allTotalStats = langsSumStats(allLangsStats);
+  console.log(allTotalStats);
+
   // Apply all the computation defined by this node
-  const allFiles = [];
+  /*const allFiles = [];
   const allFilteredFiles = [];
   projects.map(project => {
     const filteredProject = {
@@ -103,19 +103,15 @@ function MultiProjectNode(props) {
     };
     allFiles.push(...project.filesStats);
     allFilteredFiles.push(...filteredProject.filesStats);
-    console.log(project.filesStats.length + " -> " + filteredProject.filesStats.length);
-    return filteredProject;
   });
-  console.log(allFiles.length + " -> " + allFilteredFiles.length);
-  // TODO... continue FIXME
+  console.log(allFiles.length + " -> " + allFilteredFiles.length);*/
 
-
+  // DEBUG button only
   if (projects.length < 1) return (
     <React.Fragment>
       <Button href="" onClick={() => setAa(aa + 1)}>{"inc:" + aa}</Button>
     </React.Fragment>
   );
-
 
   return (
     <React.Fragment>
@@ -145,33 +141,7 @@ function MultiProjectNode(props) {
         {/* Programming Languages */}
         <Card square elevation={2}>
           <CardContent>
-            <Grid container spacing={2}>
-              <Grid item sm={12} md={6}>
-                <Typography variant="h6" component="h4" align="center">
-                  Active Languages - <IconButton href='' onClick={() =>
-                  setNoLanguages(projects[0].langsStats.map(l => l.name)
-                    .filter(l => DEFAULT_NO_LANGUAGES.includes(l)))}>
-                  <BrightnessAuto/></IconButton>
-                </Typography>
-                {projects[0].langsStats.filter(lang => !noLanguages.includes(lang.name)).map(lang =>
-                  <Chip label={lang.name} onDelete={() => {
-                    setNoLanguages((arr) => arr.concat(lang.name));
-                  }} key={'lang-' + lang.name} className={classes.langChip}/>)}
-              </Grid>
-              <Grid item xs={12} md={6} style={{background: '#eee'}}>
-                <Typography variant="h6" component="h4" align="center">
-                  Disabled languages - <IconButton href='' onClick={() => setNoLanguages([])}>
-                  <DoneAll/></IconButton>
-                </Typography>
-                {projects[0].langsStats.filter(lang => noLanguages.includes(lang.name)).map(lang =>
-                  <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => {
-                    setNoLanguages((arr) => arr.filter(l => l !== lang.name));
-                  }} key={'no-lang-' + lang.name} className={classes.langChip}/>)}
-              </Grid>
-              {/*<Grid item xs={12} style={{background: '#eee'}}>*/}
-              {/*  With the current filtering, X% of the files are excluded, representing X% of the code.*/}
-              {/*</Grid>*/}
-            </Grid>
+            <LanguagesChips langsStats={allLangsStats} noLanguages={noLanguages} onChange={setNoLanguages}/>
           </CardContent>
         </Card>
       </Section>
@@ -261,8 +231,14 @@ function App() {
                     {project.name}
                   </Typography>
                   <Typography>
-                    {Object.keys(project.filesStats).length} files
+                    {project.unfiltered.filesStats.length} files, {project.unfiltered.langsStats.length} languages
                   </Typography>
+                  <Typography>
+                    {project.unfiltered.langsSumStats.code} net lines of code
+                  </Typography>
+                  {experiment && <Typography>
+                    {project.unfiltered.langsStats.map((stat) => <Box> - {stat.name} = {stat.code}</Box>)}
+                  </Typography>}
                 </CardContent>
                 <CardActions>
                   <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
