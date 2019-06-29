@@ -18,9 +18,8 @@ import CloudUpload from '@material-ui/icons/CloudUpload';
 import Code from '@material-ui/icons/Code';
 import LibraryAdd from '@material-ui/icons/LibraryAdd';
 import {useDropzone} from "react-dropzone";
-
 // Local imports (TODO: shall minimize .. dependencies)
-import {clocJsonToFilesStats, langsSumStats, langStatsFromFilesStats} from "../analysis";
+import {clocJsonToFileStatsList, langStatsFromFilesStats, reduceLangStatsToSum} from "../analysis";
 import {TESTING} from "../config";
 
 // Configuration: only the Examples metadata
@@ -130,7 +129,7 @@ function ProjectLoader(props) {
       unfiltered: {
         filesStats: filesStats,
         langsStats: langsStats,
-        langsSumStats: langsSumStats(langsStats),
+        langsSumStats: reduceLangStatsToSum(langsStats),
       },
     };
     _parentCallback(bareProject);
@@ -161,7 +160,7 @@ function ProjectLoader(props) {
       return;
     }
     try {
-      passLoadedDataToTheParent(projectName, clocJsonToFilesStats(clocJson));
+      passLoadedDataToTheParent(projectName, clocJsonToFileStatsList(clocJson));
     } catch (e) {
       setErrorString('Invalid Cloc file. Details: ' + e);
     }
