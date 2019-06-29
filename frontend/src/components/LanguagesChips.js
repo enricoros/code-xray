@@ -67,7 +67,7 @@ export default props => {
         </Typography>
         {activeLangs.map(lang =>
           <Chip label={lang.name} onDelete={() => excludeLanguage(lang.name)}
-                key={'lang-' + lang.name} className={classes.langChip}/>)}
+                key={'lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
       <Grid item xs={12} md={6} style={{background: '#eee'}}>
         <Typography variant="h6" component="h4" align="center">
@@ -76,19 +76,25 @@ export default props => {
         </Typography>
         {inactiveLangs.map(lang =>
           <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => includeLanguage(lang.name)}
-                key={'no-lang-' + lang.name} className={classes.langChip}/>)}
+                key={'no-lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
       <Grid item xs={12}>
-        <Typography>
-          {noExclusion ? 'Code: 100% (' + activeCode + ')' : (nothingLeft ? 'Nothing left' :
-            'Removing ' + inactiveCode + ' lines of code (' + (100 - ~~(activeCodeRatio)) + '%)')}
-        </Typography>
-        <LinearProgress variant="determinate" value={activeCodeRatio}/>
-        <Typography>
-          {noExclusion ? 'Files: 100% (' + activeFiles + ')' : (nothingLeft ? 'Nothing left' :
-            'Removing ' + inactiveFiles + ' files (' + (100 - ~~(activeFilesRatio)) + '%)')}
-        </Typography>
-        <LinearProgress variant="determinate" value={activeFilesRatio}/>
+        <Grid container alignItems="center">
+          <Grid item xs={12} sm={5} md={4}>
+            {noExclusion ? 'Code: 100% (' + activeCode + ')' : (nothingLeft ? 'Nothing left' :
+              'Removing ' + inactiveCode + ' lines of code (' + (100 - ~~(activeCodeRatio)) + '%)')}
+          </Grid>
+          <Grid item xs={12} sm={7} md={8}>
+            <LinearProgress variant="determinate" value={activeCodeRatio}/>
+          </Grid>
+          <Grid item xs={12} sm={5} md={4}>
+            {noExclusion ? 'Files: 100% (' + activeFiles + ')' : (nothingLeft ? 'Nothing left' :
+              'Removing ' + inactiveFiles + ' files (' + (100 - ~~(activeFilesRatio)) + '%)')}
+          </Grid>
+          <Grid item xs={12} sm={7} md={8}>
+            <LinearProgress variant="determinate" value={activeFilesRatio}/>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   )
