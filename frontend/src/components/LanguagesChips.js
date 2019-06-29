@@ -44,14 +44,14 @@ export default props => {
     onChange([]);
   }
 
-  const activeLangs = langsStats.filter(l => !noLanguages.includes(l.name));
-  const inactiveLangs = langsStats.filter(l => noLanguages.includes(l.name));
+  const activeLS = langsStats.filter(l => !noLanguages.includes(l.name));
+  const inactiveLS = langsStats.filter(l => noLanguages.includes(l.name));
 
   // statistics (excluded files and code lines)
-  const activeCode = activeLangs.reduce((sum, l) => sum + l.code, 0);
-  const inactiveCode = inactiveLangs.reduce((sum, l) => sum + l.code, 0);
-  const activeFiles = activeLangs.reduce((sum, l) => sum + l.files, 0);
-  const inactiveFiles = inactiveLangs.reduce((sum, l) => sum + l.files, 0);
+  const activeCode = activeLS.reduce((sum, l) => sum + l.code, 0);
+  const inactiveCode = inactiveLS.reduce((sum, l) => sum + l.code, 0);
+  const activeFiles = activeLS.reduce((sum, l) => sum + l.files, 0);
+  const inactiveFiles = inactiveLS.reduce((sum, l) => sum + l.files, 0);
   const activeCodeRatio = activeCode > 0 ? 100 * (1 - inactiveCode / (activeCode + inactiveCode)) : 0;
   const activeFilesRatio = activeFiles > 0 ? 100 * (1 - inactiveFiles / (activeFiles + inactiveFiles)) : 0;
   const noExclusion = inactiveCode === 0;
@@ -65,7 +65,7 @@ export default props => {
           <IconButton href='' onClick={excludeAuto}><BrightnessAuto/></IconButton>
           <IconButton href='' onClick={resetIncluded} disabled={nothingLeft}><DoneAll/></IconButton>
         </Typography>
-        {activeLangs.map(lang =>
+        {activeLS.map(lang =>
           <Chip label={lang.name} onDelete={() => excludeLanguage(lang.name)}
                 key={'lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
@@ -74,7 +74,7 @@ export default props => {
           Disabled languages -
           <IconButton href='' onClick={resetExcluded} disabled={noExclusion}><DoneAll/></IconButton>
         </Typography>
-        {inactiveLangs.map(lang =>
+        {inactiveLS.map(lang =>
           <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => includeLanguage(lang.name)}
                 key={'no-lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
