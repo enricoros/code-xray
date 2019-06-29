@@ -17,7 +17,7 @@ import './App.css';
 import LanguagesChips from "./components/LanguagesChips";
 import ProjectLoader from "./components/ProjectLoader";
 import SignIn from "./components/SignIn";
-import {accumulateLangStats, sortDescByKpi} from "./analysis";
+import {reduceLangStatsByLanguage, reduceLangStatsToSum, sortDescByKpi} from "./analysis";
 // DEBUG
 import ReactJson from 'react-json-view'
 
@@ -87,21 +87,25 @@ function MultiProjectNode(props) {
   console.log('mpn');
   console.log(aa);
 
-  // sum all the language stats of different projects
-  const allLangsStats = accumulateLangStats(projects.reduce((acc, p) => acc.concat(p.unfiltered.langsStats), []));
+  // unfiltered composite lang stats, for input to the filter
+  const allLangsStats = reduceLangStatsByLanguage(projects.reduce((acc, p) => acc.concat(p.unfiltered.langsStats), []));
   allLangsStats.sort(sortDescByKpi('code'));
 
   // fused project
   const filteredLangStats = allLangsStats.filter(l => !noLanguages.includes(l.name));
-  console.log(filteredLangStats.length);
+
 
   const bareProject = {
     name: '_never_see_this_label_',
     unfiltered: {
       // filesStats: filesStats,
-      langsStats: filteredLangStats, // or allLangStats?
-      // langsSumStats: langsSumStats(langsStats),
+      langsStats: allLangsStats,
+      langsSumStats: reduceLangStatsToSum(allLangsStats),
     },
+    filtered: {
+      langsStats: filteredLangStats,
+      langsSumStats: reduceLangStatsToSum(filteredLangStats),
+    }
   };
   // fixme FROM here
 
