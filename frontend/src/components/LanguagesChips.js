@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
  */
 export default props => {
   const classes = useStyles();
-  const {langsStats, noLanguages, onChange} = props;
+  const {langStatList, noLanguages, onChange} = props;
 
   function excludeLanguage(name) {
     onChange(noLanguages.concat(name));
@@ -37,19 +37,19 @@ export default props => {
   }
 
   function excludeAuto() {
-    onChange(langsStats.map(l => l.name).filter(l => DEFAULT_NO_LANGUAGES.includes(l)));
+    onChange(langStatList.map(l => l.name).filter(l => DEFAULT_NO_LANGUAGES.includes(l)));
   }
 
   function resetIncluded() {
-    onChange(langsStats.map(l => l.name));
+    onChange(langStatList.map(l => l.name));
   }
 
   function resetExcluded() {
     onChange([]);
   }
 
-  const activeLS = langsStats.filter(l => !noLanguages.includes(l.name));
-  const inactiveLS = langsStats.filter(l => noLanguages.includes(l.name));
+  const activeLS = langStatList.filter(l => !noLanguages.includes(l.name));
+  const inactiveLS = langStatList.filter(l => noLanguages.includes(l.name));
 
   // statistics (excluded files and code lines)
   const activeCode = activeLS.reduce((sum, l) => sum + l.code, 0);
@@ -64,7 +64,7 @@ export default props => {
   return (
     <Grid container spacing={2}>
       <Grid item sm={12} md={6}>
-        <Typography variant="h6" component="h4" align="center">
+        <Typography align="center">
           Active Languages -
           <IconButton href='' onClick={excludeAuto}><BrightnessAuto/></IconButton>
           <IconButton href='' onClick={resetIncluded} disabled={nothingLeft}><DoneAll/></IconButton>
@@ -74,7 +74,7 @@ export default props => {
                 key={'lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
       <Grid item xs={12} md={6} style={{background: '#eee'}}>
-        <Typography variant="h6" component="h4" align="center">
+        <Typography align="center">
           Disabled languages -
           <IconButton href='' onClick={resetExcluded} disabled={noExclusion}><DoneAll/></IconButton>
         </Typography>

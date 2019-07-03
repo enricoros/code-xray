@@ -19,7 +19,7 @@ import Code from '@material-ui/icons/Code';
 import LibraryAdd from '@material-ui/icons/LibraryAdd';
 import {useDropzone} from "react-dropzone";
 // Local imports (TODO: shall minimize .. dependencies)
-import {clocJsonToFileList, makeProject} from "../analysis";
+import {clocJsonToFileStatList, makeProject} from "../analysis";
 import {TESTING} from "../config";
 
 // Configuration: only the Examples metadata
@@ -146,8 +146,8 @@ function ProjectLoader(props) {
       return;
     }
     try {
-      const projectFileList = clocJsonToFileList(clocJson);
-      const bareProject = makeProject(projectName, projectFileList);
+      const projectFiles = clocJsonToFileStatList(clocJson);
+      const bareProject = makeProject(projectName, projectFiles);
       setExpandNext(false);
       _parentOnProjectLoaded(bareProject);
     } catch (e) {

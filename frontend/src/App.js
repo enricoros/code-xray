@@ -7,19 +7,23 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
 import Container from "@material-ui/core/Container";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './App.css';
 import LanguagesChips from "./components/LanguagesChips";
 import ProjectLoader from "./components/ProjectLoader";
 import SignIn from "./components/SignIn";
-import {descendingByKey, reduceCodeStatListByName, reduceCodeStatListToSum} from "./analysis";
+import {descendingByKey, reduceCodeStatListByName} from "./analysis";
+import ReactJson from "react-json-view";
 // DEBUG
-import ReactJson from 'react-json-view'
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -77,90 +81,64 @@ function Section(props) {
   </Container>
 }
 
-function MultiProjectNode(props) {
+/**
+ * The objective of this class is to create a single project out of multiple ones (if multiple are supplied)
+ * and to perform all project-dependent computation, so that it won't need to be redone every time the state
+ * changes in the children.
+ */
+function MultiProjectNodeHolder(props) {
   const {projects, classes} = props;
-  const [noLanguages, setNoLanguages] = React.useState([]);
 
-  // TEMP
-  const [aa, setAa] = React.useState(1);
-  console.log('mpn');
-  console.log(aa);
+  // const mpnFileStatList = NOTE: there's no meaning to fuse the file list now
+  const mpnLangStatList = reduceCodeStatListByName(projects.map(p => p.unfiltered.langStatList).flat())
+    .sort(descendingByKey('code'));
+
+  return <MultiProjectNode langStatList={mpnLangStatList} projects={projects} classes={classes}/>;
+}
+
+
+function MultiProjectNode(props) {
+  const {langStatList, projects, classes} = props;
+  const [noLanguages, setNoLanguages] = React.useState([]);
 
   // unfiltered composite lang stats, for input to the filter
 
-
-  const allLangsStats = reduceCodeStatListByName(projects.reduce((acc, p) => acc.concat(p.unfiltered.langsStats), []));
-  allLangsStats.sort(descendingByKey('code'));
-
-  // fused project
-  const filteredLangStats = allLangsStats.filter(l => !noLanguages.includes(l.name));
-
-
-  const bareProject = {
-    name: '_never_see_this_label_',
-    unfiltered: {
-      // filesStats: filesStats,
-      langsStats: allLangsStats,
-      langsSumStats: reduceCodeStatListToSum(allLangsStats),
-    },
-    filtered: {
-      langsStats: filteredLangStats,
-      langsSumStats: reduceCodeStatListToSum(filteredLangStats),
-    }
-  };
-  // fixme FROM here
-
-  // Apply all the computation defined by this node
-  /*const allFiles = [];
-  const allFilteredFiles = [];
-  projects.map(project => {
-    const filteredProject = {
-      name: project.name,
-      filesStats: project.filesStats.filter((f) => !noLanguages.includes(f.language)),
-    };
-    allFiles.push(...project.filesStats);
-    allFilteredFiles.push(...filteredProject.filesStats);
-  });
-  console.log(allFiles.length + " -> " + allFilteredFiles.length);*/
-
-  // DEBUG button only
-  if (projects.length < 1) return (
-    <React.Fragment>
-      <Button href="" onClick={() => setAa(aa + 1)}>{"inc:" + aa}</Button>
-    </React.Fragment>
-  );
-
   return (
     <React.Fragment>
-      <React.Fragment>
-        <Button href="" onClick={() => setAa(aa + 1)}>{"inc:" + aa}</Button>
-      </React.Fragment>
 
       {/* Show Analysis on loaded content */}
       {/*<Section title="Analysis" className={classes.sectionClass}>*/}
       {/*  {(projects.length > 1) && <Typography>For {projects.length} projects</Typography>}*/}
-      {/*  <Typography>*/}
-      {/*    Programming Languages*/}
-      {/*  </Typography>*/}
-      {/*  <Typography>*/}
-      {/*    Statistics*/}
-      {/*  </Typography>*/}
-      {/*  <Typography>*/}
-      {/*    depth...*/}
-      {/*  </Typography>*/}
+      {/* .... */}
       {/*</Section>*/}
 
       {/* Section 3 filter */}
       <Section title="Filtering" className={classes.sectionClass}>
-        <Typography>
-          Raise the signal, drop the noise.
-        </Typography>
-        {/* Programming Languages */}
-        <Card square elevation={2}>
-          <CardContent>
-            <LanguagesChips langsStats={allLangsStats} noLanguages={noLanguages} onChange={setNoLanguages}/>
-          </CardContent>
-        </Card>
+        {/* Remove Files by Language */}
+        <ExpansionPanel defaultExpanded={true}>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
+            <Typography>
+              Programming Languages. Raise the signal, drop the noise.
+            </Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <LanguagesChips langStatList={langStatList} noLanguages={noLanguages} onChange={setNoLanguages}/>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+
+        {/* Remove Files by Folder */}
+        <ExpansionPanel>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
+            <Typography>
+              Remove entire folders from the analysis.
+            </Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Typography>
+              Not yet implemented.
+            </Typography>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
       </Section>
 
       {/*/!* Section 4 semantics *!/*/}
@@ -177,12 +155,6 @@ function MultiProjectNode(props) {
       {/*<Section title="Result" className={classes.sectionClass}>*/}
       {/*  dd*/}
       {/*</Section>*/}
-
-      {/* DEBUG */}
-      <Section title="Debug" className={classes.sectionClass}>
-        {(projects.length > 0) && <ReactJson src={projects} collapsed/>}
-      </Section>
-
     </React.Fragment>
   )
 }
@@ -212,7 +184,8 @@ function App() {
 
   return (
     <React.Fragment>
-      {/* Navigation */}
+
+      {/* Top-level Navigation Bar */}
       <AppBar position="static" color="default" className={classes.appBar}>
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
@@ -231,15 +204,16 @@ function App() {
 
       {/* Experiments box */}
       {experiment && <Container maxWidth="lg">
-        Experiments
+        <Typography>Experiments are On</Typography>
       </Container>}
 
-      {/* Welcome */}
+      {/* Welcome Message */}
       <Hero heroClass={classes.heroContent} title="Code XRay"
             description="Quickly understand a project based on source code analysis and visualization."/>
 
       {/* Projects holder and loader*/}
-      <Section title={multiProject ? "Projects" : "Project"} className={classes.sectionClass}>
+      <Section title={multiProject ? "Composite Project" : (hasProjects ? "Active Project" : undefined)}
+               className={classes.sectionClass}>
         <Grid container spacing={2} alignItems="center">
           {projects.map((project, idx) =>
             <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
@@ -247,16 +221,17 @@ function App() {
                 <CardContent>
                   <Typography variant="h6" component="h4">{project.name}</Typography>
                   <Typography>
-                    {project.unfiltered.filesStats.length} files, {project.unfiltered.langsStats.length} languages
+                    {project.unfiltered.fileStatList.length} files, {project.unfiltered.langStatList.length} languages
                   </Typography>
                   <Typography>
-                    {project.unfiltered.langsSumStats.code} lines of code
+                    {project.unfiltered.codeStatSum.code} lines of code
                   </Typography>
-                  {experiment && <Typography>
+                  {experiment && <React.Fragment>
                     <Box>- Lang = LOCs, files - density</Box>
-                    {project.unfiltered.langsStats.map((stat) =>
-                      <Box> - {stat.name} = {stat.code} {stat.files} - {~~(stat.code / stat.files)}</Box>)}
-                  </Typography>}
+                    {project.unfiltered.langStatList.map((stat, idx) =>
+                      <Box key={"lang-" + idx}> - {stat.name} = {stat.code} {stat.files} - {~~(stat.code / stat.files)}
+                      </Box>)}
+                  </React.Fragment>}
                 </CardContent>
                 <CardActions>
                   <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
@@ -268,7 +243,12 @@ function App() {
       </Section>
 
       {/* Projects */}
-      {hasProjects && <MultiProjectNode projects={projects} classes={classes}/>}
+      {hasProjects && <MultiProjectNodeHolder projects={projects} classes={classes}/>}
+
+      {/* Debugging */}
+      {hasProjects && <Section title="Debug" className={classes.sectionClass}>
+        <ReactJson src={projects} collapsed/>
+      </Section>}
 
       {/* Footer */}
       {/*<Container maxWidth="md" component="footer" className={classes.footer}>*/}

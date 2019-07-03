@@ -22,21 +22,22 @@ const makeFileStat = (fileName, fileDir, codeStatList) => {
   }
 };
 
-export const makeProject = (projectName, fileList) => {
-  const languageStats = reduceCodeStatListByName(fileList.map(f => f.codeStatList).flat());
-  const languageTotal = reduceCodeStatListToSum(languageStats);
+export const makeProject = (projectName, fileStatList, langStatList) => {
+  if (!langStatList)
+    langStatList = reduceCodeStatListByName(fileStatList.map(f => f.codeStatList).flat())
+      .sort(descendingByKey('code'));
   return {
     name: projectName,
     unfiltered: {
-      filesStats: fileList,
-      langsStats: languageStats.sort(descendingByKey('code')),
-      langsSumStats: languageTotal,
+      fileStatList: fileStatList,
+      langStatList: langStatList,
+      codeStatSum: reduceCodeStatListToSum(langStatList),
     },
   };
 };
 
 // create a list of FileStat (including CodeStat) from the Cloc JSON
-export function clocJsonToFileList(cj) {
+export function clocJsonToFileStatList(cj) {
   if (DEBUGGING) {
     console.log('Loaded a file generated from cloc: ' + cj['header']['cloc_version']);
     console.log(cj['header']);
@@ -57,7 +58,7 @@ export function clocJsonToFileList(cj) {
   return l;
 }
 
-// returns a list of langStats summing up by language name
+// returns a list of codeStar summing up by language name
 export function reduceCodeStatListByName(l) {
   return l.reduce((listByLang, cs) => {
     let lang = listByLang.find(l => l.name === cs.name);
@@ -68,6 +69,7 @@ export function reduceCodeStatListByName(l) {
   }, []);
 }
 
+// return a single codeStat with the overall sum
 export function reduceCodeStatListToSum(l) {
   return l.reduce((csSum, cs) => {
     codeStatNumFields.forEach(kpi => csSum[kpi] += cs[kpi]);
