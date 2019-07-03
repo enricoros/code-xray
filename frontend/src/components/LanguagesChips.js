@@ -20,6 +20,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+/**
+ * Usage: <LanguagesChips langsStats={statsList} noLanguages={languagesList} onChange={callback}/>
+ * @param props
+ */
 export default props => {
   const classes = useStyles();
   const {langsStats, noLanguages, onChange} = props;

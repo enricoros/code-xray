@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
 
 /**
  * Simple sign-in screen to ask for the user name. That's it, nothing more.
- * @param props {initialName='', onChange=f}
+ * @param props initialName='', onChange=f
  */
 export default function SignIn(props) {
   const classes = useStyles();
@@ -48,7 +48,7 @@ export default function SignIn(props) {
         <form className={classes.form} noValidate>
           <TextField fullWidth required variant="outlined" margin="normal" label="Your Name" autoFocus
                      value={userName} onChange={(event) => setUserName(event.target.value)}/>
-          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}
+          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} href=""
                   onClick={(e) => {
                     e.preventDefault();
                     if (userName.length > 1) onChange(userName);

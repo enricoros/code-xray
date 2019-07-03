@@ -19,7 +19,7 @@ import Code from '@material-ui/icons/Code';
 import LibraryAdd from '@material-ui/icons/LibraryAdd';
 import {useDropzone} from "react-dropzone";
 // Local imports (TODO: shall minimize .. dependencies)
-import {clocJsonToFileStatsList, langStatsFromFilesStats, reduceLangStatsToSum} from "../analysis";
+import {clocJsonToFileList, makeProject} from "../analysis";
 import {TESTING} from "../config";
 
 // Configuration: only the Examples metadata
@@ -96,7 +96,7 @@ function ClocLink(props) {
  */
 function ProjectLoader(props) {
   const _classes = useSourceSelectorStyles();
-  const {hasProjects: _parentHasProjects, onProjectLoaded: _parentCallback} = props;
+  const {hasProjects: _parentHasProjects, onProjectLoaded: _parentOnProjectLoaded} = props;
   const [expandNext, setExpandNext] = React.useState(false);
   const [tabIdx, setTabIdx] = React.useState(TESTING ? 1 : 0);
   const [errorString, setErrorString] = React.useState('');
@@ -120,20 +120,6 @@ function ProjectLoader(props) {
         })
       }),
     });
-
-  function passLoadedDataToTheParent(projectName, filesStats) {
-    setExpandNext(false);
-    const langsStats = langStatsFromFilesStats(filesStats);
-    const bareProject = {
-      name: projectName,
-      unfiltered: {
-        filesStats: filesStats,
-        langsStats: langsStats,
-        langsSumStats: reduceLangStatsToSum(langsStats),
-      },
-    };
-    _parentCallback(bareProject);
-  }
 
   // load one of the examples from the same web server (static examples)
   function loadExampleByIndex(index) {
@@ -160,7 +146,10 @@ function ProjectLoader(props) {
       return;
     }
     try {
-      passLoadedDataToTheParent(projectName, clocJsonToFileStatsList(clocJson));
+      const projectFileList = clocJsonToFileList(clocJson);
+      const bareProject = makeProject(projectName, projectFileList);
+      setExpandNext(false);
+      _parentOnProjectLoaded(bareProject);
     } catch (e) {
       setErrorString('Invalid Cloc file. Details: ' + e);
     }
