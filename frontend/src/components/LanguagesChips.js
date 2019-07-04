@@ -20,6 +20,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+export function getDefaultExclusions(langStatList) {
+  return langStatList.map(l => l.name).filter(l => DEFAULT_NO_LANGUAGES.includes(l));
+}
+
 /**
  * Usage: <LanguagesChips langsStats={statsList} noLanguages={languagesList} onChange={callback}/>
  * @param props
@@ -37,7 +41,7 @@ export default props => {
   }
 
   function excludeAuto() {
-    onChange(langStatList.map(l => l.name).filter(l => DEFAULT_NO_LANGUAGES.includes(l)));
+    onChange(getDefaultExclusions(langStatList));
   }
 
   function resetIncluded() {

@@ -21,6 +21,7 @@ import {useDropzone} from "react-dropzone";
 // Local imports (TODO: shall minimize .. dependencies)
 import {clocJsonToFileStatList, makeProject} from "../analysis";
 import {TESTING} from "../config";
+import Fab from "@material-ui/core/Fab";
 
 // Configuration: only the Examples metadata
 const EXAMPLES = [
@@ -176,9 +177,9 @@ function ProjectLoader(props) {
   // if collapsed, show a button to bring it back on
   if (showCollapsed) return (
     <Grid item md={2}>
-      <IconButton href="" variant="outlined" onClick={() => setExpandNext(true)}>
-        <LibraryAdd/>
-      </IconButton>
+      <Fab variant="extended" size="small" aria-label="Add" onClick={() => setExpandNext(true)} href="">
+        <LibraryAdd color="secondary" elevation={1}/>&nbsp;Add Project
+      </Fab>
     </Grid>
   );
 

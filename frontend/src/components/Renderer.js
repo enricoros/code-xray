@@ -203,12 +203,12 @@ export default function Renderer(props) {
     setHeight(newSize[1]);
   }
 
-  function resizeCanvasToScreen(newSize) {
+  function resizeCanvasToScreen(multiplier) {
     const canvas = document.getElementById('output-canvas');
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
-    setWidth(~~(rect.width * dpr));
-    setHeight(~~(rect.height * dpr));
+    setWidth(~~(rect.width * dpr * (multiplier || 1)));
+    setHeight(~~(rect.height * dpr * (multiplier || 1)));
   }
 
   // update the depth values on the final tree
@@ -216,6 +216,9 @@ export default function Renderer(props) {
 
   return (
     <React.Fragment>
+
+      {/* The one and only Canvas */}
+      <canvas id="output-canvas" width={cWidth} height={cHeight} className={classes.renderCanvas}/>
 
       {/* Render Config */}
       <Grid container>
@@ -243,7 +246,9 @@ export default function Renderer(props) {
                        onChange={e => setWidth(~~Math.max(96, Math.min(8192, parseInt(e.target.value))))}/>
             <TextField label="Height" type="number" value={height} className={classes.textField}
                        onChange={e => setHeight(~~(Math.max(96, Math.min(4096, parseInt(e.target.value)))))}/>
-            <Button onClick={() => resizeCanvasToScreen()} href="">1:1</Button>
+            <Button onClick={() => resizeCanvasToScreen(1)} href="">@1x</Button>
+            <Button onClick={() => resizeCanvasToScreen(2)} href="">@2x</Button>
+            <Button onClick={() => resizeCanvasToScreen(4)} href="">@4x</Button>
             <Button onClick={() => resizeCanvas([4000, 2000])} href="">4000 x 2000</Button>
             <Button onClick={() => resizeCanvas([2000, 1000])} href="">2000 x 1000</Button>
             <Button onClick={() => resizeCanvas([1000, 750])} href="">800 x 600</Button>
@@ -255,8 +260,6 @@ export default function Renderer(props) {
 
       <Typography>&nbsp;</Typography>
 
-      {/* The one and only Canvas */}
-      <canvas id="output-canvas" width={cWidth} height={cHeight} className={classes.renderCanvas}/>
 
     </React.Fragment>
   );

@@ -17,7 +17,6 @@ import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ReactJson from "react-json-view";
 import './App.css';
 import {
   collapseDegenerateDirectories,
@@ -26,7 +25,7 @@ import {
   makeProjectDirNodeTree,
   reduceCodeStatListByName
 } from "./analysis";
-import LanguagesChips from "./components/LanguagesChips";
+import LanguagesChips, {getDefaultExclusions} from "./components/LanguagesChips";
 import ProjectLoader from "./components/ProjectLoader";
 import Renderer from "./components/Renderer";
 import SignIn from "./components/SignIn";
@@ -60,6 +59,10 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(3),
   },
+  projectCard: {
+    backgroundColor: theme.palette.secondary.dark,
+    color: theme.palette.secondary.contrastText,
+  },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
@@ -82,9 +85,7 @@ function Hero(props) {
 
 function Section(props) {
   return <Container maxWidth="lg" component="main" className={props.className}>
-    {props.title && <Typography variant="h5" component="h2" gutterBottom>
-      {props.title}
-    </Typography>}
+    {props.title && <Typography variant="h5" component="h2" gutterBottom align="center">{props.title}</Typography>}
     {props.children}
   </Container>
 }
@@ -110,9 +111,10 @@ function MultiProjectFilter(props) {
   const classes = useStyles();
 
   // state from this
-  const [noLanguages, setNoLanguages] = React.useState([]);
+
+  const [noLanguages, setNoLanguages] = React.useState(getDefaultExclusions(langStatList));
   const [noFolderPrefix, setNoFolderPrefix] = React.useState([]);
-  const [semCollapse, setSemCollapse] = React.useState(false);
+  const [semCollapse, setSemCollapse] = React.useState(true);
 
   return (
     <React.Fragment>
@@ -124,7 +126,7 @@ function MultiProjectFilter(props) {
       {/*</Section>*/}
 
       {/* Section 3 filter */}
-      <Section title="Filtering" className={classes.sectionClass}>
+      <Section title="Cleanup" className={classes.sectionClass}>
         {/* Remove Files by Language */}
         <ExpansionPanel defaultExpanded={true}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
@@ -149,12 +151,8 @@ function MultiProjectFilter(props) {
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
-      </Section>
-
-      {/* Section 4 semantics */}
-      <Section title="Semantics" className={classes.sectionClass}>
         {/* Loss-less transformations */}
-        <ExpansionPanel defaultExpanded={true}>
+        <ExpansionPanel defaultExpanded={false}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
             <Typography>
               Loss-less transformations
@@ -170,7 +168,7 @@ function MultiProjectFilter(props) {
 
       {/* Section 5 render */}
       <React.Fragment>
-        <Section title="Rendering" className={classes.sectionClass}>
+        <Section title="Project tree-map" className={classes.sectionClass}>
           <Card>
             <CardContent>
               <RenderingClosure noLanguages={noLanguages} noFolderPrefix={noFolderPrefix}
@@ -273,10 +271,10 @@ function App() {
       {/* Projects holder and loader*/}
       <Section title={multiProject ? "Composite Project" : (hasProjects ? "Active Project" : undefined)}
                className={classes.sectionClass}>
-        <Grid container spacing={2} alignItems="center">
+        <Grid container spacing={2} alignItems="center" justify="center">
           {projects.map((project, idx) =>
             <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
-              <Card raised>
+              <Card raised className={classes.projectCard}>
                 <CardContent>
                   <Typography variant="h6" component="h4">{project.name}</Typography>
                   <Typography>
@@ -293,7 +291,8 @@ function App() {
                   </React.Fragment>}
                 </CardContent>
                 <CardActions>
-                  <Button color="primary" onClick={() => removeProject(idx)} href="#">Close Project</Button>
+                  <Button onClick={() => removeProject(idx)} href="#" className={classes.projectCard}>
+                    {multiProject ? "Remove" : "Close Project"}</Button>
                 </CardActions>
               </Card>
             </Grid>)}
@@ -303,11 +302,6 @@ function App() {
 
       {/* Projects */}
       {hasProjects && <MultiProjectFilterClosure projects={projects}/>}
-
-      {/* Debugging */}
-      {hasProjects && <Section title="Debug" className={classes.sectionClass}>
-        <ReactJson src={projects} collapsed/>
-      </Section>}
 
       {/* Footer */}
       {/*<Container maxWidth="md" component="footer" className={classes.footer}>*/}
