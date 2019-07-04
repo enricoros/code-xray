@@ -292,7 +292,7 @@ function App() {
                 </CardContent>
                 <CardActions>
                   <Button onClick={() => removeProject(idx)} href="#" className={classes.projectCard}>
-                    {multiProject ? "Remove" : "Close Project"}</Button>
+                    {multiProject ? "Remove This" : "Close Project"}</Button>
                 </CardActions>
               </Card>
             </Grid>)}

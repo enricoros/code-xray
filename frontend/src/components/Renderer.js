@@ -1,7 +1,5 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import {DEBUGGING} from "../config";
 import {updateTreeStatsRecursively} from "../analysis";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -11,6 +9,7 @@ import FormLabel from "@material-ui/core/FormLabel";
 import {FormGroup} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const d3h = require("d3-hierarchy");
 
@@ -35,62 +34,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-/*
-const Painter = {
-  shrinkInnerPadding: 2,
+function setShadow(ctx, color, shadowPx) {
+  ctx.shadowColor = color ? color : '#0000';
+  ctx.shadowBlur = shadowPx ? shadowPx : 0;
+  ctx.shadowOffsetX = ctx.shadowOffsetY = shadowPx ? ~~(shadowPx / 2) : 0;
+}
 
+function removeShadow(ctx) {
+  setShadow(ctx);
+}
 
-  setShadow: (ctx, color, shadowPx) => {
-    ctx.shadowColor = color ? color : '#0000';
-    ctx.shadowBlur = shadowPx ? shadowPx : 0;
-    ctx.shadowOffsetX = ctx.shadowOffsetY = shadowPx ? ~~(shadowPx / 2) : 0;
-  },
-
-  removeShadow: (ctx) => Painter.setShadow(ctx),
-
-  drawFolderBox: (ctx, dh, shrinkBox, forceFill) => {
-    const isLeaf = !dh.children;
-    // shrink project nodes
-    if (shrinkBox) {
-      dh.x0 += Painter.shrinkInnerPadding;
-      dh.x1 -= Painter.shrinkInnerPadding;
-      dh.y1 -= Painter.shrinkInnerPadding;
-    }
-    // stroke: not if leaf (note: half will be painted by the 'fillRect' call)
-    if (!isLeaf && !shrinkBox) {
-      Painter.removeShadow(ctx);
-      ctx.strokeStyle = 'black';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
-    }
-    // fill: if leaf, strong color and no shadow
-    if (isLeaf) {
-      Painter.removeShadow(ctx);
-      ctx.fillStyle = fColorI();
-    } else {
-      // if inner node, more depth-based coloring and shadow
-      Painter.setShadow(ctx, 'rgba(0,0,0,0.5)', Painter.boxShadowPx);
-      ctx.fillStyle = fColor2I();
-      // ctx.fillStyle = interpolateYlGnBu(0.1 + (dh.data.depth - 1) / 6 + (Math.random() - Math.random()) / 28);
-    }
-    if (forceFill)
-      ctx.fillStyle = forceFill;
-    ctx.fillRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
-  },
-
-  drawFolderLabel: (ctx, d, thinLabels) => {
-    let label = d.data.name + ' (' + d.data.value + ')';
-    if (thinLabels)
-      label = d.data.name;
-
-    setShadow(ctx, 'black', fontShadowPx);
-    ctx.font = fontPx + "px sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillStyle = d.children ? 'white' : 'white';
-    ctx.fillText(label, ~~((d.x0 + d.x1) / 2), ~~(d.y0 + fontPx * 0.85));
-  }
-};
-*/
 function pickBestWH(w, h) {
   let height = h || 2000,
     width = w;
@@ -101,17 +54,15 @@ function pickBestWH(w, h) {
   return {width, height};
 }
 
-const print = console.log;
-
-function renderOnCanvas(projectTree, canvas) {
-  const options = {
+function renderOnCanvas(projectTree, canvas, options) {
+  Object.assign(options, {
     width: canvas.width,
     height: canvas.height,
     hide_below: 0,
     hide_above: 99,
     hide_labels_above: 6,
     thin_labels_above: 3,
-  };
+  });
 
   // parametric configuration, def: h=2000, w=auto(16:9)
   const {width, height} = pickBestWH(options['width'], options['height']);
@@ -153,29 +104,66 @@ function renderOnCanvas(projectTree, canvas) {
   treeMap.each(dh => {
 
     const isLeaf = !dh.children;
+    const depth = dh.data.depth;
+    const shrinkBox = depth <= shrink_on;
+    const forceFill = depth <= gray_on ? 'gray' : undefined;
+    const thinLabel = depth > thin_labels_above;
 
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
+    /// if (depth < hide_below || depth > hide_above) return;
 
-    // fill: if leaf, strong color and no shadow
-    if (isLeaf) {
-      ctx.fillStyle = 'rgba(255,255,255,0.1)';
-    } else {
-      // if inner node, more depth-based coloring and shadow
-      ctx.fillStyle = 'rgba(0,0,0,0.1)';
-      // ctx.fillStyle = interpolateYlGnBu(0.1 + (dh.data.depth - 1) / 6 + (Math.random() - Math.random()) / 28);
+    // shrink project nodes
+    if (shrinkBox) {
+      dh.x0 += shrinkInnerPadding;
+      dh.x1 -= shrinkInnerPadding;
+      dh.y1 -= shrinkInnerPadding;
     }
-    // if (forceFill)
-    //   ctx.fillStyle = forceFill;
-    ctx.fillRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
+    // stroke: not if leaf (note: half will be painted by the 'fillRect' call)
+    if (options.lines && !isLeaf && !shrinkBox) {
+      removeShadow(ctx);
+      ctx.strokeStyle = 'black';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
+    }
 
-    // const depth = dh.data.depth;
-    // if (depth < hide_below || depth > hide_above) return;
-    // drawFolderBox(context, dh, depth <= shrink_on, depth <= gray_on ? 'gray' : undefined);
-    // if (depth <= hide_labels_above)
-    //   drawFolderLabel(context, dh, depth > thin_labels_above);
+    if (options.boxes) {
+      // fill: if leaf, strong color and no shadow
+      if (isLeaf) {
+        removeShadow(ctx);
+        // ctx.fillStyle = fColorI();
+        ctx.fillStyle = 'rgba(255,255,255,0.1)';
+      } else {
+        // if inner node, more depth-based coloring and shadow
+        options.shadows && setShadow(ctx, 'rgba(0,0,0,0.5)', boxShadowPx);
+        // ctx.fillStyle = fColor2I();
+        ctx.fillStyle = 'rgba(0,0,0,0.1)';
+        // ctx.fillStyle = interpolateYlGnBu(0.1 + (dh.data.depth - 1) / 6 + (Math.random() - Math.random()) / 28);
+      }
+      if (forceFill)
+        ctx.fillStyle = forceFill;
+      ctx.fillRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
+    }
+
+    /// if (depth > hide_labels_above) return;
+
+    if (options.labels) {
+      // if (depth <= hide_labels_above) {
+
+      const label = dh.data.name + (thinLabel ? '' : ' (' + dh.data.value + ')');
+
+      options.shadows && setShadow(ctx, 'black', fontShadowPx);
+      ctx.font = fontPx + "px sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillStyle = dh.children ? 'white' : 'white';
+      ctx.fillText(label, ~~((dh.x0 + dh.x1) / 2), ~~(dh.y0 + fontPx * 0.85));
+      // }
+    }
   });
+
+  // const depth = dh.data.depth;
+  // if (depth < hide_below || depth > hide_above) return;
+  // drawFolderBox(context, dh, depth <= shrink_on, depth <= gray_on ? 'gray' : undefined);
+  // if (depth <= hide_labels_above)
+  //   drawFolderLabel(context, dh, depth > thin_labels_above);
 
 }
 
@@ -189,30 +177,41 @@ export default function Renderer(props) {
   const [valueKpi, setValueKpi] = React.useState('code');
   const [width, setWidth] = React.useState(2000);
   const [height, setHeight] = React.useState(1000);
-  const cWidth = Math.max(width, 96);
-  const cHeight = Math.max(height, 96);
+  const [features, setFeatures] = React.useState({
+    labels: true,
+    lines: true,
+    boxes: true,
+    shadows: true,
+  });
 
   // render canvas at geometry changes
   React.useEffect(() => {
     const canvas = document.getElementById('output-canvas');
-    renderOnCanvas(projectTree, canvas);
+    renderOnCanvas(projectTree, canvas, features);
   });
 
-  function resizeCanvas(newSize) {
+  const changeFeature = feature => event => {
+    setFeatures({...features, [feature]: event.target.checked});
+  };
+
+  const resizeCanvas = newSize => {
     setWidth(newSize[0]);
     setHeight(newSize[1]);
-  }
+  };
 
-  function resizeCanvasToScreen(multiplier) {
+  const resizeCanvasToScreen = (multiplier) => {
     const canvas = document.getElementById('output-canvas');
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
     setWidth(~~(rect.width * dpr * (multiplier || 1)));
     setHeight(~~(rect.height * dpr * (multiplier || 1)));
-  }
+  };
 
   // update the depth values on the final tree
   updateTreeStatsRecursively(projectTree, projectTree.is_multi_project ? -1 : 0, valueKpi);
+
+  const cWidth = Math.max(width, 96);
+  const cHeight = Math.max(height, 96);
 
   return (
     <React.Fragment>
@@ -256,10 +255,22 @@ export default function Renderer(props) {
             <FormLabel component="div" className={classes.descLabel}> - Dpr: {window.devicePixelRatio}</FormLabel>}
           </FormGroup>
         </Grid>
+
+        {/* Options */}
+        <Grid item xs={12} sm={4} md={2}>
+          <FormLabel component="div" className={classes.descLabel}>Show</FormLabel>
+        </Grid>
+        <Grid item xs={12} sm={8} md={10}>
+          <FormControlLabel label="Labels" control={
+            <Checkbox checked={features['labels']} onChange={changeFeature('labels')}/>}/>
+          <FormControlLabel label="Lines" control={
+            <Checkbox checked={features['lines']} onChange={changeFeature('lines')}/>}/>
+          <FormControlLabel label="Boxes" control={
+            <Checkbox checked={features['boxes']} onChange={changeFeature('boxes')}/>}/>
+          <FormControlLabel label="Shadows" control={
+            <Checkbox checked={features['shadows']} onChange={changeFeature('shadows')}/>}/>
+        </Grid>
       </Grid>
-
-      <Typography>&nbsp;</Typography>
-
 
     </React.Fragment>
   );
