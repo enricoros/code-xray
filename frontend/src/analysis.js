@@ -3,14 +3,14 @@ import {DEBUGGING} from "./config";
 
 export const descendingByKey = kpi => (a, b) => b[kpi] - a[kpi];
 
-const codeStatNumFields = ['code', 'blank', 'comment', 'files'];
+const codeStatKPIs = ['code', 'blank', 'comment', 'files'];
 const makeCodeStat = (languageName, code, blank, comm, f) => {
   return {
     name: languageName,
     code: code || 0,    // lines
     blank: blank || 0,  // lines
     comment: comm || 0, // lines
-    files: f || 1.0,
+    files: f || 0,
   }
 };
 
@@ -19,6 +19,14 @@ const makeFileStat = (fileName, fileDir, codeStatList) => {
     name: fileName,
     dir: fileDir,
     codeStatList: codeStatList,
+  }
+};
+
+export const makeDirNode = (name) => {
+  return {
+    name: name,
+    fileStatList: [],
+    children: []
   }
 };
 
@@ -52,7 +60,7 @@ export function clocJsonToFileStatList(cj) {
       path.basename(filePath.substring(2)),
       path.dirname(filePath.substring(2)),
       // note: Cloc provide only a single language per file, assume 1.0
-      [makeCodeStat(clocFile['language'], clocFile['code'], clocFile['blank'], clocFile['comment'],)]
+      [makeCodeStat(clocFile['language'], clocFile['code'], clocFile['blank'], clocFile['comment'], 1)]
     ));
   }
   return l;
@@ -64,7 +72,7 @@ export function reduceCodeStatListByName(l) {
     let lang = listByLang.find(l => l.name === cs.name);
     if (!lang)
       listByLang.push(lang = makeCodeStat(cs.name));
-    codeStatNumFields.forEach(kpi => lang[kpi] += cs[kpi]);
+    codeStatKPIs.forEach(kpi => lang[kpi] += cs[kpi]);
     return listByLang;
   }, []);
 }
@@ -72,28 +80,71 @@ export function reduceCodeStatListByName(l) {
 // return a single codeStat with the overall sum
 export function reduceCodeStatListToSum(l) {
   return l.reduce((csSum, cs) => {
-    codeStatNumFields.forEach(kpi => csSum[kpi] += cs[kpi]);
+    codeStatKPIs.forEach(kpi => csSum[kpi] += cs[kpi]);
     return csSum;
   }, makeCodeStat('_SUM_'));
 }
 
 // create a Tree representation of folders, with contained files: {name, files[], children[]}
-/*function makeDirStatsTree(filesStats, projectName) {
-  const root = {is_project: true, 'name': projectName, files: [], children: []};
-  filesStats.forEach(fileStat => {
+export function makeProjectDirNodeTree(fileStatList, projectName) {
+  const root = makeDirNode(projectName);
+  root.is_project = true; // FIXME: HACK
+  fileStatList.forEach(fs => {
     // create & walk the sub-folder structure
-    let fileDir = root;
-    fileStat['dir'].split(path.sep).forEach(subName => {
+    let fileNode = root;
+    fs.dir.split(path.sep).forEach(subName => {
       if (subName === '.' || subName === '') return;
-      let subFolder = fileDir.children.find(e => e.name === subName);
+      let subFolder = fileNode.children.find(c => c.name === subName);
       if (!subFolder) {
-        subFolder = {'name': subName, files: [], children: []};
-        fileDir.children.push(subFolder);
+        subFolder = makeDirNode(subName);
+        fileNode.children.push(subFolder);
       }
-      fileDir = subFolder;
+      fileNode = subFolder;
     });
     // add this file
-    fileDir.files.push(fileStat);
+    fileNode.fileStatList.push(fs);
   });
   return root;
-}*/
+}
+
+// when a directory only has 1 sub-folder and no files, fuse-in that sub-folder contents (similar to github's path simplifier)
+export function collapseDegenerateDirectories(node) {
+  let fused = false;
+  while (node.children.length === 1 && node.fileStatList.length === 0) {
+    const child = node.children[0];
+    node.name = node.name + path.sep + child.name;
+    node.fileStatList = child.fileStatList;
+    node.children = child.children;
+    fused = true;
+  }
+  if (fused && DEBUGGING)
+    console.log('fused: ' + node.name);
+  // this node is okay, recurse to children
+  node.children.forEach(c => collapseDegenerateDirectories(c));
+}
+
+
+// recursively compute code statistics; the root node has the whole project language statistics
+export function updateTreeStatsRecursively(node, newDepth, sum_kpi) {
+  // local stats: reduce languages of all local files
+  const localCodeStatList = reduceCodeStatListByName(node.fileStatList.map(fs => fs.codeStatList).flat());
+
+  // rollup code stats: reduce( local + all children stats )
+  let rollupCodeStatList = [].concat(localCodeStatList);
+  node.children.forEach(c => {
+    updateTreeStatsRecursively(c, newDepth + 1, sum_kpi);
+    rollupCodeStatList.push(c.rollupCodeStatList);
+  });
+  rollupCodeStatList = reduceCodeStatListByName(rollupCodeStatList.flat());
+
+  // final node value_lang = the dominant language in the folder and sub-folders
+  const sumByKpi = rollupCodeStatList.reduce((acc, cs) => acc + cs[sum_kpi], 0);
+
+  // we could assign these incrementally, but I like making the edit atomic and explicit
+  Object.assign(node, {
+    depth: newDepth,
+    value: sumByKpi,
+    localCodeStatList: localCodeStatList,
+    rollupCodeStatList: rollupCodeStatList.sort(descendingByKey('code')),
+  });
+}
