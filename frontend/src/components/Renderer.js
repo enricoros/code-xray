@@ -30,7 +30,6 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2),
   },
   renderCanvas: {
-    backgroundColor: DEBUGGING ? 'red' : 'transparent',
     width: '100%',
     height: '100%',
   },
@@ -137,10 +136,9 @@ function renderOnCanvas(projectTree, canvas) {
   // const fColorI = () => fColor(++fColorIdx);
   // const fColor2I = () => interpolateYlGnBu(fColorIdx2 += 0.015);
 
-  // erase canvas
+  // erase canvas - equivalent to 'copy' compositing op, with black transparent
   const context = canvas.getContext('2d');
-  context.fillStyle = 'white';
-  context.fillRect(0, 0, width, height);
+  context.clearRect(0, 0, width, height);
 
   // use d3 to layout the TreeMap
   const dataHierarchy = d3h.hierarchy(projectTree);
@@ -245,7 +243,7 @@ export default function Renderer(props) {
                        onChange={e => setWidth(~~Math.max(96, Math.min(8192, parseInt(e.target.value))))}/>
             <TextField label="Height" type="number" value={height} className={classes.textField}
                        onChange={e => setHeight(~~(Math.max(96, Math.min(4096, parseInt(e.target.value)))))}/>
-            <Button color="primary" onClick={() => resizeCanvasToScreen()} href="">1:1</Button>
+            <Button onClick={() => resizeCanvasToScreen()} href="">1:1</Button>
             <Button onClick={() => resizeCanvas([4000, 2000])} href="">4000 x 2000</Button>
             <Button onClick={() => resizeCanvas([2000, 1000])} href="">2000 x 1000</Button>
             <Button onClick={() => resizeCanvas([1000, 750])} href="">800 x 600</Button>
