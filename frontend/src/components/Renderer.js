@@ -118,12 +118,12 @@ function renderOnCanvas(projectTree, canvas, options) {
       dh.y1 -= shrinkInnerPadding;
     }
     // stroke: not if leaf (note: half will be painted by the 'fillRect' call)
-    if (options.lines && !isLeaf && !shrinkBox) {
+    // if (options.lines && !isLeaf /*&& !shrinkBox*/) {
       removeShadow(ctx);
       ctx.strokeStyle = 'black';
       ctx.lineWidth = 2;
       ctx.strokeRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
-    }
+    // }
 
     if (options.boxes) {
       // fill: if leaf, strong color and no shadow
@@ -153,7 +153,8 @@ function renderOnCanvas(projectTree, canvas, options) {
       options.shadows && setShadow(ctx, 'black', fontShadowPx);
       ctx.font = fontPx + "px sans-serif";
       ctx.textAlign = "center";
-      ctx.fillStyle = dh.children ? 'white' : 'white';
+      // ctx.fillStyle = dh.children ? 'white' : 'white';
+      ctx.fillStyle = 'black';
       ctx.fillText(label, ~~((dh.x0 + dh.x1) / 2), ~~(dh.y0 + fontPx * 0.85));
       // }
     }
@@ -180,7 +181,7 @@ export default function Renderer(props) {
   const [features, setFeatures] = React.useState({
     labels: true,
     lines: true,
-    boxes: true,
+    boxes: false,
     shadows: true,
   });
 
