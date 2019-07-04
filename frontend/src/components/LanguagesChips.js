@@ -73,7 +73,7 @@ export default props => {
           <Chip label={lang.name} onDelete={() => excludeLanguage(lang.name)}
                 key={'lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
-      <Grid item xs={12} md={6} style={{background: '#eee'}}>
+      <Grid item xs={12} md={6}>
         <Typography align="center">
           Disabled languages -
           <IconButton href='' onClick={resetExcluded} disabled={noExclusion}><DoneAll/></IconButton>
@@ -82,7 +82,7 @@ export default props => {
           <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => includeLanguage(lang.name)}
                 key={'no-lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} style={{backgroundColor: '#f0f0f0'}}>
         <Grid container alignItems="center">
           <Grid item xs={12} sm={5} md={4}>
             {noExclusion ? 'Code: 100% (' + activeCode + ')' : (nothingLeft ? 'Nothing left' :
