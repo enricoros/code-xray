@@ -13,8 +13,6 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
 import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -26,11 +24,11 @@ import {
   descendingByKey,
   makeDirNode,
   makeProjectDirNodeTree,
-  reduceCodeStatListByName,
-  updateTreeStatsRecursively
+  reduceCodeStatListByName
 } from "./analysis";
 import LanguagesChips from "./components/LanguagesChips";
 import ProjectLoader from "./components/ProjectLoader";
+import Renderer from "./components/Renderer";
 import SignIn from "./components/SignIn";
 
 // localstorage persisted state
@@ -170,15 +168,24 @@ function MultiProjectFilter(props) {
         </ExpansionPanel>
       </Section>
 
-      <MultiProjectFusionClosure noLanguages={noLanguages} noFolderPrefix={noFolderPrefix}
-                                 collapseDegenerate={semCollapse} projects={projects}/>
+      {/* Section 5 render */}
+      <React.Fragment>
+        <Section title="Rendering" className={classes.sectionClass}>
+          <Card>
+            <CardContent>
+              <RenderingClosure noLanguages={noLanguages} noFolderPrefix={noFolderPrefix}
+                                collapseDegenerate={semCollapse} projects={projects}/>
+            </CardContent>
+          </Card>
+        </Section>
+      </React.Fragment>
 
     </React.Fragment>
   )
 }
 
 
-function MultiProjectFusionClosure(props) {
+function RenderingClosure(props) {
   const {noLanguages, noFolderPrefix, collapseDegenerate, projects} = props;
 
   // multi project tree
@@ -209,49 +216,7 @@ function MultiProjectFusionClosure(props) {
       fusedTree.children.push(filteredDirStatTree);
   });
 
-  return <ProjectTreeRenderer projectTree={fusedTree}/>
-}
-
-
-function ProjectTreeRenderer(props) {
-  const classes = useStyles();
-  const {projectTree} = props;
-
-  const [valueKpi, setValueKpi] = React.useState('code');
-
-  // update the depth values on the final tree
-  updateTreeStatsRecursively(projectTree, projectTree.is_multi_project ? -1 : 0, valueKpi);
-  console.log(projectTree);
-
-  return (
-    <React.Fragment>
-
-      {/* Section 5 render config */}
-      <Section title="Render Config" className={classes.sectionClass}>
-        <Card>
-          <CardContent>
-            <Typography>Size according to:</Typography>
-            <RadioGroup aria-label="value-kpi" name="value-kpi" row value={valueKpi}
-                        onChange={(e, value) => setValueKpi(value)}>
-              <FormControlLabel value="code" control={<Radio color="primary"/>} label="Lines of code"/>
-              <FormControlLabel value="comment" control={<Radio color="primary"/>} label="Comment"/>
-              <FormControlLabel value="blank" control={<Radio color="primary"/>} label="Spaces"/>
-              <FormControlLabel value="files" control={<Radio color="primary"/>} label="Files count"/>
-            </RadioGroup>
-          </CardContent>
-        </Card>
-      </Section>
-
-      {/* Section 6 render */}
-      <Section title="Result" className={classes.sectionClass}>
-        <Typography>
-          Rendering content goes here. Outer size: {projectTree.value}
-        </Typography>
-        <canvas/>
-      </Section>
-
-    </React.Fragment>
-  )
+  return <Renderer projectTree={fusedTree}/>
 }
 
 
