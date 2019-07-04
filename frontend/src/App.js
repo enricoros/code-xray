@@ -13,26 +13,36 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
 import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ReactJson from "react-json-view";
 import './App.css';
+import {
+  collapseDegenerateDirectories,
+  descendingByKey,
+  makeDirNode,
+  makeProjectDirNodeTree,
+  reduceCodeStatListByName,
+  updateTreeStatsRecursively
+} from "./analysis";
 import LanguagesChips from "./components/LanguagesChips";
 import ProjectLoader from "./components/ProjectLoader";
 import SignIn from "./components/SignIn";
-import {descendingByKey, reduceCodeStatListByName} from "./analysis";
-import ReactJson from "react-json-view";
-// DEBUG
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
 // const usePersistedUserState = createPersistedState('user_name_2');
 
-// settings
-const default_GuestName = 'Guest';
+// settings-
+const DEFAULT_GUEST_NAME = 'Guest';
+const DEFAULT_PROJECT_NAME = 'Composite Project';
 
-const useAppStyles = makeStyles(theme => ({
+// App styled looks
+const useStyles = makeStyles(theme => ({
   appBar: {
     position: 'relative',
   },
@@ -86,22 +96,25 @@ function Section(props) {
  * and to perform all project-dependent computation, so that it won't need to be redone every time the state
  * changes in the children.
  */
-function MultiProjectNodeHolder(props) {
-  const {projects, classes} = props;
+function MultiProjectFilterClosure(props) {
+  const {projects} = props;
 
   // const mpnFileStatList = NOTE: there's no meaning to fuse the file list now
   const mpnLangStatList = reduceCodeStatListByName(projects.map(p => p.unfiltered.langStatList).flat())
     .sort(descendingByKey('code'));
 
-  return <MultiProjectNode langStatList={mpnLangStatList} projects={projects} classes={classes}/>;
+  return <MultiProjectFilter langStatList={mpnLangStatList} projects={projects}/>;
 }
 
 
-function MultiProjectNode(props) {
-  const {langStatList, projects, classes} = props;
-  const [noLanguages, setNoLanguages] = React.useState([]);
+function MultiProjectFilter(props) {
+  const {langStatList, projects} = props;
+  const classes = useStyles();
 
-  // unfiltered composite lang stats, for input to the filter
+  // state from this
+  const [noLanguages, setNoLanguages] = React.useState([]);
+  const [noFolderPrefix, setNoFolderPrefix] = React.useState([]);
+  const [semCollapse, setSemCollapse] = React.useState(false);
 
   return (
     <React.Fragment>
@@ -125,7 +138,6 @@ function MultiProjectNode(props) {
             <LanguagesChips langStatList={langStatList} noLanguages={noLanguages} onChange={setNoLanguages}/>
           </ExpansionPanelDetails>
         </ExpansionPanel>
-
         {/* Remove Files by Folder */}
         <ExpansionPanel>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
@@ -141,30 +153,112 @@ function MultiProjectNode(props) {
         </ExpansionPanel>
       </Section>
 
-      {/*/!* Section 4 semantics *!/*/}
-      {/*<Section title="Semantics" className={classes.sectionClass}>*/}
-      {/*  bb*/}
-      {/*</Section>*/}
+      {/* Section 4 semantics */}
+      <Section title="Semantics" className={classes.sectionClass}>
+        {/* Loss-less transformations */}
+        <ExpansionPanel defaultExpanded={true}>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
+            <Typography>
+              Loss-less transformations
+            </Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <FormControlLabel label="Collapse degenerate folder structures" control={
+              <Switch checked={semCollapse} onChange={(e, state) => setSemCollapse(state)} color="primary"/>}/>
+            {/*<Typography>TODO: ADDD cap folders here</Typography>*/}
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </Section>
 
-      {/*/!* Section 5 render config *!/*/}
-      {/*<Section title="Rendering" className={classes.sectionClass}>*/}
-      {/*  ee*/}
-      {/*</Section>*/}
+      <MultiProjectFusionClosure noLanguages={noLanguages} noFolderPrefix={noFolderPrefix}
+                                 collapseDegenerate={semCollapse} projects={projects}/>
 
-      {/*/!* Section 6 render *!/*/}
-      {/*<Section title="Result" className={classes.sectionClass}>*/}
-      {/*  dd*/}
-      {/*</Section>*/}
+    </React.Fragment>
+  )
+}
+
+
+function MultiProjectFusionClosure(props) {
+  const {noLanguages, noFolderPrefix, collapseDegenerate, projects} = props;
+
+  // multi project tree
+  let fusedTree = makeDirNode(DEFAULT_PROJECT_NAME);
+  fusedTree.is_multi_project = true; // FIXME: HACK
+
+  // create per-project trees, executing cleanups
+  projects.forEach(p => {
+    // lossy cleanup 1: remove entire folders from the export (for example if you didn't care about /scripts/..)
+    // lossy cleanup 2: remove files written in unwanted languages, to improve the SNR
+    const filteredFileStatList = p.unfiltered.fileStatList.filter(fs => {
+      const hasFolderPrefix = noFolderPrefix.find(folder => fs.dir.startsWith(folder));
+      const hasLanguage = noLanguages.find(languageName => fs.codeStatList.map(cs => cs.name).includes(languageName));
+      return !hasFolderPrefix && !hasLanguage;
+    });
+
+    // make the project tree
+    const filteredDirStatTree = makeProjectDirNodeTree(filteredFileStatList, p.name);
+
+    // loss-less cleanup 3: collapse degenerate a-b-c- .. directories into single 'a/b/c/' nodes
+    if (collapseDegenerate)
+      collapseDegenerateDirectories(filteredDirStatTree);
+
+    // if single project, let this tree be the root, otherwise append to children
+    if (projects.length === 1)
+      fusedTree = filteredDirStatTree;
+    else
+      fusedTree.children.push(filteredDirStatTree);
+  });
+
+  return <ProjectTreeRenderer projectTree={fusedTree}/>
+}
+
+
+function ProjectTreeRenderer(props) {
+  const classes = useStyles();
+  const {projectTree} = props;
+
+  const [valueKpi, setValueKpi] = React.useState('code');
+
+  // update the depth values on the final tree
+  updateTreeStatsRecursively(projectTree, projectTree.is_multi_project ? -1 : 0, valueKpi);
+  console.log(projectTree);
+
+  return (
+    <React.Fragment>
+
+      {/* Section 5 render config */}
+      <Section title="Render Config" className={classes.sectionClass}>
+        <Card>
+          <CardContent>
+            <Typography>Size according to:</Typography>
+            <RadioGroup aria-label="value-kpi" name="value-kpi" row value={valueKpi}
+                        onChange={(e, value) => setValueKpi(value)}>
+              <FormControlLabel value="code" control={<Radio color="primary"/>} label="Lines of code"/>
+              <FormControlLabel value="comment" control={<Radio color="primary"/>} label="Comment"/>
+              <FormControlLabel value="blank" control={<Radio color="primary"/>} label="Spaces"/>
+              <FormControlLabel value="files" control={<Radio color="primary"/>} label="Files count"/>
+            </RadioGroup>
+          </CardContent>
+        </Card>
+      </Section>
+
+      {/* Section 6 render */}
+      <Section title="Result" className={classes.sectionClass}>
+        <Typography>
+          Rendering content goes here. Outer size: {projectTree.value}
+        </Typography>
+        <canvas/>
+      </Section>
+
     </React.Fragment>
   )
 }
 
 
 function App() {
-  console.log('app');
-  const classes = useAppStyles();
+  const classes = useStyles();
   const [experiment, setExperiment] = React.useState(false);
-  const [userName, setUserName] = React.useState(default_GuestName);
+  const [userName, setUserName] = React.useState(DEFAULT_GUEST_NAME);
   const [projects, setProjects] = React.useState([]);
   const hasProjects = projects.length > 0;
   const multiProject = projects.length > 1;
@@ -209,7 +303,7 @@ function App() {
 
       {/* Welcome Message */}
       <Hero heroClass={classes.heroContent} title="Code XRay"
-            description="Quickly understand a project based on source code analysis and visualization."/>
+            description="Understand a project based on source code analysis and visualization."/>
 
       {/* Projects holder and loader*/}
       <Section title={multiProject ? "Composite Project" : (hasProjects ? "Active Project" : undefined)}
@@ -229,7 +323,7 @@ function App() {
                   {experiment && <React.Fragment>
                     <Box>- Lang = LOCs, files - density</Box>
                     {project.unfiltered.langStatList.map((stat, idx) =>
-                      <Box key={"lang-" + idx}> - {stat.name} = {stat.code} {stat.files} - {~~(stat.code / stat.files)}
+                      <Box key={"lang-" + idx}> - {stat.name} = {stat.code}, {stat.files} - {~~(stat.code / stat.files)}
                       </Box>)}
                   </React.Fragment>}
                 </CardContent>
@@ -243,7 +337,7 @@ function App() {
       </Section>
 
       {/* Projects */}
-      {hasProjects && <MultiProjectNodeHolder projects={projects} classes={classes}/>}
+      {hasProjects && <MultiProjectFilterClosure projects={projects}/>}
 
       {/* Debugging */}
       {hasProjects && <Section title="Debug" className={classes.sectionClass}>
