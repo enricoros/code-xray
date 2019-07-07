@@ -26,9 +26,13 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  textField: {
+  numberInput: {
     marginRight: theme.spacing(2),
     width: 120,
+  },
+  colorInput: {
+    marginRight: theme.spacing(2),
+    width: 160,
   },
   descLabel: {
     padding: theme.spacing(2, 0),
@@ -40,6 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
+const DEFAULT_COLOR_LEAF = 'rainbow';
+const DEFAULT_COLOR_INNER = 'orange-depth';
 const Colors = [
   {
     name: 'Leaf default',
@@ -54,34 +61,34 @@ const Colors = [
     k: 'depth',
   },
   {
-    name: 'Rainbow',
-    value: 'rainbow',
-    f: d3sc.interpolateRainbow,
-    k: 'rand',
-  },
-  {
-    name: 'Rainbow (depth)',
-    value: 'rainbow-depth',
-    f: d3sc.interpolateRainbow,
-    k: 'depth',
-  },
-  {
     name: 'Orange (depth)',
     value: 'orange-depth',
     f: d3sc.interpolateOranges,
     k: 'depth',
   },
   {
-    name: 'Viridis',
-    value: 'viridis-rand',
-    f: d3sc.interpolateViridis,
-    k: 'rand',
+    name: 'Purple (depth)',
+    value: 'purple-depth',
+    f: d3sc.interpolatePurples,
+    k: 'depth',
   },
   {
     name: 'Viridis (depth)',
     value: 'viridis-depth',
     f: d3sc.interpolateViridis,
     k: 'depth',
+  },
+  {
+    name: 'Viridis',
+    value: 'viridis',
+    f: d3sc.interpolateViridis,
+    k: 'rand',
+  },
+  {
+    name: 'Rainbow',
+    value: 'rainbow',
+    f: d3sc.interpolateRainbow,
+    k: 'rand',
   },
 ];
 let leafColorCache = {};
@@ -266,8 +273,8 @@ export default function Renderer(props) {
     box_shadows: true,
     lines: true,
   });
-  const [leafColor, setLeafColor] = React.useState(Colors[0]);
-  const [innerColor, setInnerColor] = React.useState(Colors[1]);
+  const [leafColor, setLeafColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_LEAF));
+  const [innerColor, setInnerColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_INNER));
 
   // hit boxes
   let lastRenderedRects = [];
@@ -352,9 +359,9 @@ export default function Renderer(props) {
         </Grid>
         <Grid item xs={12} sm={8} md={10}>
           <FormGroup row>
-            <TextField label="Width" type="number" value={width} className={classes.textField}
+            <TextField label="Width" type="number" value={width} className={classes.numberInput}
                        onChange={e => setWidth(~~Math.max(96, Math.min(8192, parseInt(e.target.value))))}/>
-            <TextField label="Height" type="number" value={height} className={classes.textField}
+            <TextField label="Height" type="number" value={height} className={classes.numberInput}
                        onChange={e => setHeight(~~(Math.max(96, Math.min(4096, parseInt(e.target.value)))))}/>
             <Button onClick={() => resizeCanvasToScreen(1)} href="">@1x</Button>
             <Button onClick={() => resizeCanvasToScreen(2)} href="">@2x</Button>
@@ -392,15 +399,15 @@ export default function Renderer(props) {
         </Grid>
         <Grid item xs={12} sm={8} md={10}>
           <form autoComplete="off">
-            <FormControl className={classes.textField} component={'div'}>
-              <InputLabel htmlFor="leaf-color">{leafColor.name}</InputLabel>
-              <Select value={leafColor.value} onChange={changeLeafColor} inputProps={{id: 'leaf-color'}}>
+            <FormControl className={classes.colorInput} component={'div'}>
+              <InputLabel>Leaf color</InputLabel>
+              <Select value={leafColor.value} onChange={changeLeafColor}>
                 {Colors.map((c, idx) => <MenuItem value={c.value} key={'leafc-' + idx}>{c.name}</MenuItem>)}
               </Select>
             </FormControl>
-            <FormControl className={classes.textField} component={'div'}>
-              <InputLabel htmlFor="inner-color">{innerColor.name}</InputLabel>
-              <Select value={innerColor.value} onChange={changeInnerColor} inputProps={{id: 'inner-color'}}>
+            <FormControl className={classes.colorInput} component={'div'}>
+              <InputLabel>Inner color</InputLabel>
+              <Select value={innerColor.value} onChange={changeInnerColor}>
                 {Colors.map((c, idx) => <MenuItem value={c.value} key={'innerc-' + idx}>{c.name}</MenuItem>)}
               </Select>
             </FormControl>
