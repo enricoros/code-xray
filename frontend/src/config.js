@@ -1,4 +1,4 @@
 const TESTING = window.location.port === "3000";
-const DEBUGGING = TESTING;
+const DEBUGGING = false;
 
 export {DEBUGGING, TESTING};

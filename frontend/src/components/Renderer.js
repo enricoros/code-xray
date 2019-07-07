@@ -72,9 +72,8 @@ function renderOnCanvas(projectTree, canvas, options) {
   const {width, height} = pickBestWH(options['width'], options['height']);
   const hide_below = options['hide_below'] || 0; // note: the multi-project container (if present) is depth -1
   const hide_above = options['hide_above'] || 99; // note: the multi-project container (if present) is depth -1
-  const gray_below = hide_below;
-  const shrink_on = gray_below;
-  const hide_labels_above = options['hide_labels_above'] || 6;
+  const shrink_below = hide_below + 2; // FIXME: parametric 2
+  const hide_labels_above = options['hide_labels_above'] || 8;
   const thin_labels_above = options['thin_labels_above'] || ~~(hide_labels_above / 2);
 
   // derived constants
@@ -124,8 +123,8 @@ function renderOnCanvas(projectTree, canvas, options) {
   treeMap.each(dh => {
     const isLeaf = dh.data.invDepth === 0;
     const depth = dh.data.depth;
-    const shrinkBox = depth <= shrink_on;
-    const forceFill = depth < gray_below ? 'gray' : undefined;
+    const shrinkBox = depth < shrink_below;
+    // const forceFill = depth === 0 ? '#19857b' : undefined;
     const thinLabel = depth > thin_labels_above;
 
     // skip drawing for too shallow (-1, 0) or too deep
@@ -138,6 +137,9 @@ function renderOnCanvas(projectTree, canvas, options) {
       dh.y1 -= shrinkInnerPadding;
     }
 
+    // add the rectangle, for click checking
+    rects.push({dirNode: dh.data, l: ~~dh.x0, t: ~~dh.y0, r: ~~dh.x1, b: ~~dh.y1,});
+
     // stroke: not if leaf (note: half will be painted by the 'fillRect' call)
     if (options.lines && !isLeaf && !shrinkBox) {
       ctx.strokeStyle = 'black';
@@ -149,31 +151,36 @@ function renderOnCanvas(projectTree, canvas, options) {
     if (options.boxes) {
       ctx.fillStyle = colorForNode(isLeaf, dh.data.depth / depthLevels, dh.data.name);
       options.box_shadows && isLeaf && setShadow(ctx, 'rgba(0,0,0,0.5)', boxShadowPx);
-      if (forceFill)
-        ctx.fillStyle = forceFill;
+      // if (forceFill)
+      //   ctx.fillStyle = forceFill;
       ctx.fillRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
       options.box_shadows && removeShadow(ctx);
     }
-
-    // add the rectangle, for click checking
-    rects.push({dirNode: dh.data, l: ~~dh.x0, t: ~~dh.y0, r: ~~dh.x1, b: ~~dh.y1,});
 
     // skip labels when going too deep
     if (depth > hide_labels_above) return;
 
     if (options.labels) {
       if (depth <= hide_labels_above) {
+        // clip label inside the rectangle
+        ctx.save();
+        if (true) {
+          ctx.beginPath();
+          ctx.rect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
+          ctx.clip();
+        }
         let label = dh.data.name;
         if (options.lab_kpi)
           label += thinLabel ? '' : ' (' + dh.data.value + ')';
         // label += dh.data.depth + ' (' + dh.data.invDepth + ')';
-        options.lab_shadows && setShadow(ctx, 'white', fontShadowPx);
         ctx.font = fontPx + "px sans-serif";
         ctx.textAlign = "center";
         // ctx.fillStyle = dh.children ? 'white' : 'white';
         ctx.fillStyle = 'black';
+        options.lab_shadows && setShadow(ctx, 'white', fontShadowPx);
         ctx.fillText(label, ~~((dh.x0 + dh.x1) / 2), ~~(dh.y0 + fontPx * 0.90));
         options.lab_shadows && removeShadow(ctx);
+        ctx.restore();
       }
     }
   });

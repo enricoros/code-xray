@@ -9,10 +9,10 @@ import App from './App';
 // customize the colors by using a theme
 const theme = createMuiTheme({
   palette: {
-    _primary: {
+    primary: {
       main: '#556cd6',
     },
-    _secondary: {
+    secondary: {
       main: '#19857b',
     },
     error: {
