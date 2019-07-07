@@ -2,12 +2,16 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
+import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
+import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
 import * as d3h from "d3-hierarchy";
 import * as d3s from "d3-scale";
@@ -36,6 +40,53 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const Colors = [
+  {
+    name: 'Leaf default',
+    value: 'warm',
+    f: d3sc.interpolateWarm,
+    k: 'rand',
+  },
+  {
+    name: 'Inner default',
+    value: 'YlGnBu',
+    f: d3sc.interpolateYlGnBu,
+    k: 'depth',
+  },
+  {
+    name: 'Rainbow',
+    value: 'rainbow',
+    f: d3sc.interpolateRainbow,
+    k: 'rand',
+  },
+  {
+    name: 'Rainbow (depth)',
+    value: 'rainbow-depth',
+    f: d3sc.interpolateRainbow,
+    k: 'depth',
+  },
+  {
+    name: 'Orange (depth)',
+    value: 'orange-depth',
+    f: d3sc.interpolateOranges,
+    k: 'depth',
+  },
+  {
+    name: 'Viridis',
+    value: 'viridis-rand',
+    f: d3sc.interpolateViridis,
+    k: 'rand',
+  },
+  {
+    name: 'Viridis (depth)',
+    value: 'viridis-depth',
+    f: d3sc.interpolateViridis,
+    k: 'depth',
+  },
+];
+let leafColorCache = {};
+let innerColorCache = {};
+
 function setShadow(ctx, color, shadowPx) {
   ctx.shadowColor = color ? color : '#0000';
   ctx.shadowBlur = shadowPx ? shadowPx : 0;
@@ -56,9 +107,8 @@ function pickBestWH(w, h) {
   return {width, height};
 }
 
-const leafColorCache = {};
 
-function renderOnCanvas(projectTree, canvas, options) {
+function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
   Object.assign(options, {
     width: canvas.width,
     height: canvas.height,
@@ -97,12 +147,19 @@ function renderOnCanvas(projectTree, canvas, options) {
       // return fColor(++fColorIdx);
       if (leafColorCache.hasOwnProperty(dirName))
         return leafColorCache[dirName];
-      return leafColorCache[dirName] = d3sc.interpolateWarm(Math.random()); //  fColor(++fColorIdx);
+      const k = leafColor.k === 'rand' ? Math.random() : leafColor.k === 'depth' ? nDepth : 0;
+      return leafColorCache[dirName] = leafColor.f(k);
+      // return leafColorCache[dirName] = d3sc.interpolateWarm(Math.random()); //  fColor(++fColorIdx);
     } else {
       // ctx.fillStyle = fColor2I();
       // return d3sc.interpolateYlGnBu(0.1 + nDepth + (Math.random() - Math.random()) / 28);
       // return fColor2I();
-      return d3sc.interpolateYlGnBu(nDepth);
+      if (innerColorCache.hasOwnProperty(dirName))
+        return innerColorCache[dirName];
+      const k = innerColor.k === 'rand' ? Math.random() : innerColor.k === 'depth' ? nDepth : 0;
+      return innerColorCache[dirName] = innerColor.f(k);
+      // return d3sc.interpolateYlGnBu(nDepth);
+
     }
   };
 
@@ -150,7 +207,7 @@ function renderOnCanvas(projectTree, canvas, options) {
     // fill box
     if (options.boxes) {
       ctx.fillStyle = colorForNode(isLeaf, dh.data.depth / depthLevels, dh.data.name);
-      options.box_shadows && isLeaf && setShadow(ctx, 'rgba(0,0,0,0.5)', boxShadowPx);
+      options.box_shadows && (isLeaf /*|| depth === 0*/) && setShadow(ctx, 'rgba(0,0,0,0.5)', boxShadowPx);
       // if (forceFill)
       //   ctx.fillStyle = forceFill;
       ctx.fillRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
@@ -189,6 +246,7 @@ function renderOnCanvas(projectTree, canvas, options) {
   return rects.reverse();
 }
 
+
 /**
  * ...
  */
@@ -196,6 +254,7 @@ export default function Renderer(props) {
   const {projectTree, onClicked} = props;
   const classes = useStyles();
 
+  // state
   const [valueKpi, setValueKpi] = React.useState('code');
   const [width, setWidth] = React.useState(2000);
   const [height, setHeight] = React.useState(1000);
@@ -207,16 +266,30 @@ export default function Renderer(props) {
     box_shadows: true,
     lines: true,
   });
+  const [leafColor, setLeafColor] = React.useState(Colors[0]);
+  const [innerColor, setInnerColor] = React.useState(Colors[1]);
+
+  // hit boxes
   let lastRenderedRects = [];
 
   // render canvas at geometry changes
   React.useEffect(() => {
     const canvas = document.getElementById('output-canvas');
-    lastRenderedRects = renderOnCanvas(projectTree, canvas, features);
+    lastRenderedRects = renderOnCanvas(projectTree, canvas, features, leafColor, innerColor);
   });
 
   const changeFeature = feature => event => {
     setFeatures({...features, [feature]: event.target.checked});
+  };
+
+  const changeLeafColor = event => {
+    leafColorCache = {};
+    setLeafColor(Colors.find(c => c.value === event.target.value));
+  };
+
+  const changeInnerColor = event => {
+    innerColorCache = {};
+    setInnerColor(Colors.find(c => c.value === event.target.value));
   };
 
   const resizeCanvas = newSize => {
@@ -312,8 +385,31 @@ export default function Renderer(props) {
           <FormControlLabel label="Lines" control={
             <Checkbox checked={features['lines']} color="primary" onChange={changeFeature('lines')}/>}/>
         </Grid>
+
+        {/* Options */}
+        <Grid item xs={12} sm={4} md={2}>
+          <FormLabel component="div" className={classes.descLabel}>Colors</FormLabel>
+        </Grid>
+        <Grid item xs={12} sm={8} md={10}>
+          <form autoComplete="off">
+            <FormControl className={classes.textField} component={'div'}>
+              <InputLabel htmlFor="leaf-color">{leafColor.name}</InputLabel>
+              <Select value={leafColor.value} onChange={changeLeafColor} inputProps={{id: 'leaf-color'}}>
+                {Colors.map((c, idx) => <MenuItem value={c.value} key={'leafc-' + idx}>{c.name}</MenuItem>)}
+              </Select>
+            </FormControl>
+            <FormControl className={classes.textField} component={'div'}>
+              <InputLabel htmlFor="inner-color">{innerColor.name}</InputLabel>
+              <Select value={innerColor.value} onChange={changeInnerColor} inputProps={{id: 'inner-color'}}>
+                {Colors.map((c, idx) => <MenuItem value={c.value} key={'innerc-' + idx}>{c.name}</MenuItem>)}
+              </Select>
+            </FormControl>
+          </form>
+        </Grid>
       </Grid>
 
     </React.Fragment>
   );
 }
+
+
