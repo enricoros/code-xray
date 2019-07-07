@@ -2,6 +2,7 @@ import path from "path";
 import {DEBUGGING} from "./config";
 
 export const descendingByKey = kpi => (a, b) => b[kpi] - a[kpi];
+export const SEPARATOR = '/';
 
 const codeStatKPIs = ['code', 'blank', 'comment', 'files'];
 const makeCodeStat = (languageName, code, blank, comm, f) => {
@@ -22,9 +23,10 @@ const makeFileStat = (fileName, fileDir, codeStatList) => {
   }
 };
 
-export const makeDirNode = (name) => {
+export const makeDirNode = (name, parentPath) => {
   return {
     name: name,
+    path: parentPath !== undefined ? parentPath + SEPARATOR + name : name,
     fileStatList: [],
     children: []
   }
@@ -92,11 +94,11 @@ export function makeProjectDirNodeTree(fileStatList, projectName) {
   fileStatList.forEach(fs => {
     // create & walk the sub-folder structure
     let fileNode = root;
-    fs.dir.split(path.sep).forEach(subName => {
+    fs.dir.split(SEPARATOR).forEach(subName => {
       if (subName === '.' || subName === '') return;
       let subFolder = fileNode.children.find(c => c.name === subName);
       if (!subFolder) {
-        subFolder = makeDirNode(subName);
+        subFolder = makeDirNode(subName, fileNode.path);
         fileNode.children.push(subFolder);
       }
       fileNode = subFolder;
@@ -112,7 +114,7 @@ export function collapseDegenerateDirectories(node) {
   let fused = false;
   while (node.children.length === 1 && node.fileStatList.length === 0) {
     const child = node.children[0];
-    node.name = node.name + path.sep + child.name;
+    node.name = node.name + SEPARATOR + child.name;
     node.fileStatList = child.fileStatList;
     node.children = child.children;
     fused = true;

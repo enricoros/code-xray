@@ -19,16 +19,18 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './App.css';
 import {
+  SEPARATOR,
   collapseDegenerateDirectories,
   descendingByKey,
   makeDirNode,
   makeProjectDirNodeTree,
-  reduceCodeStatListByName
+  reduceCodeStatListByName,
 } from "./analysis";
 import LanguagesChips, {getDefaultExclusions} from "./components/LanguagesChips";
 import ProjectLoader from "./components/ProjectLoader";
 import Renderer from "./components/Renderer";
 import SignIn from "./components/SignIn";
+import Chip from "@material-ui/core/Chip";
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -48,6 +50,9 @@ const useStyles = makeStyles(theme => ({
   },
   toolbarTitle: {
     flexGrow: 1,
+  },
+  folderChip: {
+    margin: theme.spacing(0.5),
   },
   link: {
     margin: theme.spacing(1, 1.5),
@@ -116,6 +121,9 @@ function MultiProjectFilter(props) {
   const [noFolderPrefix, setNoFolderPrefix] = React.useState([]);
   const [semCollapse, setSemCollapse] = React.useState(true);
 
+  const excludeFolder = (path) => setNoFolderPrefix((state) => state.concat(path));
+  const includeFolder = (path) => setNoFolderPrefix((state) => state.filter(n => n !== path));
+
   return (
     <React.Fragment>
 
@@ -139,16 +147,18 @@ function MultiProjectFilter(props) {
           </ExpansionPanelDetails>
         </ExpansionPanel>
         {/* Remove Files by Folder */}
-        <ExpansionPanel>
+        <ExpansionPanel defaultExpanded={true}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
             <Typography>
               Remove entire folders from the analysis.
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Not yet implemented.
-            </Typography>
+            <Grid container>
+              {noFolderPrefix.map((path, idx) =>
+                <Chip color="secondary" variant="outlined" label={path} onDelete={() => includeFolder(path)}
+                      key={'no-folder-' + idx} component="div" className={classes.folderChip}/>)}
+            </Grid>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         {/* Loss-less transformations */}
@@ -168,11 +178,11 @@ function MultiProjectFilter(props) {
 
       {/* Section 5 render */}
       <React.Fragment>
-        <Section title="Project tree-map" className={classes.sectionClass}>
+        <Section title="Code XRay" className={classes.sectionClass}>
           <Card>
             <CardContent>
               <RenderingClosure noLanguages={noLanguages} noFolderPrefix={noFolderPrefix}
-                                collapseDegenerate={semCollapse} projects={projects}/>
+                                collapseDegenerate={semCollapse} projects={projects} doRemovePath={excludeFolder}/>
             </CardContent>
           </Card>
         </Section>
@@ -184,7 +194,8 @@ function MultiProjectFilter(props) {
 
 
 function RenderingClosure(props) {
-  const {noLanguages, noFolderPrefix, collapseDegenerate, projects} = props;
+  const {noLanguages, noFolderPrefix, collapseDegenerate, projects, doRemovePath} = props;
+  const onClicked = dirNode => doRemovePath(dirNode.path);
 
   // multi project tree
   let fusedTree = makeDirNode(DEFAULT_PROJECT_NAME);
@@ -195,7 +206,8 @@ function RenderingClosure(props) {
     // lossy cleanup 1: remove entire folders from the export (for example if you didn't care about /scripts/..)
     // lossy cleanup 2: remove files written in unwanted languages, to improve the SNR
     const filteredFileStatList = p.unfiltered.fileStatList.filter(fs => {
-      const hasFolderPrefix = noFolderPrefix.find(folder => fs.dir.startsWith(folder));
+      const projectDir = p.name + SEPARATOR + fs.dir;
+      const hasFolderPrefix = noFolderPrefix.find(folder => projectDir.startsWith(folder));
       const hasLanguage = noLanguages.find(languageName => fs.codeStatList.map(cs => cs.name).includes(languageName));
       return !hasFolderPrefix && !hasLanguage;
     });
@@ -214,7 +226,7 @@ function RenderingClosure(props) {
       fusedTree.children.push(filteredDirStatTree);
   });
 
-  return <Renderer projectTree={fusedTree}/>
+  return <Renderer projectTree={fusedTree} onClicked={onClicked}/>
 }
 
 

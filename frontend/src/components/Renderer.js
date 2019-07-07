@@ -56,6 +56,8 @@ function pickBestWH(w, h) {
   return {width, height};
 }
 
+const leafColorCache = {};
+
 function renderOnCanvas(projectTree, canvas, options) {
   Object.assign(options, {
     width: canvas.width,
@@ -77,7 +79,7 @@ function renderOnCanvas(projectTree, canvas, options) {
 
   // derived constants
   const paddingLabel = ~~(height / 35);
-  const paddingBorder = ~~(paddingLabel);
+  const paddingBorder = ~~(paddingLabel / 2);
   const fontPx = ~~(0.9 * paddingLabel);
   const boxShadowPx = ~~(paddingBorder / 2);
   const fontShadowPx = ~~(fontPx / 3);
@@ -88,10 +90,26 @@ function renderOnCanvas(projectTree, canvas, options) {
   let fColorIdx = 0, fColorIdx2 = 0.2;
   const fColor = d3s.scaleOrdinal(d3sc.schemeCategory10);
   const fColor2I = () => d3sc.interpolateYlGnBu(fColorIdx2 += 0.02);
+  const colorForNode = (isLeaf, nDepth, dirName) => {
+    if (isLeaf) {
+      // ctx.fillStyle = fColorI();
+      // ctx.fillStyle = 'rgba(255,255,255,0.1)';
+      // ctx.fillStyle = d3sc.interpolatePlasma(dh.data.depth / depthLevels);
+      // return fColor(++fColorIdx);
+      if (leafColorCache.hasOwnProperty(dirName))
+        return leafColorCache[dirName];
+      return leafColorCache[dirName] = d3sc.interpolateWarm(Math.random()); //  fColor(++fColorIdx);
+    } else {
+      // ctx.fillStyle = fColor2I();
+      // return d3sc.interpolateYlGnBu(0.1 + nDepth + (Math.random() - Math.random()) / 28);
+      // return fColor2I();
+      return d3sc.interpolateYlGnBu(nDepth);
+    }
+  };
 
   // erase canvas - equivalent to 'copy' compositing op, with black transparent
-  const context = canvas.getContext('2d');
-  context.clearRect(0, 0, width, height);
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, width, height);
 
   // use d3 to layout the TreeMap
   const dataHierarchy = d3h.hierarchy(projectTree);
@@ -102,24 +120,8 @@ function renderOnCanvas(projectTree, canvas, options) {
     .paddingTop(paddingLabel)
     (dataHierarchy);
 
-  const ctx = context;
-
-  function colorForNode(isLeaf, nDepth) {
-    if (isLeaf) {
-      // ctx.fillStyle = fColorI();
-      // ctx.fillStyle = 'rgba(255,255,255,0.1)';
-      // ctx.fillStyle = d3sc.interpolatePlasma(dh.data.depth / depthLevels);
-      return fColor(++fColorIdx);
-    } else {
-      // ctx.fillStyle = fColor2I();
-      // return d3sc.interpolateYlGnBu(0.1 + nDepth + (Math.random() - Math.random()) / 28);
-      // return fColor2I();
-      return d3sc.interpolateYlGnBu(nDepth);
-    }
-  }
-
+  const rects = [];
   treeMap.each(dh => {
-
     const isLeaf = dh.data.invDepth === 0;
     const depth = dh.data.depth;
     const shrinkBox = depth <= shrink_on;
@@ -145,13 +147,16 @@ function renderOnCanvas(projectTree, canvas, options) {
 
     // fill box
     if (options.boxes) {
-      ctx.fillStyle = colorForNode(isLeaf, dh.data.depth / depthLevels);
+      ctx.fillStyle = colorForNode(isLeaf, dh.data.depth / depthLevels, dh.data.name);
       options.box_shadows && isLeaf && setShadow(ctx, 'rgba(0,0,0,0.5)', boxShadowPx);
       if (forceFill)
         ctx.fillStyle = forceFill;
       ctx.fillRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
       options.box_shadows && removeShadow(ctx);
     }
+
+    // add the rectangle, for click checking
+    rects.push({dirNode: dh.data, l: ~~dh.x0, t: ~~dh.y0, r: ~~dh.x1, b: ~~dh.y1,});
 
     // skip labels when going too deep
     if (depth > hide_labels_above) return;
@@ -162,7 +167,7 @@ function renderOnCanvas(projectTree, canvas, options) {
         if (options.lab_kpi)
           label += thinLabel ? '' : ' (' + dh.data.value + ')';
         // label += dh.data.depth + ' (' + dh.data.invDepth + ')';
-        options.lab_shadows && setShadow(ctx, 'black', fontShadowPx);
+        options.lab_shadows && setShadow(ctx, 'white', fontShadowPx);
         ctx.font = fontPx + "px sans-serif";
         ctx.textAlign = "center";
         // ctx.fillStyle = dh.children ? 'white' : 'white';
@@ -173,19 +178,15 @@ function renderOnCanvas(projectTree, canvas, options) {
     }
   });
 
-  // const depth = dh.data.depth;
-  // if (depth < hide_below || depth > hide_above) return;
-  // drawFolderBox(context, dh, depth <= shrink_on, depth <= gray_on ? 'gray' : undefined);
-  // if (depth <= hide_labels_above)
-  //   drawFolderLabel(context, dh, depth > thin_labels_above);
-
+  // return the rendering result, for click purposes
+  return rects.reverse();
 }
 
 /**
  * ...
  */
 export default function Renderer(props) {
-  const {projectTree} = props;
+  const {projectTree, onClicked} = props;
   const classes = useStyles();
 
   const [valueKpi, setValueKpi] = React.useState('code');
@@ -199,11 +200,12 @@ export default function Renderer(props) {
     box_shadows: true,
     lines: true,
   });
+  let lastRenderedRects = [];
 
   // render canvas at geometry changes
   React.useEffect(() => {
     const canvas = document.getElementById('output-canvas');
-    renderOnCanvas(projectTree, canvas, features);
+    lastRenderedRects = renderOnCanvas(projectTree, canvas, features);
   });
 
   const changeFeature = feature => event => {
@@ -223,6 +225,18 @@ export default function Renderer(props) {
     setHeight(~~(rect.height * dpr * (multiplier || 1)));
   };
 
+  const handleCanvasClick = event => {
+    const canvas = document.getElementById('output-canvas');
+    const rect = canvas.getBoundingClientRect();
+    // get the coordinates in the rectangles space (since the canvas is generally larger than the screen size)
+    const rx = (event.clientX - rect.left) * canvas.width / canvas.offsetWidth;
+    const ry = (event.clientY - rect.top) * canvas.height / canvas.offsetHeight;
+    // stop at the first rectangle - the array was already reversed
+    const r = lastRenderedRects.find(r => r.l <= rx && r.r >= rx && r.t <= ry && r.b >= ry);
+    if (r)
+      onClicked(r.dirNode);
+  };
+
   // update the depth values on the final tree
   updateTreeStatsRecursively(projectTree, projectTree.is_multi_project ? -1 : 0, valueKpi);
 
@@ -232,8 +246,9 @@ export default function Renderer(props) {
   return (
     <React.Fragment>
 
-      {/* The one and only Canvas */}
-      <canvas id="output-canvas" width={cWidth} height={cHeight} className={classes.renderCanvas}/>
+      {/* The one and only Canvas - not-allowed was another great cursor choice */}
+      <canvas id="output-canvas" width={cWidth} height={cHeight} style={{cursor: 'crosshair'}}
+              onClick={handleCanvasClick} className={classes.renderCanvas}/>
 
       {/* Render Config */}
       <Grid container>
