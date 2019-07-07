@@ -13,6 +13,7 @@ const DEFAULT_NO_LANGUAGES = [
   'XML', 'YAML', 'Dockerfile', 'Protocol Buffers', 'HTML', 'Bourne Shell', 'Markdown', 'CMake',
   'PowerShell', 'Windows Module Definition', 'DOS Batch', 'Pascal', 'MSBuild script'
 ];
+const DEFAULT_EXCLUDE_LANGUAGES = true;
 
 const useStyles = makeStyles(theme => ({
   langChip: {
@@ -21,11 +22,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export function getDefaultExclusions(langStatList) {
-  return langStatList.map(l => l.name).filter(l => DEFAULT_NO_LANGUAGES.includes(l));
+  return DEFAULT_EXCLUDE_LANGUAGES ? langStatList.map(l => l.name).filter(l => DEFAULT_NO_LANGUAGES.includes(l)) : [];
 }
 
 /**
- * Usage: <LanguagesChips langsStats={statsList} noLanguages={languagesList} onChange={callback}/>
+ * Usage: <LanguagesChips langStatList={statsList} noLanguages={languagesList} onChange={callback}/>
  * @param props
  */
 export default props => {
@@ -86,7 +87,7 @@ export default props => {
           <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => includeLanguage(lang.name)}
                 key={'no-lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
-      <Grid item xs={12} style={{backgroundColor: '#f0f0f0'}}>
+      <Grid item xs={12} style={{backgroundColor: 'white'}}>
         <Grid container alignItems="center">
           <Grid item xs={12} sm={5} md={4}>
             {noExclusion ? 'Code: 100% (' + activeCode + ')' : (nothingLeft ? 'Nothing left' :

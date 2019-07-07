@@ -135,7 +135,7 @@ export function updateTreeStatsRecursively(node, newDepth, sum_kpi) {
   node.children.forEach(c => {
     updateTreeStatsRecursively(c, newDepth + 1, sum_kpi);
     rollupCodeStatList.push(c.rollupCodeStatList);
-    if (c.invDepth > invDepth) invDepth = c.invDepth;
+    if (c.invDepth >= invDepth) invDepth = c.invDepth + 1;
   });
   rollupCodeStatList = reduceCodeStatListByName(rollupCodeStatList.flat());
 
@@ -145,7 +145,7 @@ export function updateTreeStatsRecursively(node, newDepth, sum_kpi) {
   // we could assign these incrementally, but I like making the edit atomic and explicit
   Object.assign(node, {
     depth: newDepth,
-    invDepth: invDepth + 1,
+    invDepth: invDepth,
     value: sumByKpi,
     localCodeStatList: localCodeStatList,
     rollupCodeStatList: rollupCodeStatList.sort(descendingByKey('code')),

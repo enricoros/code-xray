@@ -1,17 +1,19 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {updateTreeStatsRecursively} from "../analysis";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Radio from "@material-ui/core/Radio";
-import TextField from "@material-ui/core/TextField";
-import FormLabel from "@material-ui/core/FormLabel";
-import {FormGroup} from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormLabel from "@material-ui/core/FormLabel";
+import Grid from "@material-ui/core/Grid";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import TextField from "@material-ui/core/TextField";
+import * as d3h from "d3-hierarchy";
+import * as d3s from "d3-scale";
+import * as d3sc from "d3-scale-chromatic";
+import {updateTreeStatsRecursively} from "../analysis";
 
-const d3h = require("d3-hierarchy");
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -37,7 +39,7 @@ const useStyles = makeStyles(theme => ({
 function setShadow(ctx, color, shadowPx) {
   ctx.shadowColor = color ? color : '#0000';
   ctx.shadowBlur = shadowPx ? shadowPx : 0;
-  ctx.shadowOffsetX = ctx.shadowOffsetY = shadowPx ? ~~(shadowPx / 2) : 0;
+  ctx.shadowOffsetX = ctx.shadowOffsetY = shadowPx ? ~~(shadowPx / 4) : 0;
 }
 
 function removeShadow(ctx) {
@@ -68,24 +70,24 @@ function renderOnCanvas(projectTree, canvas, options) {
   const {width, height} = pickBestWH(options['width'], options['height']);
   const hide_below = options['hide_below'] || 0; // note: the multi-project container (if present) is depth -1
   const hide_above = options['hide_above'] || 99; // note: the multi-project container (if present) is depth -1
-  const gray_on = hide_below;
-  const shrink_on = gray_on;
+  const gray_below = hide_below;
+  const shrink_on = gray_below;
   const hide_labels_above = options['hide_labels_above'] || 6;
   const thin_labels_above = options['thin_labels_above'] || ~~(hide_labels_above / 2);
 
   // derived constants
-  const paddingLabel = ~~(height / 50);
+  const paddingLabel = ~~(height / 35);
   const paddingBorder = ~~(paddingLabel);
   const fontPx = ~~(0.9 * paddingLabel);
-  const boxShadowPx = ~~(paddingBorder / 3);
+  const boxShadowPx = ~~(paddingBorder / 2);
   const fontShadowPx = ~~(fontPx / 3);
   const shrinkInnerPadding = ~~(paddingBorder / 2);
 
   // graphical & drawing & color functions
+  const depthLevels = Math.max(1, projectTree.invDepth + projectTree.depth);
   let fColorIdx = 0, fColorIdx2 = 0.2;
-  // const fColor = scaleOrdinal(schemeCategory10);
-  // const fColorI = () => fColor(++fColorIdx);
-  // const fColor2I = () => interpolateYlGnBu(fColorIdx2 += 0.015);
+  const fColor = d3s.scaleOrdinal(d3sc.schemeCategory10);
+  const fColor2I = () => d3sc.interpolateYlGnBu(fColorIdx2 += 0.02);
 
   // erase canvas - equivalent to 'copy' compositing op, with black transparent
   const context = canvas.getContext('2d');
@@ -101,15 +103,31 @@ function renderOnCanvas(projectTree, canvas, options) {
     (dataHierarchy);
 
   const ctx = context;
+
+  function colorForNode(isLeaf, nDepth) {
+    if (isLeaf) {
+      // ctx.fillStyle = fColorI();
+      // ctx.fillStyle = 'rgba(255,255,255,0.1)';
+      // ctx.fillStyle = d3sc.interpolatePlasma(dh.data.depth / depthLevels);
+      return fColor(++fColorIdx);
+    } else {
+      // ctx.fillStyle = fColor2I();
+      // return d3sc.interpolateYlGnBu(0.1 + nDepth + (Math.random() - Math.random()) / 28);
+      // return fColor2I();
+      return d3sc.interpolateYlGnBu(nDepth);
+    }
+  }
+
   treeMap.each(dh => {
 
-    const isLeaf = !dh.children;
+    const isLeaf = dh.data.invDepth === 0;
     const depth = dh.data.depth;
     const shrinkBox = depth <= shrink_on;
-    const forceFill = depth <= gray_on ? 'gray' : undefined;
+    const forceFill = depth < gray_below ? 'gray' : undefined;
     const thinLabel = depth > thin_labels_above;
 
-    /// if (depth < hide_below || depth > hide_above) return;
+    // skip drawing for too shallow (-1, 0) or too deep
+    if (depth < hide_below || depth > hide_above) return;
 
     // shrink project nodes
     if (shrinkBox) {
@@ -117,46 +135,41 @@ function renderOnCanvas(projectTree, canvas, options) {
       dh.x1 -= shrinkInnerPadding;
       dh.y1 -= shrinkInnerPadding;
     }
+
     // stroke: not if leaf (note: half will be painted by the 'fillRect' call)
-    // if (options.lines && !isLeaf /*&& !shrinkBox*/) {
-      removeShadow(ctx);
+    if (options.lines && !isLeaf && !shrinkBox) {
       ctx.strokeStyle = 'black';
       ctx.lineWidth = 2;
       ctx.strokeRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
-    // }
+    }
 
+    // fill box
     if (options.boxes) {
-      // fill: if leaf, strong color and no shadow
-      if (isLeaf) {
-        removeShadow(ctx);
-        // ctx.fillStyle = fColorI();
-        ctx.fillStyle = 'rgba(255,255,255,0.1)';
-      } else {
-        // if inner node, more depth-based coloring and shadow
-        options.shadows && setShadow(ctx, 'rgba(0,0,0,0.5)', boxShadowPx);
-        // ctx.fillStyle = fColor2I();
-        ctx.fillStyle = 'rgba(0,0,0,0.1)';
-        // ctx.fillStyle = interpolateYlGnBu(0.1 + (dh.data.depth - 1) / 6 + (Math.random() - Math.random()) / 28);
-      }
+      ctx.fillStyle = colorForNode(isLeaf, dh.data.depth / depthLevels);
+      options.box_shadows && isLeaf && setShadow(ctx, 'rgba(0,0,0,0.5)', boxShadowPx);
       if (forceFill)
         ctx.fillStyle = forceFill;
       ctx.fillRect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
+      options.box_shadows && removeShadow(ctx);
     }
 
-    /// if (depth > hide_labels_above) return;
+    // skip labels when going too deep
+    if (depth > hide_labels_above) return;
 
     if (options.labels) {
-      // if (depth <= hide_labels_above) {
-
-      const label = dh.data.name + (thinLabel ? '' : ' (' + dh.data.value + ')');
-
-      options.shadows && setShadow(ctx, 'black', fontShadowPx);
-      ctx.font = fontPx + "px sans-serif";
-      ctx.textAlign = "center";
-      // ctx.fillStyle = dh.children ? 'white' : 'white';
-      ctx.fillStyle = 'black';
-      ctx.fillText(label, ~~((dh.x0 + dh.x1) / 2), ~~(dh.y0 + fontPx * 0.85));
-      // }
+      if (depth <= hide_labels_above) {
+        let label = dh.data.name;
+        if (options.lab_kpi)
+          label += thinLabel ? '' : ' (' + dh.data.value + ')';
+        // label += dh.data.depth + ' (' + dh.data.invDepth + ')';
+        options.lab_shadows && setShadow(ctx, 'black', fontShadowPx);
+        ctx.font = fontPx + "px sans-serif";
+        ctx.textAlign = "center";
+        // ctx.fillStyle = dh.children ? 'white' : 'white';
+        ctx.fillStyle = 'black';
+        ctx.fillText(label, ~~((dh.x0 + dh.x1) / 2), ~~(dh.y0 + fontPx * 0.90));
+        options.lab_shadows && removeShadow(ctx);
+      }
     }
   });
 
@@ -180,9 +193,11 @@ export default function Renderer(props) {
   const [height, setHeight] = React.useState(1000);
   const [features, setFeatures] = React.useState({
     labels: true,
+    lab_kpi: false,
+    lab_shadows: false,
+    boxes: true,
+    box_shadows: true,
     lines: true,
-    boxes: false,
-    shadows: true,
   });
 
   // render canvas at geometry changes
@@ -263,13 +278,17 @@ export default function Renderer(props) {
         </Grid>
         <Grid item xs={12} sm={8} md={10}>
           <FormControlLabel label="Labels" control={
-            <Checkbox checked={features['labels']} onChange={changeFeature('labels')}/>}/>
-          <FormControlLabel label="Lines" control={
-            <Checkbox checked={features['lines']} onChange={changeFeature('lines')}/>}/>
+            <Checkbox checked={features['labels']} color="primary" onChange={changeFeature('labels')}/>}/>
+          <FormControlLabel label="Size" disabled={!features['labels']} control={
+            <Checkbox checked={features['lab_kpi']} onChange={changeFeature('lab_kpi')}/>}/>
+          <FormControlLabel label="Shadows" disabled={!features['labels']} control={
+            <Checkbox checked={features['lab_shadows']} onChange={changeFeature('lab_shadows')}/>}/>
           <FormControlLabel label="Boxes" control={
-            <Checkbox checked={features['boxes']} onChange={changeFeature('boxes')}/>}/>
-          <FormControlLabel label="Shadows" control={
-            <Checkbox checked={features['shadows']} onChange={changeFeature('shadows')}/>}/>
+            <Checkbox checked={features['boxes']} color="primary" onChange={changeFeature('boxes')}/>}/>
+          <FormControlLabel label="Shadows" disabled={!features['boxes']} control={
+            <Checkbox checked={features['box_shadows']} onChange={changeFeature('box_shadows')}/>}/>
+          <FormControlLabel label="Lines" control={
+            <Checkbox checked={features['lines']} color="primary" onChange={changeFeature('lines')}/>}/>
         </Grid>
       </Grid>
 
