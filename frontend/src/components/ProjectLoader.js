@@ -83,10 +83,10 @@ const useSourceSelectorStyles = makeStyles(theme => ({
     color: theme.palette.error.contrastText,
   },
   exampleCard: {
-    padding: theme.spacing(2, 3, 1),
+    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.primary.dark,
     textAlign: 'center',
-    backgroundColor: theme.palette.secondary.dark,
-    color: theme.palette.secondary.contrastText,
+    padding: theme.spacing(2, 3, 1),
   },
 }));
 
@@ -102,7 +102,7 @@ function ClocLink(props) {
  * @param props onDataLoaded(validClocJson) =>
  */
 function ProjectLoader(props) {
-  const _classes = useSourceSelectorStyles();
+  const classes = useSourceSelectorStyles();
   const {hasProjects: _parentHasProjects, onProjectLoaded: _parentOnProjectLoaded} = props;
   const [expandNext, setExpandNext] = React.useState(false);
   const [tabIdx, setTabIdx] = React.useState(TESTING ? 1 : 0);
@@ -193,7 +193,7 @@ function ProjectLoader(props) {
   return (
     <Grid item xs={12}>
       {/* Selector Tab (idx: state) */}
-      <AppBar position="static">
+      <AppBar color="default" position="static" elevation={1}>
         <Tabs centered value={tabIdx} onChange={(e, newValue) => setTabIdx(newValue)} component="div">
           <Tab href="" label="Load cloc file"/>
           <Tab href="" label="Examples"/>
@@ -202,9 +202,10 @@ function ProjectLoader(props) {
       </AppBar>
 
       {/* Panel container: only 1 panel visible at a time */}
-      <Paper square>
+      <Paper square elevation={2}>
+        {/* Errors: visible on any tab, on top */}
         {errorString &&
-        <Card className={_classes.errorCard} square elevation={0}>
+        <Card className={classes.errorCard} square elevation={0}>
           <CardContent>
             <Typography>
               <Typography variant="button">Error:</Typography> {errorString}
@@ -219,7 +220,7 @@ function ProjectLoader(props) {
             {/* drop target and load button */}
             <Grid item sm={12} md={6}>
               Load a JSON file generated with <ClocLink/>
-              <div {...dzProps({className: _classes.dropZone})}>
+              <div {...dzProps({className: classes.dropZone})}>
                 <input {...dzInputProps()} id="drop-area-file"/>
                 {isDragActive ?
                   <p>Drop the cloc file here ...</p> :
@@ -231,7 +232,7 @@ function ProjectLoader(props) {
             </Grid>
             {/* instructions */}
             <Grid item sm={12} md={6}>Instructions to get a <ClocLink/> file
-              <pre className={_classes.codeBlock}>{
+              <pre className={classes.codeBlock}>{
                 `cd /where/your/repo/is
 cloc --by-file --json --out=cloc.json ./`}</pre>
             </Grid>
@@ -245,7 +246,7 @@ cloc --by-file --json --out=cloc.json ./`}</pre>
             {EXAMPLES.map((e, idx) =>
               <Grid item sm={6} md={4} lg={3} key={'example-' + idx}>
                 <Card raised>
-                  <CardActionArea href="#" className={_classes.exampleCard} onClick={() => loadExampleByIndex(idx)}>
+                  <CardActionArea href="#" className={classes.exampleCard} onClick={() => loadExampleByIndex(idx)}>
                     <Typography variant="h6" component="h4">
                       {e.name}
                     </Typography>

@@ -19,6 +19,9 @@ const useStyles = makeStyles(theme => ({
   langChip: {
     margin: theme.spacing(0.5),
   },
+  linearProgress: {
+    backgroundColor: theme.palette.grey.A100,
+  },
 }));
 
 export function getDefaultExclusions(langStatList) {
@@ -70,38 +73,40 @@ export default props => {
     <Grid container spacing={2}>
       <Grid item sm={12} md={6}>
         <Typography align="center">
-          Active Languages -
+          Active languages &nbsp;
           <IconButton href='' onClick={excludeAuto}><BrightnessAuto/></IconButton>
           <IconButton href='' onClick={resetIncluded} disabled={nothingLeft}><DoneAll/></IconButton>
         </Typography>
         {activeLS.map(lang =>
-          <Chip label={lang.name} onDelete={() => excludeLanguage(lang.name)}
+          <Chip color="secondary" label={lang.name} onDelete={() => excludeLanguage(lang.name)}
                 key={'lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
       <Grid item xs={12} md={6}>
         <Typography align="center">
-          Disabled languages -
+          Disabled languages  &nbsp;
           <IconButton href='' onClick={resetExcluded} disabled={noExclusion}><DoneAll/></IconButton>
         </Typography>
         {inactiveLS.map(lang =>
-          <Chip color="secondary" variant="outlined" label={lang.name} onDelete={() => includeLanguage(lang.name)}
+          <Chip variant="outlined" label={lang.name} onDelete={() => includeLanguage(lang.name)}
                 key={'no-lang-' + lang.name} component="div" className={classes.langChip}/>)}
       </Grid>
       <Grid item xs={12} style={{backgroundColor: 'white'}}>
         <Grid container alignItems="center">
           <Grid item xs={12} sm={5} md={4}>
             {noExclusion ? 'Code: 100% (' + activeCode + ')' : (nothingLeft ? 'Nothing left' :
-              'Removing ' + inactiveCode + ' lines of code (' + (100 - ~~(activeCodeRatio)) + '%)')}
+              'Removing ' + inactiveCode.toLocaleString() + ' lines of code (' + (100 - ~~(activeCodeRatio)) + '%)')}
           </Grid>
-          <Grid item xs={12} sm={7} md={8}>
-            <LinearProgress variant="determinate" value={activeCodeRatio}/>
+          <Grid item xs={12} sm={5} md={8}>
+            <LinearProgress color="secondary" variant="determinate" value={activeCodeRatio}
+                            className={classes.linearProgress}/>
           </Grid>
           <Grid item xs={12} sm={5} md={4}>
-            {noExclusion ? 'Files: 100% (' + activeFiles + ')' : (nothingLeft ? 'Nothing left' :
-              'Removing ' + inactiveFiles + ' files (' + (100 - ~~(activeFilesRatio)) + '%)')}
+            {noExclusion ? 'Files: 100% (' + activeFiles + ')' : (nothingLeft ? 'No files left' :
+              'Removing ' + inactiveFiles.toLocaleString() + ' files (' + (100 - ~~(activeFilesRatio)) + '%)')}
           </Grid>
           <Grid item xs={12} sm={7} md={8}>
-            <LinearProgress variant="determinate" value={activeFilesRatio}/>
+            <LinearProgress color="secondary" variant="determinate" value={activeFilesRatio}
+                            className={classes.linearProgress}/>
           </Grid>
         </Grid>
       </Grid>

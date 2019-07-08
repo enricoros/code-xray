@@ -12,19 +12,18 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
 import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './App.css';
 import {
-  SEPARATOR,
   collapseDegenerateDirectories,
   descendingByKey,
   makeDirNode,
   makeProjectDirNodeTree,
   reduceCodeStatListByName,
+  SEPARATOR,
 } from "./analysis";
 import LanguagesChips, {getDefaultExclusions} from "./components/LanguagesChips";
 import ProjectLoader from "./components/ProjectLoader";
@@ -43,7 +42,8 @@ const DEFAULT_PROJECT_NAME = 'Composite Project';
 // App styled looks
 const useStyles = makeStyles(theme => ({
   appBar: {
-    position: 'relative',
+    // position: 'relative',
+    background: 'white',
   },
   toolbar: {
     flexWrap: 'wrap',
@@ -51,10 +51,7 @@ const useStyles = makeStyles(theme => ({
   toolbarTitle: {
     flexGrow: 1,
   },
-  folderChip: {
-    margin: theme.spacing(0.5),
-  },
-  link: {
+  toolbarLink: {
     margin: theme.spacing(1, 1.5),
   },
   heroContent: {
@@ -65,8 +62,11 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(3),
   },
   projectCard: {
-    backgroundColor: theme.palette.secondary.dark,
-    color: theme.palette.secondary.contrastText,
+    backgroundColor: theme.palette.primary.dark,
+    color: theme.palette.primary.contrastText,
+  },
+  folderChip: {
+    margin: theme.spacing(0.5),
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -77,11 +77,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Hero(props) {
-  return <Container maxWidth="md" component="main" className={props.heroClass}>
+  const classes = useStyles();
+  return <Container maxWidth="md" component="main" className={classes.heroContent}>
     <Typography variant="h2" component="h1" align="center" color="textPrimary" gutterBottom>
       {props.title}
     </Typography>
-    <Typography variant="h5" align="center" color="textSecondary" component="p">
+    <Typography variant="h6" align="center" color="textSecondary" component="p">
       {props.description}
     </Typography>
   </Container>
@@ -89,8 +90,9 @@ function Hero(props) {
 
 
 function Section(props) {
-  return <Container maxWidth="lg" component="main" className={props.className}>
-    {props.title && <Typography variant="h5" component="h2" gutterBottom align="center">{props.title}</Typography>}
+  return <Container maxWidth="lg" component="main" className={props.className}> {
+    props.title && <Typography variant="h5" component="h2" align={props.align || "inherit"} gutterBottom>
+      {props.title}</Typography>}
     {props.children}
   </Container>
 }
@@ -134,39 +136,37 @@ function MultiProjectFilter(props) {
       {/*</Section>*/}
 
       {/* Section 3 filter */}
-      <Section title="Cleanup" className={classes.sectionClass}>
+      <Section title="Cleanup project" className={classes.sectionClass}>
         {/* Remove Files by Language */}
         <ExpansionPanel defaultExpanded={true}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
-            <Typography>
-              Programming Languages. Raise the signal, drop the noise.
-            </Typography>
+            {/*Raise the signal, drop the noise.*/}
+            <Typography>Filter Languages{(noLanguages.length > 0) && ' (' + noLanguages.length + ')'}</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <LanguagesChips langStatList={langStatList} noLanguages={noLanguages} onChange={setNoLanguages}/>
           </ExpansionPanelDetails>
         </ExpansionPanel>
+
         {/* Remove Files by Folder */}
         <ExpansionPanel defaultExpanded={true}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
-            <Typography>
-              Remove entire folders from the analysis.
-            </Typography>
+            <Typography>Filter Folders{(noFolderPrefix.length > 0) && ' (' + noFolderPrefix.length + ')'}</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Grid container>
+            {(noFolderPrefix.length < 1) && <Typography>Click on a folder on the XRay to remove it.</Typography>}
+            {(noFolderPrefix.length > 0) && <Grid container>
               {noFolderPrefix.map((path, idx) =>
-                <Chip color="secondary" variant="outlined" label={path} onDelete={() => includeFolder(path)}
+                <Chip variant="outlined" label={path} onDelete={() => includeFolder(path)}
                       key={'no-folder-' + idx} component="div" className={classes.folderChip}/>)}
-            </Grid>
+            </Grid>}
           </ExpansionPanelDetails>
         </ExpansionPanel>
-        {/* Loss-less transformations */}
+
+        {/* Lossless transformations */}
         <ExpansionPanel defaultExpanded={false}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
-            <Typography>
-              Loss-less transformations
-            </Typography>
+            <Typography>Lossless transformations</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <FormControlLabel label="Collapse degenerate folder structures" control={
@@ -178,7 +178,7 @@ function MultiProjectFilter(props) {
 
       {/* Section 5 render */}
       <React.Fragment>
-        <Section title="Code XRay" className={classes.sectionClass}>
+        <Section title="Source code explosion" className={classes.sectionClass}>
           <Card>
             <CardContent>
               <RenderingClosure noLanguages={noLanguages} noFolderPrefix={noFolderPrefix}
@@ -255,34 +255,31 @@ function App() {
     <React.Fragment>
 
       {/* Top-level Navigation Bar */}
-      <AppBar position="static" color="default" className={classes.appBar}>
+      <AppBar position="sticky" color="default" className={classes.appBar}>
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
-            <Typography variant="h4" color="inherit" noWrap className={classes.toolbarTitle}>
+            <Typography variant="h5" color="secondary" noWrap className={classes.toolbarTitle}>
               Source Exploder
             </Typography>
             <FormControlLabel control={
               <Switch checked={experiment} onChange={(e, state) => setExperiment(state)} color="primary"/>
             } label="Experiments"/>
-            <Link variant="button" color="textPrimary" href="" className={classes.link} component="a">{userName}</Link>
-            <Button href="#" color="primary" variant="outlined" className={classes.link}
+            <Button href="https://github.com/enricoros/code-xray" variant="outlined"
+                    className={classes.toolbarLink}>GitHub</Button>
+            {/*<Link variant="button" color="textPrimary" href="" className={classes.toolbarLink}*/}
+            {/*      component="a">{userName}</Link>*/}
+            <Button href="#" color="primary" variant="outlined" className={classes.toolbarLink}
                     onClick={() => setUserName(undefined)}>Logout</Button>
           </Toolbar>
         </Container>
       </AppBar>
 
-      {/* Experiments box */}
-      {experiment && <Container maxWidth="lg">
-        <Typography>Experiments are On</Typography>
-      </Container>}
-
       {/* Welcome Message */}
-      <Hero heroClass={classes.heroContent} title="Code XRay"
-            description="Understand a project based on source code analysis and visualization."/>
+      <Hero title="Code XRay" description="Understand a project based on source code analysis and visualization."/>
 
       {/* Projects holder and loader*/}
       <Section title={multiProject ? "Composite Project" : (hasProjects ? "Active Project" : undefined)}
-               className={classes.sectionClass}>
+               className={classes.sectionClass} align="center">
         <Grid container spacing={2} alignItems="center" justify="center">
           {projects.map((project, idx) =>
             <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
@@ -290,15 +287,17 @@ function App() {
                 <CardContent>
                   <Typography variant="h6" component="h4">{project.name}</Typography>
                   <Typography>
-                    {project.unfiltered.fileStatList.length} files, {project.unfiltered.langStatList.length} languages
+                    {project.unfiltered.fileStatList.length.toLocaleString()} files, {project.unfiltered.langStatList.length} languages
                   </Typography>
                   <Typography>
-                    {project.unfiltered.codeStatSum.code} lines of code
+                    {project.unfiltered.codeStatSum.code.toLocaleString()} lines of code
                   </Typography>
-                  {experiment && <React.Fragment>
-                    <Box>- Lang = LOCs, files - density</Box>
+                  {experiment &&
+                  <React.Fragment>
+                    <Typography>Lang: LOCs, files - density</Typography>
                     {project.unfiltered.langStatList.map((stat, idx) =>
-                      <Box key={"lang-" + idx}> - {stat.name} = {stat.code}, {stat.files} - {~~(stat.code / stat.files)}
+                      <Box
+                        key={"lang-" + idx}>- {stat.name}: {stat.code.toLocaleString()}, {stat.files.toLocaleString()} - {~~(stat.code / stat.files)}
                       </Box>)}
                   </React.Fragment>}
                 </CardContent>

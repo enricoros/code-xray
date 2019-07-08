@@ -46,7 +46,9 @@ const useStyles = makeStyles(theme => ({
 
 
 const DEFAULT_COLOR_LEAF = 'rainbow';
-const DEFAULT_COLOR_INNER = 'orange-depth';
+// const DEFAULT_COLOR_LEAF = 'viridis';
+// const DEFAULT_COLOR_INNER = 'orange-depth';
+const DEFAULT_COLOR_INNER = 'purple-depth';
 const Colors = [
   {
     name: 'Leaf default',
@@ -235,7 +237,7 @@ function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
         }
         let label = dh.data.name;
         if (options.lab_kpi)
-          label += thinLabel ? '' : ' (' + dh.data.value + ')';
+          label += thinLabel ? '' : ' (' + dh.data.value.toLocaleString() + ')';
         // label += dh.data.depth + ' (' + dh.data.invDepth + ')';
         ctx.font = fontPx + "px sans-serif";
         ctx.textAlign = "center";
@@ -364,7 +366,7 @@ export default function Renderer(props) {
             <TextField label="Height" type="number" value={height} className={classes.numberInput}
                        onChange={e => setHeight(~~(Math.max(96, Math.min(4096, parseInt(e.target.value)))))}/>
             <Button onClick={() => resizeCanvasToScreen(1)} href="">@1x</Button>
-            <Button onClick={() => resizeCanvasToScreen(2)} href="">@2x</Button>
+            <Button color="primary" onClick={() => resizeCanvasToScreen(2)} href="">@2x</Button>
             <Button onClick={() => resizeCanvasToScreen(4)} href="">@4x</Button>
             <Button onClick={() => resizeCanvas([4000, 2000])} href="">4000 x 2000</Button>
             <Button onClick={() => resizeCanvas([2000, 1000])} href="">2000 x 1000</Button>
