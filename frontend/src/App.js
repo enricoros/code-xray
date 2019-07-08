@@ -289,23 +289,27 @@ function App() {
       <Section title={multiProject ? "Composite Project" : (hasProjects ? "Active Project" : undefined)}
                className={classes.sectionClass} align="center">
         <Grid container spacing={2} alignItems="center" justify="center">
-          {projects.map((project, idx) =>
+          {projects.map((p, idx) =>
             <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
               <Card raised className={classes.projectCard}>
                 <CardContent>
-                  <Typography variant="h6" component="h4">{project.name}</Typography>
+                  <Typography variant="h6" component="h4">{p.name}</Typography>
                   <Typography>
-                    {project.unfiltered.fileStatList.length.toLocaleString()} files, {project.unfiltered.langStatList.length} languages
+                    <b>{p.unfiltered.fileStatList.length.toLocaleString()} files</b>,
+                    written in {p.unfiltered.langStatList.length} languages
                   </Typography>
                   <Typography>
-                    {project.unfiltered.codeStatSum.code.toLocaleString()} lines of code
+                    <b>{p.unfiltered.codeStatSum.code.toLocaleString()} lines of code</b>
+                    {(p.unfiltered.langStatList.length > 0) && (', ' +
+                      ~~(100 * p.unfiltered.langStatList[0].code / p.unfiltered.codeStatSum.code) +
+                      '% in ' + p.unfiltered.langStatList[0].name)}
                   </Typography>
                   {experiment &&
                   <React.Fragment>
                     <Typography>Lang: LOCs, files - density</Typography>
-                    {project.unfiltered.langStatList.map((stat, idx) =>
-                      <Box
-                        key={"lang-" + idx}>- {stat.name}: {stat.code.toLocaleString()}, {stat.files.toLocaleString()} - {~~(stat.code / stat.files)}
+                    {p.unfiltered.langStatList.map((cs, idx) =>
+                      <Box key={"lang-" + idx}>
+                        - {cs.name}: {cs.code.toLocaleString()}, {cs.files.toLocaleString()} ({~~(cs.code / cs.files)})
                       </Box>)}
                   </React.Fragment>}
                 </CardContent>

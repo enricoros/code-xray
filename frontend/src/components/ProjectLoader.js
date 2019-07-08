@@ -179,11 +179,17 @@ function ProjectLoader(props) {
     request.send();
   }
 
+  React.useEffect(() => {
+    if (typeof autoLoadExample === "number" && autoLoadExample >= 0 && autoLoadExample < EXAMPLES.length) {
+      // setTimeout(() => loadExampleByIndex(autoLoadExample), 5000);
+    }
+  });
+
   // if autoload is requested, perform it and don't render anything
   if (typeof autoLoadExample === "number" && autoLoadExample >= 0 && autoLoadExample < EXAMPLES.length) {
     console.log("Auto Loading example " + autoLoadExample);
-    setTimeout(() => loadExampleByIndex(autoLoadExample), 100);
-    return <React.Fragment/>;
+    // setTimeout(() => loadExampleByIndex(autoLoadExample), 100);
+    return <Typography>Loading example {autoLoadExample}...</Typography>;
   }
 
   // derived logic: collapse if there are other projects int the parent and we didn't expand this
@@ -193,7 +199,7 @@ function ProjectLoader(props) {
   if (showCollapsed) return (
     <Grid item md={2}>
       <Fab variant="extended" size="small" aria-label="Add" onClick={() => setExpandNext(true)} href="">
-        <LibraryAdd color="secondary" elevation={1}/>&nbsp;Add Project
+        <LibraryAdd color="primary" elevation={1}/>&nbsp;Add Project
       </Fab>
     </Grid>
   );
