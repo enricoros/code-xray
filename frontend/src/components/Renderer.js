@@ -7,24 +7,27 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
+import Paper from "@material-ui/core/Paper";
+import Popover from "@material-ui/core/Popover";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import Delete from "@material-ui/icons/Delete";
 import * as d3h from "d3-hierarchy";
-import * as d3s from "d3-scale";
 import * as d3sc from "d3-scale-chromatic";
 import {updateTreeStatsRecursively} from "../analysis";
+import {TESTING} from "../config";
 
 
 const useStyles = makeStyles(theme => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+  renderCanvas: {
+    width: '100%',
+    height: '100%',
   },
   numberInput: {
     marginRight: theme.spacing(2),
@@ -38,9 +41,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2, 0),
     marginRight: theme.spacing(2),
   },
-  renderCanvas: {
-    width: '100%',
-    height: '100%',
+  popActions: {
+    padding: theme.spacing(1),
   },
 }));
 
@@ -145,9 +147,8 @@ function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
 
   // graphical & drawing & color functions
   const depthLevels = Math.max(1, projectTree.invDepth + projectTree.depth);
-  let fColorIdx = 0, fColorIdx2 = 0.2;
-  const fColor = d3s.scaleOrdinal(d3sc.schemeCategory10);
-  const fColor2I = () => d3sc.interpolateYlGnBu(fColorIdx2 += 0.02);
+  // let fColorIdx2 = 0.2;
+  // const fColor2I = () => d3sc.interpolateYlGnBu(fColorIdx2 += 0.02);
   const colorForNode = (isLeaf, nDepth, dirName) => {
     if (isLeaf) {
       // ctx.fillStyle = fColorI();
@@ -168,7 +169,6 @@ function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
       const k = innerColor.k === 'rand' ? Math.random() : innerColor.k === 'depth' ? nDepth : 0;
       return innerColorCache[dirName] = innerColor.f(k);
       // return d3sc.interpolateYlGnBu(nDepth);
-
     }
   };
 
@@ -178,12 +178,12 @@ function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
 
   // use d3 to layout the TreeMap
   const dataHierarchy = d3h.hierarchy(projectTree);
-  const treeMap = d3h.treemap()
+  const treeMapF = d3h.treemap()
     .tile(d3h.treemapSquarify)
     .size([width, height])
     .paddingOuter(paddingBorder)
-    .paddingTop(paddingLabel)
-    (dataHierarchy);
+    .paddingTop(paddingLabel);
+  const treeMap = treeMapF(dataHierarchy);
 
   const rects = [];
   treeMap.each(dh => {
@@ -255,7 +255,6 @@ function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
   return rects.reverse();
 }
 
-
 /**
  * ...
  */
@@ -263,10 +262,12 @@ export default function Renderer(props) {
   const {projectTree, onClicked} = props;
   const classes = useStyles();
 
-  // state
+  // state: user preferences
   const [valueKpi, setValueKpi] = React.useState('code');
   const [width, setWidth] = React.useState(2000);
   const [height, setHeight] = React.useState(1000);
+  const [leafColor, setLeafColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_LEAF));
+  const [innerColor, setInnerColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_INNER));
   const [features, setFeatures] = React.useState({
     labels: true,
     lab_kpi: false,
@@ -275,8 +276,13 @@ export default function Renderer(props) {
     box_shadows: true,
     lines: true,
   });
-  const [leafColor, setLeafColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_LEAF));
-  const [innerColor, setInnerColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_INNER));
+  // state: mechanics
+  const [popOver, setPopOver] = React.useState({
+    anchorEl: null,
+    anchorX: 0,
+    anchorY: 0,
+    dirNode: null
+  });
 
   // hit boxes
   let lastRenderedRects = [];
@@ -314,16 +320,39 @@ export default function Renderer(props) {
     setHeight(~~(rect.height * dpr * (multiplier || 1)));
   };
 
-  const handleCanvasClick = event => {
+  const openPopOver = event => {
+    // find the element (dirNode) relative to the click
     const canvas = document.getElementById('output-canvas');
     const rect = canvas.getBoundingClientRect();
     // get the coordinates in the rectangles space (since the canvas is generally larger than the screen size)
-    const rx = (event.clientX - rect.left) * canvas.width / canvas.offsetWidth;
-    const ry = (event.clientY - rect.top) * canvas.height / canvas.offsetHeight;
-    // stop at the first rectangle - the array was already reversed
-    const r = lastRenderedRects.find(r => r.l <= rx && r.r >= rx && r.t <= ry && r.b >= ry);
-    if (r)
-      onClicked(r.dirNode);
+    const cx = event.clientX - rect.left;
+    const cy = event.clientY - rect.top;
+    const rx = cx * canvas.width / canvas.offsetWidth;
+    const ry = cy * canvas.height / canvas.offsetHeight;
+
+    // stop at the first rectangle that's hit
+    // (the array was already reversed so elements at the top of the stack are first)
+    const hitRect = lastRenderedRects.find(r => r.l <= rx && r.r >= rx && r.t <= ry && r.b >= ry);
+    if (!hitRect || hitRect.dirNode.depth < 0) return;
+
+    // open the popover for the element
+    TESTING && console.log(hitRect.dirNode);
+    setPopOver({
+      ...popOver,
+      anchorEl: event.target,
+      anchorX: cx,
+      anchorY: cy,
+      dirNode: hitRect.dirNode,
+    });
+  };
+
+  const onPopRemove = () => {
+    popOver.dirNode && onClicked(popOver.dirNode);
+    closePopOver();
+  };
+
+  const closePopOver = () => {
+    setPopOver({...popOver, anchorEl: null, dirNode: null});
   };
 
   // update the depth values on the final tree
@@ -331,13 +360,28 @@ export default function Renderer(props) {
 
   const cWidth = Math.max(width, 96);
   const cHeight = Math.max(height, 96);
+  const popOverOpen = popOver.anchorEl !== null;
 
   return (
     <React.Fragment>
 
       {/* The one and only Canvas - not-allowed was another great cursor choice */}
       <canvas id="output-canvas" width={cWidth} height={cHeight} style={{cursor: 'crosshair'}}
-              onClick={handleCanvasClick} className={classes.renderCanvas}/>
+              onClick={openPopOver} className={classes.renderCanvas}/>
+
+      <Popover
+        open={popOverOpen}
+        onClose={closePopOver}
+        anchorEl={popOver.anchorEl}
+        anchorOrigin={{horizontal: popOver.anchorX, vertical: popOver.anchorY,}}
+        transformOrigin={{vertical: 'bottom', horizontal: 'left',}}
+      >{popOverOpen &&
+      <Paper className={classes.popActions}>
+        <Typography color="secondary">{popOver.dirNode.path}</Typography>
+        {/*<Divider variant="middle" component="hr"/>*/}
+        <IconButton aria-label="Remove Folder" color="primary" href="" onClick={onPopRemove}><Delete/></IconButton>
+      </Paper>}
+      </Popover>
 
       {/* Render Config */}
       <Grid container>
