@@ -30,6 +30,7 @@ import ProjectLoader from "./components/ProjectLoader";
 import Renderer from "./components/Renderer";
 import SignIn from "./components/SignIn";
 import Chip from "@material-ui/core/Chip";
+import {TESTING} from "./config";
 
 // localstorage persisted state
 // import createPersistedState from 'use-persisted-state';
@@ -82,7 +83,7 @@ function Hero(props) {
     <Typography variant="h2" component="h1" align="center" color="textPrimary" gutterBottom>
       {props.title}
     </Typography>
-    <Typography variant="h6" align="center" color="textSecondary" component="p">
+    <Typography variant="h5" align="center" color="textSecondary" component="p">
       {props.description}
     </Typography>
   </Container>
@@ -160,18 +161,8 @@ function MultiProjectFilter(props) {
                 <Chip variant="outlined" label={path} onDelete={() => includeFolder(path)}
                       key={'no-folder-' + idx} component="div" className={classes.folderChip}/>)}
             </Grid>}
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-
-        {/* Lossless transformations */}
-        <ExpansionPanel defaultExpanded={false}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
-            <Typography>Lossless transformations</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
             <FormControlLabel label="Collapse degenerate folder structures" control={
               <Switch checked={semCollapse} onChange={(e, state) => setSemCollapse(state)} color="primary"/>}/>
-            {/*<Typography>TODO: ADDD cap folders here</Typography>*/}
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </Section>
@@ -261,9 +252,9 @@ function App() {
             <Typography variant="h5" color="secondary" noWrap className={classes.toolbarTitle}>
               Source Exploder
             </Typography>
-            <FormControlLabel control={
+            {TESTING && <FormControlLabel control={
               <Switch checked={experiment} onChange={(e, state) => setExperiment(state)} color="primary"/>
-            } label="Experiments"/>
+            } label="Experiments"/>}
             <Button href="https://github.com/enricoros/code-xray" variant="outlined"
                     className={classes.toolbarLink}>GitHub</Button>
             {/*<Link variant="button" color="textPrimary" href="" className={classes.toolbarLink}*/}
@@ -275,7 +266,7 @@ function App() {
       </AppBar>
 
       {/* Welcome Message */}
-      <Hero title="Code XRay" description="Understand a project based on source code analysis and visualization."/>
+      <Hero title="Code XRay" description="Graphical representation of source code projects."/>
 
       {/* Projects holder and loader*/}
       <Section title={multiProject ? "Composite Project" : (hasProjects ? "Active Project" : undefined)}

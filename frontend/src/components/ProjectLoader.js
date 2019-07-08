@@ -30,6 +30,9 @@ const EXAMPLES = [
     name: 'Libra',
     rev: '502936fb',
     upstream: 'https://github.com/libra/libra',
+    presets: {
+      noFolderPrefix: ['Libra/terraform']
+    }
   },
   {
     href: 'examples/cloc.microsoft_onnxruntime.df68111b.json',
@@ -122,8 +125,6 @@ function ProjectLoader(props) {
           if (guessedProject.indexOf('.') !== -1)
             guessedProject = guessedProject.split('.').slice(0, -1).join('.');
           loadClocJson(guessedProject ? guessedProject : UNNAMED_PROJECT, maybeJson, file.name)
-          //TODO: coalesce all the the response of the for loop and send up a [] of project, otherwise
-          // the asynchronous nature of React will just keep the last
         })
       }),
     });
@@ -131,6 +132,7 @@ function ProjectLoader(props) {
   // load one of the examples from the same web server (static examples)
   function loadExampleByIndex(index) {
     const example = EXAMPLES[index];
+    // TODO: use the presets in the example, and apply those in the UI
     loadJsonFromHttpGet(example.href, (maybeJson) => loadClocJson(example.name, maybeJson, example.href));
   }
 
