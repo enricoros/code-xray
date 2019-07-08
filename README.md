@@ -1,3 +1,6 @@
+## Next Gen
+Note: the new development is happening in the [Redux](tree/redux) branch.
+
 # Code XRAY
 XRAYs a folder and shows the code in a nice looking
 [Treemap](https://en.wikipedia.org/wiki/Treemapping). This tool makes it intuitive to look at
