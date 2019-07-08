@@ -1,0 +1,4179 @@
+{"header" : {
+  "cloc_url"           : "github.com/AlDanial/cloc",
+  "cloc_version"       : "1.82",
+  "elapsed_seconds"    : 1.21022915840149,
+  "n_files"            : 833,
+  "n_lines"            : 143877,
+  "files_per_second"   : 688.299397033413,
+  "lines_per_second"   : 118884.096454954,
+  "report_file"        : "cloc.json"},
+"./terraform/templates/dashboards/overview_dashboard.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 8146,
+  "language": "JSON"},
+"./terraform/templates/dashboards/consensus.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 2354,
+  "language": "JSON"},
+"./language/compiler/ir_to_bytecode/src/compiler.rs" :{
+  "blank": 176,
+  "comment": 96,
+  "code": 1960,
+  "language": "Rust"},
+"./terraform/templates/dashboards/system.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1845,
+  "language": "JSON"},
+"./terraform/templates/dashboards/network.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1794,
+  "language": "JSON"},
+"./terraform/templates/dashboards/usage_stats.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1081,
+  "language": "JSON"},
+"./types/src/vm_error.rs" :{
+  "blank": 54,
+  "comment": 26,
+  "code": 1049,
+  "language": "Rust"},
+"./terraform/templates/dashboards/mempool.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1040,
+  "language": "JSON"},
+"./client/src/client_proxy.rs" :{
+  "blank": 94,
+  "comment": 63,
+  "code": 937,
+  "language": "Rust"},
+"./language/compiler/ir_to_bytecode/src/parser/ast.rs" :{
+  "blank": 156,
+  "comment": 287,
+  "code": 922,
+  "language": "Rust"},
+"./terraform/templates/dashboards/storage.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 901,
+  "language": "JSON"},
+"./language/vm/src/deserializer.rs" :{
+  "blank": 80,
+  "comment": 51,
+  "code": 895,
+  "language": "Rust"},
+"./network/src/peer_manager/mod.rs" :{
+  "blank": 71,
+  "comment": 87,
+  "code": 889,
+  "language": "Rust"},
+"./terraform/templates/dashboards/performance.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 877,
+  "language": "JSON"},
+"./consensus/src/chained_bft/event_processor_test.rs" :{
+  "blank": 44,
+  "comment": 40,
+  "code": 851,
+  "language": "Rust"},
+"./terraform/templates/dashboards/system-io.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 834,
+  "language": "JSON"},
+"./terraform/templates/dashboards/validators.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 826,
+  "language": "JSON"},
+"./types/src/transaction.rs" :{
+  "blank": 122,
+  "comment": 117,
+  "code": 812,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/abstract_interpreter.rs" :{
+  "blank": 57,
+  "comment": 8,
+  "code": 791,
+  "language": "Rust"},
+"./language/vm/src/serializer.rs" :{
+  "blank": 72,
+  "comment": 126,
+  "code": 763,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/txn_executor.rs" :{
+  "blank": 43,
+  "comment": 87,
+  "code": 720,
+  "language": "Rust"},
+"./terraform/templates/dashboards/analytics.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 703,
+  "language": "JSON"},
+"./execution/executor/src/block_processor.rs" :{
+  "blank": 70,
+  "comment": 115,
+  "code": 686,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/unit_tests/runtime_tests.rs" :{
+  "blank": 67,
+  "comment": 11,
+  "code": 674,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/stack_generator.rs" :{
+  "blank": 50,
+  "comment": 103,
+  "code": 672,
+  "language": "Rust"},
+"./consensus/src/chained_bft/event_processor.rs" :{
+  "blank": 42,
+  "comment": 101,
+  "code": 669,
+  "language": "Rust"},
+"./language/vm/src/file_format.rs" :{
+  "blank": 84,
+  "comment": 579,
+  "code": 651,
+  "language": "Rust"},
+"./language/vm/src/errors.rs" :{
+  "blank": 96,
+  "comment": 40,
+  "code": 633,
+  "language": "Rust"},
+"./types/src/get_with_proof.rs" :{
+  "blank": 53,
+  "comment": 24,
+  "code": 596,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/unit_tests/module_cache_tests.rs" :{
+  "blank": 66,
+  "comment": 28,
+  "code": 591,
+  "language": "Rust"},
+"./network/noise/src/socket.rs" :{
+  "blank": 66,
+  "comment": 57,
+  "code": 589,
+  "language": "Rust"},
+"./network/src/peer_manager/tests.rs" :{
+  "blank": 83,
+  "comment": 62,
+  "code": 584,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/sparse_merkle_test.rs" :{
+  "blank": 89,
+  "comment": 57,
+  "code": 576,
+  "language": "Rust"},
+"./storage/libradb/src/lib.rs" :{
+  "blank": 71,
+  "comment": 86,
+  "code": 567,
+  "language": "Rust"},
+"./consensus/src/chained_bft/chained_bft_smr_test.rs" :{
+  "blank": 37,
+  "comment": 62,
+  "code": 533,
+  "language": "Rust"},
+"./execution/execution_service/tests/storage_integration_test.rs" :{
+  "blank": 55,
+  "comment": 14,
+  "code": 527,
+  "language": "Rust"},
+"./network/src/connectivity_manager/test.rs" :{
+  "blank": 64,
+  "comment": 68,
+  "code": 526,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/abstract_state.rs" :{
+  "blank": 48,
+  "comment": 30,
+  "code": 525,
+  "language": "Rust"},
+"./config/src/config.rs" :{
+  "blank": 72,
+  "comment": 67,
+  "code": 524,
+  "language": "Rust"},
+"./network/src/protocols/rpc/test.rs" :{
+  "blank": 102,
+  "comment": 93,
+  "code": 518,
+  "language": "Rust"},
+"./language/vm/src/printers.rs" :{
+  "blank": 42,
+  "comment": 64,
+  "code": 517,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/verify_txn.rs" :{
+  "blank": 64,
+  "comment": 59,
+  "code": 508,
+  "language": "Rust"},
+"./execution/executor/src/block_tree/block_tree_test.rs" :{
+  "blank": 74,
+  "comment": 13,
+  "code": 494,
+  "language": "Rust"},
+"./types/src/proof/unit_tests/proof_test.rs" :{
+  "blank": 55,
+  "comment": 62,
+  "code": 481,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/peer_to_peer.rs" :{
+  "blank": 50,
+  "comment": 56,
+  "code": 470,
+  "language": "Rust"},
+"./network/src/validator_network/network_builder.rs" :{
+  "blank": 43,
+  "comment": 48,
+  "code": 467,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/epilogue.rs" :{
+  "blank": 61,
+  "comment": 41,
+  "code": 460,
+  "language": "Rust"},
+"./types/src/proptest_types.rs" :{
+  "blank": 56,
+  "comment": 23,
+  "code": 459,
+  "language": "Rust"},
+"./consensus/src/chained_bft/chained_bft_smr.rs" :{
+  "blank": 39,
+  "comment": 27,
+  "code": 452,
+  "language": "Rust"},
+"./language/vm/src/views.rs" :{
+  "blank": 86,
+  "comment": 18,
+  "code": 448,
+  "language": "Rust"},
+"./execution/executor/src/executor_test.rs" :{
+  "blank": 66,
+  "comment": 26,
+  "code": 447,
+  "language": "Rust"},
+"./types/src/proof/mod.rs" :{
+  "blank": 52,
+  "comment": 42,
+  "code": 446,
+  "language": "Rust"},
+"./libra_swarm/src/swarm.rs" :{
+  "blank": 58,
+  "comment": 32,
+  "code": 444,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/node_type/node_type_test.rs" :{
+  "blank": 48,
+  "comment": 85,
+  "code": 440,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/value.rs" :{
+  "blank": 73,
+  "comment": 28,
+  "code": 433,
+  "language": "Rust"},
+"./consensus/src/chained_bft/network.rs" :{
+  "blank": 23,
+  "comment": 38,
+  "code": 427,
+  "language": "Rust"},
+"./network/src/protocols/direct_send/test.rs" :{
+  "blank": 57,
+  "comment": 37,
+  "code": 426,
+  "language": "Rust"},
+"./vm_validator/src/unit_tests/vm_validator_test.rs" :{
+  "blank": 42,
+  "comment": 30,
+  "code": 418,
+  "language": "Rust"},
+"./consensus/src/chained_bft/block_storage/block_store.rs" :{
+  "blank": 41,
+  "comment": 77,
+  "code": 417,
+  "language": "Rust"},
+"./consensus/src/chained_bft/network_tests.rs" :{
+  "blank": 36,
+  "comment": 63,
+  "code": 417,
+  "language": "Rust"},
+"./network/src/protocols/discovery/mod.rs" :{
+  "blank": 21,
+  "comment": 99,
+  "code": 403,
+  "language": "Rust"},
+"./consensus/src/chained_bft/block_storage/block_store_test.rs" :{
+  "blank": 45,
+  "comment": 40,
+  "code": 403,
+  "language": "Rust"},
+"./terraform/templates/dashboards/execution.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 397,
+  "language": "JSON"},
+"./storage/scratchpad/src/sparse_merkle/sparse_merkle_test.rs" :{
+  "blank": 56,
+  "comment": 94,
+  "code": 397,
+  "language": "Rust"},
+"./common/canonical_serialization/src/lib.rs" :{
+  "blank": 76,
+  "comment": 66,
+  "code": 393,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/hash.rs" :{
+  "blank": 83,
+  "comment": 141,
+  "code": 391,
+  "language": "Rust"},
+"./language/vm/vm_genesis/src/lib.rs" :{
+  "blank": 46,
+  "comment": 16,
+  "code": 390,
+  "language": "Rust"},
+"./types/src/proof/definition.rs" :{
+  "blank": 64,
+  "comment": 93,
+  "code": 390,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/signing.rs" :{
+  "blank": 68,
+  "comment": 85,
+  "code": 376,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/code_cache/module_cache.rs" :{
+  "blank": 43,
+  "comment": 70,
+  "code": 373,
+  "language": "Rust"},
+"./mempool/src/shared_mempool.rs" :{
+  "blank": 42,
+  "comment": 39,
+  "code": 369,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/branch_tests.rs" :{
+  "blank": 28,
+  "comment": 2,
+  "code": 369,
+  "language": "Rust"},
+"./storage/libradb/src/libradb_test.rs" :{
+  "blank": 50,
+  "comment": 14,
+  "code": 366,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/verifier.rs" :{
+  "blank": 37,
+  "comment": 87,
+  "code": 360,
+  "language": "Rust"},
+"./language/bytecode_verifier/invalid_mutations/src/bounds.rs" :{
+  "blank": 33,
+  "comment": 62,
+  "code": 360,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/lib.rs" :{
+  "blank": 54,
+  "comment": 169,
+  "code": 359,
+  "language": "Rust"},
+"./consensus/src/chained_bft/block_storage/block_tree.rs" :{
+  "blank": 40,
+  "comment": 72,
+  "code": 352,
+  "language": "Rust"},
+"./language/vm/src/proptest_types.rs" :{
+  "blank": 43,
+  "comment": 97,
+  "code": 350,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/local_pacemaker.rs" :{
+  "blank": 29,
+  "comment": 83,
+  "code": 325,
+  "language": "Rust"},
+"./client/libra_wallet/src/mnemonic.rs" :{
+  "blank": 12,
+  "comment": 11,
+  "code": 317,
+  "language": "Rust"},
+"./language/vm/src/proptest_types/functions.rs" :{
+  "blank": 27,
+  "comment": 27,
+  "code": 316,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensus_types/block.rs" :{
+  "blank": 33,
+  "comment": 43,
+  "code": 315,
+  "language": "Rust"},
+"./consensus/src/chained_bft/sync_manager.rs" :{
+  "blank": 20,
+  "comment": 54,
+  "code": 313,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/references.rs" :{
+  "blank": 49,
+  "comment": 41,
+  "code": 308,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/node_type/mod.rs" :{
+  "blank": 50,
+  "comment": 217,
+  "code": 307,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/timeout_msg.rs" :{
+  "blank": 46,
+  "comment": 43,
+  "code": 303,
+  "language": "Rust"},
+"./types/src/proof/unit_tests/proof_proto_conversion_test.rs" :{
+  "blank": 28,
+  "comment": 2,
+  "code": 300,
+  "language": "Rust"},
+"./language/vm/src/check_bounds.rs" :{
+  "blank": 27,
+  "comment": 15,
+  "code": 295,
+  "language": "Rust"},
+"./consensus/src/chained_bft/safety/safety_rules_test.rs" :{
+  "blank": 49,
+  "comment": 68,
+  "code": 289,
+  "language": "Rust"},
+"./network/src/connectivity_manager/mod.rs" :{
+  "blank": 14,
+  "comment": 56,
+  "code": 289,
+  "language": "Rust"},
+"./consensus/src/chained_bft/persistent_storage.rs" :{
+  "blank": 33,
+  "comment": 58,
+  "code": 289,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/account_universe.rs" :{
+  "blank": 41,
+  "comment": 114,
+  "code": 288,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/account.rs" :{
+  "blank": 39,
+  "comment": 87,
+  "code": 288,
+  "language": "Rust"},
+"./types/src/access_path.rs" :{
+  "blank": 50,
+  "comment": 62,
+  "code": 281,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/module_generator.rs" :{
+  "blank": 37,
+  "comment": 72,
+  "code": 280,
+  "language": "Rust"},
+"./network/src/protocols/health_checker/test.rs" :{
+  "blank": 46,
+  "comment": 53,
+  "code": 277,
+  "language": "Rust"},
+"./network/src/validator_network/consensus.rs" :{
+  "blank": 47,
+  "comment": 67,
+  "code": 272,
+  "language": "Rust"},
+"./execution/executor/src/mock_vm/mod.rs" :{
+  "blank": 34,
+  "comment": 5,
+  "code": 271,
+  "language": "Rust"},
+"./types/src/proof/unit_tests/position_test.rs" :{
+  "blank": 30,
+  "comment": 22,
+  "code": 269,
+  "language": "Rust"},
+"./network/benches/network_bench.rs" :{
+  "blank": 31,
+  "comment": 29,
+  "code": 267,
+  "language": "Rust"},
+"./admission_control/admission_control_service/src/unit_tests/admission_control_service_test.rs" :{
+  "blank": 9,
+  "comment": 3,
+  "code": 266,
+  "language": "Rust"},
+"./network/src/validator_network/test.rs" :{
+  "blank": 33,
+  "comment": 28,
+  "code": 262,
+  "language": "Rust"},
+"./storage/storage_proto/src/lib.rs" :{
+  "blank": 46,
+  "comment": 60,
+  "code": 262,
+  "language": "Rust"},
+"./storage/scratchpad/src/sparse_merkle/mod.rs" :{
+  "blank": 34,
+  "comment": 164,
+  "code": 261,
+  "language": "Rust"},
+"./network/netcore/src/multiplexing/yamux.rs" :{
+  "blank": 61,
+  "comment": 25,
+  "code": 261,
+  "language": "Rust"},
+"./common/logger/src/collector_serializer.rs" :{
+  "blank": 31,
+  "comment": 14,
+  "code": 261,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/bin/repl.rs" :{
+  "blank": 21,
+  "comment": 3,
+  "code": 261,
+  "language": "Rust"},
+"./storage/storage_client/src/lib.rs" :{
+  "blank": 30,
+  "comment": 57,
+  "code": 259,
+  "language": "Rust"},
+"./execution/executor/src/lib.rs" :{
+  "blank": 23,
+  "comment": 17,
+  "code": 258,
+  "language": "Rust"},
+"./network/netcore/src/transport/tcp.rs" :{
+  "blank": 40,
+  "comment": 16,
+  "code": 252,
+  "language": "Rust"},
+"./execution/executor/src/transaction_block.rs" :{
+  "blank": 55,
+  "comment": 63,
+  "code": 252,
+  "language": "Rust"},
+"./storage/schemadb/tests/db.rs" :{
+  "blank": 38,
+  "comment": 6,
+  "code": 251,
+  "language": "Rust"},
+"./common/canonical_serialization/src/canonical_serialization_test.rs" :{
+  "blank": 44,
+  "comment": 27,
+  "code": 250,
+  "language": "Rust"},
+"./network/src/protocols/discovery/test.rs" :{
+  "blank": 22,
+  "comment": 29,
+  "code": 250,
+  "language": "Rust"},
+"./common/grpcio-client/src/codegen.rs" :{
+  "blank": 44,
+  "comment": 15,
+  "code": 249,
+  "language": "Rust"},
+"./network/benches/socket_muxer_bench.rs" :{
+  "blank": 54,
+  "comment": 121,
+  "code": 248,
+  "language": "Rust"},
+"./libra_node/src/main_node.rs" :{
+  "blank": 24,
+  "comment": 5,
+  "code": 247,
+  "language": "Rust"},
+"./client/src/grpc_client.rs" :{
+  "blank": 30,
+  "comment": 23,
+  "code": 247,
+  "language": "Rust"},
+"./types/src/proof/unit_tests/treebits_test.rs" :{
+  "blank": 38,
+  "comment": 3,
+  "code": 241,
+  "language": "Rust"},
+"./network/src/protocols/rpc/mod.rs" :{
+  "blank": 34,
+  "comment": 155,
+  "code": 240,
+  "language": "Rust"},
+"./storage/schemadb/src/lib.rs" :{
+  "blank": 46,
+  "comment": 54,
+  "code": 239,
+  "language": "Rust"},
+"./types/src/validator_verifier.rs" :{
+  "blank": 26,
+  "comment": 33,
+  "code": 239,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/unit_tests/signing_test.rs" :{
+  "blank": 45,
+  "comment": 26,
+  "code": 239,
+  "language": "Rust"},
+"./storage/storage_service/src/mocks/mock_storage_client.rs" :{
+  "blank": 20,
+  "comment": 7,
+  "code": 238,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/process_txn/validate.rs" :{
+  "blank": 24,
+  "comment": 42,
+  "code": 237,
+  "language": "Rust"},
+"./mempool/src/core_mempool/unit_tests/core_mempool_test.rs" :{
+  "blank": 41,
+  "comment": 43,
+  "code": 237,
+  "language": "Rust"},
+"./consensus/src/state_synchronizer/coordinator.rs" :{
+  "blank": 26,
+  "comment": 28,
+  "code": 230,
+  "language": "Rust"},
+"./execution/executor/src/block_tree/mod.rs" :{
+  "blank": 45,
+  "comment": 72,
+  "code": 229,
+  "language": "Rust"},
+"./network/src/protocols/direct_send/mod.rs" :{
+  "blank": 19,
+  "comment": 68,
+  "code": 229,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/gas_meter.rs" :{
+  "blank": 13,
+  "comment": 72,
+  "code": 227,
+  "language": "Rust"},
+"./mempool/src/core_mempool/transaction_store.rs" :{
+  "blank": 30,
+  "comment": 46,
+  "code": 226,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/check_duplication.rs" :{
+  "blank": 9,
+  "comment": 21,
+  "code": 225,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/x25519.rs" :{
+  "blank": 37,
+  "comment": 82,
+  "code": 225,
+  "language": "Rust"},
+"./network/src/protocols/health_checker/mod.rs" :{
+  "blank": 10,
+  "comment": 49,
+  "code": 225,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/expression_tests.rs" :{
+  "blank": 17,
+  "comment": 2,
+  "code": 222,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/rotating_proposer_test.rs" :{
+  "blank": 16,
+  "comment": 11,
+  "code": 221,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensus_types/block_test.rs" :{
+  "blank": 21,
+  "comment": 35,
+  "code": 220,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/vrf/ecvrf.rs" :{
+  "blank": 40,
+  "comment": 64,
+  "code": 219,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/unit_tests/ed25519_test.rs" :{
+  "blank": 35,
+  "comment": 42,
+  "code": 218,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/ed25519.rs" :{
+  "blank": 53,
+  "comment": 82,
+  "code": 218,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/data_cache.rs" :{
+  "blank": 18,
+  "comment": 46,
+  "code": 218,
+  "language": "Rust"},
+"./testsuite/tests/libratest/smoke_test.rs" :{
+  "blank": 15,
+  "comment": 16,
+  "code": 216,
+  "language": "Rust"},
+"./mempool/src/core_mempool/unit_tests/shared_mempool_test.rs" :{
+  "blank": 37,
+  "comment": 29,
+  "code": 216,
+  "language": "Rust"},
+"./consensus/src/state_synchronizer/sync_test.rs" :{
+  "blank": 21,
+  "comment": 13,
+  "code": 216,
+  "language": "Rust"},
+"./config/config_builder/src/swarm_config.rs" :{
+  "blank": 33,
+  "comment": 18,
+  "code": 216,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/bytecode_specifications/stack_transition_info.rs" :{
+  "blank": 26,
+  "comment": 31,
+  "code": 214,
+  "language": "Rust"},
+"./network/src/interface/mod.rs" :{
+  "blank": 14,
+  "comment": 36,
+  "code": 211,
+  "language": "Rust"},
+"./network/memsocket/src/lib.rs" :{
+  "blank": 38,
+  "comment": 176,
+  "code": 210,
+  "language": "Rust"},
+"./common/logger/src/glog_format.rs" :{
+  "blank": 35,
+  "comment": 14,
+  "code": 209,
+  "language": "Rust"},
+"./language/vm/src/access.rs" :{
+  "blank": 56,
+  "comment": 18,
+  "code": 208,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/module_publishing.rs" :{
+  "blank": 36,
+  "comment": 17,
+  "code": 208,
+  "language": "Rust"},
+"./storage/storage_service/src/lib.rs" :{
+  "blank": 31,
+  "comment": 41,
+  "code": 207,
+  "language": "Rust"},
+"./language/bytecode_verifier/invalid_mutations/src/signature.rs" :{
+  "blank": 30,
+  "comment": 14,
+  "code": 204,
+  "language": "Rust"},
+"./network/netcore/src/negotiate/inbound.rs" :{
+  "blank": 42,
+  "comment": 22,
+  "code": 204,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/nibble_path/nibble_path_test.rs" :{
+  "blank": 21,
+  "comment": 5,
+  "code": 204,
+  "language": "Rust"},
+"./client/src/query_commands.rs" :{
+  "blank": 16,
+  "comment": 11,
+  "code": 204,
+  "language": "Rust"},
+"./mempool/src/core_mempool/index.rs" :{
+  "blank": 36,
+  "comment": 39,
+  "code": 201,
+  "language": "Rust"},
+"./consensus/src/chained_bft/safety/safety_rules.rs" :{
+  "blank": 31,
+  "comment": 81,
+  "code": 201,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/cfg_tests.rs" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 198,
+  "language": "Rust"},
+"./storage/libradb/src/event_store/mod.rs" :{
+  "blank": 29,
+  "comment": 26,
+  "code": 198,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/process_txn/verify.rs" :{
+  "blank": 21,
+  "comment": 21,
+  "code": 197,
+  "language": "Rust"},
+"./language/bytecode_verifier/invalid_mutations/src/bounds/code_unit.rs" :{
+  "blank": 24,
+  "comment": 10,
+  "code": 196,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/unit_tests/hash_test.rs" :{
+  "blank": 23,
+  "comment": 3,
+  "code": 194,
+  "language": "Rust"},
+"./client/libra_wallet/src/internal_macros.rs" :{
+  "blank": 35,
+  "comment": 17,
+  "code": 193,
+  "language": "Rust"},
+"./types/src/ledger_info.rs" :{
+  "blank": 36,
+  "comment": 45,
+  "code": 193,
+  "language": "Rust"},
+"./types/src/proto/vm_errors.proto" :{
+  "blank": 19,
+  "comment": 70,
+  "code": 192,
+  "language": "Protocol Buffers"},
+"./storage/libradb/src/event_store/test.rs" :{
+  "blank": 34,
+  "comment": 10,
+  "code": 192,
+  "language": "Rust"},
+"./terraform/network.tf" :{
+  "blank": 32,
+  "comment": 0,
+  "code": 192,
+  "language": "HCL"},
+"./storage/sparse_merkle/src/node_serde/mod.rs" :{
+  "blank": 21,
+  "comment": 38,
+  "code": 191,
+  "language": "Rust"},
+"./terraform/monitoring.tf" :{
+  "blank": 41,
+  "comment": 1,
+  "code": 190,
+  "language": "HCL"},
+"./admission_control/admission_control_service/src/admission_control_service.rs" :{
+  "blank": 17,
+  "comment": 26,
+  "code": 187,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/bin/main.rs" :{
+  "blank": 10,
+  "comment": 20,
+  "code": 185,
+  "language": "Rust"},
+"./network/netcore/src/negotiate/outbound.rs" :{
+  "blank": 47,
+  "comment": 32,
+  "code": 185,
+  "language": "Rust"},
+"./network/socket_bench_server/src/lib.rs" :{
+  "blank": 21,
+  "comment": 19,
+  "code": 185,
+  "language": "Rust"},
+"./types/src/account_address.rs" :{
+  "blank": 43,
+  "comment": 13,
+  "code": 184,
+  "language": "Rust"},
+"./consensus/src/chained_bft/test_utils/mock_storage.rs" :{
+  "blank": 23,
+  "comment": 11,
+  "code": 183,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/nibble_path/mod.rs" :{
+  "blank": 32,
+  "comment": 43,
+  "code": 183,
+  "language": "Rust"},
+"./storage/schemadb/tests/iterator.rs" :{
+  "blank": 30,
+  "comment": 2,
+  "code": 182,
+  "language": "Rust"},
+"./benchmark/src/lib.rs" :{
+  "blank": 15,
+  "comment": 38,
+  "code": 181,
+  "language": "Rust"},
+"./documentation/coding_guidelines.md" :{
+  "blank": 88,
+  "comment": 0,
+  "code": 180,
+  "language": "Markdown"},
+"./storage/scratchpad/src/sparse_merkle/node.rs" :{
+  "blank": 37,
+  "comment": 41,
+  "code": 180,
+  "language": "Rust"},
+"./mempool/src/core_mempool/mempool.rs" :{
+  "blank": 24,
+  "comment": 35,
+  "code": 179,
+  "language": "Rust"},
+"./terraform/validators.tf" :{
+  "blank": 28,
+  "comment": 0,
+  "code": 178,
+  "language": "HCL"},
+"./consensus/src/chained_bft/safety/vote_msg.rs" :{
+  "blank": 22,
+  "comment": 27,
+  "code": 177,
+  "language": "Rust"},
+"./config/src/trusted_peers.rs" :{
+  "blank": 26,
+  "comment": 11,
+  "code": 176,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/pacemaker_timeout_manager.rs" :{
+  "blank": 12,
+  "comment": 34,
+  "code": 176,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/control_flow_graph.rs" :{
+  "blank": 42,
+  "comment": 30,
+  "code": 176,
+  "language": "Rust"},
+"./storage/libradb/src/state_store/state_store_test.rs" :{
+  "blank": 14,
+  "comment": 21,
+  "code": 176,
+  "language": "Rust"},
+"./language/functional_tests/src/evaluator.rs" :{
+  "blank": 28,
+  "comment": 35,
+  "code": 174,
+  "language": "Rust"},
+"./language/functional_tests/src/config/transaction.rs" :{
+  "blank": 13,
+  "comment": 8,
+  "code": 173,
+  "language": "Rust"},
+"./libra_swarm/src/client.rs" :{
+  "blank": 11,
+  "comment": 11,
+  "code": 171,
+  "language": "Rust"},
+"./network/src/transport.rs" :{
+  "blank": 18,
+  "comment": 4,
+  "code": 171,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/vrf/unit_tests/vrf_test.rs" :{
+  "blank": 21,
+  "comment": 5,
+  "code": 170,
+  "language": "Rust"},
+"./types/src/account_config.rs" :{
+  "blank": 28,
+  "comment": 41,
+  "code": 170,
+  "language": "Rust"},
+"./language/vm/src/file_format_common.rs" :{
+  "blank": 13,
+  "comment": 47,
+  "code": 169,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/execution_stack.rs" :{
+  "blank": 24,
+  "comment": 3,
+  "code": 165,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/unit_tests/cross_test.rs" :{
+  "blank": 33,
+  "comment": 32,
+  "code": 164,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/proposal_generator.rs" :{
+  "blank": 12,
+  "comment": 45,
+  "code": 162,
+  "language": "Rust"},
+"./consensus/src/chained_bft/test_utils/mod.rs" :{
+  "blank": 19,
+  "comment": 9,
+  "code": 162,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/bls12381.rs" :{
+  "blank": 32,
+  "comment": 62,
+  "code": 160,
+  "language": "Rust"},
+"./storage/accumulator/src/lib.rs" :{
+  "blank": 31,
+  "comment": 132,
+  "code": 158,
+  "language": "Rust"},
+"./types/src/contract_event.rs" :{
+  "blank": 17,
+  "comment": 16,
+  "code": 158,
+  "language": "Rust"},
+"./types/src/test_helpers/transaction_test_helpers.rs" :{
+  "blank": 16,
+  "comment": 8,
+  "code": 158,
+  "language": "Rust"},
+"./common/logger/src/lib.rs" :{
+  "blank": 22,
+  "comment": 46,
+  "code": 157,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/unit_tests/hkdf_test.rs" :{
+  "blank": 28,
+  "comment": 31,
+  "code": 157,
+  "language": "Rust"},
+"./network/netcore/src/transport/timeout.rs" :{
+  "blank": 26,
+  "comment": 26,
+  "code": 156,
+  "language": "Rust"},
+"./types/src/write_set.rs" :{
+  "blank": 29,
+  "comment": 15,
+  "code": 155,
+  "language": "Rust"},
+"./execution/execution_proto/src/lib.rs" :{
+  "blank": 29,
+  "comment": 10,
+  "code": 155,
+  "language": "Rust"},
+"./network/src/protocols/identity.rs" :{
+  "blank": 23,
+  "comment": 15,
+  "code": 153,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/mod.rs" :{
+  "blank": 18,
+  "comment": 8,
+  "code": 153,
+  "language": "Rust"},
+"./client/libra_wallet/src/key_factory.rs" :{
+  "blank": 35,
+  "comment": 52,
+  "code": 153,
+  "language": "Rust"},
+"./execution/execution_service/src/lib.rs" :{
+  "blank": 10,
+  "comment": 5,
+  "code": 153,
+  "language": "Rust"},
+"./consensus/src/state_computer.rs" :{
+  "blank": 12,
+  "comment": 12,
+  "code": 151,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensus_types/quorum_cert.rs" :{
+  "blank": 15,
+  "comment": 12,
+  "code": 151,
+  "language": "Rust"},
+"./common/proto_conv/proto_conv_derive/src/lib.rs" :{
+  "blank": 18,
+  "comment": 55,
+  "code": 150,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/unit_tests/value_tests.rs" :{
+  "blank": 20,
+  "comment": 19,
+  "code": 148,
+  "language": "Rust"},
+"./consensus/src/chained_bft/chained_bft_consensus_provider.rs" :{
+  "blank": 10,
+  "comment": 10,
+  "code": 148,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/global_state/inhabitor.rs" :{
+  "blank": 14,
+  "comment": 21,
+  "code": 148,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/tree_cache/mod.rs" :{
+  "blank": 25,
+  "comment": 107,
+  "code": 147,
+  "language": "Rust"},
+"./language/vm/src/gas_schedule.rs" :{
+  "blank": 26,
+  "comment": 49,
+  "code": 147,
+  "language": "Rust"},
+"./crypto/secret_service/src/crypto_wrappers.rs" :{
+  "blank": 23,
+  "comment": 18,
+  "code": 145,
+  "language": "Rust"},
+"./crypto/secret_service/src/secret_service_server.rs" :{
+  "blank": 16,
+  "comment": 33,
+  "code": 145,
+  "language": "Rust"},
+"./types/src/transaction/program.rs" :{
+  "blank": 16,
+  "comment": 4,
+  "code": 144,
+  "language": "Rust"},
+"./consensus/src/chained_bft/mutex_map.rs" :{
+  "blank": 18,
+  "comment": 48,
+  "code": 144,
+  "language": "Rust"},
+"./mempool/src/mempool_service.rs" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 144,
+  "language": "Rust"},
+"./consensus/src/time_service.rs" :{
+  "blank": 18,
+  "comment": 45,
+  "code": 142,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/account_universe.rs" :{
+  "blank": 16,
+  "comment": 25,
+  "code": 139,
+  "language": "Rust"},
+"./network/netcore/src/transport/and_then.rs" :{
+  "blank": 20,
+  "comment": 35,
+  "code": 139,
+  "language": "Rust"},
+"./storage/libradb/src/ledger_store/mod.rs" :{
+  "blank": 19,
+  "comment": 19,
+  "code": 139,
+  "language": "Rust"},
+"./network/src/error.rs" :{
+  "blank": 29,
+  "comment": 16,
+  "code": 138,
+  "language": "Rust"},
+"./types/src/account_state_blob/mod.rs" :{
+  "blank": 23,
+  "comment": 14,
+  "code": 138,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/transaction_scripts.rs" :{
+  "blank": 26,
+  "comment": 8,
+  "code": 137,
+  "language": "Rust"},
+"./common/metrics/src/json_encoder.rs" :{
+  "blank": 24,
+  "comment": 26,
+  "code": 137,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/testutils.rs" :{
+  "blank": 20,
+  "comment": 6,
+  "code": 134,
+  "language": "Rust"},
+"./network/src/validator_network/mempool.rs" :{
+  "blank": 22,
+  "comment": 36,
+  "code": 133,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/value_serializer.rs" :{
+  "blank": 5,
+  "comment": 8,
+  "code": 132,
+  "language": "Rust"},
+"./types/src/proof/treebits.rs" :{
+  "blank": 31,
+  "comment": 150,
+  "code": 132,
+  "language": "Rust"},
+"./client/libra_wallet/src/wallet_library.rs" :{
+  "blank": 18,
+  "comment": 32,
+  "code": 132,
+  "language": "Rust"},
+"./consensus/src/chained_bft/block_storage/mod.rs" :{
+  "blank": 29,
+  "comment": 56,
+  "code": 131,
+  "language": "Rust"},
+"./crypto/secret_service/src/unit_tests/secret_service_test.rs" :{
+  "blank": 18,
+  "comment": 14,
+  "code": 130,
+  "language": "Rust"},
+"./types/src/language_storage.rs" :{
+  "blank": 20,
+  "comment": 6,
+  "code": 130,
+  "language": "Rust"},
+"./common/metrics/src/lib.rs" :{
+  "blank": 21,
+  "comment": 9,
+  "code": 129,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/local_pacemaker_test.rs" :{
+  "blank": 14,
+  "comment": 13,
+  "code": 129,
+  "language": "Rust"},
+"./network/netcore/src/negotiate/framing.rs" :{
+  "blank": 32,
+  "comment": 12,
+  "code": 129,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/unit_tests/slip0010_test.rs" :{
+  "blank": 4,
+  "comment": 16,
+  "code": 128,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/stack_usage_verifier.rs" :{
+  "blank": 20,
+  "comment": 9,
+  "code": 127,
+  "language": "Rust"},
+"./client/src/account_commands.rs" :{
+  "blank": 14,
+  "comment": 10,
+  "code": 127,
+  "language": "Rust"},
+"./consensus/src/txn_manager.rs" :{
+  "blank": 8,
+  "comment": 7,
+  "code": 126,
+  "language": "Rust"},
+"./language/vm/src/unit_tests/number_tests.rs" :{
+  "blank": 13,
+  "comment": 3,
+  "code": 126,
+  "language": "Rust"},
+"./scripts/dev_setup.sh" :{
+  "blank": 20,
+  "comment": 7,
+  "code": 125,
+  "language": "Bourne Shell"},
+"./execution/executor/src/mock_vm/mock_vm_test.rs" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 125,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/slip0010.rs" :{
+  "blank": 27,
+  "comment": 36,
+  "code": 125,
+  "language": "Rust"},
+"./common/grpc_helpers/src/lib.rs" :{
+  "blank": 12,
+  "comment": 7,
+  "code": 125,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/signature.rs" :{
+  "blank": 15,
+  "comment": 9,
+  "code": 123,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/verify_transaction.rs" :{
+  "blank": 21,
+  "comment": 5,
+  "code": 122,
+  "language": "Rust"},
+"./types/src/unit_tests/address_test.rs" :{
+  "blank": 17,
+  "comment": 2,
+  "code": 122,
+  "language": "Rust"},
+"./language/compiler/src/main.rs" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 121,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/process_txn/execute.rs" :{
+  "blank": 12,
+  "comment": 24,
+  "code": 121,
+  "language": "Rust"},
+"./common/executable_helpers/src/helpers.rs" :{
+  "blank": 24,
+  "comment": 13,
+  "code": 121,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/proposal_generator_test.rs" :{
+  "blank": 12,
+  "comment": 8,
+  "code": 120,
+  "language": "Rust"},
+"./mempool/src/unit_tests/service_test.rs" :{
+  "blank": 21,
+  "comment": 14,
+  "code": 120,
+  "language": "Rust"},
+"./mempool/src/core_mempool/unit_tests/common.rs" :{
+  "blank": 15,
+  "comment": 4,
+  "code": 119,
+  "language": "Rust"},
+"./common/metrics/src/service_metrics.rs" :{
+  "blank": 22,
+  "comment": 52,
+  "code": 119,
+  "language": "Rust"},
+"./types/src/validator_signer.rs" :{
+  "blank": 19,
+  "comment": 17,
+  "code": 118,
+  "language": "Rust"},
+"./storage/storage_client/src/state_view.rs" :{
+  "blank": 10,
+  "comment": 49,
+  "code": 118,
+  "language": "Rust"},
+"./storage/libradb/src/state_store/mod.rs" :{
+  "blank": 14,
+  "comment": 11,
+  "code": 117,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/loaded_data/loaded_module.rs" :{
+  "blank": 20,
+  "comment": 13,
+  "code": 117,
+  "language": "Rust"},
+"./language/vm/src/resolver.rs" :{
+  "blank": 5,
+  "comment": 10,
+  "code": 115,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/pacemaker_timeout_manager_test.rs" :{
+  "blank": 11,
+  "comment": 7,
+  "code": 115,
+  "language": "Rust"},
+"./types/src/proof/position.rs" :{
+  "blank": 34,
+  "comment": 78,
+  "code": 115,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/validator-overview.html" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 115,
+  "language": "HTML"},
+"./terraform/templates/prometheus/consoles/node-overview.html" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 115,
+  "language": "HTML"},
+"./language/vm/vm_runtime/src/block_processor.rs" :{
+  "blank": 9,
+  "comment": 19,
+  "code": 114,
+  "language": "Rust"},
+"./common/metrics/src/op_counters.rs" :{
+  "blank": 17,
+  "comment": 8,
+  "code": 114,
+  "language": "Rust"},
+"./storage/accumulator/src/tests/mod.rs" :{
+  "blank": 21,
+  "comment": 19,
+  "code": 114,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/src/main.rs" :{
+  "blank": 12,
+  "comment": 25,
+  "code": 112,
+  "language": "Rust"},
+"./language/bytecode_verifier/README.md" :{
+  "blank": 46,
+  "comment": 0,
+  "code": 111,
+  "language": "Markdown"},
+"./network/README.md" :{
+  "blank": 18,
+  "comment": 0,
+  "code": 111,
+  "language": "Markdown"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/executor.rs" :{
+  "blank": 17,
+  "comment": 32,
+  "code": 110,
+  "language": "Rust"},
+"./language/functional_tests/src/checker.rs" :{
+  "blank": 11,
+  "comment": 12,
+  "code": 110,
+  "language": "Rust"},
+"./consensus/src/mock_time_service.rs" :{
+  "blank": 11,
+  "comment": 18,
+  "code": 109,
+  "language": "Rust"},
+"./crypto/secret_service/src/unit_tests/secret_service_node_test.rs" :{
+  "blank": 25,
+  "comment": 17,
+  "code": 109,
+  "language": "Rust"},
+"./network/netcore/src/transport/memory.rs" :{
+  "blank": 23,
+  "comment": 5,
+  "code": 108,
+  "language": "Rust"},
+"./client/src/commands.rs" :{
+  "blank": 15,
+  "comment": 17,
+  "code": 108,
+  "language": "Rust"},
+"./language/functional_tests/src/tests/checker_tests.rs" :{
+  "blank": 19,
+  "comment": 28,
+  "code": 107,
+  "language": "Rust"},
+"./admission_control/admission_control_service/src/admission_control_node.rs" :{
+  "blank": 13,
+  "comment": 13,
+  "code": 107,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/proposer_election.rs" :{
+  "blank": 14,
+  "comment": 20,
+  "code": 106,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/account_universe/peer_to_peer.rs" :{
+  "blank": 14,
+  "comment": 27,
+  "code": 106,
+  "language": "Rust"},
+"./client/src/main.rs" :{
+  "blank": 12,
+  "comment": 24,
+  "code": 105,
+  "language": "Rust"},
+"./types/src/validator_public_keys.rs" :{
+  "blank": 14,
+  "comment": 17,
+  "code": 105,
+  "language": "Rust"},
+"./language/vm/src/proptest_types/signature.rs" :{
+  "blank": 18,
+  "comment": 9,
+  "code": 104,
+  "language": "Rust"},
+"./consensus/src/state_synchronizer/synchronizer.rs" :{
+  "blank": 11,
+  "comment": 7,
+  "code": 104,
+  "language": "Rust"},
+"./config/config_builder/src/bin/libra-config.rs" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 104,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_cache_map/src/cache_map.rs" :{
+  "blank": 11,
+  "comment": 26,
+  "code": 103,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/partition.rs" :{
+  "blank": 11,
+  "comment": 15,
+  "code": 103,
+  "language": "Rust"},
+"./language/vm/src/lib.rs" :{
+  "blank": 17,
+  "comment": 8,
+  "code": 102,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/node_serde/node_serde_test.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 102,
+  "language": "Rust"},
+"./storage/scratchpad/src/accumulator/mod.rs" :{
+  "blank": 21,
+  "comment": 58,
+  "code": 101,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/frame.rs" :{
+  "blank": 14,
+  "comment": 5,
+  "code": 101,
+  "language": "Rust"},
+"./common/logger/src/security.rs" :{
+  "blank": 27,
+  "comment": 66,
+  "code": 100,
+  "language": "Rust"},
+"./language/functional_tests/src/utils.rs" :{
+  "blank": 7,
+  "comment": 5,
+  "code": 99,
+  "language": "Rust"},
+"./storage/libradb/src/test_helper.rs" :{
+  "blank": 10,
+  "comment": 12,
+  "code": 98,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/function_call.rs" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 98,
+  "language": "Rust"},
+"./mempool/src/core_mempool/transaction.rs" :{
+  "blank": 9,
+  "comment": 16,
+  "code": 98,
+  "language": "Rust"},
+"./vm_validator/src/vm_validator.rs" :{
+  "blank": 11,
+  "comment": 17,
+  "code": 97,
+  "language": "Rust"},
+"./types/src/proof/proptest_proof.rs" :{
+  "blank": 10,
+  "comment": 4,
+  "code": 97,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/mock_tree_store.rs" :{
+  "blank": 14,
+  "comment": 4,
+  "code": 97,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/common_transactions.rs" :{
+  "blank": 14,
+  "comment": 16,
+  "code": 97,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/data_store.rs" :{
+  "blank": 15,
+  "comment": 24,
+  "code": 96,
+  "language": "Rust"},
+"./network/src/protocols/peer_id_exchange.rs" :{
+  "blank": 23,
+  "comment": 14,
+  "code": 95,
+  "language": "Rust"},
+"./execution/README.md" :{
+  "blank": 18,
+  "comment": 0,
+  "code": 95,
+  "language": "Markdown"},
+"./language/compiler/ir_to_bytecode/src/parser/mod.rs" :{
+  "blank": 9,
+  "comment": 215,
+  "code": 95,
+  "language": "Rust"},
+"./language/vm/vm_runtime/README.md" :{
+  "blank": 13,
+  "comment": 0,
+  "code": 94,
+  "language": "Markdown"},
+"./storage/storage_service/src/storage_service_test.rs" :{
+  "blank": 9,
+  "comment": 5,
+  "code": 92,
+  "language": "Rust"},
+"./language/functional_tests/src/config/global.rs" :{
+  "blank": 10,
+  "comment": 13,
+  "code": 92,
+  "language": "Rust"},
+"./libra_swarm/src/output_tee.rs" :{
+  "blank": 12,
+  "comment": 8,
+  "code": 92,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/struct_defs.rs" :{
+  "blank": 16,
+  "comment": 15,
+  "code": 90,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/traits.rs" :{
+  "blank": 21,
+  "comment": 102,
+  "code": 89,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/global_state/account.rs" :{
+  "blank": 6,
+  "comment": 18,
+  "code": 89,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/prometheus-overview.html" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 89,
+  "language": "HTML"},
+"./types/src/validator_set.rs" :{
+  "blank": 14,
+  "comment": 6,
+  "code": 88,
+  "language": "Rust"},
+"./common/channel/src/lib.rs" :{
+  "blank": 16,
+  "comment": 53,
+  "code": 88,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/mint.rs" :{
+  "blank": 15,
+  "comment": 11,
+  "code": 88,
+  "language": "Rust"},
+"./consensus/src/state_synchronizer/downloader.rs" :{
+  "blank": 8,
+  "comment": 13,
+  "code": 88,
+  "language": "Rust"},
+"./language/bytecode_verifier/tests/bounds_tests.rs" :{
+  "blank": 11,
+  "comment": 13,
+  "code": 88,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/absint.rs" :{
+  "blank": 12,
+  "comment": 4,
+  "code": 88,
+  "language": "Rust"},
+"./terraform/load-balancing.tf" :{
+  "blank": 16,
+  "comment": 1,
+  "code": 87,
+  "language": "HCL"},
+"./language/functional_tests/src/tests/transaction_config_tests.rs" :{
+  "blank": 13,
+  "comment": 12,
+  "code": 86,
+  "language": "Rust"},
+"./admission_control/admission_control_proto/src/lib.rs" :{
+  "blank": 13,
+  "comment": 11,
+  "code": 86,
+  "language": "Rust"},
+"./network/memsocket/tests/memory_socket.rs" :{
+  "blank": 26,
+  "comment": 2,
+  "code": 86,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/hkdf.rs" :{
+  "blank": 15,
+  "comment": 94,
+  "code": 86,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/gas_costs.rs" :{
+  "blank": 20,
+  "comment": 39,
+  "code": 85,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/account_universe/create_account.rs" :{
+  "blank": 11,
+  "comment": 12,
+  "code": 84,
+  "language": "Rust"},
+"./consensus/src/state_replication.rs" :{
+  "blank": 15,
+  "comment": 42,
+  "code": 84,
+  "language": "Rust"},
+"./common/proto_conv/src/lib.rs" :{
+  "blank": 23,
+  "comment": 21,
+  "code": 84,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/loaded_data/function.rs" :{
+  "blank": 21,
+  "comment": 15,
+  "code": 84,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/runtime.rs" :{
+  "blank": 8,
+  "comment": 32,
+  "code": 83,
+  "language": "Rust"},
+"./network/src/proto/consensus.proto" :{
+  "blank": 16,
+  "comment": 47,
+  "code": 83,
+  "language": "Protocol Buffers"},
+"./storage/libradb/src/mock_genesis/mod.rs" :{
+  "blank": 11,
+  "comment": 18,
+  "code": 83,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/payments.rs" :{
+  "blank": 19,
+  "comment": 2,
+  "code": 82,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/counters.rs" :{
+  "blank": 9,
+  "comment": 21,
+  "code": 82,
+  "language": "Rust"},
+"./network/src/sink/buffered_send.rs" :{
+  "blank": 38,
+  "comment": 83,
+  "code": 81,
+  "language": "Rust"},
+"./terraform/auth.tf" :{
+  "blank": 15,
+  "comment": 0,
+  "code": 81,
+  "language": "HCL"},
+"./language/stdlib/natives/src/dispatch.rs" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 81,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/proptest_types.rs" :{
+  "blank": 13,
+  "comment": 14,
+  "code": 80,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/function_tests.rs" :{
+  "blank": 20,
+  "comment": 4,
+  "code": 80,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/src/fuzz_targets.rs" :{
+  "blank": 16,
+  "comment": 12,
+  "code": 79,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/src/commands.rs" :{
+  "blank": 12,
+  "comment": 15,
+  "code": 79,
+  "language": "Rust"},
+"./types/src/proto/transaction.proto" :{
+  "blank": 22,
+  "comment": 69,
+  "code": 79,
+  "language": "Protocol Buffers"},
+"./config/src/seed_peers.rs" :{
+  "blank": 10,
+  "comment": 10,
+  "code": 79,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/create_account.rs" :{
+  "blank": 10,
+  "comment": 11,
+  "code": 79,
+  "language": "Rust"},
+"./storage/README.md" :{
+  "blank": 22,
+  "comment": 0,
+  "code": 77,
+  "language": "Markdown"},
+"./config/src/utils.rs" :{
+  "blank": 10,
+  "comment": 10,
+  "code": 76,
+  "language": "Rust"},
+"./common/proptest_helpers/src/unit_tests/repeat_vec_tests.rs" :{
+  "blank": 15,
+  "comment": 11,
+  "code": 76,
+  "language": "Rust"},
+"./vm_validator/src/mocks/mock_vm_validator.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 76,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/prologue.rs" :{
+  "blank": 17,
+  "comment": 6,
+  "code": 76,
+  "language": "Rust"},
+"./network/src/protocols/rpc/error.rs" :{
+  "blank": 20,
+  "comment": 3,
+  "code": 75,
+  "language": "Rust"},
+"./terraform/variables.tf" :{
+  "blank": 17,
+  "comment": 0,
+  "code": 74,
+  "language": "HCL"},
+"./terraform/templates/prometheus/consoles/validators.html" :{
+  "blank": 15,
+  "comment": 0,
+  "code": 74,
+  "language": "HTML"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/account_universe/peer_to_peer.rs" :{
+  "blank": 10,
+  "comment": 12,
+  "code": 74,
+  "language": "Rust"},
+"./consensus/src/time_service_test.rs" :{
+  "blank": 8,
+  "comment": 0,
+  "code": 73,
+  "language": "Rust"},
+"./common/grpcio-client/src/util.rs" :{
+  "blank": 12,
+  "comment": 12,
+  "code": 73,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/node-disk.html" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 72,
+  "language": "HTML"},
+"./network/noise/src/lib.rs" :{
+  "blank": 14,
+  "comment": 19,
+  "code": 72,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/global_ref_count.rs" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 72,
+  "language": "Rust"},
+"./consensus/src/chained_bft/test_utils/mock_state_computer.rs" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 71,
+  "language": "Rust"},
+"./consensus/src/chained_bft/test_utils/mock_txn_manager.rs" :{
+  "blank": 9,
+  "comment": 6,
+  "code": 70,
+  "language": "Rust"},
+"./terraform/validator-sets/dev/node.config.toml" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 70,
+  "language": "TOML"},
+"./config/data/configs/node.config.toml" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 70,
+  "language": "TOML"},
+"./testsuite/libra_fuzzer/tests/artifacts.rs" :{
+  "blank": 13,
+  "comment": 7,
+  "code": 70,
+  "language": "Rust"},
+"./types/src/proto/get_with_proof.proto" :{
+  "blank": 32,
+  "comment": 209,
+  "code": 69,
+  "language": "Protocol Buffers"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/lib.rs" :{
+  "blank": 9,
+  "comment": 7,
+  "code": 69,
+  "language": "Rust"},
+"./network/netcore/src/transport/boxed.rs" :{
+  "blank": 10,
+  "comment": 3,
+  "code": 68,
+  "language": "Rust"},
+"./Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 68,
+  "language": "TOML"},
+"./language/vm/vm_runtime/src/loaded_data/types.rs" :{
+  "blank": 7,
+  "comment": 7,
+  "code": 68,
+  "language": "Rust"},
+"./mempool/src/runtime.rs" :{
+  "blank": 5,
+  "comment": 8,
+  "code": 67,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_cache_map/src/unit_tests/cache_map_tests.rs" :{
+  "blank": 10,
+  "comment": 7,
+  "code": 67,
+  "language": "Rust"},
+"./common/proto_conv/tests/derive.rs" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 67,
+  "language": "Rust"},
+"./language/compiler/src/lib.rs" :{
+  "blank": 13,
+  "comment": 19,
+  "code": 67,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/code_unit_verifier.rs" :{
+  "blank": 9,
+  "comment": 5,
+  "code": 66,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/code_cache/module_adapter.rs" :{
+  "blank": 11,
+  "comment": 11,
+  "code": 65,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/account_universe/create_account.rs" :{
+  "blank": 9,
+  "comment": 10,
+  "code": 65,
+  "language": "Rust"},
+"./terraform/faucet.tf" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 65,
+  "language": "HCL"},
+"./language/vm/vm_runtime/src/move_vm.rs" :{
+  "blank": 10,
+  "comment": 6,
+  "code": 65,
+  "language": "Rust"},
+"./language/transaction_builder/src/transaction_argument.rs" :{
+  "blank": 6,
+  "comment": 6,
+  "code": 65,
+  "language": "Rust"},
+"./execution/execution_service/tests/execution_service_test.rs" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 65,
+  "language": "Rust"},
+"./terraform/templates/prometheus.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 63,
+  "language": "JSON"},
+"./client/libra_wallet/src/error.rs" :{
+  "blank": 13,
+  "comment": 7,
+  "code": 63,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/unit_tests/bls12381_test.rs" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 62,
+  "language": "Rust"},
+"./common/debug_interface/src/lib.rs" :{
+  "blank": 13,
+  "comment": 4,
+  "code": 62,
+  "language": "Rust"},
+"./libra_swarm/src/utils.rs" :{
+  "blank": 14,
+  "comment": 11,
+  "code": 61,
+  "language": "Rust"},
+"./network/memsocket/tests/memory_listener.rs" :{
+  "blank": 21,
+  "comment": 2,
+  "code": 60,
+  "language": "Rust"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/key_rotation.rs" :{
+  "blank": 13,
+  "comment": 7,
+  "code": 60,
+  "language": "Rust"},
+"./consensus/src/counters.rs" :{
+  "blank": 53,
+  "comment": 88,
+  "code": 60,
+  "language": "Rust"},
+"./common/build_helpers/src/build_helpers.rs" :{
+  "blank": 10,
+  "comment": 11,
+  "code": 60,
+  "language": "Rust"},
+"./storage/libradb/src/ledger_store/ledger_info_test.rs" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 59,
+  "language": "Rust"},
+"./language/compiler/README.md" :{
+  "blank": 20,
+  "comment": 0,
+  "code": 59,
+  "language": "Markdown"},
+"./common/proptest_helpers/src/lib.rs" :{
+  "blank": 12,
+  "comment": 46,
+  "code": 59,
+  "language": "Rust"},
+"./terraform/templates/prometheus.yml" :{
+  "blank": 10,
+  "comment": 12,
+  "code": 58,
+  "language": "YAML"},
+"./consensus/src/state_synchronizer/mocks.rs" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 58,
+  "language": "Rust"},
+"./storage/libradb/src/schema/retired_state_record/mod.rs" :{
+  "blank": 12,
+  "comment": 21,
+  "code": 58,
+  "language": "Rust"},
+"./admission_control/admission_control_service/src/unit_tests/mod.rs" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 58,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/rotating_proposer_election.rs" :{
+  "blank": 7,
+  "comment": 12,
+  "code": 58,
+  "language": "Rust"},
+"./common/logger/src/simple_logger.rs" :{
+  "blank": 12,
+  "comment": 21,
+  "code": 58,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/lib.rs" :{
+  "blank": 11,
+  "comment": 108,
+  "code": 57,
+  "language": "Rust"},
+"./consensus/Cargo.toml" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 57,
+  "language": "TOML"},
+"./libra_swarm/src/main.rs" :{
+  "blank": 8,
+  "comment": 5,
+  "code": 56,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/unit_tests/x25519_test.rs" :{
+  "blank": 8,
+  "comment": 6,
+  "code": 56,
+  "language": "Rust"},
+"./common/proptest_helpers/src/growing_subset.rs" :{
+  "blank": 10,
+  "comment": 58,
+  "code": 56,
+  "language": "Rust"},
+"./storage/scratchpad/src/accumulator/accumulator_test.rs" :{
+  "blank": 10,
+  "comment": 6,
+  "code": 56,
+  "language": "Rust"},
+"./language/transaction_builder/src/bin/main.rs" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 56,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/node-cpu.html" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 56,
+  "language": "HTML"},
+"./common/logger/src/kv_categorizer.rs" :{
+  "blank": 10,
+  "comment": 17,
+  "code": 56,
+  "language": "Rust"},
+"./common/crash_handler/src/lib.rs" :{
+  "blank": 13,
+  "comment": 6,
+  "code": 56,
+  "language": "Rust"},
+"./language/functional_tests/src/tests/global_config_tests.rs" :{
+  "blank": 11,
+  "comment": 10,
+  "code": 56,
+  "language": "Rust"},
+"./types/src/transaction_helpers.rs" :{
+  "blank": 5,
+  "comment": 5,
+  "code": 55,
+  "language": "Rust"},
+"./config/generate_keypair/src/lib.rs" :{
+  "blank": 7,
+  "comment": 10,
+  "code": 55,
+  "language": "Rust"},
+"./common/metrics/src/metric_server.rs" :{
+  "blank": 7,
+  "comment": 4,
+  "code": 55,
+  "language": "Rust"},
+"./language/bytecode_verifier/tests/signature_tests.rs" :{
+  "blank": 8,
+  "comment": 7,
+  "code": 55,
+  "language": "Rust"},
+"./execution/execution_service/tests/test_helper.rs" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 54,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/import_tests.rs" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 54,
+  "language": "Rust"},
+"./types/src/unit_tests/access_path_test.rs" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 54,
+  "language": "Rust"},
+"./storage/sparse_merkle/src/tree_cache/tree_cache_test.rs" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 54,
+  "language": "Rust"},
+"./storage/libradb/src/schema/event_by_access_path/mod.rs" :{
+  "blank": 18,
+  "comment": 10,
+  "code": 54,
+  "language": "Rust"},
+"./common/metrics/src/unit_tests/lib_test.rs" :{
+  "blank": 12,
+  "comment": 4,
+  "code": 54,
+  "language": "Rust"},
+"./storage/accumulator/src/tests/write_test.rs" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 54,
+  "language": "Rust"},
+"./language/vm/coverage_report.sh" :{
+  "blank": 14,
+  "comment": 13,
+  "code": 54,
+  "language": "Bourne Shell"},
+"./storage/storage_proto/src/proto/storage.proto" :{
+  "blank": 23,
+  "comment": 39,
+  "code": 53,
+  "language": "Protocol Buffers"},
+"./common/channel/src/test.rs" :{
+  "blank": 8,
+  "comment": 6,
+  "code": 53,
+  "language": "Rust"},
+"./language/vm/src/transaction_metadata.rs" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 53,
+  "language": "Rust"},
+"./storage/libradb/src/ledger_store/transaction_info_test.rs" :{
+  "blank": 11,
+  "comment": 5,
+  "code": 53,
+  "language": "Rust"},
+"./network/netcore/src/transport/mod.rs" :{
+  "blank": 15,
+  "comment": 76,
+  "code": 52,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/pacemaker.rs" :{
+  "blank": 10,
+  "comment": 22,
+  "code": 52,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/process_txn/mod.rs" :{
+  "blank": 5,
+  "comment": 5,
+  "code": 51,
+  "language": "Rust"},
+"./types/src/unit_tests/vm_error_proto_conversion_test.rs" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 51,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/src/fuzz_targets/vm_value.rs" :{
+  "blank": 11,
+  "comment": 7,
+  "code": 51,
+  "language": "Rust"},
+"./storage/schemadb/src/schema.rs" :{
+  "blank": 10,
+  "comment": 80,
+  "code": 51,
+  "language": "Rust"},
+"./types/src/byte_array.rs" :{
+  "blank": 14,
+  "comment": 12,
+  "code": 51,
+  "language": "Rust"},
+"./language/stdlib/src/stdlib.rs" :{
+  "blank": 11,
+  "comment": 2,
+  "code": 50,
+  "language": "Rust"},
+"./language/transaction_builder/src/tests/transaction_argument_tests.rs" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 50,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/rotate_key.rs" :{
+  "blank": 8,
+  "comment": 7,
+  "code": 50,
+  "language": "Rust"},
+"./common/debug_interface/src/node_debug_service.rs" :{
+  "blank": 7,
+  "comment": 3,
+  "code": 50,
+  "language": "Rust"},
+"./common/tools/src/output_capture.rs" :{
+  "blank": 9,
+  "comment": 23,
+  "code": 50,
+  "language": "Rust"},
+"./common/logger/src/http_log_client.rs" :{
+  "blank": 7,
+  "comment": 14,
+  "code": 49,
+  "language": "Rust"},
+"./common/proptest_helpers/src/repeat_vec.rs" :{
+  "blank": 9,
+  "comment": 73,
+  "code": 49,
+  "language": "Rust"},
+"./language/vm/src/unit_tests/deserializer_tests.rs" :{
+  "blank": 7,
+  "comment": 8,
+  "code": 49,
+  "language": "Rust"},
+"./consensus/src/consensus_provider.rs" :{
+  "blank": 9,
+  "comment": 13,
+  "code": 49,
+  "language": "Rust"},
+"./storage/accumulator/src/tests/proof_test.rs" :{
+  "blank": 10,
+  "comment": 5,
+  "code": 49,
+  "language": "Rust"},
+"./config/config_builder/src/util.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 48,
+  "language": "Rust"},
+"./language/vm/README.md" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 48,
+  "language": "Markdown"},
+"./common/logger/src/http_local_slog_drain.rs" :{
+  "blank": 4,
+  "comment": 18,
+  "code": 47,
+  "language": "Rust"},
+"./common/proto_conv/src/test_helper.rs" :{
+  "blank": 7,
+  "comment": 7,
+  "code": 47,
+  "language": "Rust"},
+"./mempool/src/proto/mempool.proto" :{
+  "blank": 18,
+  "comment": 40,
+  "code": 47,
+  "language": "Protocol Buffers"},
+"./terraform/templates/prometheus/consoles/validator-toplevel.html" :{
+  "blank": 9,
+  "comment": 0,
+  "code": 47,
+  "language": "HTML"},
+"./terraform/templates/prometheus/consoles/consensus-toplevel.html" :{
+  "blank": 15,
+  "comment": 0,
+  "code": 47,
+  "language": "HTML"},
+"./language/stdlib/natives/src/hash.rs" :{
+  "blank": 14,
+  "comment": 2,
+  "code": 46,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/test_utils.rs" :{
+  "blank": 6,
+  "comment": 4,
+  "code": 46,
+  "language": "Rust"},
+"./network/netcore/src/negotiate/test.rs" :{
+  "blank": 10,
+  "comment": 6,
+  "code": 46,
+  "language": "Rust"},
+"./crypto/secret_service/src/secret_service_node.rs" :{
+  "blank": 10,
+  "comment": 11,
+  "code": 46,
+  "language": "Rust"},
+"./storage/storage_service/src/main.rs" :{
+  "blank": 12,
+  "comment": 3,
+  "code": 46,
+  "language": "Rust"},
+"./types/src/unit_tests/get_with_proof_proto_conversion_test.rs" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 45,
+  "language": "Rust"},
+"./README.md" :{
+  "blank": 18,
+  "comment": 0,
+  "code": 45,
+  "language": "Markdown"},
+"./.circleci/config.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 45,
+  "language": "YAML"},
+"./storage/libradb/src/schema/validator/mod.rs" :{
+  "blank": 9,
+  "comment": 12,
+  "code": 45,
+  "language": "Rust"},
+"./crypto/secret_service/src/secret_service_client.rs" :{
+  "blank": 9,
+  "comment": 13,
+  "code": 45,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/schema/single_entry/mod.rs" :{
+  "blank": 9,
+  "comment": 12,
+  "code": 44,
+  "language": "Rust"},
+"./storage/libradb/src/schema/event/mod.rs" :{
+  "blank": 13,
+  "comment": 10,
+  "code": 44,
+  "language": "Rust"},
+"./client/src/transfer_commands.rs" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 44,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/natives.rs" :{
+  "blank": 9,
+  "comment": 18,
+  "code": 43,
+  "language": "Rust"},
+"./storage/libradb/src/schema/event_accumulator/mod.rs" :{
+  "blank": 12,
+  "comment": 10,
+  "code": 43,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/stdlib_scripts.rs" :{
+  "blank": 10,
+  "comment": 2,
+  "code": 43,
+  "language": "Rust"},
+"./consensus/README.md" :{
+  "blank": 20,
+  "comment": 0,
+  "code": 43,
+  "language": "Markdown"},
+"./language/vm/vm_runtime/src/code_cache/script_cache.rs" :{
+  "blank": 6,
+  "comment": 8,
+  "code": 43,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/account_universe/rotate_key.rs" :{
+  "blank": 7,
+  "comment": 4,
+  "code": 42,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/performance.html" :{
+  "blank": 15,
+  "comment": 0,
+  "code": 42,
+  "language": "HTML"},
+"./docker/mint/server.py" :{
+  "blank": 15,
+  "comment": 6,
+  "code": 42,
+  "language": "Python"},
+"./language/vm/vm_runtime/vm_cache_map/src/arena.rs" :{
+  "blank": 9,
+  "comment": 9,
+  "code": 42,
+  "language": "Rust"},
+"./language/compiler/src/util.rs" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 42,
+  "language": "Rust"},
+"./network/src/counters.rs" :{
+  "blank": 37,
+  "comment": 39,
+  "code": 41,
+  "language": "Rust"},
+"./execution/execution_proto/src/protobuf_conversion_test.rs" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 41,
+  "language": "Rust"},
+"./crypto/secret_service/src/proto/secret_service.proto" :{
+  "blank": 12,
+  "comment": 11,
+  "code": 41,
+  "language": "Protocol Buffers"},
+"./benchmark/src/bin/local_benchmarker.rs" :{
+  "blank": 1,
+  "comment": 6,
+  "code": 41,
+  "language": "Rust"},
+"./consensus/src/chained_bft/proto_test.rs" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 41,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/loaded_data/struct_def.rs" :{
+  "blank": 7,
+  "comment": 14,
+  "code": 41,
+  "language": "Rust"},
+"./storage/libradb/src/schema/mod.rs" :{
+  "blank": 6,
+  "comment": 6,
+  "code": 41,
+  "language": "Rust"},
+"./scripts/cli/trusted_peers.config.toml" :{
+  "blank": 9,
+  "comment": 0,
+  "code": 40,
+  "language": "TOML"},
+"./types/src/unit_tests/transaction_test.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 40,
+  "language": "Rust"},
+"./network/Cargo.toml" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 40,
+  "language": "TOML"},
+"./language/functional_tests/src/tests/utils_tests.rs" :{
+  "blank": 10,
+  "comment": 8,
+  "code": 39,
+  "language": "Rust"},
+"./terraform/templates/validator.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 39,
+  "language": "JSON"},
+"./storage/libradb/src/schema/transaction_info/mod.rs" :{
+  "blank": 8,
+  "comment": 12,
+  "code": 39,
+  "language": "Rust"},
+"./client/src/submit_transaction_command.rs" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 38,
+  "language": "Rust"},
+"./client/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 38,
+  "language": "TOML"},
+"./consensus/src/chained_bft/common.rs" :{
+  "blank": 5,
+  "comment": 10,
+  "code": 38,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/consensusdb_test.rs" :{
+  "blank": 14,
+  "comment": 3,
+  "code": 38,
+  "language": "Rust"},
+"./admission_control/README.md" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 38,
+  "language": "Markdown"},
+"./language/README.md" :{
+  "blank": 16,
+  "comment": 0,
+  "code": 37,
+  "language": "Markdown"},
+"./storage/libradb/src/schema/transaction_accumulator/mod.rs" :{
+  "blank": 8,
+  "comment": 10,
+  "code": 37,
+  "language": "Rust"},
+"./crypto/secret_service/README.md" :{
+  "blank": 9,
+  "comment": 0,
+  "code": 37,
+  "language": "Markdown"},
+"./libra_node/src/main.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 37,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 37,
+  "language": "TOML"},
+"./client/libra_wallet/Cargo.toml" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 36,
+  "language": "TOML"},
+"./storage/libradb/src/schema/ledger_info/mod.rs" :{
+  "blank": 8,
+  "comment": 12,
+  "code": 36,
+  "language": "Rust"},
+"./CONTRIBUTING.md" :{
+  "blank": 19,
+  "comment": 0,
+  "code": 36,
+  "language": "Markdown"},
+"./client/src/lib.rs" :{
+  "blank": 5,
+  "comment": 21,
+  "code": 36,
+  "language": "Rust"},
+"./execution/execution_proto/src/proto/execution.proto" :{
+  "blank": 19,
+  "comment": 37,
+  "code": 36,
+  "language": "Protocol Buffers"},
+"./storage/libradb/src/schema/validator/test.rs" :{
+  "blank": 8,
+  "comment": 2,
+  "code": 36,
+  "language": "Rust"},
+"./types/src/unit_tests/transaction_proto_conversion_test.rs" :{
+  "blank": 9,
+  "comment": 2,
+  "code": 36,
+  "language": "Rust"},
+"./libra_node/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 36,
+  "language": "TOML"},
+"./mempool/Cargo.toml" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 36,
+  "language": "TOML"},
+"./language/bytecode_verifier/src/unit_tests/signature_tests.rs" :{
+  "blank": 3,
+  "comment": 4,
+  "code": 35,
+  "language": "Rust"},
+"./storage/libradb/src/schema/signed_transaction/mod.rs" :{
+  "blank": 8,
+  "comment": 12,
+  "code": 35,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 35,
+  "language": "TOML"},
+"./network/src/validator_network/mod.rs" :{
+  "blank": 7,
+  "comment": 21,
+  "code": 35,
+  "language": "Rust"},
+"./execution/execution_client/src/lib.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 35,
+  "language": "Rust"},
+"./language/vm/vm_runtime/Cargo.toml" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 35,
+  "language": "TOML"},
+"./language/tools/cost_synthesis/src/vm_runner.rs" :{
+  "blank": 3,
+  "comment": 9,
+  "code": 35,
+  "language": "Rust"},
+"./network/src/peer_manager/error.rs" :{
+  "blank": 11,
+  "comment": 3,
+  "code": 34,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/README.md" :{
+  "blank": 17,
+  "comment": 0,
+  "code": 34,
+  "language": "Markdown"},
+"./crypto/legacy_crypto/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 34,
+  "language": "TOML"},
+"./mempool/README.md" :{
+  "blank": 19,
+  "comment": 0,
+  "code": 34,
+  "language": "Markdown"},
+"./language/bytecode_verifier/src/resources.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 34,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/proptest_types.rs" :{
+  "blank": 5,
+  "comment": 8,
+  "code": 33,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/schema/block/mod.rs" :{
+  "blank": 9,
+  "comment": 9,
+  "code": 33,
+  "language": "Rust"},
+"./storage/libradb/src/schema/state_merkle_node/mod.rs" :{
+  "blank": 8,
+  "comment": 8,
+  "code": 32,
+  "language": "Rust"},
+"./storage/libradb/src/schema/account_state/mod.rs" :{
+  "blank": 8,
+  "comment": 9,
+  "code": 32,
+  "language": "Rust"},
+"./network/socket_bench_server/src/main.rs" :{
+  "blank": 11,
+  "comment": 14,
+  "code": 32,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/serializer_tests.rs" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 32,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/genesis.rs" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 32,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/compile.rs" :{
+  "blank": 5,
+  "comment": 12,
+  "code": 31,
+  "language": "Rust"},
+"./admission_control/admission_control_service/Cargo.toml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 31,
+  "language": "TOML"},
+"./language/vm/vm_runtime/src/unit_tests/vm_types.rs" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 31,
+  "language": "Rust"},
+"./execution/executor/Cargo.toml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 31,
+  "language": "TOML"},
+"./language/vm/vm_genesis/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 31,
+  "language": "TOML"},
+"./language/vm/vm_runtime/vm_cache_map/src/unit_tests/arena_tests.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 31,
+  "language": "Rust"},
+"./client/libra_wallet/src/io_utils.rs" :{
+  "blank": 9,
+  "comment": 7,
+  "code": 31,
+  "language": "Rust"},
+"./common/logger/Cargo.toml" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 30,
+  "language": "TOML"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/pack_unpack.rs" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 30,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/bytecode_specifications/frame_transition_info.rs" :{
+  "blank": 4,
+  "comment": 7,
+  "code": 30,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/arithmetic.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 30,
+  "language": "Rust"},
+"./common/debug_interface/src/node_debug_helpers.rs" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 30,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/macros/src/lib.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 30,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/account_universe/rotate_key.rs" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 30,
+  "language": "Rust"},
+"./types/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 30,
+  "language": "TOML"},
+"./storage/libradb/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 29,
+  "language": "TOML"},
+"./common/proptest_helpers/src/unit_tests/growing_subset_tests.rs" :{
+  "blank": 5,
+  "comment": 4,
+  "code": 29,
+  "language": "Rust"},
+"./storage/storage_service/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 29,
+  "language": "TOML"},
+"./terraform/templates/faucet.json" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 29,
+  "language": "JSON"},
+"./crypto/legacy_crypto/src/utils.rs" :{
+  "blank": 5,
+  "comment": 8,
+  "code": 29,
+  "language": "Rust"},
+"./execution/execution_service/Cargo.toml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 29,
+  "language": "TOML"},
+"./admission_control/admission_control_proto/src/proto/admission_control.proto" :{
+  "blank": 8,
+  "comment": 37,
+  "code": 29,
+  "language": "Protocol Buffers"},
+"./.github/ISSUE_TEMPLATE/bug_report.md" :{
+  "blank": 14,
+  "comment": 0,
+  "code": 29,
+  "language": "Markdown"},
+"./storage/libradb/src/transaction_store/mod.rs" :{
+  "blank": 7,
+  "comment": 5,
+  "code": 29,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/prometheus.html" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 29,
+  "language": "HTML"},
+"./terraform/templates/prometheus/consoles/node.html" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 28,
+  "language": "HTML"},
+"./types/src/lib.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 28,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/schema/quorum_certificate/mod.rs" :{
+  "blank": 8,
+  "comment": 9,
+  "code": 28,
+  "language": "Rust"},
+"./language/vm/vm_genesis/src/tests/genesis_test.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 28,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/network-toplevel.html" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 28,
+  "language": "HTML"},
+"./scripts/nightly_features.sh" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 28,
+  "language": "Bourne Shell"},
+"./crypto/nextgen_crypto/README.md" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 27,
+  "language": "Markdown"},
+"./language/bytecode_verifier/src/lib.rs" :{
+  "blank": 5,
+  "comment": 4,
+  "code": 27,
+  "language": "Rust"},
+"./vm_validator/Cargo.toml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 27,
+  "language": "TOML"},
+"./language/stdlib/natives/src/primitive_helpers.rs" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 27,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/identifier.rs" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 27,
+  "language": "Rust"},
+"./terraform/templates/prometheus/consoles/index.html" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 27,
+  "language": "HTML"},
+"./storage/storage_proto/src/tests.rs" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 26,
+  "language": "Rust"},
+"./types/src/proto/proof.proto" :{
+  "blank": 11,
+  "comment": 35,
+  "code": 26,
+  "language": "Protocol Buffers"},
+"./crypto/secret_service/Cargo.toml" :{
+  "blank": 6,
+  "comment": 1,
+  "code": 26,
+  "language": "TOML"},
+"./crypto/legacy_crypto/README.md" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 26,
+  "language": "Markdown"},
+"./language/vm/vm_runtime/src/unit_tests/identifier_prop_tests.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 26,
+  "language": "Rust"},
+"./types/src/account_state_blob/account_state_blob_test.rs" :{
+  "blank": 6,
+  "comment": 2,
+  "code": 26,
+  "language": "Rust"},
+"./language/stdlib/src/transaction_scripts.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 26,
+  "language": "Rust"},
+"./network/src/utils.rs" :{
+  "blank": 2,
+  "comment": 4,
+  "code": 25,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/data/plot.py" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 25,
+  "language": "Python"},
+"./language/functional_tests/README.md" :{
+  "blank": 10,
+  "comment": 0,
+  "code": 25,
+  "language": "Markdown"},
+"./types/src/unit_tests/ledger_info_proto_conversion_test.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 24,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/src/lib.rs" :{
+  "blank": 11,
+  "comment": 8,
+  "code": 24,
+  "language": "Rust"},
+"./language/stdlib/natives/src/signature.rs" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 24,
+  "language": "Rust"},
+"./terraform/templates/alertmanager.yml" :{
+  "blank": 11,
+  "comment": 17,
+  "code": 24,
+  "language": "YAML"},
+"./terraform/templates/prometheus/alerting_rules/blockchain_alerts.yml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 24,
+  "language": "YAML"},
+"./testsuite/libra_fuzzer/src/fuzz_targets/compiled_module.rs" :{
+  "blank": 6,
+  "comment": 4,
+  "code": 24,
+  "language": "Rust"},
+"./common/proto_conv/tests/proto/test.proto" :{
+  "blank": 15,
+  "comment": 2,
+  "code": 24,
+  "language": "Protocol Buffers"},
+"./common/proptest_helpers/src/unit_tests/pick_idx_tests.rs" :{
+  "blank": 4,
+  "comment": 6,
+  "code": 24,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 24,
+  "language": "TOML"},
+"./consensus/src/chained_bft/mod.rs" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 24,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/Cargo.toml" :{
+  "blank": 3,
+  "comment": 1,
+  "code": 23,
+  "language": "TOML"},
+"./language/vm/tests/serializer_tests.rs" :{
+  "blank": 6,
+  "comment": 5,
+  "code": 23,
+  "language": "Rust"},
+"./storage/libradb/src/transaction_store/test.rs" :{
+  "blank": 7,
+  "comment": 2,
+  "code": 23,
+  "language": "Rust"},
+"./scripts/cli/start_cli_testnet.sh" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 23,
+  "language": "Bourne Shell"},
+"./crypto/nextgen_crypto/src/unit_tests/mod.rs" :{
+  "blank": 3,
+  "comment": 5,
+  "code": 23,
+  "language": "Rust"},
+"./benchmark/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 22,
+  "language": "TOML"},
+"./libra_swarm/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 22,
+  "language": "TOML"},
+"./language/functional_tests/_old_move_ir_tests/src/tests/transactions.rs" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 22,
+  "language": "Rust"},
+"./common/metrics/Cargo.toml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 22,
+  "language": "TOML"},
+"./network/build.rs" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 21,
+  "language": "Rust"},
+"./common/proto_conv/Cargo.toml" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 21,
+  "language": "TOML"},
+"./.github/ISSUE_TEMPLATE/feature_request.md" :{
+  "blank": 11,
+  "comment": 0,
+  "code": 21,
+  "language": "Markdown"},
+"./storage/sparse_merkle/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 21,
+  "language": "TOML"},
+"./network/src/common.rs" :{
+  "blank": 4,
+  "comment": 9,
+  "code": 21,
+  "language": "Rust"},
+"./language/functional_tests/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 21,
+  "language": "TOML"},
+"./config/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 21,
+  "language": "TOML"},
+"./types/src/proto/events.proto" :{
+  "blank": 8,
+  "comment": 9,
+  "code": 21,
+  "language": "Protocol Buffers"},
+"./config/config_builder/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 21,
+  "language": "TOML"},
+"./common/jemalloc/src/lib.rs" :{
+  "blank": 3,
+  "comment": 14,
+  "code": 20,
+  "language": "Rust"},
+"./language/transaction_builder/src/transaction.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 20,
+  "language": "Rust"},
+"./language/vm/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 20,
+  "language": "TOML"},
+"./language/transaction_builder/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 20,
+  "language": "TOML"},
+"./config/generate_keypair/src/main.rs" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 20,
+  "language": "Rust"},
+"./execution/execution_proto/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 20,
+  "language": "TOML"},
+"./consensus/src/lib.rs" :{
+  "blank": 7,
+  "comment": 9,
+  "code": 20,
+  "language": "Rust"},
+"./network/socket_bench_server/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 20,
+  "language": "TOML"},
+"./config/src/unit_tests/config_test.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 20,
+  "language": "Rust"},
+"./language/compiler/ir_to_bytecode/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 20,
+  "language": "TOML"},
+"./storage/storage_proto/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 19,
+  "language": "TOML"},
+"./admission_control/admission_control_proto/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 19,
+  "language": "TOML"},
+"./language/functional_tests/src/errors.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 19,
+  "language": "Rust"},
+"./storage/storage_client/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 19,
+  "language": "TOML"},
+"./testsuite/libra_fuzzer/fuzz/fuzz_targets/fuzz_runner.rs" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 19,
+  "language": "Rust"},
+"./network/src/proto/network.proto" :{
+  "blank": 8,
+  "comment": 19,
+  "code": 18,
+  "language": "Protocol Buffers"},
+"./types/src/proto/ledger_info.proto" :{
+  "blank": 11,
+  "comment": 53,
+  "code": 18,
+  "language": "Protocol Buffers"},
+"./scripts/cargo_check_dependencies.sh" :{
+  "blank": 5,
+  "comment": 14,
+  "code": 18,
+  "language": "Bourne Shell"},
+"./common/grpc_helpers/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 18,
+  "language": "TOML"},
+"./testsuite/libra_fuzzer/fuzz/Cargo.toml" :{
+  "blank": 5,
+  "comment": 4,
+  "code": 18,
+  "language": "TOML"},
+"./language/vm/vm_genesis/src/main.rs" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 17,
+  "language": "Rust"},
+"./network/src/lib.rs" :{
+  "blank": 5,
+  "comment": 9,
+  "code": 17,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/schema/mod.rs" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 17,
+  "language": "Rust"},
+"./common/debug_interface/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 17,
+  "language": "TOML"},
+"./storage/schemadb/Cargo.toml" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 17,
+  "language": "TOML"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests/validator_set.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 17,
+  "language": "Rust"},
+"./terraform/validator-sets/dev/trusted_peers.config.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 16,
+  "language": "TOML"},
+"./language/bytecode_verifier/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 16,
+  "language": "TOML"},
+"./testsuite/Cargo.toml" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 16,
+  "language": "TOML"},
+"./crypto/legacy_crypto/src/lib.rs" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 16,
+  "language": "Rust"},
+"./network/netcore/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 16,
+  "language": "TOML"},
+"./mempool/src/lib.rs" :{
+  "blank": 4,
+  "comment": 52,
+  "code": 16,
+  "language": "Rust"},
+"./network/netcore/src/multiplexing/mod.rs" :{
+  "blank": 10,
+  "comment": 35,
+  "code": 16,
+  "language": "Rust"},
+"./language/functional_tests/src/tests/mod.rs" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 16,
+  "language": "Rust"},
+"./common/metrics/src/counters.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 16,
+  "language": "Rust"},
+"./language/compiler/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 16,
+  "language": "TOML"},
+"./scripts/cargo_update_outdated.sh" :{
+  "blank": 6,
+  "comment": 10,
+  "code": 15,
+  "language": "Bourne Shell"},
+"./crypto/nextgen_crypto/src/lib.rs" :{
+  "blank": 6,
+  "comment": 3,
+  "code": 15,
+  "language": "Rust"},
+"./network/noise/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 15,
+  "language": "TOML"},
+"./types/src/unit_tests/validator_set_test.rs" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 15,
+  "language": "Rust"},
+"./config/generate_keypair/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 15,
+  "language": "TOML"},
+"./storage/libradb/src/schema/transaction_info/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 14,
+  "language": "Rust"},
+"./common/executable_helpers/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 14,
+  "language": "TOML"},
+"./language/vm/vm_runtime/src/unit_tests/type_prop_tests.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 14,
+  "language": "Rust"},
+"./common/grpcio-client/src/lib.rs" :{
+  "blank": 4,
+  "comment": 53,
+  "code": 14,
+  "language": "Rust"},
+"./network/src/proto/mod.rs" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 14,
+  "language": "Rust"},
+"./crypto/secret_service/src/main.rs" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 14,
+  "language": "Rust"},
+"./types/src/unit_tests/language_storage_test.rs" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 14,
+  "language": "Rust"},
+"./terraform/validator-sets/build.sh" :{
+  "blank": 6,
+  "comment": 0,
+  "code": 14,
+  "language": "Bourne Shell"},
+"./language/vm/vm_runtime/vm_cache_map/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 14,
+  "language": "TOML"},
+"./admission_control/admission_control_service/src/main.rs" :{
+  "blank": 4,
+  "comment": 4,
+  "code": 14,
+  "language": "Rust"},
+"./common/grpcio-client/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 14,
+  "language": "TOML"},
+"./language/stdlib/natives/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 14,
+  "language": "TOML"},
+"./storage/libradb/src/schema/event_by_access_path/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 14,
+  "language": "Rust"},
+"./storage/accumulator/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 14,
+  "language": "TOML"},
+"./common/proto_conv/proto_conv_derive/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 13,
+  "language": "TOML"},
+"./config/data/metrics/prometheus.yml" :{
+  "blank": 6,
+  "comment": 11,
+  "code": 13,
+  "language": "YAML"},
+"./execution/execution_client/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 13,
+  "language": "TOML"},
+"./common/channel/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 13,
+  "language": "TOML"},
+"./docker/socket_muxer_bench/build-server.sh" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 13,
+  "language": "Bourne Shell"},
+"./types/src/unit_tests/contract_event_proto_conversion_test.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 13,
+  "language": "Rust"},
+"./types/src/proto/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 13,
+  "language": "Rust"},
+"./language/compiler/ir_to_bytecode/src/logging.rs" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 13,
+  "language": "Rust"},
+"./storage/scratchpad/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 13,
+  "language": "TOML"},
+"./language/bytecode_verifier/src/nonce.rs" :{
+  "blank": 4,
+  "comment": 6,
+  "code": 13,
+  "language": "Rust"},
+"./common/debug_interface/src/proto/node_debug_interface.proto" :{
+  "blank": 8,
+  "comment": 6,
+  "code": 13,
+  "language": "Protocol Buffers"},
+"./storage/libradb/src/schema/event/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 13,
+  "language": "Rust"},
+"./docker/socket_muxer_bench/build-client.sh" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 13,
+  "language": "Bourne Shell"},
+"./language/functional_tests/tests/testsuite.rs" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 13,
+  "language": "Rust"},
+"./docker/mint/run.sh" :{
+  "blank": 5,
+  "comment": 3,
+  "code": 12,
+  "language": "Bourne Shell"},
+"./types/src/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 12,
+  "language": "Rust"},
+"./storage/libradb/src/schema/ledger_info/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 12,
+  "language": "Rust"},
+"./common/crash_handler/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 12,
+  "language": "TOML"},
+"./types/src/unit_tests/validator_change_proto_conversion_test.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 12,
+  "language": "Rust"},
+"./docker/validator/run.sh" :{
+  "blank": 4,
+  "comment": 0,
+  "code": 12,
+  "language": "Bourne Shell"},
+"./language/vm/vm_runtime/vm_runtime_tests/src/tests.rs" :{
+  "blank": 2,
+  "comment": 9,
+  "code": 12,
+  "language": "Rust"},
+"./network/src/sink/mod.rs" :{
+  "blank": 4,
+  "comment": 10,
+  "code": 12,
+  "language": "Rust"},
+"./common/canonical_serialization/Cargo.toml" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 12,
+  "language": "TOML"},
+"./network/netcore/src/negotiate/mod.rs" :{
+  "blank": 4,
+  "comment": 6,
+  "code": 12,
+  "language": "Rust"},
+"./.github/PULL_REQUEST_TEMPLATE.md" :{
+  "blank": 9,
+  "comment": 0,
+  "code": 12,
+  "language": "Markdown"},
+"./docker/socket_muxer_bench/run-client.sh" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 12,
+  "language": "Bourne Shell"},
+"./common/canonical_serialization/src/test_helper.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 12,
+  "language": "Rust"},
+"./common/failure_ext/src/lib.rs" :{
+  "blank": 5,
+  "comment": 15,
+  "code": 11,
+  "language": "Rust"},
+"./common/proptest_helpers/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 11,
+  "language": "TOML"},
+"./terraform/main.tf" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 11,
+  "language": "HCL"},
+"./language/vm/src/unit_tests/fixture_tests.rs" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 11,
+  "language": "Rust"},
+"./consensus/src/state_synchronizer/mod.rs" :{
+  "blank": 6,
+  "comment": 22,
+  "code": 11,
+  "language": "Rust"},
+"./common/build_helpers/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 11,
+  "language": "TOML"},
+"./language/functional_tests/src/lib.rs" :{
+  "blank": 4,
+  "comment": 2,
+  "code": 11,
+  "language": "Rust"},
+"./consensus/src/chained_bft/liveness/mod.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 11,
+  "language": "Rust"},
+"./language/bytecode_verifier/invalid_mutations/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 11,
+  "language": "TOML"},
+"./mempool/build.rs" :{
+  "blank": 2,
+  "comment": 7,
+  "code": 11,
+  "language": "Rust"},
+"./mempool/src/core_mempool/mod.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 11,
+  "language": "Rust"},
+"./language/stdlib/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 11,
+  "language": "TOML"},
+"./storage/libradb/src/schema/retired_state_record/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 11,
+  "language": "Rust"},
+"./storage/libradb/src/schema/state_merkle_node/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 11,
+  "language": "Rust"},
+"./network/memsocket/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 11,
+  "language": "TOML"},
+"./language/vm/vm_runtime/src/unit_tests/value_prop_tests.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 11,
+  "language": "Rust"},
+"./storage/state_view/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 10,
+  "language": "TOML"},
+"./language/bytecode_verifier/tests/duplication_tests.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "Rust"},
+"./common/grpcio-extras/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 10,
+  "language": "TOML"},
+"./admission_control/admission_control_proto/build.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 10,
+  "language": "Rust"},
+"./common/jemalloc/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 10,
+  "language": "TOML"},
+"./crypto/legacy_crypto/src/macros/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 10,
+  "language": "TOML"},
+"./terraform/templates/ec2_user_data.sh" :{
+  "blank": 5,
+  "comment": 0,
+  "code": 10,
+  "language": "Bourne Shell"},
+"./storage/libradb/src/schema/account_state/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "Rust"},
+"./types/src/validator_change.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 10,
+  "language": "Rust"},
+"./admission_control/admission_control_service/src/lib.rs" :{
+  "blank": 5,
+  "comment": 10,
+  "code": 10,
+  "language": "Rust"},
+"./mempool/src/proto/shared/mempool_status.proto" :{
+  "blank": 3,
+  "comment": 8,
+  "code": 10,
+  "language": "Protocol Buffers"},
+"./config/data/configs/overrides/testnet.node.config.override.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 10,
+  "language": "TOML"},
+"./storage/libradb/src/schema/signed_transaction/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "Rust"},
+"./language/bytecode_verifier/tests/resources_tests.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "Rust"},
+"./language/test.sh" :{
+  "blank": 3,
+  "comment": 4,
+  "code": 10,
+  "language": "Bourne Shell"},
+"./common/failure_ext/Cargo.toml" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 10,
+  "language": "TOML"},
+"./language/bytecode_verifier/tests/struct_defs_tests.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 10,
+  "language": "Rust"},
+"./language/compiler/src/unit_tests/mod.rs" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 9,
+  "language": "Rust"},
+"./execution/execution_proto/build.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 9,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/common.rs" :{
+  "blank": 8,
+  "comment": 13,
+  "code": 9,
+  "language": "Rust"},
+"./consensus/build.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 9,
+  "language": "Rust"},
+"./common/tools/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 9,
+  "language": "TOML"},
+"./types/src/unit_tests/write_set_test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 9,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/lib.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 9,
+  "language": "Rust"},
+"./docker/socket_muxer_bench/run-server.sh" :{
+  "blank": 2,
+  "comment": 0,
+  "code": 9,
+  "language": "Bourne Shell"},
+"./common/grpcio-extras/src/lib.rs" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 9,
+  "language": "Rust"},
+"./types/src/proto/account_state_blob.proto" :{
+  "blank": 5,
+  "comment": 2,
+  "code": 9,
+  "language": "Protocol Buffers"},
+"./storage/storage_proto/build.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 9,
+  "language": "Rust"},
+"./storage/libradb/src/schema/transaction_accumulator/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 9,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/schema/single_entry/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 9,
+  "language": "Rust"},
+"./storage/libradb/src/schema/event_accumulator/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 9,
+  "language": "Rust"},
+"./types/src/proto/validator_change.proto" :{
+  "blank": 4,
+  "comment": 15,
+  "code": 8,
+  "language": "Protocol Buffers"},
+"./common/proto_conv/build.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 8,
+  "language": "Rust"},
+"./docker/validator/build.sh" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 8,
+  "language": "Bourne Shell"},
+"./types/build.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 8,
+  "language": "Rust"},
+"./rustfmt.toml" :{
+  "blank": 1,
+  "comment": 1,
+  "code": 8,
+  "language": "TOML"},
+"./docker/mint/build.sh" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 8,
+  "language": "Bourne Shell"},
+"./docker/client/build.sh" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 8,
+  "language": "Bourne Shell"},
+"./storage/libradb/src/errors.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 8,
+  "language": "Rust"},
+"./types/src/proto/validator_public_keys.proto" :{
+  "blank": 3,
+  "comment": 7,
+  "code": 8,
+  "language": "Protocol Buffers"},
+"./client/libra_wallet/src/lib.rs" :{
+  "blank": 7,
+  "comment": 9,
+  "code": 8,
+  "language": "Rust"},
+"./language/transaction_builder/src/errors.rs" :{
+  "blank": 3,
+  "comment": 4,
+  "code": 8,
+  "language": "Rust"},
+"./types/src/proto/transaction_info.proto" :{
+  "blank": 6,
+  "comment": 12,
+  "code": 8,
+  "language": "Protocol Buffers"},
+"./common/failure_ext/failure_macros/Cargo.toml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 8,
+  "language": "TOML"},
+"./client/libra_wallet/README.md" :{
+  "blank": 7,
+  "comment": 0,
+  "code": 8,
+  "language": "Markdown"},
+"./crypto/secret_service/build.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 8,
+  "language": "Rust"},
+"./terraform/templates/grafana-datasources.yml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 7,
+  "language": "YAML"},
+"./terraform/templates/grafana-dashboards.yml" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 7,
+  "language": "YAML"},
+"./mempool/src/proto/mod.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 7,
+  "language": "Rust"},
+"./language/compiler/ir_to_bytecode/src/errors.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 7,
+  "language": "Rust"},
+"./network/src/protocols/mod.rs" :{
+  "blank": 3,
+  "comment": 6,
+  "code": 7,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/schema/quorum_certificate/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 7,
+  "language": "Rust"},
+"./scripts/clippy.sh" :{
+  "blank": 5,
+  "comment": 5,
+  "code": 7,
+  "language": "Bourne Shell"},
+"./.github/ISSUE_TEMPLATE/questions.md" :{
+  "blank": 3,
+  "comment": 0,
+  "code": 7,
+  "language": "Markdown"},
+"./storage/state_view/src/lib.rs" :{
+  "blank": 5,
+  "comment": 10,
+  "code": 7,
+  "language": "Rust"},
+"./network/src/proto/mempool.proto" :{
+  "blank": 4,
+  "comment": 7,
+  "code": 7,
+  "language": "Protocol Buffers"},
+"./config/src/unit_tests/seed_peers_test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 7,
+  "language": "Rust"},
+"./terraform/validator-sets/dev/ab0d6a54ce9d7fc79c061f95883a308f9bdfc987262b6a34a360fdd788fcd9cd.node.keys.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 6,
+  "language": "TOML"},
+"./types/src/proto/language_storage.proto" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 6,
+  "language": "Protocol Buffers"},
+"./language/transaction_builder/src/lib.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 6,
+  "language": "Rust"},
+"./terraform/validator-sets/dev/1e5d5a74b0fd09f601ac0fca2fe7d213704e02e51943d18cf25a546b8416e9e1.node.keys.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 6,
+  "language": "TOML"},
+"./storage/scratchpad/src/lib.rs" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 6,
+  "language": "Rust"},
+"./language/compiler/ir_to_bytecode/build.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 6,
+  "language": "Rust"},
+"./common/failure_ext/failure_macros/src/lib.rs" :{
+  "blank": 2,
+  "comment": 7,
+  "code": 6,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensusdb/schema/block/test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 6,
+  "language": "Rust"},
+"./crypto/secret_service/src/lib.rs" :{
+  "blank": 2,
+  "comment": 4,
+  "code": 6,
+  "language": "Rust"},
+"./types/src/proto/validator_set.proto" :{
+  "blank": 4,
+  "comment": 3,
+  "code": 6,
+  "language": "Protocol Buffers"},
+"./language/vm/vm_runtime/vm_cache_map/src/lib.rs" :{
+  "blank": 3,
+  "comment": 4,
+  "code": 6,
+  "language": "Rust"},
+"./types/src/proto/access_path.proto" :{
+  "blank": 3,
+  "comment": 2,
+  "code": 6,
+  "language": "Protocol Buffers"},
+"./terraform/validator-sets/dev/57ff83747054695f2228042c26eb6a243ac73de1b9038aea103999480b076d45.node.keys.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 6,
+  "language": "TOML"},
+"./terraform/validator-sets/dev/8deeeaed65f0cd7484a9e4e5ac51fbac548f2f71299a05e000156031ca78fb9f.node.keys.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 6,
+  "language": "TOML"},
+"./language/vm/src/internals.rs" :{
+  "blank": 4,
+  "comment": 5,
+  "code": 5,
+  "language": "Rust"},
+"./config/src/unit_tests/trusted_peers_test.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 5,
+  "language": "Rust"},
+"./language/compiler/ir_to_bytecode/src/lib.rs" :{
+  "blank": 3,
+  "comment": 3,
+  "code": 5,
+  "language": "Rust"},
+"./network/netcore/src/lib.rs" :{
+  "blank": 3,
+  "comment": 7,
+  "code": 5,
+  "language": "Rust"},
+"./language/vm/src/foreign_contracts.rs" :{
+  "blank": 1,
+  "comment": 1,
+  "code": 5,
+  "language": "Rust"},
+"./types/src/test_helpers/fixtures/scripts/make_placeholder_script.sh" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 5,
+  "language": "Bourne Shell"},
+"./libra_swarm/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 4,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/loaded_data/mod.rs" :{
+  "blank": 1,
+  "comment": 5,
+  "code": 4,
+  "language": "Rust"},
+"./admission_control/admission_control_proto/src/proto/mod.rs" :{
+  "blank": 2,
+  "comment": 4,
+  "code": 4,
+  "language": "Rust"},
+"./SECURITY.md" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 4,
+  "language": "Markdown"},
+"./terraform/templates/seed_peers.config.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 4,
+  "language": "TOML"},
+"./language/stdlib/natives/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 4,
+  "language": "Rust"},
+"./config/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 4,
+  "language": "Rust"},
+"./common/proptest_helpers/src/unit_tests.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 3,
+  "language": "Rust"},
+"./storage/storage_proto/src/proto/mod.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 3,
+  "language": "Rust"},
+"./vm_validator/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 3,
+  "language": "Rust"},
+"./crypto/legacy_crypto/src/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 3,
+  "language": "Rust"},
+"./clippy.toml" :{
+  "blank": 0,
+  "comment": 3,
+  "code": 3,
+  "language": "TOML"},
+"./mempool/src/core_mempool/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 3,
+  "language": "Rust"},
+"./language/vm/vm_runtime/src/code_cache/mod.rs" :{
+  "blank": 1,
+  "comment": 3,
+  "code": 3,
+  "language": "Rust"},
+"./crypto/secret_service/src/proto/mod.rs" :{
+  "blank": 1,
+  "comment": 3,
+  "code": 3,
+  "language": "Rust"},
+"./language/vm/src/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 3,
+  "language": "Rust"},
+"./language/vm/vm_genesis/genesis/vm_config.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 3,
+  "language": "TOML"},
+"./execution/execution_proto/src/proto/mod.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 3,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/vrf/mod.rs" :{
+  "blank": 3,
+  "comment": 5,
+  "code": 3,
+  "language": "Rust"},
+"./docker/validator/install-tools.sh" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 3,
+  "language": "Bourne Shell"},
+"./terraform/validator-sets/dev/seed_peers.config.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 2,
+  "language": "TOML"},
+"./testsuite/libra_fuzzer/src/fuzz_targets/signed_transaction.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./language/stdlib/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./consensus/src/chained_bft/safety/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./network/netcore/src/utils.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./language/functional_tests/src/config/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./common/debug_interface/src/proto/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./language/vm/vm_runtime/vm_cache_map/src/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./config/data/configs/overrides/persistent_data.node.config.override.toml" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 2,
+  "language": "TOML"},
+"./types/src/proof/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/global_state/mod.rs" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 2,
+  "language": "Rust"},
+"./CODE_OF_CONDUCT.md" :{
+  "blank": 1,
+  "comment": 0,
+  "code": 2,
+  "language": "Markdown"},
+"./language/bytecode_verifier/invalid_mutations/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./consensus/src/chained_bft/consensus_types/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./common/tools/src/lib.rs" :{
+  "blank": 2,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./testsuite/libra_fuzzer/src/fuzz_targets/raw_transaction.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./config/config_builder/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./language/tools/cost_synthesis/src/bytecode_specifications/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 2,
+  "language": "Rust"},
+"./mempool/src/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./common/executable_helpers/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./common/proto_conv/tests/proto/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./crypto/nextgen_crypto/src/vrf/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./libra_node/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./language/vm/vm_genesis/src/tests.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./vm_validator/src/mocks/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./mempool/src/proto/shared/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./storage/storage_service/src/mocks/mod.rs" :{
+  "blank": 2,
+  "comment": 3,
+  "code": 1,
+  "language": "Rust"},
+"./common/metrics/src/unit_tests/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./types/src/test_helpers/mod.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./language/transaction_builder/src/tests/mod.rs" :{
+  "blank": 0,
+  "comment": 0,
+  "code": 1,
+  "language": "Rust"},
+"./language/bytecode_verifier/src/unit_tests.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./testsuite/tests/libratest/main.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./common/build_helpers/src/lib.rs" :{
+  "blank": 1,
+  "comment": 2,
+  "code": 1,
+  "language": "Rust"},
+"./testsuite/src/lib.rs" :{
+  "blank": 1,
+  "comment": 3,
+  "code": 0,
+  "language": "Rust"},
+"SUM": {
+  "blank": 13020,
+  "comment": 15516,
+  "code": 115341,
+  "nFiles": 833} }

@@ -26,6 +26,12 @@ import Fab from "@material-ui/core/Fab";
 // Configuration: only the Examples metadata
 const EXAMPLES = [
   {
+    href: 'examples/cloc.libra.502936fb.json',
+    name: 'Libra',
+    rev: '502936fb',
+    upstream: 'https://github.com/libra/libra',
+  },
+  {
     href: 'examples/cloc.microsoft_onnxruntime.df68111b.json',
     name: 'ONNX Runtime',
     rev: 'df68111b',
