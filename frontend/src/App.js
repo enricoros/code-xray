@@ -141,7 +141,7 @@ function MultiProjectFilter(props) {
       {/*</Section>*/}
 
       {/* Section 3 filter */}
-      <Section title="Cleanup project" className={classes.sectionClass}>
+      <Section title="Cleanup content" className={classes.sectionClass}>
         {/* Remove Files by Language */}
         <ExpansionPanel defaultExpanded={true}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
@@ -240,8 +240,6 @@ function App() {
   const [experiment, setExperiment] = React.useState(false);
   const [userName, setUserName] = React.useState(DEFAULT_GUEST_NAME);
   const [projects, setProjects] = React.useState([]);
-  const hasProjects = projects.length > 0;
-  const multiProject = projects.length > 1;
 
   function addProject(project) {
     setProjects((projects) => projects.concat(project));
@@ -253,14 +251,19 @@ function App() {
     setProjects(remaining);
   }
 
+  const hasProjects = projects.length > 0;
+  const multiProject = projects.length > 1;
+  const autoLoadExample = window.location.pathname.includes('examples/libra') && !hasProjects ? 0 : undefined;
+
   // ask for user name if not set
-  if (!userName) return <SignIn onChange={setUserName}/>;
+  if (!userName)
+    return <SignIn onChange={setUserName}/>;
 
   return (
     <React.Fragment>
 
       {/* Top-level Navigation Bar */}
-      <AppBar position="sticky" color="default" className={classes.appBar}>
+      <AppBar position="sticky" color="default" className={classes.appBar} elevation={3}>
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
             <Typography variant="h5" color="secondary" noWrap className={classes.toolbarTitle}>
@@ -312,7 +315,7 @@ function App() {
                 </CardActions>
               </Card>
             </Grid>)}
-          <ProjectLoader hasProjects={hasProjects} onProjectLoaded={addProject}/>
+          <ProjectLoader hasProjects={hasProjects} autoLoadExample={autoLoadExample} onProjectLoaded={addProject}/>
         </Grid>
       </Section>
 

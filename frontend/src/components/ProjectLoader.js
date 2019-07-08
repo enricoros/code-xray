@@ -106,13 +106,10 @@ function ClocLink(props) {
  */
 function ProjectLoader(props) {
   const classes = useSourceSelectorStyles();
-  const {hasProjects: _parentHasProjects, onProjectLoaded: _parentOnProjectLoaded} = props;
+  const {hasProjects, autoLoadExample, onProjectLoaded} = props;
   const [expandNext, setExpandNext] = React.useState(false);
   const [tabIdx, setTabIdx] = React.useState(TESTING ? 1 : 0);
   const [errorString, setErrorString] = React.useState('');
-
-  // derived logic: collapse if there are projects and we didn't expand this
-  const showCollapsed = _parentHasProjects && !expandNext;
 
   // using the "react-dropzone" module, which mimics hooks. upon a drop, load the file
   const {getRootProps: dzProps, getInputProps: dzInputProps, isDragActive} = useDropzone(
@@ -158,7 +155,7 @@ function ProjectLoader(props) {
       const projectFiles = clocJsonToFileStatList(clocJson);
       const bareProject = makeProject(projectName, projectFiles);
       setExpandNext(false);
-      _parentOnProjectLoaded(bareProject);
+      onProjectLoaded(bareProject);
     } catch (e) {
       setErrorString('Invalid Cloc file. Details: ' + e);
     }
@@ -181,6 +178,16 @@ function ProjectLoader(props) {
     request.onload = () => callback(request.response);
     request.send();
   }
+
+  // if autoload is requested, perform it and don't render anything
+  if (typeof autoLoadExample === "number" && autoLoadExample >= 0 && autoLoadExample < EXAMPLES.length) {
+    console.log("Auto Loading example " + autoLoadExample);
+    setTimeout(() => loadExampleByIndex(autoLoadExample), 100);
+    return <React.Fragment/>;
+  }
+
+  // derived logic: collapse if there are other projects int the parent and we didn't expand this
+  const showCollapsed = hasProjects && !expandNext;
 
   // if collapsed, show a button to bring it back on
   if (showCollapsed) return (
