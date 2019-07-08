@@ -6,11 +6,13 @@ import Button from '@material-ui/core/Button';
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
+import Chip from "@material-ui/core/Chip";
 import Container from "@material-ui/core/Container";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
 import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -29,7 +31,6 @@ import LanguagesChips, {getDefaultExclusions} from "./components/LanguagesChips"
 import ProjectLoader from "./components/ProjectLoader";
 import Renderer from "./components/Renderer";
 import SignIn from "./components/SignIn";
-import Chip from "@material-ui/core/Chip";
 import {TESTING} from "./config";
 
 // localstorage persisted state
@@ -65,6 +66,9 @@ const useStyles = makeStyles(theme => ({
   projectCard: {
     backgroundColor: theme.palette.primary.dark,
     color: theme.palette.primary.contrastText,
+  },
+  descLabel: {
+    // padding: theme.spacing(0.5, 0),
   },
   folderChip: {
     margin: theme.spacing(0.5),
@@ -155,14 +159,24 @@ function MultiProjectFilter(props) {
             <Typography>Filter Folders{(noFolderPrefix.length > 0) && ' (' + noFolderPrefix.length + ')'}</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            {(noFolderPrefix.length < 1) && <Typography>Click on a folder on the XRay to remove it.</Typography>}
-            {(noFolderPrefix.length > 0) && <Grid container>
-              {noFolderPrefix.map((path, idx) =>
-                <Chip variant="outlined" label={path} onDelete={() => includeFolder(path)}
-                      key={'no-folder-' + idx} component="div" className={classes.folderChip}/>)}
-            </Grid>}
-            <FormControlLabel label="Collapse degenerate folder structures" control={
-              <Switch checked={semCollapse} onChange={(e, state) => setSemCollapse(state)} color="primary"/>}/>
+            <Grid container>
+              <Grid item xs={12} sm={4} md={2}>
+                <FormLabel component="div" className={classes.descLabel}>Removed folders</FormLabel>
+              </Grid>
+              <Grid item xs={12} sm={8} md={10}>
+                {(noFolderPrefix.length < 1) && <Typography>Click on a folder on the XRay to remove it.</Typography>}
+                {noFolderPrefix.map((path, idx) =>
+                  <Chip variant="outlined" label={path} onDelete={() => includeFolder(path)}
+                        key={'no-folder-' + idx} component="div" className={classes.folderChip}/>)}
+              </Grid>
+              <Grid item xs={12} sm={4} md={2}>
+                <FormLabel component="div" className={classes.descLabel}>Lossless operations</FormLabel>
+              </Grid>
+              <Grid item xs={12} sm={8} md={10}>
+                <FormControlLabel label="Collapse degenerate folder structures" control={
+                  <Switch checked={semCollapse} onChange={(e, state) => setSemCollapse(state)} color="primary"/>}/>
+              </Grid>
+            </Grid>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </Section>
