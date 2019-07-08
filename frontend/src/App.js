@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   toolbarLink: {
-    margin: theme.spacing(1, 1.5),
+    margin: theme.spacing(1, 0.5),
   },
   heroContent: {
     padding: theme.spacing(8, 0, 2),
@@ -272,11 +272,13 @@ function App() {
             {TESTING && <FormControlLabel control={
               <Switch checked={experiment} onChange={(e, state) => setExperiment(state)} color="primary"/>
             } label="Experiments"/>}
-            <Button href="https://github.com/enricoros/code-xray" variant="outlined"
+            <Button href="https://github.com/enricoros/code-xray/issues/new" size="small"
+                    className={classes.toolbarLink}>Request a Feature</Button>
+            <Button href="https://github.com/enricoros/code-xray" size="small"
                     className={classes.toolbarLink}>GitHub</Button>
             {/*<Link variant="button" color="textPrimary" href="" className={classes.toolbarLink}*/}
             {/*      component="a">{userName}</Link>*/}
-            <Button href="#" color="primary" variant="outlined" className={classes.toolbarLink}
+            <Button href="" color="primary" size="small" className={classes.toolbarLink}
                     onClick={() => setUserName(undefined)}>Logout</Button>
           </Toolbar>
         </Container>
