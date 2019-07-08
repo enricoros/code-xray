@@ -199,7 +199,7 @@ function ProjectLoader(props) {
         <Tabs centered value={tabIdx} onChange={(e, newValue) => setTabIdx(newValue)} component="div">
           <Tab href="" label="Load cloc file"/>
           <Tab href="" label="Examples"/>
-          <Tab href="" label="From Github" disabled/>
+          <Tab href="" label="From Github (n/a yet)" disabled/>
         </Tabs>
       </AppBar>
 
