@@ -20,8 +20,7 @@ import Typography from "@material-ui/core/Typography";
 import Delete from "@material-ui/icons/Delete";
 import * as d3h from "d3-hierarchy";
 import * as d3sc from "d3-scale-chromatic";
-import {updateTreeStatsRecursively} from "../analysis";
-import {TESTING} from "../config";
+import {TESTING, updateTreeStatsRecursively} from "./analysis";
 
 
 const useStyles = makeStyles(theme => ({
@@ -230,7 +229,7 @@ function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
       if (depth <= hide_labels_above) {
         // clip label inside the rectangle
         ctx.save();
-        if (true) {
+        if (options.clip) {
           ctx.beginPath();
           ctx.rect(~~dh.x0, ~~dh.y0, ~~(dh.x1 - dh.x0), ~~(dh.y1 - dh.y0));
           ctx.clip();
@@ -275,6 +274,7 @@ export default function Renderer(props) {
     boxes: true,
     box_shadows: true,
     lines: true,
+    clip: true,
   });
   // state: mechanics
   const [popOver, setPopOver] = React.useState({
@@ -464,5 +464,3 @@ export default function Renderer(props) {
     </React.Fragment>
   );
 }
-
-

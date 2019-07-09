@@ -18,7 +18,6 @@ import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import './App.css';
 import {
   collapseDegenerateDirectories,
   descendingByKey,
@@ -26,18 +25,14 @@ import {
   makeProjectDirNodeTree,
   reduceCodeStatListByName,
   SEPARATOR,
+  TESTING,
 } from "./analysis";
-import LanguagesChips, {getDefaultExclusions} from "./components/LanguagesChips";
-import ProjectLoader from "./components/ProjectLoader";
-import Renderer from "./components/Renderer";
-import SignIn from "./components/SignIn";
-import {TESTING} from "./config";
+import LanguagesChips, {getDefaultExclusions} from "./LanguagesChips";
+import ProjectLoader from "./ProjectLoader";
+import Renderer from "./Renderer";
+import SignIn from "./SignIn";
 
-// localstorage persisted state
-// import createPersistedState from 'use-persisted-state';
-// const usePersistedUserState = createPersistedState('user_name_2');
-
-// settings-
+// settings
 const DEFAULT_GUEST_NAME = 'Guest';
 const DEFAULT_PROJECT_NAME = 'Composite Project';
 

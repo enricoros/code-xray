@@ -1,5 +1,7 @@
 import path from "path";
-import {DEBUGGING} from "./config";
+
+const DEBUGGING = false;
+export const TESTING = window.location.port === "3000";
 
 export const descendingByKey = kpi => (a, b) => b[kpi] - a[kpi];
 export const SEPARATOR = '/';

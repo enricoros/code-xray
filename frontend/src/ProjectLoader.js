@@ -6,6 +6,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
+import Fab from "@material-ui/core/Fab";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -18,10 +19,7 @@ import CloudUpload from '@material-ui/icons/CloudUpload';
 import Code from '@material-ui/icons/Code';
 import LibraryAdd from '@material-ui/icons/LibraryAdd';
 import {useDropzone} from "react-dropzone";
-// Local imports (TODO: shall minimize .. dependencies)
-import {clocJsonToFileStatList, makeProject} from "../analysis";
-import {TESTING} from "../config";
-import Fab from "@material-ui/core/Fab";
+import {clocJsonToFileStatList, makeProject, TESTING} from "./analysis";
 
 // Configuration: only the Examples metadata
 const EXAMPLES = [
@@ -115,8 +113,8 @@ function ProjectLoader(props) {
   const {getRootProps: dzProps, getInputProps: dzInputProps, isDragActive} = useDropzone(
     {
       accept: "application/json",
-      onDropRejected: (f) => setErrorString('File ' + f[0].name + ' does not seem a JSON (' + (f[0].type || 'consider having a .json extension') + ')'),
-      onDropAccepted: (files) => files.forEach(file => {
+      onDropRejected: files => setErrorString('File ' + files[0].name + ' does not seem a JSON (' + (files[0].type || 'consider having a .json extension') + ')'),
+      onDropAccepted: files => files.forEach(file => {
         loadJsonFromUpload(file, (maybeJson) => {
           let guessedProject = file.name;
           if (guessedProject.indexOf('.') !== -1)
