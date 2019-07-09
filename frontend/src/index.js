@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import {red} from '@material-ui/core/colors';
-import * as ReactGA from 'react-ga';
+import * as GA from 'react-ga';
 import App from './App';
 
 // customize the colors by using a theme
@@ -33,8 +33,8 @@ ReactDOM.render(
   document.querySelector('#root'),
 );
 
-// analytics
-// if (process.env.REACT_APP_GA_ID !== undefined) {
-//   ReactGA.initialize(process.env.REACT_APP_GA_ID || '');
-//   ReactGA.pageview(window.location.pathname + window.location.search);
-// }
+// Google Analytics
+if (process.env.REACT_APP_GA_ID !== undefined) {
+  GA.initialize(process.env.REACT_APP_GA_ID);
+  GA.pageview(window.location.pathname + window.location.search);
+}
