@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import {red} from '@material-ui/core/colors';
+import * as ReactGA from 'react-ga';
 import App from './App';
 
 // customize the colors by using a theme
@@ -31,3 +32,6 @@ ReactDOM.render(
   </ThemeProvider>,
   document.querySelector('#root'),
 );
+
+ReactGA.initialize(process.env.REACT_APP_GA_ID);
+ReactGA.pageview(window.location.pathname + window.location.search);
