@@ -33,5 +33,8 @@ ReactDOM.render(
   document.querySelector('#root'),
 );
 
-ReactGA.initialize(process.env.REACT_APP_GA_ID);
-ReactGA.pageview(window.location.pathname + window.location.search);
+// analytics
+if (process.env.REACT_APP_GA_ID !== undefined) {
+  ReactGA.initialize(process.env.REACT_APP_GA_ID || '');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
