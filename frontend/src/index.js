@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {hydrate, render} from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
@@ -25,15 +25,24 @@ const theme = createMuiTheme({
   },
 });
 
-ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline/>
-    <App/>
-  </ThemeProvider>,
-  document.querySelector('#root'),
-);
+function Root() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <App/>
+    </ThemeProvider>
+  )
+}
 
-// Google Analytics
+// use react-snap for pre-render static routes
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<Root/>, rootElement);
+} else {
+  render(<Root/>, rootElement);
+}
+
+// Google Analytics, with the ID compiled in during build
 if (process.env.REACT_APP_GA_ID !== undefined) {
   GA.initialize(process.env.REACT_APP_GA_ID);
   GA.pageview(window.location.pathname + window.location.search);
