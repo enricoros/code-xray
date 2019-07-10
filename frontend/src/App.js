@@ -31,6 +31,7 @@ import LanguagesChips, {getDefaultExclusions} from "./LanguagesChips";
 import ProjectLoader from "./ProjectLoader";
 import Renderer from "./Renderer";
 import SignIn from "./SignIn";
+import Link from "@material-ui/core/Link";
 
 // settings
 const DEFAULT_GUEST_NAME = 'Guest';
@@ -38,6 +39,11 @@ const DEFAULT_PROJECT_NAME = 'Composite Project';
 
 // App styled looks
 const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
   appBar: {
     // position: 'relative',
     background: 'white',
@@ -69,12 +75,18 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(0.5),
   },
   footer: {
+    marginTop: 'auto',
     borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    padding: theme.spacing(4, 0),
+    backgroundColor: theme.palette.common.white,
   },
 }));
+
+// other constants
+const GITHUB_URL = 'https://github.com/enricoros/code-xray';
+const LEGAL = ['Terms: do not use this website. This website does not promise anything and declines all responsibilities.',
+  'Privacy Policy: This application runs on your browser, nothing is collected from the server side. If you provide ' +
+  'data, the data is not uploaded.'];
 
 function Hero(props) {
   const classes = useStyles();
@@ -254,8 +266,14 @@ function App() {
   if (!userName)
     return <SignIn onChange={setUserName}/>;
 
+  const displayLegal = idx => e => {
+    e.preventDefault();
+    alert(LEGAL[idx]);
+    console.log(LEGAL[idx]);
+  };
+
   return (
-    <React.Fragment>
+    <Box className={classes.root}>
 
       {/* Top-level Navigation Bar */}
       <AppBar position="sticky" color="default" className={classes.appBar} elevation={3}>
@@ -267,9 +285,9 @@ function App() {
             {TESTING && <FormControlLabel control={
               <Switch checked={experiment} onChange={(e, state) => setExperiment(state)} color="primary"/>
             } label="Experiments"/>}
-            <Button href="https://github.com/enricoros/code-xray/issues/new" size="small"
+            <Button href={GITHUB_URL + '/issues/new'} size="small"
                     className={classes.toolbarLink}>Request a Feature</Button>
-            <Button href="https://github.com/enricoros/code-xray" size="small"
+            <Button href={GITHUB_URL} size="small"
                     className={classes.toolbarLink}>GitHub</Button>
             {/*<Link variant="button" color="textPrimary" href="" className={classes.toolbarLink}*/}
             {/*      component="a">{userName}</Link>*/}
@@ -323,11 +341,27 @@ function App() {
       {/* Projects */}
       {hasProjects && <MultiProjectFilterClosure projects={projects}/>}
 
+      {/* Padding element so that the footer doesn't come too close*/}
+      <Box style={{marginTop: 8 * 4}}/>
+
       {/* Footer */}
-      {/*<Container maxWidth="md" component="footer" className={classes.footer}>*/}
-      {/*  <Grid container spacing={4} justify="space-evenly"/>*/}
-      {/*</Container>*/}
-    </React.Fragment>
+      <Box className={classes.footer} component="footer">
+        <Container maxWidth="sm">
+          <Typography variant="body1" color="textPrimary" align="center">
+            Built with love by <Link color="inherit" href="https://www.enricoros.com/" component="a">Enrico Ros</Link>.
+          </Typography>
+          <Typography variant="body2" color="textSecondary" align="center">
+            {' '}<Link color="inherit" component="a" href={GITHUB_URL}>Source code</Link>
+            {' and '}<Link color="inherit" component="a" href={GITHUB_URL + '/issues'}>issues tracking</Link>
+            {' on '}<Link color="inherit" component="a" href={GITHUB_URL}>GitHub</Link>.
+          </Typography>
+          <Typography variant="body2" color="textSecondary" align="center">
+            Copyright 2019. <Link component="a" color="inherit" href="" onClick={displayLegal(0)}>Terms</Link>
+            {' and '}<Link component="a" color="inherit" href="" onClick={displayLegal(1)}>Privacy</Link> policy.
+          </Typography>
+        </Container>
+      </Box>
+    </Box>
   );
 }
 
