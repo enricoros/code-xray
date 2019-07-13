@@ -24,7 +24,9 @@
     "eject": "react-scripts eject"
   },
   "reactSnap": {
-    "puppeteerArgs": ["--no-sandbox"]
+    "puppeteerArgs": [
+      "--no-sandbox"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
