@@ -64,10 +64,12 @@ export const UNNAMED_PROJECT = 'Unnamed Project';
 // just code below
 const useSourceSelectorStyles = makeStyles(theme => ({
   codeBlock: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(2, 2),
+    backgroundColor: theme.palette.secondary.main,
+    boxShadow: '6px 4px 10px 0px #00000059',
+  },
+  codePre: {
     margin: 0,
-    color: 'white',
-    background: '#263238',
   },
   dropZone: {
     flex: 1,
@@ -251,9 +253,10 @@ function ProjectLoader(props) {
             </Grid>
             {/* instructions */}
             <Grid item sm={12} md={6}>Instructions to get a <ClocLink/> file
-              <pre className={classes.codeBlock}>{
-                `cd /where/your/repo/is
-cloc --by-file --json --out=cloc.json ./`}</pre>
+              <div className={classes.codeBlock}>
+                <pre style={{color: 'lightgray'}} className={classes.codePre}># cd /where/your/repo/is</pre>
+                <pre style={{color: 'white'}} className={classes.codePre}>cloc --by-file --json --out=cloc.json ./</pre>
+              </div>
             </Grid>
           </Grid>
         </TabContainer>}
