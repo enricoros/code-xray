@@ -33,6 +33,12 @@ const EXAMPLES = [
     }
   },
   {
+    href: 'examples/cloc.linux.e9a83bd2.json',
+    name: 'Linux Kernel',
+    rev: 'e9a83bd2',
+    upstream: 'https://github.com/torvalds/linux',
+  },
+  {
     href: 'examples/cloc.microsoft_onnxruntime.df68111b.json',
     name: 'ONNX Runtime',
     rev: 'df68111b',
