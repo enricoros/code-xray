@@ -17,7 +17,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Typography from "@material-ui/core/Typography";
 import {CloudUpload, Code, LibraryAdd} from '@material-ui/icons';
 import {useDropzone} from "react-dropzone";
-import {clocJsonToFileStatList, makeProject, TESTING} from "./analysis";
+import {clocJsonToFileStatList, makeProject} from "./analysis";
 // import {ReactComponent as GitHubIcon} from './icon_gh_white.svg';
 
 // Configuration: only the Examples metadata
@@ -118,7 +118,7 @@ function ProjectLoader(props) {
   const classes = useSourceSelectorStyles();
   const {hasProjects, autoLoadExample, onProjectLoaded} = props;
   const [expandNext, setExpandNext] = React.useState(false);
-  const [tabIdx, setTabIdx] = React.useState(TESTING ? 1 : 0);
+  const [tabIdx, setTabIdx] = React.useState(1);
   const [errorString, setErrorString] = React.useState('');
 
   // using the "react-dropzone" module, which mimics hooks. upon a drop, load the file
