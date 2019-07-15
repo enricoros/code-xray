@@ -15,11 +15,10 @@ import Paper from "@material-ui/core/Paper";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import Typography from "@material-ui/core/Typography";
-import CloudUpload from '@material-ui/icons/CloudUpload';
-import Code from '@material-ui/icons/Code';
-import LibraryAdd from '@material-ui/icons/LibraryAdd';
+import {CloudUpload, Code, LibraryAdd} from '@material-ui/icons';
 import {useDropzone} from "react-dropzone";
 import {clocJsonToFileStatList, makeProject, TESTING} from "./analysis";
+// import {ReactComponent as GitHubIcon} from './icon_gh_white.svg';
 
 // Configuration: only the Examples metadata
 const EXAMPLES = [
@@ -27,6 +26,7 @@ const EXAMPLES = [
     href: 'examples/cloc.libra.502936fb.json',
     name: 'Libra',
     rev: '502936fb',
+    github_org: 'libra',
     upstream: 'https://github.com/libra/libra',
     presets: {
       noFolderPrefix: ['Libra/terraform']
@@ -36,24 +36,28 @@ const EXAMPLES = [
     href: 'examples/cloc.linux.e9a83bd2.json',
     name: 'Linux Kernel',
     rev: 'e9a83bd2',
+    github_org: 'torvalds',
     upstream: 'https://github.com/torvalds/linux',
   },
   {
     href: 'examples/cloc.microsoft_onnxruntime.df68111b.json',
     name: 'ONNX Runtime',
     rev: 'df68111b',
+    github_org: 'microsoft',
     upstream: 'https://github.com/microsoft/onnxruntime',
   },
   {
     href: 'examples/cloc.paddlepaddle_anakin.6c434060.json',
     name: 'PaddlePaddle Anakin',
     rev: '6c434060',
+    github_org: 'PaddlePaddle',
     upstream: 'https://github.com/PaddlePaddle/Anakin',
   },
   {
     href: 'examples/cloc.pytorch_glow.5b0ed03b.json',
     name: 'PyTorch Glow',
     rev: '5b0ed03b',
+    github_org: 'pytorch',
     upstream: 'https://github.com/pytorch/glow',
   },
 ];
@@ -270,6 +274,7 @@ function ProjectLoader(props) {
                 <Card raised>
                   <CardActionArea href="#" className={classes.exampleCard} onClick={() => loadExampleByIndex(idx)}>
                     <Typography variant="h6" component="h4">
+                      {/*<GitHubIcon width={16} height={16}/>/{e.github_org}/*/}
                       {e.name}
                     </Typography>
                     <Typography>
