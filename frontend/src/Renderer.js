@@ -15,6 +15,7 @@ import Popover from "@material-ui/core/Popover";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Select from "@material-ui/core/Select";
+import Slider from "@material-ui/core/Slider";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Delete from "@material-ui/icons/Delete";
@@ -35,6 +36,10 @@ const useStyles = makeStyles(theme => ({
   colorInput: {
     marginRight: theme.spacing(2),
     width: 160,
+  },
+  sliderInput: {
+    marginTop: theme.spacing(2),
+    width: '90%'
   },
   descLabel: {
     padding: theme.spacing(2, 0),
@@ -118,23 +123,14 @@ function pickBestWH(w, h) {
 }
 
 
-function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor) {
-  Object.assign(options, {
-    width: canvas.width,
-    height: canvas.height,
-    hide_below: 0,
-    hide_above: 99,
-    hide_labels_above: 6,
-    thin_labels_above: 3,
-  });
-
+function renderOnCanvas(projectTree, canvas, options, leafColor, innerColor, depthRange, labelsRange) {
   // parametric configuration, def: h=2000, w=auto(16:9)
-  const {width, height} = pickBestWH(options['width'], options['height']);
-  const hide_below = options['hide_below'] || 0; // note: the multi-project container (if present) is depth -1
-  const hide_above = options['hide_above'] || 99; // note: the multi-project container (if present) is depth -1
+  const {width, height} = pickBestWH(canvas.width, canvas.height);
+  const hide_below = depthRange[0] || 0; // note: the multi-project container (if present) is depth -1
+  const hide_above = depthRange[1] || 99; // note: the multi-project container (if present) is depth -1
   const shrink_below = hide_below + 2; // FIXME: parametric 2
-  const hide_labels_above = options['hide_labels_above'] || 8;
-  const thin_labels_above = options['thin_labels_above'] || ~~(hide_labels_above / 2);
+  const hide_labels_above = labelsRange[1] || 8;
+  const thin_labels_above = labelsRange[0] || ~~(hide_labels_above / 2);
 
   // derived constants
   const paddingLabel = ~~(height / 35);
@@ -267,7 +263,7 @@ export default function Renderer(props) {
   const [height, setHeight] = React.useState(1000);
   const [leafColor, setLeafColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_LEAF));
   const [innerColor, setInnerColor] = React.useState(Colors.find(c => c.value === DEFAULT_COLOR_INNER));
-  const [features, setFeatures] = React.useState({
+  const [renderFeatures, setRenderFeatures] = React.useState({
     labels: true,
     lab_kpi: false,
     lab_shadows: false,
@@ -276,7 +272,10 @@ export default function Renderer(props) {
     lines: true,
     clip: true,
   });
-  // state: mechanics
+  const [depthRange, setDepthRange] = React.useState([0, 99]);
+  const [labelsRange, setLabelsRange] = React.useState([3, 6]);
+
+  // state: popover mechanics
   const [popOver, setPopOver] = React.useState({
     anchorEl: null,
     anchorX: 0,
@@ -290,11 +289,11 @@ export default function Renderer(props) {
   // render canvas at geometry changes
   React.useEffect(() => {
     const canvas = document.getElementById('output-canvas');
-    lastRenderedRects = renderOnCanvas(projectTree, canvas, features, leafColor, innerColor);
+    lastRenderedRects = renderOnCanvas(projectTree, canvas, renderFeatures, leafColor, innerColor, depthRange, labelsRange);
   });
 
   const changeFeature = feature => event => {
-    setFeatures({...features, [feature]: event.target.checked});
+    setRenderFeatures({...renderFeatures, [feature]: event.target.checked});
   };
 
   const changeLeafColor = event => {
@@ -362,6 +361,9 @@ export default function Renderer(props) {
   const cHeight = Math.max(height, 96);
   const popOverOpen = popOver.anchorEl !== null;
 
+  const minDepth = projectTree.depth;
+  const maxDepth = projectTree.invDepth;
+
   return (
     <React.Fragment>
 
@@ -426,20 +428,20 @@ export default function Renderer(props) {
         </Grid>
         <Grid item xs={12} sm={8} md={10}>
           <FormControlLabel label="Labels" control={
-            <Checkbox checked={features['labels']} color="primary" onChange={changeFeature('labels')}/>}/>
-          <FormControlLabel label="Size" disabled={!features['labels']} control={
-            <Checkbox checked={features['lab_kpi']} onChange={changeFeature('lab_kpi')}/>}/>
-          <FormControlLabel label="Shadows" disabled={!features['labels']} control={
-            <Checkbox checked={features['lab_shadows']} onChange={changeFeature('lab_shadows')}/>}/>
+            <Checkbox checked={renderFeatures['labels']} color="primary" onChange={changeFeature('labels')}/>}/>
+          <FormControlLabel label="Size" disabled={!renderFeatures['labels']} control={
+            <Checkbox checked={renderFeatures['lab_kpi']} onChange={changeFeature('lab_kpi')}/>}/>
+          <FormControlLabel label="Shadows" disabled={!renderFeatures['labels']} control={
+            <Checkbox checked={renderFeatures['lab_shadows']} onChange={changeFeature('lab_shadows')}/>}/>
           <FormControlLabel label="Boxes" control={
-            <Checkbox checked={features['boxes']} color="primary" onChange={changeFeature('boxes')}/>}/>
-          <FormControlLabel label="Shadows" disabled={!features['boxes']} control={
-            <Checkbox checked={features['box_shadows']} onChange={changeFeature('box_shadows')}/>}/>
+            <Checkbox checked={renderFeatures['boxes']} color="primary" onChange={changeFeature('boxes')}/>}/>
+          <FormControlLabel label="Shadows" disabled={!renderFeatures['boxes']} control={
+            <Checkbox checked={renderFeatures['box_shadows']} onChange={changeFeature('box_shadows')}/>}/>
           <FormControlLabel label="Lines" control={
-            <Checkbox checked={features['lines']} color="primary" onChange={changeFeature('lines')}/>}/>
+            <Checkbox checked={renderFeatures['lines']} color="primary" onChange={changeFeature('lines')}/>}/>
         </Grid>
 
-        {/* Options */}
+        {/* Colors */}
         <Grid item xs={12} sm={4} md={2}>
           <FormLabel component="div" className={classes.descLabel}>Colors</FormLabel>
         </Grid>
@@ -458,6 +460,25 @@ export default function Renderer(props) {
               </Select>
             </FormControl>
           </form>
+        </Grid>
+
+        {/* Ranges */}
+        <Grid item xs={12} sm={4} md={2}>
+          <FormLabel component="div" className={classes.descLabel}>Limit depth</FormLabel>
+        </Grid>
+        <Grid item xs={12} sm={4} md={3}>
+          <Slider className={classes.sliderInput}
+                  min={minDepth} max={maxDepth} value={depthRange} marks
+                  onChange={(event, newValue) => setDepthRange(newValue)}
+                  valueLabelDisplay="auto"
+          />
+        </Grid>
+        <Grid item xs={12} sm={4} md={3}>
+          <Slider className={classes.sliderInput}
+                  min={minDepth} max={maxDepth} value={labelsRange} marks
+                  onChange={(event, newValue) => setLabelsRange(newValue)}
+                  valueLabelDisplay="auto"
+          />
         </Grid>
       </Grid>
 
