@@ -1,5 +1,3 @@
-import path from "path";
-
 const DEBUGGING = false;
 export const TESTING = window.location.port === "3000";
 
@@ -47,6 +45,11 @@ export const makeProject = (projectName, fileStatList, langStatList) => {
     },
   };
 };
+
+const path = {
+  basename: path => path.split('/').reverse()[0],
+  dirname: str => str.slice(0, str.lastIndexOf('/')),
+}
 
 // create a list of FileStat (including CodeStat) from the Cloc JSON
 export function clocJsonToFileStatList(cj) {
@@ -111,7 +114,7 @@ export function makeProjectDirNodeTree(fileStatList, projectName) {
   return root;
 }
 
-// when a directory only has 1 sub-folder and no files, fuse-in that sub-folder contents (similar to github's path simplifier)
+// when a directory only has 1 sub-folder and no files, fuse-in that sub-folder contents (similar to GitHub's path simplifier)
 export function collapseDegenerateDirectories(node) {
   let fused = false;
   while (node.children.length === 1 && node.fileStatList.length === 0) {

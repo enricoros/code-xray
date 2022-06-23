@@ -8,9 +8,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
 import Chip from "@material-ui/core/Chip";
 import Container from "@material-ui/core/Container";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
@@ -18,20 +15,13 @@ import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {
-  collapseDegenerateDirectories,
-  descendingByKey,
-  makeDirNode,
-  makeProjectDirNodeTree,
-  reduceCodeStatListByName,
-  SEPARATOR,
-  TESTING,
-} from "./analysis";
+import {collapseDegenerateDirectories, descendingByKey, makeDirNode, makeProjectDirNodeTree, reduceCodeStatListByName, SEPARATOR, TESTING,} from "./analysis";
 import LanguagesChips, {getDefaultExclusions} from "./LanguagesChips";
 import ProjectLoader from "./ProjectLoader";
 import Renderer from "./Renderer";
 import SignIn from "./SignIn";
 import Link from "@material-ui/core/Link";
+import {Accordion, AccordionDetails, AccordionSummary} from "@material-ui/core";
 
 // settings
 const DEFAULT_GUEST_NAME = 'Guest';
@@ -150,22 +140,22 @@ function MultiProjectFilter(props) {
       {/* Section 3 filter */}
       <Section title="Cleanup content" className={classes.sectionClass}>
         {/* Remove Files by Language */}
-        <ExpansionPanel defaultExpanded={true}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
+        <Accordion defaultExpanded={true}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon/>} href="">
             {/*Raise the signal, drop the noise.*/}
             <Typography>Filter Languages{(noLanguages.length > 0) && ' (' + noLanguages.length + ')'}</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
+          </AccordionSummary>
+          <AccordionDetails>
             <LanguagesChips langStatList={langStatList} noLanguages={noLanguages} onChange={setNoLanguages}/>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          </AccordionDetails>
+        </Accordion>
 
         {/* Remove Files by Folder */}
-        <ExpansionPanel defaultExpanded={true}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} href="">
+        <Accordion defaultExpanded={true}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon/>} href="">
             <Typography>Filter Folders{(noFolderPrefix.length > 0) && ' (' + noFolderPrefix.length + ')'}</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
+          </AccordionSummary>
+          <AccordionDetails>
             <Grid container>
               <Grid item xs={12} sm={4} md={2}>
                 <FormLabel component="div" className={classes.descLabel}>Removed folders</FormLabel>
@@ -184,8 +174,8 @@ function MultiProjectFilter(props) {
                   <Switch checked={semCollapse} onChange={(e, state) => setSemCollapse(state)} color="primary"/>}/>
               </Grid>
             </Grid>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          </AccordionDetails>
+        </Accordion>
       </Section>
 
       {/* Section 5 render */}
@@ -303,7 +293,7 @@ function App() {
       {/* Projects holder and loader*/}
       <Section title={multiProject ? "Composite Project" : (hasProjects ? "Active Project" : undefined)}
                className={classes.sectionClass} align="center">
-        <Grid container spacing={2} alignItems="center" justify="center">
+        <Grid container spacing={2} alignItems="center" justifyContent="center">
           {projects.map((p, idx) =>
             <Grid item xs={12} sm={6} md={4} key={"project-" + idx}>
               <Card raised className={classes.projectCard}>
@@ -320,13 +310,13 @@ function App() {
                       '% in ' + p.unfiltered.langStatList[0].name)}
                   </Typography>
                   {experiment &&
-                  <React.Fragment>
-                    <Typography>Lang: LOCs, files - density</Typography>
-                    {p.unfiltered.langStatList.map((cs, idx) =>
-                      <Box key={"lang-" + idx}>
-                        - {cs.name}: {cs.code.toLocaleString()}, {cs.files.toLocaleString()} ({~~(cs.code / cs.files)})
-                      </Box>)}
-                  </React.Fragment>}
+                    <React.Fragment>
+                      <Typography>Lang: LOCs, files - density</Typography>
+                      {p.unfiltered.langStatList.map((cs, idx) =>
+                        <Box key={"lang-" + idx}>
+                          - {cs.name}: {cs.code.toLocaleString()}, {cs.files.toLocaleString()} ({~~(cs.code / cs.files)})
+                        </Box>)}
+                    </React.Fragment>}
                 </CardContent>
                 <CardActions>
                   <Button onClick={() => removeProject(idx)} href="#" className={classes.projectCard}>
