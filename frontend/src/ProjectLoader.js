@@ -23,6 +23,13 @@ import {clocJsonToFileStatList, makeProject} from "./analysis";
 // Configuration: only the Examples metadata
 const EXAMPLES = [
   {
+    href: 'examples/cloc.pytorch.08820cb0.json',
+    name: 'PyTorch',
+    rev: '08820cb0',
+    github_org: 'pytorch',
+    upstream: 'https://github.com/pytorch/pytorch',
+  },
+  {
     href: 'examples/cloc.libra.502936fb.json',
     name: 'Libra',
     rev: '502936fb',
